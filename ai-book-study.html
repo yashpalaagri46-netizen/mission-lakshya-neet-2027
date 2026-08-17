@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>AI Book Study - Mission Lakshya NEET 2027</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#18202a;
+}
+
+header{
+  background:#1769aa;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+header h1{
+  margin:0;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin-bottom:15px;
+  border-radius:16px;
+  box-shadow:0 3px 12px #00000012;
+}
+
+select,
+input,
+textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #ccd6e0;
+  border-radius:10px;
+  font-size:16px;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:12px 16px;
+  margin:5px 3px 5px 0;
+  background:#1769aa;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+.book{
+  background:#f8fafc;
+  padding:15px;
+  border-radius:12px;
+  line-height:1.7;
+}
+
+.chapter{
+  padding:12px;
+  margin:8px 0;
+  background:#eef5ff;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.chapter:hover{
+  background:#dfeeff;
+}
+
+.ai-answer{
+  margin-top:15px;
+  padding:15px;
+  background:#eef8ee;
+  border-radius:12px;
+  line-height:1.7;
+}
+
+.status{
+  color:#555;
+  margin-top:8px;
+}
+
+@media(max-width:600px){
+
+  button{
+    width:100%;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📚 AI Book Study</h1>
+
+<p>Mission Lakshya NEET 2027</p>
+
+</header>
+
+
+<main>
+
+
+<!-- SUBJECT -->
+
+<div class="card">
+
+<h2>📖 Subject चुनें</h2>
+
+<select id="subject" onchange="loadChapters()">
+
+<option value="">-- Subject चुनें --</option>
+
+<option value="physics">⚡ Physics</option>
+
+<option value="chemistry">🧪 Chemistry</option>
+
+<option value="biology">🧬 Biology</option>
+
+</select>
+
+</div>
+
+
+<!-- CHAPTER -->
+
+<div class="card">
+
+<h2>📚 Chapters</h2>
+
+<div id="chapters">
+
+Subject चुनने के बाद chapters यहाँ दिखाई देंगे।
+
+</div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="card">
+
+<h2>🔎 Topic Search</h2>
+
+<input
+id="search"
+placeholder="जैसे Newton, Cell, Mole Concept..."
+oninput="searchTopic()"
+>
+
+<div id="searchResult"></div>
+
+</div>
+
+
+<!-- AI -->
+
+<div class="card">
+
+<h2>🤖 AI Study Assistant</h2>
+
+<textarea
+id="question"
+placeholder="इस chapter/topic के बारे में अपना सवाल लिखें..."
+></textarea>
+
+<button onclick="askAI()">
+🤖 AI से पूछें
+</button>
+
+<button onclick="startVoice()">
+🎤 बोलकर पूछें
+</button>
+
+<button onclick="speakAnswer()">
+🔊 जवाब सुनें
+</button>
+
+<div id="status" class="status"></div>
+
+<div id="answer" class="ai-answer">
+
+यहाँ AI का explanation दिखाई देगा।
+
+</div>
+
+</div>
+
+
+<!-- BOOK CONTENT -->
+
+<div class="card">
+
+<h2>📘 Study Notes</h2>
+
+<div id="bookContent" class="book">
+
+किसी chapter पर क्लिक करें।
+
+</div>
+
+</div>
+
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   BOOK DATA
+========================= */
+
+const chapters={
+
+physics:[
+
+{
+name:"Units & Measurements",
+content:
+"Units और Measurements में physical quantities, SI units, dimensions और measurement errors का अध्ययन किया जाता है।"
+},
+
+{
+name:"Motion in a Straight Line",
+content:
+"Motion में position, displacement, velocity और acceleration जैसी quantities का अध्ययन किया जाता है।"
+},
+
+{
+name:"Laws of Motion",
+content:
+"Newton के laws of motion वस्तुओं की गति और उन पर लगने वाले बलों के बीच संबंध बताते हैं।"
+},
+
+{
+name:"Work, Energy & Power",
+content:
+"Work, Energy और Power mechanics के महत्वपूर्ण concepts हैं। Work = Force × displacement के अनुसार work की गणना की जा सकती है।"
+},
+
+{
+name:"Gravitation",
+content:
+"Gravitation दो masses के बीच आकर्षण का बल है। Newton के universal law of gravitation के अनुसार F = Gm₁m₂/r²."
+}
+
+],
+
+
+chemistry:[
+
+{
+name:"Some Basic Concepts of Chemistry",
+content:
+"इस chapter में atoms, molecules, mole concept, molar mass और chemical calculations का अध्ययन किया जाता है।"
+},
+
+{
+name:"Structure of Atom",
+content:
+"Atom में nucleus और electrons होते हैं। Atomic structure को समझने के लिए विभिन्न atomic models का अध्ययन किया जाता है।"
+},
+
+{
+name:"Classification of Elements",
+content:
+"Periodic table में elements को उनके atomic number और properties के आधार पर व्यवस्थित किया गया है।"
+},
+
+{
+name:"Chemical Bonding",
+content:
+"Chemical bonding atoms को molecules या compounds बनाने के लिए जोड़ती है। Ionic और covalent bonding इसके प्रमुख प्रकार हैं।"
+},
+
+{
+name:"Thermodynamics",
+content:
+"Thermodynamics में heat, work, internal energy और energy changes का अध्ययन किया जाता है।"
+}
+
+],
+
+
+biology:[
+
+{
+name:"The Living World",
+content:
+"इस chapter में living organisms, biodiversity, taxonomy और biological classification की basic concepts पढ़ी जाती हैं।"
+},
+
+{
+name:"Cell: The Unit of Life",
+content:
+"Cell जीवों की structural और functional unit है। इसमें nucleus, mitochondria, ribosomes आदि organelles पाए जाते हैं।"
+},
+
+{
+name:"Biomolecules",
+content:
+"Carbohydrates, proteins, lipids और nucleic acids प्रमुख biomolecules हैं।"
+},
+
+{
+name:"Photosynthesis",
+content:
+"Photosynthesis में green plants प्रकाश ऊर्जा की सहायता से carbon dioxide और water से carbohydrates बनाते हैं।"
+},
+
+{
+name:"Human Physiology",
+content:
+"Human physiology में digestion, breathing, circulation, excretion और nervous system जैसे topics का अध्ययन किया जाता है।"
+}
+
+]
+
+};
+
+
+/* =========================
+   LOAD CHAPTERS
+========================= */
+
+function loadChapters(){
+
+const subject=
+document.getElementById("subject").value;
+
+const box=
+document.getElementById("chapters");
+
+box.innerHTML="";
+
+if(!subject){
+
+box.innerHTML=
+"पहले Subject चुनें।";
+
+return;
+
+}
+
+chapters[subject].forEach((chapter,index)=>{
+
+const div=document.createElement("div");
+
+div.className="chapter";
+
+div.textContent=
+"📖 "+chapter.name;
+
+div.onclick=function(){
+
+openChapter(subject,index);
+
+};
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/* =========================
+   OPEN CHAPTER
+========================= */
+
+function openChapter(subject,index){
+
+const chapter=
+chapters[subject][index];
+
+document.getElementById("bookContent").innerHTML=
+
+"<h3>"+chapter.name+"</h3>"+
+"<p>"+chapter.content+"</p>";
+
+document.getElementById("question").value=
+chapter.name+" को आसान भाषा में समझाइए।";
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchTopic(){
+
+const text=
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+const result=
+document.getElementById("searchResult");
+
+if(!text){
+
+result.innerHTML="";
+
+return;
+
+}
+
+let found=[];
+
+Object.keys(chapters).forEach(subject=>{
+
+chapters[subject].forEach(chapter=>{
+
+if(
+chapter.name.toLowerCase().includes(text) ||
+chapter.content.toLowerCase().includes(text)
+){
+
+found.push(chapter);
+
+}
+
+});
+
+});
+
+
+if(found.length===0){
+
+result.innerHTML=
+"<p>❌ Topic नहीं मिला।</p>";
+
+return;
+
+}
+
+result.innerHTML=
+found.map(x=>
+"<div class='chapter'>📖 "+x.name+"</div>"
+).join("");
+
+}
+
+
+/* =========================
+   AI
+========================= */
+
+let lastAnswer="";
+
+async function askAI(){
+
+const question=
+document.getElementById("question")
+.value
+.trim();
+
+const answer=
+document.getElementById("answer");
+
+const status=
+document.getElementById("status");
+
+if(!question){
+
+alert("पहले सवाल लिखें।");
+
+return;
+
+}
+
+status.textContent=
+"🤖 AI जवाब तैयार कर रहा है...";
+
+answer.innerHTML=
+"⏳ कृपया इंतजार करें...";
+
+
+try{
+
+const response=
+await fetch("/api/ai",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+question:
+"Mission Lakshya NEET 2027 AI Book Study के लिए इस सवाल का सरल हिंदी में NEET स्तर का explanation दें: "+
+question
+
+})
+
+});
+
+
+const data=
+await response.json();
+
+
+if(data.answer){
+
+lastAnswer=data.answer;
+
+answer.innerHTML=
+"<b>🤖 AI Explanation</b><br><br>"+
+escapeHTML(data.answer)
+.replace(/\n/g,"<br>");
+
+status.textContent=
+"✅ जवाब तैयार है।";
+
+}else{
+
+answer.innerHTML=
+"❌ AI से जवाब नहीं मिला।";
+
+status.textContent=
+"❌ Error";
+
+}
+
+}catch(error){
+
+console.error(error);
+
+answer.innerHTML=
+"❌ AI अभी connect नहीं है।";
+
+status.textContent=
+"Backend connection की जरूरत है।";
+
+}
+
+}
+
+
+/* =========================
+   VOICE INPUT
+========================= */
+
+let recognition=null;
+
+function startVoice(){
+
+const SpeechRecognition=
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+
+alert(
+"आपके browser में Voice Input उपलब्ध नहीं है।"
+);
+
+return;
+
+}
+
+recognition=
+new SpeechRecognition();
+
+recognition.lang="hi-IN";
+
+recognition.continuous=false;
+
+recognition.interimResults=false;
+
+
+recognition.onstart=function(){
+
+document.getElementById("status")
+.textContent=
+"🎤 सुन रहा हूँ...";
+
+};
+
+
+recognition.onresult=function(event){
+
+const text=
+event.results[0][0].transcript;
+
+document.getElementById("question")
+.value=text;
+
+document.getElementById("status")
+.textContent=
+"✅ आवाज़ मिल गई। अब AI से पूछें।";
+
+};
+
+
+recognition.onerror=function(){
+
+document.getElementById("status")
+.textContent=
+"❌ Voice input में समस्या हुई।";
+
+};
+
+
+recognition.start();
+
+}
+
+
+/* =========================
+   SPEAK
+========================= */
+
+function speakAnswer(){
+
+if(!lastAnswer){
+
+alert(
+"पहले AI से जवाब प्राप्त करें।"
+);
+
+return;
+
+}
+
+if(!("speechSynthesis" in window)){
+
+alert(
+"आपके browser में Voice Answer उपलब्ध नहीं है।"
+);
+
+return;
+
+}
+
+speechSynthesis.cancel();
+
+const speech=
+new SpeechSynthesisUtterance(
+lastAnswer
+);
+
+speech.lang="hi-IN";
+
+speech.rate=.9;
+
+speechSynthesis.speak(speech);
+
+}
+
+
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHTML(text){
+
+const div=
+document.createElement("div");
+
+div.textContent=text;
+
+return div.innerHTML;
+
+}
+
+</script>
+
+</body>
+  </html>
