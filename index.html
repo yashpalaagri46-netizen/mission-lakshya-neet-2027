@@ -45,6 +45,10 @@ a{color:#1769aa}
 <div class="card" onclick="showPage('dpp')"><div class="icon">📋</div><h3>DPP</h3><p>Daily practice</p></div>
 <div class="card" onclick="showPage('quiz')"><div class="icon">🧠</div><h3>Quiz</h3><p>अपना ज्ञान जांचें</p></div>
 <div class="card" onclick="showPage('websites')"><div class="icon">🌐</div><h3>Websites</h3><p>Useful study links</p></div>
+</div><div class="card" onclick="showPage('ai')">
+  <div class="icon">🤖</div>
+  <h3>AI Doubt Solver</h3>
+  <p>Physics • Chemistry • Biology</p>
 </div>
 </section>
 
@@ -83,6 +87,23 @@ a{color:#1769aa}
 <a href="https://www.nta.ac.in/" target="_blank" rel="noopener">NTA</a><br><br>
 <a href="https://ncert.nic.in/" target="_blank" rel="noopener">NCERT</a>
 </div>
+</section><section id="ai" class="page">
+  <button class="back" onclick="showPage('home')">← Home</button>
+
+  <div class="hero">
+    <h2>🤖 AI Doubt Solver</h2>
+    <p>Physics, Chemistry और Biology के सवाल पूछें।</p>
+
+    <textarea
+      id="aiQuestion"
+      rows="5"
+      placeholder="अपना सवाल यहाँ लिखें..."
+    ></textarea>
+
+    <button onclick="askAI()">AI से पूछें</button>
+
+    <div id="aiAnswer" class="question" style="display:none;"></div>
+  </div>
 </section>
 </main>
 
@@ -117,7 +138,45 @@ function makeQuiz(target, title){
  });
 }
 makeQuiz('quizBox','');
-makeQuiz('testBox','');
+makeQuiz('testBox','');async function askAI() {
+  const question = document.getElementById("aiQuestion").value.trim();
+  const answerBox = document.getElementById("aiAnswer");
+
+  if (!question) {
+    alert("पहले अपना सवाल लिखें।");
+    return;
+  }
+
+  answerBox.style.display = "block";
+  answerBox.textContent = "🤖 AI जवाब तैयार कर रहा है...";
+
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: question
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "AI response failed");
+    }
+
+    answerBox.innerHTML =
+      "<b>🤖 AI:</b><br><br>" +
+      data.answer.replace(/\n/g, "<br>");
+
+  } catch (error) {
+    answerBox.textContent =
+      "❌ AI अभी उपलब्ध नहीं है। थोड़ी देर बाद फिर कोशिश करें।";
+    console.error(error);
+  }
+}
 </script>
 </body>
 </html>
