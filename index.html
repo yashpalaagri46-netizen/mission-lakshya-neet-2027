@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1769aa">
+<title>Mission Lakshya NEET 2027</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#18202a}
+header{background:#1769aa;color:white;padding:22px 16px;text-align:center}
+header h1{margin:0 0 6px;font-size:25px}header p{margin:0}
+main{max-width:950px;margin:auto;padding:18px}
+.hero,.card{background:white;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #00000012}
+.hero{text-align:center}.creator{color:#555;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{cursor:pointer;text-align:center;border:1px solid #e7edf4}.icon{font-size:35px}
+button,.linkbtn{border:0;border-radius:10px;padding:11px 15px;background:#1769aa;color:white;cursor:pointer;font-size:15px}
+input,textarea{width:100%;padding:12px;border:1px solid #ccd6e0;border-radius:10px;margin:7px 0 12px}
+.page{display:none}.page.active{display:block}.back{margin-bottom:14px}
+.question{background:#f8fafc;padding:14px;border-radius:12px;margin:12px 0}
+.option{display:block;margin:8px 0;background:white;color:#18202a;border:1px solid #ccd6e0;text-align:left}
+.option:hover{background:#eef6ff}
+footer{text-align:center;color:#667;padding:25px}
+a{color:#1769aa}
+@media(max-width:600px){.grid{grid-template-columns:1fr}main{padding:12px}header h1{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+<h1>🎯 Mission Lakshya NEET 2027</h1>
+<p>पढ़ाई • वीडियो • टेस्ट • DPP • Quiz</p>
+</header>
+
+<main>
+<section id="home" class="page active">
+<div class="hero">
+<h2>NEET 2027 की तैयारी</h2>
+<p>अपने अध्ययन सामग्री को एक जगह व्यवस्थित करें।</p>
+<p class="creator">Created by <b>Yashpal Aagri</b></p>
+</div>
+<div class="grid">
+<div class="card" onclick="showPage('books')"><div class="icon">📚</div><h3>Books</h3><p>अधिकृत PDF/बुक लिंक</p></div>
+<div class="card" onclick="showPage('videos')"><div class="icon">🎥</div><h3>Video Lectures</h3><p>अपने अधिकृत वीडियो जोड़ें</p></div>
+<div class="card" onclick="showPage('tests')"><div class="icon">📝</div><h3>Tests</h3><p>Practice test</p></div>
+<div class="card" onclick="showPage('dpp')"><div class="icon">📋</div><h3>DPP</h3><p>Daily practice</p></div>
+<div class="card" onclick="showPage('quiz')"><div class="icon">🧠</div><h3>Quiz</h3><p>अपना ज्ञान जांचें</p></div>
+<div class="card" onclick="showPage('websites')"><div class="icon">🌐</div><h3>Websites</h3><p>Useful study links</p></div>
+</div>
+</section>
+
+<section id="books" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>📚 Books</h2><p>यहाँ केवल आपके पास अधिकार वाली सामग्री के लिंक जोड़ें।</p>
+<a class="linkbtn" href="#" onclick="alert('अपनी अधिकृत पुस्तक/PDF का लिंक यहाँ जोड़ें।');return false;">Book Link</a></div>
+</section>
+
+<section id="videos" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>🎥 Video Lectures</h2><p>अपने या अधिकृत YouTube/वीडियो लिंक यहाँ जोड़ें।</p>
+<input id="videoUrl" placeholder="https://youtube.com/...">
+<button onclick="openVideo()">वीडियो खोलें</button></div>
+</section>
+
+<section id="tests" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>📝 Practice Test</h2><div id="testBox"></div></div>
+</section>
+
+<section id="dpp" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>📋 DPP</h2><p>आज का DPP</p><button onclick="alert('आज का DPP पूरा करें और अपने उत्तर कॉपी में लिखें।')">Start DPP</button></div>
+</section>
+
+<section id="quiz" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>🧠 Biology Quiz</h2><div id="quizBox"></div></div>
+</section>
+
+<section id="websites" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+<div class="hero"><h2>🌐 Useful Websites</h2>
+<p>नीचे केवल भरोसेमंद/अधिकृत study websites के लिंक रखें।</p>
+<a href="https://www.nta.ac.in/" target="_blank" rel="noopener">NTA</a><br><br>
+<a href="https://ncert.nic.in/" target="_blank" rel="noopener">NCERT</a>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Mission Lakshya NEET 2027 • Created by Yashpal Aagri</footer>
+
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+function openVideo(){
+ const u=document.getElementById('videoUrl').value.trim();
+ if(!u){alert('पहले वीडियो लिंक डालें।');return}
+ try{const x=new URL(u); if(!/^https?:$/.test(x.protocol)) throw 0; window.open(x.href,'_blank','noopener');}
+ catch(e){alert('सही http/https लिंक डालें।')}
+}
+const questions=[
+ {q:'मानव शरीर में रक्त का लाल रंग किस कारण होता है?',a:['हीमोग्लोबिन','इंसुलिन','कैल्शियम','प्लाज्मा'],c:0},
+ {q:'पौधों में प्रकाश संश्लेषण मुख्यतः किस अंगक में होता है?',a:['माइटोकॉन्ड्रिया','क्लोरोप्लास्ट','राइबोसोम','नाभिक'],c:1}
+];
+function makeQuiz(target, title){
+ const box=document.getElementById(target); box.innerHTML='';
+ questions.forEach((x,i)=>{
+  const d=document.createElement('div');d.className='question';
+  d.innerHTML='<b>'+ (i+1)+'. '+x.q+'</b>';
+  x.a.forEach((o,j)=>{
+   const b=document.createElement('button');b.className='option';b.textContent=o;
+   b.onclick=()=>{b.style.borderColor=(j===x.c?'green':'crimson');};
+   d.appendChild(b);
+  });box.appendChild(d);
+ });
+}
+makeQuiz('quizBox','');
+makeQuiz('testBox','');
+</script>
+</body>
+</html>
