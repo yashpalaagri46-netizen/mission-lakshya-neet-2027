@@ -16,7 +16,7 @@ app.post("/api/ai", async (req, res) => {
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
-
+console.log("OPENAI_API_KEY मौजूद है:", !!apiKey);
     if (!apiKey) {
       return res.status(500).json({
         answer: "AI API key अभी सेट नहीं है।"
