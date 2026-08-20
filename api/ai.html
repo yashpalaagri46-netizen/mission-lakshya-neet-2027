@@ -281,15 +281,6 @@ if(!("speechSynthesis" in window)){
 alert("आपके browser में voice output उपलब्ध नहीं है।");
 return;
 }
-
-const speech=new SpeechSynthesisUtterance(lastAnswer);
-
-speech.lang="hi-IN";
-speech.rate=0.9;
-
-window.speechSynthesis.cancel();
-window.speechSynthesis.speak(speech);
-
 }
 
 </script>
