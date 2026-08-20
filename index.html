@@ -246,63 +246,6 @@ makeQuiz('testBox','');async function askAI() {
       </div>
     `;
   }
-}async function loadYouTubeLive() {
-  const box = document.getElementById("youtubeLiveBox");
-
-  box.innerHTML = "<p>🔄 Live classes खोजी जा रही हैं...</p>";
-
-  try {
-    const response = await fetch("/api/youtube-live");
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || "YouTube API error");
-    }
-
-    if (!data.liveClasses || data.liveClasses.length === 0) {
-      box.innerHTML = `
-        <div class="question">
-          <b>📺 अभी कोई public live class नहीं मिली।</b>
-          <p>थोड़ी देर बाद Refresh करके देखें।</p>
-        </div>
-      `;
-      return;
-    }
-
-    box.innerHTML = "";
-
-    data.liveClasses.forEach(video => {
-      const card = document.createElement("div");
-      card.className = "question";
-
-      card.innerHTML = `
-        <img src="${video.thumbnail}"
-             style="width:100%;border-radius:12px;"
-             alt="Live class">
-
-        <h3>🔴 ${escapeHtml(video.title)}</h3>
-
-        <p><b>Channel:</b> ${escapeHtml(video.channelTitle)}</p>
-
-        <button onclick="window.open('${video.url}', '_blank')">
-          ▶️ YouTube पर Live देखें
-        </button>
-      `;
-
-      box.appendChild(card);
-    });
-
-  } catch (error) {
-    console.error(error);
-
-    box.innerHTML = `
-      <div class="question">
-        ❌ Live classes अभी load नहीं हो सकीं।
-        <br><br>
-        🔄 थोड़ी देर बाद फिर कोशिश करें।
-      </div>
-    `;
-  }
 
 
 </script>
