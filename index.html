@@ -177,15 +177,6 @@ makeQuiz('testBox','');async function askAI() {
       "<b>🤖 AI:</b><br><br>" +
       data.answer.replace(/\n/g, "<br>");
 
-  } catch (error) {
-    answerBox.textContent =
-      "❌ AI अभी उपलब्ध नहीं है। थोड़ी देर बाद फिर कोशिश करें।";
-    console.error(error);
-  } async function loadYouTubeLive() {
-  const box = document.getElementById("youtubeLiveBox");
-
-  box.innerHTML = "<p>🔄 Live classes खोजी जा रही हैं...</p>";
-
   }
 
 </script>
