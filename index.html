@@ -6,412 +6,489 @@
 <meta name="theme-color" content="#1769aa">
 <title>Mission Lakshya NEET 2027</title>
 
-<script>
-window.va = window.va || function () {
-  (window.vaq = window.vaq || []).push(arguments);
-};
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
 <style>
 *{box-sizing:border-box}
 
 :root{
-  --bg:#f4f7fb;
-  --surface:#fff;
-  --text:#18202a;
-  --muted:#667085;
-  --primary:#1769aa;
-  --soft:#f8fafc;
-  --border:#e1e8ef;
+ --bg:#eef5ff;
+ --card:#fff;
+ --text:#14213d;
+ --muted:#64748b;
+ --primary:#1769aa;
+ --primary2:#0d47a1;
+ --soft:#f3f8ff;
+ --border:#d7e3f0;
 }
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:.25s;
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:var(--bg);
+ color:var(--text);
 }
 
 body.dark{
-  --bg:#0b1220;
-  --surface:#111827;
-  --text:#e5e7eb;
-  --muted:#aab4c3;
-  --primary:#42a5f5;
-  --soft:#172235;
-  --border:#263244;
-}
-
-body.blue{
-  --bg:#eaf6ff;
-  --surface:#fff;
-  --text:#102a43;
-  --muted:#486581;
-  --primary:#0077b6;
-  --soft:#eef9ff;
-  --border:#c7e6f8;
+ --bg:#080d18;
+ --card:#111827;
+ --text:#f1f5f9;
+ --muted:#aab6c7;
+ --primary:#42a5f5;
+ --primary2:#1565c0;
+ --soft:#182438;
+ --border:#2b3a50;
 }
 
 body.green{
-  --bg:#edf8f1;
-  --surface:#fff;
-  --text:#16351f;
-  --muted:#557060;
-  --primary:#198754;
-  --soft:#f1fbf4;
-  --border:#cfe9d8;
+ --bg:#eaf8ef;
+ --card:#fff;
+ --text:#12351f;
+ --muted:#557060;
+ --primary:#198754;
+ --primary2:#146c43;
+ --soft:#eaf8ef;
+ --border:#bfe3cc;
 }
 
 body.purple{
-  --bg:#f5efff;
-  --surface:#fff;
-  --text:#2d1b45;
-  --muted:#6c5a7e;
-  --primary:#7b3fb6;
-  --soft:#faf5ff;
-  --border:#e2d2f1;
+ --bg:#f5efff;
+ --card:#fff;
+ --text:#2d1647;
+ --muted:#715d82;
+ --primary:#7b3fb6;
+ --primary2:#54238a;
+ --soft:#f7f0ff;
+ --border:#dfc9f2;
 }
 
-/* MODE BAR */
+body.orange{
+ --bg:#fff4e8;
+ --card:#fff;
+ --text:#442000;
+ --muted:#80684f;
+ --primary:#f57c00;
+ --primary2:#e65100;
+ --soft:#fff0df;
+ --border:#f0c79c;
+}
+
+/* LOGIN */
+
+#loginPage{
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+ background:linear-gradient(135deg,#0d47a1,#0288d1);
+}
+
+.loginBox{
+ width:min(450px,100%);
+ background:white;
+ padding:30px;
+ border-radius:24px;
+ box-shadow:0 15px 45px #0005;
+ text-align:center;
+}
+
+.loginLogo{
+ width:130px;
+ height:130px;
+ object-fit:contain;
+ margin:auto;
+}
+
+.loginBox h1{
+ color:#123;
+ margin:10px 0;
+}
+
+.loginBox input{
+ width:100%;
+ padding:14px;
+ margin:7px 0;
+ border:1px solid #ccd6e0;
+ border-radius:11px;
+ font-size:16px;
+}
+
+.loginBox button{
+ width:100%;
+ margin:7px 0;
+}
+
+/* TOP */
 
 .modebar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  display:flex;
-  justify-content:center;
-  gap:7px;
-  flex-wrap:wrap;
-  padding:10px;
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
+ position:sticky;
+ top:0;
+ z-index:1000;
+ display:flex;
+ justify-content:center;
+ gap:8px;
+ flex-wrap:wrap;
+ padding:10px;
+ background:var(--card);
+ border-bottom:1px solid var(--border);
 }
 
 .modebar button{
-  margin:0;
-  padding:8px 12px;
-  border-radius:20px;
-  background:var(--soft);
-  color:var(--text);
-  border:1px solid var(--border);
-}
-
-.modebar button.active{
-  background:var(--primary);
-  color:#fff;
+ margin:0;
+ padding:9px 14px;
+ border-radius:22px;
 }
 
 /* HEADER */
 
 header{
-  background:linear-gradient(
-    135deg,
-    #0d47a1,
-    #1769aa,
-    #0288d1
-  );
-  color:#fff;
-  text-align:center;
-  padding:28px 15px;
+ background:linear-gradient(135deg,#0d47a1,#0288d1);
+ color:#fff;
+ text-align:center;
+ padding:25px 15px;
 }
 
 .logo{
-  width:180px;
-  height:180px;
-  object-fit:contain;
-  display:block;
-  margin:auto;
-  filter:drop-shadow(0 5px 12px #0005);
+ width:160px;
+ height:160px;
+ object-fit:contain;
+ display:block;
+ margin:auto;
 }
 
 header h1{
-  margin:10px 0 6px;
-  font-size:clamp(25px,5vw,42px);
+ font-size:clamp(25px,5vw,44px);
+ margin:10px 0;
 }
 
-header p{
-  margin:0;
-  font-size:clamp(14px,2.5vw,19px);
+/* USER */
+
+.userbar{
+ background:var(--card);
+ border-bottom:1px solid var(--border);
+ padding:12px 20px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ flex-wrap:wrap;
 }
 
 /* MAIN */
 
 main{
-  width:min(1400px,96%);
-  margin:auto;
-  padding:24px 10px;
+ width:min(1500px,97%);
+ margin:auto;
+ padding:25px 10px;
 }
 
 .hero,.card{
-  background:var(--surface);
-  color:var(--text);
-  border-radius:18px;
-  padding:22px;
-  margin-bottom:18px;
-  box-shadow:0 4px 16px #00000014;
+ background:var(--card);
+ border:1px solid var(--border);
+ border-radius:20px;
+ padding:25px;
+ margin-bottom:20px;
+ box-shadow:0 5px 18px #00000012;
 }
 
 .hero{text-align:center}
 
-.creator{
-  color:var(--muted);
-}
-
 .grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:20px;
 }
 
 .card{
-  text-align:center;
-  cursor:pointer;
-  border:1px solid var(--border);
-  min-height:150px;
-  transition:.2s;
+ text-align:center;
+ min-height:170px;
+ cursor:pointer;
 }
 
 .card:hover{
-  transform:translateY(-3px);
+ transform:translateY(-3px);
 }
 
 .icon{
-  font-size:45px;
+ font-size:48px;
 }
 
 .page{display:none}
 .page.active{display:block}
 
 button,.linkbtn{
-  border:0;
-  border-radius:10px;
-  padding:12px 16px;
-  background:var(--primary);
-  color:white;
-  cursor:pointer;
-  font-size:15px;
-  margin:5px 3px;
-  text-decoration:none;
-  display:inline-block;
+ border:0;
+ border-radius:11px;
+ padding:12px 17px;
+ background:var(--primary);
+ color:white;
+ cursor:pointer;
+ font-size:15px;
+ margin:5px;
+ text-decoration:none;
+ display:inline-block;
 }
 
 .secondary{
-  background:#455a64;
+ background:#455a64;
 }
 
 input,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid var(--border);
-  background:var(--surface);
-  color:var(--text);
-  border-radius:10px;
-  margin:7px 0 12px;
-  font-size:16px;
+ width:100%;
+ padding:13px;
+ border:1px solid var(--border);
+ background:var(--card);
+ color:var(--text);
+ border-radius:11px;
+ font-size:16px;
+ margin:7px 0 12px;
 }
 
 .question{
-  background:var(--soft);
-  color:var(--text);
-  padding:16px;
-  border-radius:14px;
-  margin:14px 0;
+ background:var(--soft);
+ border:1px solid var(--border);
+ padding:17px;
+ border-radius:15px;
+ margin:15px 0;
 }
 
 .pwx{
-  background:linear-gradient(90deg,#ff6a00,#ee0979);
-  padding:20px;
-  text-align:center;
-  border-radius:14px;
-  margin-bottom:18px;
+ background:linear-gradient(90deg,#ff6a00,#ee0979);
+ padding:22px;
+ text-align:center;
+ border-radius:16px;
+ margin-bottom:20px;
 }
 
-.pwx h2,.pwx p{color:#fff}
-
-.pwx a{
-  background:#fff;
-  color:#ee0979;
-  padding:11px 22px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* BOOKS */
-
-.bookgrid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
-.bookcard{
-  background:var(--soft);
-  border:1px solid var(--border);
-  padding:16px;
-  border-radius:14px;
-  text-align:center;
-}
-
-.bookcover{
-  width:100%;
-  aspect-ratio:5/4;
-  object-fit:cover;
-  border-radius:12px;
-  background:#1769aa;
-}
-
-/* VIDEO */
-
-.player{
-  width:100%;
-  aspect-ratio:16/9;
-  border:0;
-  border-radius:12px;
-  background:#000;
-}
-
-/* LIVE */
-
-.live-layout{
-  display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:16px;
-}
-
-.chat-frame{
-  width:100%;
-  min-height:500px;
-  border:0;
-  border-radius:12px;
-  background:#111;
-}
-
-/* WEBSITES */
+.pwx h2,.pwx p{color:white}
 
 .webgrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
 }
 
 .webcard{
-  background:var(--soft);
-  border:1px solid var(--border);
-  padding:16px;
-  border-radius:14px;
-  text-align:center;
+ background:var(--soft);
+ border:1px solid var(--border);
+ padding:18px;
+ border-radius:16px;
 }
 
-.status,.small{
-  color:var(--muted);
-  font-size:14px;
+.webframe{
+ width:100%;
+ height:650px;
+ border:0;
+ border-radius:14px;
+ background:white;
+ margin-top:15px;
+}
+
+.bookgrid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:18px;
+}
+
+.bookcard{
+ background:var(--soft);
+ border:1px solid var(--border);
+ padding:17px;
+ border-radius:16px;
+ text-align:center;
+}
+
+.bookcover{
+ height:180px;
+ border-radius:13px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:65px;
+ background:linear-gradient(135deg,var(--primary2),var(--primary));
+ color:white;
+}
+
+.player{
+ width:100%;
+ aspect-ratio:16/9;
+ border:0;
+ border-radius:14px;
+ background:#000;
+}
+
+.livegrid{
+ display:grid;
+ grid-template-columns:1.5fr 1fr;
+ gap:18px;
+}
+
+.chatframe{
+ width:100%;
+ height:550px;
+ border:0;
+ border-radius:14px;
+}
+
+.result{
+ background:var(--soft);
+ padding:18px;
+ border-radius:14px;
+ font-size:20px;
+ font-weight:bold;
 }
 
 footer{
-  text-align:center;
-  color:var(--muted);
-  padding:30px;
+ text-align:center;
+ color:var(--muted);
+ padding:35px;
 }
 
-@media(max-width:1000px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .bookgrid{grid-template-columns:repeat(2,1fr)}
-  .webgrid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1100px){
+ .grid,.bookgrid{grid-template-columns:repeat(2,1fr)}
+ .webgrid{grid-template-columns:repeat(2,1fr)}
 }
 
-@media(max-width:600px){
-  .grid,.bookgrid,.webgrid{
-    grid-template-columns:1fr;
-  }
-
-  .live-layout{
-    grid-template-columns:1fr;
-  }
-
-  .logo{
-    width:145px;
-    height:145px;
-  }
-
-  main{
-    width:100%;
-    padding:14px 9px;
-  }
-
-  .modebar{
-    justify-content:flex-start;
-    overflow-x:auto;
-    flex-wrap:nowrap;
-  }
-
-  .modebar button{
-    white-space:nowrap;
-  }
+@media(max-width:700px){
+ .grid,.bookgrid,.webgrid{grid-template-columns:1fr}
+ .livegrid{grid-template-columns:1fr}
+ .modebar{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}
+ .modebar button{white-space:nowrap}
+ .logo{width:130px;height:130px}
+ main{width:100%;padding:15px 8px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MODE -->
+<!-- ================= LOGIN ================= -->
 
-<div class="modebar">
+<div id="loginPage">
 
-<button onclick="setMode('auto')" data-mode="auto">
-📱 Auto
+<div class="loginBox">
+
+<img
+src="logo.png"
+class="loginLogo"
+onerror="this.style.display='none'"
+alt="Logo">
+
+<h1>🎯 Mission Lakshya</h1>
+
+<p>NEET 2027 Study Portal</p>
+
+<div id="loginForm">
+
+<input
+id="loginName"
+placeholder="अपना नाम">
+
+<input
+id="loginEmail"
+type="email"
+placeholder="Email">
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password">
+
+<button onclick="loginUser()">
+🔐 Login
 </button>
 
-<button onclick="setMode('light')" data-mode="light">
-☀️ Light
-</button>
-
-<button onclick="setMode('dark')" data-mode="dark">
-🌙 Dark
-</button>
-
-<button onclick="setMode('blue')" data-mode="blue">
-💙 Blue
-</button>
-
-<button onclick="setMode('green')" data-mode="green">
-💚 Green
-</button>
-
-<button onclick="setMode('purple')" data-mode="purple">
-💜 Purple
+<button
+class="secondary"
+onclick="registerUser()">
+📝 Create Account
 </button>
 
 </div>
 
+<p id="loginMessage"></p>
 
-<!-- HEADER -->
+</div>
+
+</div>
+
+
+<!-- ================= WEBSITE ================= -->
+
+<div id="app" style="display:none">
+
+<!-- MODES -->
+
+<div class="modebar">
+
+<button onclick="setMode('light')">
+☀️ Light
+</button>
+
+<button onclick="setMode('dark')">
+🌙 Dark
+</button>
+
+<button onclick="setMode('blue')">
+💙 Blue
+</button>
+
+<button onclick="setMode('green')">
+💚 Green
+</button>
+
+<button onclick="setMode('purple')">
+💜 Purple
+</button>
+
+<button onclick="setMode('orange')">
+🧡 Orange
+</button>
+
+</div>
+
 
 <header>
 
 <img
 src="logo.png"
 class="logo"
-alt="Mission Lakshya NEET 2027 Logo"
-onerror="this.style.display='none'"
->
+alt="Mission Lakshya Logo"
+onerror="this.style.display='none'">
 
-<h1>
-🎯 Mission Lakshya NEET 2027
-</h1>
+<h1>🎯 Mission Lakshya NEET 2027</h1>
 
 <p>
-पढ़ाई • वीडियो • टेस्ट • DPP • Quiz • AI • Live Classes
+Books • Videos • Tests • DPP • Quiz • AI • Live Classes
 </p>
 
 </header>
 
 
-<main>
+<div class="userbar">
 
-<!-- PWX -->
+<div>
+👤 Welcome,
+<b id="userNameDisplay"></b>
+</div>
+
+<div>
+
+<button onclick="showPage('home')">
+🏠 Home
+</button>
+
+<button
+class="secondary"
+onclick="logoutUser()">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
+
+
+<main>
 
 <div class="pwx">
 
@@ -421,11 +498,8 @@ onerror="this.style.display='none'"
 
 <a
 href="https://pwx.pages.dev"
-target="_blank"
-rel="noopener noreferrer">
-
+target="_blank">
 Open →
-
 </a>
 
 </div>
@@ -437,13 +511,13 @@ Open →
 
 <div class="hero">
 
-<h2>NEET 2027 की तैयारी</h2>
+<h2>NEET 2027 की तैयारी 🚀</h2>
 
 <p>
-अपने अध्ययन resources को एक जगह व्यवस्थित करें।
+सभी study resources एक जगह।
 </p>
 
-<p class="creator">
+<p>
 Created by <b>Yashpal Aagri</b>
 </p>
 
@@ -455,7 +529,7 @@ Created by <b>Yashpal Aagri</b>
 <div class="card" onclick="showPage('books')">
 <div class="icon">📚</div>
 <h3>Books</h3>
-<p>PDF Study Resources</p>
+<p>PDF Books</p>
 </div>
 
 <div class="card" onclick="showPage('videos')">
@@ -479,19 +553,19 @@ Created by <b>Yashpal Aagri</b>
 <div class="card" onclick="showPage('quiz')">
 <div class="icon">🧠</div>
 <h3>Quiz</h3>
-<p>Knowledge Test</p>
+<p>Biology Quiz</p>
 </div>
 
 <div class="card" onclick="showPage('youtube')">
 <div class="icon">🔴</div>
 <h3>YouTube Live</h3>
-<p>Live Classes</p>
+<p>Live + Chat</p>
 </div>
 
 <div class="card" onclick="showPage('websites')">
 <div class="icon">🌐</div>
-<h3>Websites</h3>
-<p>Study Websites</p>
+<h3>Study Websites</h3>
+<p>Website के अंदर</p>
 </div>
 
 <div class="card" onclick="showPage('ai')">
@@ -509,15 +583,84 @@ Created by <b>Yashpal Aagri</b>
 
 <section id="books" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
 <div class="hero">
 
-<h2>📚 Books & PDF Resources</h2>
+<h2>📚 Books & PDF</h2>
 
-<div class="bookgrid" id="bookGrid"></div>
+<div class="bookgrid">
+
+<div class="bookcard">
+
+<div class="bookcover">📘</div>
+
+<h3>Biology 30 Years</h3>
+
+<a
+class="linkbtn"
+href="books/biology-30years.pdf"
+target="_blank">
+📖 Open PDF
+</a>
+
+</div>
+
+
+<div class="bookcard">
+
+<div class="bookcover">📕</div>
+
+<h3>Physics 38 Years</h3>
+
+<a
+class="linkbtn"
+href="books/physics-38years.pdf"
+target="_blank">
+📖 Open PDF
+</a>
+
+</div>
+
+
+<div class="bookcard">
+
+<div class="bookcover">📗</div>
+
+<h3>Chemistry 38 Years</h3>
+
+<a
+class="linkbtn"
+href="books/chemistry-38years.pdf"
+target="_blank">
+📖 Open PDF
+</a>
+
+</div>
+
+
+<div class="bookcard">
+
+<div class="bookcover">📙</div>
+
+<h3>Fingertips Chemistry</h3>
+
+<a
+class="linkbtn"
+href="books/fingertips-chemistry-2026.pdf"
+target="_blank">
+📖 Open PDF
+</a>
+
+</div>
+
+</div>
+
+<p>
+⚠️ PDF files project के <b>books</b> folder में रखें।
+</p>
 
 </div>
 
@@ -528,7 +671,7 @@ Created by <b>Yashpal Aagri</b>
 
 <section id="videos" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -538,19 +681,19 @@ Created by <b>Yashpal Aagri</b>
 
 <input
 id="videoUrl"
-placeholder="YouTube video/live link डालें"
->
+placeholder="YouTube link डालें">
 
 <button onclick="playVideo()">
 ▶️ Website में चलाएँ
 </button>
 
-<div id="videoBox" style="display:none">
+<div
+id="videoBox"
+style="display:none">
 
 <iframe
 id="videoPlayer"
 class="player"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen>
 </iframe>
 
@@ -565,13 +708,15 @@ allowfullscreen>
 
 <section id="tests" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
 <div class="hero">
 
-<h2>📝 Practice Test</h2>
+<h2>📝 NEET Practice Test</h2>
+
+<p>20 Questions</p>
 
 <div id="testBox"></div>
 
@@ -590,7 +735,7 @@ allowfullscreen>
 
 <section id="dpp" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -598,22 +743,15 @@ allowfullscreen>
 
 <h2>📋 Daily Practice Problems</h2>
 
-<div class="question">
+<p>10 Questions</p>
 
-<b>
-Q1. Newton का दूसरा नियम क्या है?
-</b>
+<div id="dppBox"></div>
 
-<p>A) F = ma</p>
-<p>B) V = IR</p>
-<p>C) P = VI</p>
-<p>D) E = mc²</p>
-
-<button onclick="alert('सही उत्तर: A) F = ma')">
-✅ Answer देखें
+<button onclick="checkDPP()">
+✅ Submit DPP
 </button>
 
-</div>
+<div id="dppResult"></div>
 
 </div>
 
@@ -624,7 +762,7 @@ Q1. Newton का दूसरा नियम क्या है?
 
 <section id="quiz" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -633,6 +771,12 @@ Q1. Newton का दूसरा नियम क्या है?
 <h2>🧠 Biology Quiz</h2>
 
 <div id="quizBox"></div>
+
+<button onclick="checkQuiz()">
+✅ Submit Quiz
+</button>
+
+<div id="quizResult"></div>
 
 </div>
 
@@ -643,7 +787,7 @@ Q1. Newton का दूसरा नियम क्या है?
 
 <section id="ai" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -651,14 +795,10 @@ Q1. Newton का दूसरा नियम क्या है?
 
 <h2>🤖 AI Doubt Solver</h2>
 
-<p>
-Physics, Chemistry और Biology के सवाल पूछें।
-</p>
-
 <textarea
 id="aiQuestion"
 rows="5"
-placeholder="अपना सवाल यहाँ लिखें...">
+placeholder="अपना NEET सवाल लिखें">
 </textarea>
 
 <button onclick="askAI()">
@@ -669,7 +809,7 @@ placeholder="अपना सवाल यहाँ लिखें...">
 🎤 बोलें
 </button>
 
-<div id="aiStatus" class="status"></div>
+<p id="aiStatus"></p>
 
 <div
 id="aiAnswer"
@@ -686,7 +826,7 @@ style="display:none">
 
 <section id="youtube" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -694,18 +834,14 @@ style="display:none">
 
 <h2>🔴 YouTube Live Classes</h2>
 
-<p>
-Currently public live study classes
-</p>
-
 <button onclick="loadYouTubeLive()">
-🔄 Live Classes Refresh करें
+🔄 Refresh Live
 </button>
 
 <div id="youtubeLiveBox">
 
 <div class="question">
-🔴 Refresh दबाकर live classes खोजें।
+🔴 Refresh दबाएँ।
 </div>
 
 </div>
@@ -715,20 +851,18 @@ Currently public live study classes
 id="youtubePlayerBox"
 style="display:none">
 
-<div class="question">
-
 <h3 id="liveVideoTitle">
 🔴 Live Class
 </h3>
 
-<div class="live-layout">
+<div class="livegrid">
 
 <div>
 
 <iframe
 id="youtubeLivePlayer"
 class="player"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allow="autoplay; encrypted-media"
 allowfullscreen>
 </iframe>
 
@@ -740,8 +874,7 @@ allowfullscreen>
 
 <iframe
 id="liveChatFrame"
-class="chat-frame"
-title="YouTube Live Chat">
+class="chatframe">
 </iframe>
 
 </div>
@@ -755,10 +888,8 @@ onclick="closeYouTubePlayer()">
 </button>
 
 <button onclick="openLiveOnYouTube()">
-▶️ YouTube पर देखें
+▶️ YouTube
 </button>
-
-</div>
 
 </div>
 
@@ -771,7 +902,7 @@ onclick="closeYouTubePlayer()">
 
 <section id="websites" class="page">
 
-<button class="back" onclick="showPage('home')">
+<button onclick="showPage('home')">
 ← Home
 </button>
 
@@ -779,9 +910,13 @@ onclick="closeYouTubePlayer()">
 
 <h2>🌐 Study Websites</h2>
 
+<p>
+पहले website को इसी page में खोलने की कोशिश होगी।
+</p>
+
 <div
-class="webgrid"
-id="websiteGrid">
+id="websiteGrid"
+class="webgrid">
 </div>
 
 </div>
@@ -801,77 +936,199 @@ Created by <b>Yashpal Aagri</b>
 
 </footer>
 
+</div>
+
 
 <script>
 
-/* =====================
-   MODE
-===================== */
+/* =========================
+ LOGIN SYSTEM
+========================= */
+
+function registerUser(){
+
+const name=
+document.getElementById("loginName").value.trim();
+
+const email=
+document.getElementById("loginEmail").value.trim();
+
+const password=
+document.getElementById("loginPassword").value;
+
+const message=
+document.getElementById("loginMessage");
+
+if(!name||!email||!password){
+
+message.textContent=
+"❌ सभी details भरें।";
+
+return;
+
+}
+
+const user={
+ name:name,
+ email:email,
+ password:password
+};
+
+localStorage.setItem(
+"missionUser",
+JSON.stringify(user)
+);
+
+localStorage.setItem(
+"missionLoggedIn",
+"true"
+);
+
+message.textContent=
+"✅ Account बन गया।";
+
+openApp();
+
+}
+
+
+function loginUser(){
+
+const email=
+document.getElementById("loginEmail").value.trim();
+
+const password=
+document.getElementById("loginPassword").value;
+
+const saved=
+localStorage.getItem("missionUser");
+
+if(!saved){
+
+document.getElementById(
+"loginMessage"
+).textContent=
+"❌ पहले Create Account करें।";
+
+return;
+
+}
+
+const user=
+JSON.parse(saved);
+
+if(
+user.email===email &&
+user.password===password
+){
+
+localStorage.setItem(
+"missionLoggedIn",
+"true"
+);
+
+openApp();
+
+}else{
+
+document.getElementById(
+"loginMessage"
+).textContent=
+"❌ Email या Password गलत है।";
+
+}
+
+}
+
+
+function openApp(){
+
+const saved=
+localStorage.getItem("missionUser");
+
+if(!saved)return;
+
+const user=
+JSON.parse(saved);
+
+document.getElementById(
+"loginPage"
+).style.display="none";
+
+document.getElementById(
+"app"
+).style.display="block";
+
+document.getElementById(
+"userNameDisplay"
+).textContent=
+user.name;
+
+}
+
+
+function logoutUser(){
+
+localStorage.removeItem(
+"missionLoggedIn"
+);
+
+document.getElementById(
+"app"
+).style.display="none";
+
+document.getElementById(
+"loginPage"
+).style.display="flex";
+
+}
+
+
+if(
+localStorage.getItem(
+"missionLoggedIn"
+)==="true"
+){
+
+openApp();
+
+}
+
+
+/* =========================
+ MODE
+========================= */
 
 function setMode(mode){
 
+document.body.classList.remove(
+"dark",
+"green",
+"purple",
+"orange"
+);
+
+if(mode!=="light"){
+document.body.classList.add(mode);
+}
+
 localStorage.setItem(
-"mission-theme",
+"missionMode",
 mode
 );
 
-applyMode(mode);
-
 }
 
-function applyMode(mode){
-
-document.body.classList.remove(
-"dark",
-"blue",
-"green",
-"purple"
-);
-
-let realMode=mode;
-
-if(mode==="auto"){
-
-realMode=
-window.matchMedia(
-"(prefers-color-scheme:dark)"
-).matches
-?"dark"
-:"light";
-
-}
-
-if(realMode!=="light"){
-
-document.body.classList.add(
-realMode
-);
-
-}
-
-document
-.querySelectorAll("[data-mode]")
-.forEach(btn=>{
-
-btn.classList.toggle(
-"active",
-btn.dataset.mode===mode
-);
-
-});
-
-}
-
-applyMode(
+setMode(
 localStorage.getItem(
-"mission-theme"
-)||"auto"
+"missionMode"
+)||"light"
 );
 
 
-/* =====================
-   PAGE
-===================== */
+/* =========================
+ PAGE
+========================= */
 
 function showPage(id){
 
@@ -888,118 +1145,17 @@ if(page){
 page.classList.add("active");
 }
 
-window.scrollTo(0,0);
-
-}
-
-
-/* =====================
-   BOOKS
-===================== */
-
-/*
-IMPORTANT:
-
-नीचे दिए PDF filenames को
-तुम्हारे project के books folder
-में रखना है।
-
-अगर actual filename अलग है,
-तो इसी जगह actual filename डालना।
-*/
-
-const books=[
-
-{
-title:"📘 Biology – 30 Years",
-subject:"Biology • NEET",
-pdf:"books/biology-30years.pdf"
-},
-
-{
-title:"📕 MTG Physics – 38 Years",
-subject:"Physics • Class 11 • NEET Hindi Medium",
-pdf:"books/physics-38years.pdf"
-},
-
-{
-title:"📗 MTG Chemistry – 38 Years",
-subject:"Chemistry • Class 11 • NEET Hindi Medium",
-pdf:"books/chemistry-38years.pdf"
-},
-
-{
-title:"📙 MTG Fingertips Chemistry 2026",
-subject:"Chemistry • NEET",
-pdf:"books/fingertips-chemistry-2026.pdf"
-}
-
-];
-
-
-function renderBooks(){
-
-const grid=
-document.getElementById(
-"bookGrid"
-);
-
-grid.innerHTML="";
-
-books.forEach(book=>{
-
-const card=
-document.createElement("div");
-
-card.className="bookcard";
-
-card.innerHTML=`
-
-<div
-class="bookcover"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:55px;
-">
-
-📚
-
-</div>
-
-<h3>
-${escapeHtml(book.title)}
-</h3>
-
-<p>
-${escapeHtml(book.subject)}
-</p>
-
-<a
-class="linkbtn"
-href="${book.pdf}"
-target="_blank"
-rel="noopener">
-
-📖 PDF खोलें
-
-</a>
-
-`;
-
-grid.appendChild(card);
-
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
 
 }
 
-renderBooks();
 
-
-/* =====================
-   YOUTUBE VIDEO
-===================== */
+/* =========================
+ YOUTUBE VIDEO
+========================= */
 
 function getYouTubeId(url){
 
@@ -1010,38 +1166,32 @@ const u=new URL(url);
 if(u.hostname==="youtu.be"){
 
 return u.pathname
-.slice(1)
+.substring(1)
 .split("/")[0];
 
 }
 
 if(u.hostname.includes("youtube.com")){
 
-if(u.pathname==="/watch"){
-
+if(u.searchParams.get("v")){
 return u.searchParams.get("v");
-
 }
 
 const parts=
 u.pathname.split("/");
 
-const liveIndex=
+const live=
 parts.indexOf("live");
 
-if(liveIndex>=0){
-
-return parts[liveIndex+1];
-
+if(live>=0){
+return parts[live+1];
 }
 
-const embedIndex=
+const embed=
 parts.indexOf("embed");
 
-if(embedIndex>=0){
-
-return parts[embedIndex+1];
-
+if(embed>=0){
+return parts[embed+1];
 }
 
 }
@@ -1060,13 +1210,12 @@ document.getElementById(
 "videoUrl"
 ).value.trim();
 
-const id=getYouTubeId(url);
+const id=
+getYouTubeId(url);
 
 if(!id){
 
-alert(
-"सही YouTube link डालें।"
-);
+alert("सही YouTube link डालें।");
 
 return;
 
@@ -1075,8 +1224,7 @@ return;
 document.getElementById(
 "videoPlayer"
 ).src=
-"https://www.youtube.com/embed/"
-+
+"https://www.youtube.com/embed/"+
 encodeURIComponent(id);
 
 document.getElementById(
@@ -1086,47 +1234,86 @@ document.getElementById(
 }
 
 
-/* =====================
-   TEST
-===================== */
+/* =========================
+ QUESTIONS
+========================= */
 
 const testQuestions=[
 
-{
-q:"Ohm's law क्या है?",
-options:[
-"V = IR",
-"F = ma",
-"P = VI",
-"E = mc²"
-],
-correct:0
-},
+["Ohm's law क्या है?",["V = IR","F = ma","P = VI","E = mc²"],0],
 
-{
-q:"Molarity का formula क्या है?",
-options:[
-"moles / volume in litre",
-"mass × volume",
-"volume / mass",
-"mass + volume"
-],
-correct:0
-}
+["Molarity का formula क्या है?",["moles/volume(L)","mass×volume","volume/mass","mass+volume"],0],
+
+["मानव हृदय में कितने chambers होते हैं?",["2","3","4","5"],2],
+
+["प्रकाश संश्लेषण कहाँ होता है?",["नाभिक","क्लोरोप्लास्ट","राइबोसोम","माइटोकॉन्ड्रिया"],1],
+
+["बल की SI unit क्या है?",["Joule","Newton","Watt","Pascal"],1],
+
+["pH 7 सामान्यतः क्या है?",["अम्लीय","क्षारीय","उदासीन","अत्यधिक अम्लीय"],2],
+
+["DNA का full form क्या है?",["Deoxyribonucleic Acid","Dinitrogen Acid","Dynamic Nuclear Acid","None"],0],
+
+["Electric current की SI unit?",["Volt","Ohm","Ampere","Watt"],2],
+
+["Plants में water transport?",["Phloem","Xylem","Stomata","Root hair"],1],
+
+["CO₂ molecular mass?",["18","32","44","28"],2],
+
+["Work की SI unit?",["Newton","Joule","Watt","Pascal"],1],
+
+["Oxygen transport मुख्यतः किससे?",["Hemoglobin","Insulin","Calcium","Glucose"],0],
+
+["NaCl का सामान्य नाम?",["Baking soda","नमक","चीनी","चूना"],1],
+
+["Cell का control centre?",["Ribosome","Nucleus","Golgi body","Lysosome"],1],
+
+["Speed की SI unit?",["m/s","m²/s","N/m","kg/m"],0],
+
+["Enzyme क्या है?",["Biological catalyst","Sugar","Lipid","Salt"],0],
+
+["H₂O क्या है?",["Oxygen","Hydrogen","Water","Hydrogen peroxide"],2],
+
+["ATP किससे संबंधित है?",["Energy","Genetics","Digestion","Blood group"],0],
+
+["Power की SI unit?",["Joule","Newton","Watt","Volt"],2],
+
+["Lungs का मुख्य कार्य?",["Gas exchange","Blood pumping","Digestion","Hormone production"],0]
 
 ];
 
 
-function makeTest(){
+const dppQuestions=[
+["Newton का दूसरा नियम?",["F = ma","V = IR","P = VI","E = mc²"],0],
+["Velocity कैसी quantity है?",["Scalar","Vector","Constant","None"],1],
+["Molarity किस पर आधारित है?",["Moles per litre","Mass per metre","Volume","Temperature"],0],
+["Photosynthesis में कौन-सी gas उपयोग होती है?",["O₂","CO₂","N₂","H₂"],1],
+["Ribosome का कार्य?",["Protein synthesis","DNA storage","Energy storage","Digestion"],0],
+["Acid का pH?",["7 से कम","7","7 से अधिक","14"],0],
+["Acceleration की SI unit?",["m/s","m/s²","N","J"],1],
+["Blood का liquid part?",["Platelet","Plasma","RBC","WBC"],1],
+["Electron का charge?",["Positive","Negative","Neutral","Variable"],1],
+["Plant cell wall मुख्यतः?",["Cellulose","Protein","Lipid","DNA"],0]
+];
+
+
+const quizQuestions=[
+["Blood का लाल रंग किस कारण?",["Hemoglobin","Insulin","Calcium","Plasma"],0],
+["Photosynthesis कहाँ होता है?",["Mitochondria","Chloroplast","Ribosome","Nucleus"],1],
+["मानव शरीर की सबसे बड़ी gland?",["Thyroid","Liver","Pituitary","Pancreas"],1],
+["DNA मुख्यतः कहाँ?",["Nucleus","Blood","Stomach","Bones"],0],
+["RBC का मुख्य कार्य?",["Oxygen transport","Digestion","Hormone","Bone"],0]
+];
+
+
+function renderQuestions(list,id,prefix){
 
 const box=
-document.getElementById(
-"testBox"
-);
+document.getElementById(id);
 
 box.innerHTML="";
 
-testQuestions.forEach((item,i)=>{
+list.forEach((item,i)=>{
 
 const div=
 document.createElement("div");
@@ -1134,28 +1321,20 @@ document.createElement("div");
 div.className="question";
 
 let html=
-"<b>"+
-(i+1)+
-". "+
-escapeHtml(item.q)+
+"<b>"+(i+1)+". "+
+escapeHtml(item[0])+
 "</b>";
 
-item.options.forEach((option,j)=>{
+item[1].forEach((option,j)=>{
 
 html+=`
-
-<label
-style="display:block;margin:10px 0">
-
+<label style="display:block;margin:12px 0">
 <input
 type="radio"
-name="test${i}"
+name="${prefix}${i}"
 value="${j}">
-
 ${escapeHtml(option)}
-
 </label>
-
 `;
 
 });
@@ -1168,23 +1347,40 @@ box.appendChild(div);
 
 }
 
-makeTest();
+
+renderQuestions(
+testQuestions,
+"testBox",
+"test"
+);
+
+renderQuestions(
+dppQuestions,
+"dppBox",
+"dpp"
+);
+
+renderQuestions(
+quizQuestions,
+"quizBox",
+"quiz"
+);
 
 
-function checkTest(){
+function calculate(list,prefix,resultId){
 
 let score=0;
 
-testQuestions.forEach((item,i)=>{
+list.forEach((item,i)=>{
 
 const selected=
 document.querySelector(
-'input[name="test'+i+'"]:checked'
+`input[name="${prefix}${i}"]:checked`
 );
 
 if(
 selected &&
-Number(selected.value)===item.correct
+Number(selected.value)===item[2]
 ){
 
 score++;
@@ -1194,111 +1390,42 @@ score++;
 });
 
 document.getElementById(
+resultId
+).innerHTML=
+`<div class="result">
+🎉 Score: ${score}/${list.length}
+</div>`;
+
+}
+
+function checkTest(){
+calculate(
+testQuestions,
+"test",
 "testResult"
-).innerHTML=`
-
-<div class="question">
-
-<b>
-🎉 Score:
-${score}/${testQuestions.length}
-</b>
-
-</div>
-
-`;
-
-}
-
-
-/* =====================
-   QUIZ
-===================== */
-
-const quizQuestions=[
-
-{
-q:"रक्त का लाल रंग किस कारण होता है?",
-options:[
-"हीमोग्लोबिन",
-"इंसुलिन",
-"कैल्शियम",
-"प्लाज्मा"
-],
-correct:0
-},
-
-{
-q:"प्रकाश संश्लेषण मुख्यतः कहाँ होता है?",
-options:[
-"माइटोकॉन्ड्रिया",
-"क्लोरोप्लास्ट",
-"राइबोसोम",
-"नाभिक"
-],
-correct:1
-}
-
-];
-
-
-function makeQuiz(){
-
-const box=
-document.getElementById(
-"quizBox"
 );
-
-box.innerHTML="";
-
-quizQuestions.forEach((item,i)=>{
-
-const div=
-document.createElement("div");
-
-div.className="question";
-
-let html=
-"<b>"+
-(i+1)+
-". "+
-escapeHtml(item.q)+
-"</b>";
-
-item.options.forEach((option,j)=>{
-
-html+=`
-
-<label
-style="display:block;margin:10px 0">
-
-<input
-type="radio"
-name="quiz${i}"
-value="${j}">
-
-${escapeHtml(option)}
-
-</label>
-
-`;
-
-});
-
-div.innerHTML=html;
-
-box.appendChild(div);
-
-});
-
 }
 
-makeQuiz();
+function checkDPP(){
+calculate(
+dppQuestions,
+"dpp",
+"dppResult"
+);
+}
+
+function checkQuiz(){
+calculate(
+quizQuestions,
+"quiz",
+"quizResult"
+);
+}
 
 
-/* =====================
-   AI
-===================== */
+/* =========================
+ AI
+========================= */
 
 async function askAI(){
 
@@ -1307,33 +1434,23 @@ document.getElementById(
 "aiQuestion"
 ).value.trim();
 
-const answerBox=
+const answer=
 document.getElementById(
 "aiAnswer"
 );
 
-const status=
-document.getElementById(
-"aiStatus"
-);
-
 if(!question){
 
-alert(
-"पहले अपना सवाल लिखें।"
-);
+alert("पहले सवाल लिखें।");
 
 return;
 
 }
 
-answerBox.style.display="block";
+answer.style.display="block";
 
-answerBox.textContent=
+answer.textContent=
 "🤖 AI जवाब तैयार कर रहा है...";
-
-status.textContent=
-"⏳ AI से connection हो रहा है...";
 
 try{
 
@@ -1343,8 +1460,7 @@ await fetch(
 {
 method:"POST",
 headers:{
-"Content-Type":
-"application/json"
+"Content-Type":"application/json"
 },
 body:JSON.stringify({
 message:question
@@ -1356,45 +1472,30 @@ const data=
 await response.json();
 
 if(!response.ok){
-
 throw new Error(
-data.error ||
-"AI request failed"
+data.error||"AI error"
 );
-
 }
 
-answerBox.innerHTML=
-"<b>🤖 Mission Lakshya AI:</b><br><br>"+
+answer.innerHTML=
+"<b>🤖 Mission Lakshya AI</b><br><br>"+
 escapeHtml(
-data.answer||
-"AI ने कोई जवाब नहीं दिया।"
-)
-.replace(/\n/g,"<br>");
+data.answer||"जवाब नहीं मिला।"
+).replace(/\n/g,"<br>");
 
-status.textContent=
-"✅ जवाब तैयार है।";
+}catch(e){
 
-}catch(error){
-
-console.error(error);
-
-answerBox.textContent=
+answer.textContent=
 "❌ AI अभी उपलब्ध नहीं है।";
 
-status.textContent=
-"AI backend या API key check करें।";
-
 }
 
 }
 
 
-/* =====================
-   VOICE
-===================== */
-
-let recognition=null;
+/* =========================
+ VOICE
+========================= */
 
 function startVoice(){
 
@@ -1405,51 +1506,25 @@ window.webkitSpeechRecognition;
 if(!SpeechRecognition){
 
 alert(
-"आपके browser में voice input उपलब्ध नहीं है।"
+"इस browser में voice input उपलब्ध नहीं है।"
 );
 
 return;
 
 }
 
-recognition=
+const recognition=
 new SpeechRecognition();
 
 recognition.lang="hi-IN";
 
-recognition.continuous=false;
-
-recognition.interimResults=false;
-
-recognition.onstart=()=>{
-
-document.getElementById(
-"aiStatus"
-).textContent=
-"🎤 सुन रहा हूँ...";
-
-};
-
-recognition.onresult=(event)=>{
+recognition.onresult=
+event=>{
 
 document.getElementById(
 "aiQuestion"
 ).value=
 event.results[0][0].transcript;
-
-document.getElementById(
-"aiStatus"
-).textContent=
-"✅ सवाल मिल गया।";
-
-};
-
-recognition.onerror=()=>{
-
-document.getElementById(
-"aiStatus"
-).textContent=
-"❌ Voice input में समस्या हुई।";
 
 };
 
@@ -1458,11 +1533,12 @@ recognition.start();
 }
 
 
-/* =====================
-   YOUTUBE LIVE
-===================== */
+/* =========================
+ YOUTUBE LIVE
+========================= */
 
 let currentLiveUrl="";
+
 
 async function loadYouTubeLive(){
 
@@ -1471,11 +1547,8 @@ document.getElementById(
 "youtubeLiveBox"
 );
 
-box.innerHTML=`
-<div class="question">
-🔄 Live classes खोजी जा रही हैं...
-</div>
-`;
+box.innerHTML=
+"<div class='question'>🔄 Live classes खोजी जा रही हैं...</div>";
 
 try{
 
@@ -1488,12 +1561,7 @@ const data=
 await response.json();
 
 if(!response.ok){
-
-throw new Error(
-data.error||
-"YouTube API error"
-);
-
+throw new Error();
 }
 
 if(
@@ -1501,17 +1569,8 @@ if(
 !data.liveClasses.length
 ){
 
-box.innerHTML=`
-<div class="question">
-
-📺 अभी कोई public live class नहीं मिली।
-
-<br><br>
-
-🔄 थोड़ी देर बाद Refresh करें।
-
-</div>
-`;
+box.innerHTML=
+"<div class='question'>📺 अभी public live class नहीं मिली।</div>";
 
 return;
 
@@ -1526,50 +1585,30 @@ document.createElement("div");
 
 card.className="question";
 
-if(video.thumbnail){
+card.innerHTML=
+`
+<img
+src="${video.thumbnail||""}"
+style="width:100%;border-radius:13px"
+alt="Live">
 
-const img=
-document.createElement("img");
+<h3>🔴 ${escapeHtml(video.title)}</h3>
 
-img.src=video.thumbnail;
+<p>
+<b>Channel:</b>
+${escapeHtml(video.channelTitle||"")}
+</p>
+`;
 
-img.style=
-"width:100%;border-radius:12px";
-
-img.alt="Live class";
-
-card.appendChild(img);
-
-}
-
-const h=
-document.createElement("h3");
-
-h.textContent=
-"🔴 "+video.title;
-
-card.appendChild(h);
-
-const p=
-document.createElement("p");
-
-p.innerHTML=
-"<b>Channel:</b> "+
-escapeHtml(
-video.channelTitle||""
-);
-
-card.appendChild(p);
-
-const button=
+const btn=
 document.createElement("button");
 
-button.textContent=
-"▶️ Website में Live देखें";
+btn.textContent=
+"▶️ Website में देखें";
 
-button.onclick=()=>{
+btn.onclick=()=>{
 
-playLiveOnWebsite(
+playLive(
 video.videoId,
 video.title,
 video.url
@@ -1577,63 +1616,23 @@ video.url
 
 };
 
-card.appendChild(button);
-
-const yt=
-document.createElement("button");
-
-yt.className="secondary";
-
-yt.textContent=
-"▶️ YouTube पर देखें";
-
-yt.onclick=()=>{
-
-window.open(
-video.url,
-"_blank",
-"noopener,noreferrer"
-);
-
-};
-
-card.appendChild(yt);
+card.appendChild(btn);
 
 box.appendChild(card);
 
 });
 
-}catch(error){
+}catch(e){
 
-console.error(error);
-
-box.innerHTML=`
-<div class="question">
-
-❌ YouTube Live load नहीं हो सकी।
-
-<br><br>
-
-YOUTUBE_API_KEY और
-backend check करें।
-
-</div>
-`;
+box.innerHTML=
+"<div class='question'>❌ YouTube Live load नहीं हुई।</div>";
 
 }
 
 }
 
 
-/* =====================
-   LIVE PLAYER + CHAT
-===================== */
-
-function playLiveOnWebsite(
-videoId,
-title,
-url
-){
+function playLive(videoId,title,url){
 
 currentLiveUrl=
 url||
@@ -1696,59 +1695,38 @@ document.getElementById(
 
 function openLiveOnYouTube(){
 
-if(!currentLiveUrl){
-
-alert(
-"पहले कोई Live Class खोलें।"
-);
-
-return;
-
-}
+if(currentLiveUrl){
 
 window.open(
 currentLiveUrl,
-"_blank",
-"noopener,noreferrer"
+"_blank"
 );
 
 }
 
+}
 
-/* =====================
-   WEBSITES
-===================== */
+
+/* =========================
+ WEBSITES
+========================= */
 
 const websites=[
 
 ["📚 DeltaStudy","http://DeltaStudy.site"],
-
 ["📘 Eduzex PW","http://eduzex-pw.pages.dev/"],
-
 ["📚 StudyRays","http://StudyRays.cc"],
-
 ["🎓 Learntopper","http://Learntopper.in"],
-
 ["📖 Studyspark","http://Studyspark.pro"],
-
 ["📝 Studybeepro","http://Studybeepro.site"],
-
 ["🐼 StudyPanda","http://StudyPanda.live"],
-
 ["⚡ PWX Study","https://pwxstudy.site/"],
-
 ["🎯 PWThor","https://pwthor.live"],
-
 ["📚 Studystark","http://studystark.in"],
-
 ["🚀 PrepProNetwork","https://PrepProNetwork.vercel.app"],
-
 ["🔗 Shared Resource","https://share.google/DHeSO9KKuPDPMdutj"],
-
 ["🌐 Learnify","https://learnify.deltaverse.site/"],
-
 ["🎓 PW Study Parcham","https://pw.studyparcham.in/#home-view"],
-
 ["📚 AS Multiverse","https://asmultiverse.com/?tab=home"]
 
 ];
@@ -1769,20 +1747,42 @@ document.createElement("div");
 
 card.className="webcard";
 
-const h=
-document.createElement("h3");
+card.innerHTML=
+`<h3>${escapeHtml(name)}</h3>
+<p>Website को इसी page में खोलें।</p>`;
 
-h.textContent=name;
-
-card.appendChild(h);
-
-const button=
+const inside=
 document.createElement("button");
 
-button.textContent=
-"🌐 नई tab में खोलें";
+inside.textContent=
+"🌐 इसी page में खोलें";
 
-button.onclick=()=>{
+const tab=
+document.createElement("button");
+
+tab.className="secondary";
+
+tab.textContent=
+"↗️ New Tab";
+
+const frame=
+document.createElement("iframe");
+
+frame.className="webframe";
+
+frame.style.display="none";
+
+inside.onclick=()=>{
+
+frame.style.display="block";
+
+frame.src=url;
+
+inside.style.display="none";
+
+};
+
+tab.onclick=()=>{
 
 window.open(
 url,
@@ -1792,7 +1792,9 @@ url,
 
 };
 
-card.appendChild(button);
+card.appendChild(inside);
+card.appendChild(tab);
+card.appendChild(frame);
 
 grid.appendChild(card);
 
@@ -1803,9 +1805,9 @@ grid.appendChild(card);
 renderWebsites();
 
 
-/* =====================
-   ESCAPE
-===================== */
+/* =========================
+ ESCAPE
+========================= */
 
 function escapeHtml(text){
 
