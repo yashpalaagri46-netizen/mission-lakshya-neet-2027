@@ -1,0 +1,19 @@
+{
+  "name": "mission-lakshya-neet-2027",
+  "version": "1.0.0",
+  "description": "Mission Lakshya NEET 2027 - Study platform for NEET preparation",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Yashpal Aagri",
+  "license": "ISC"
+}
