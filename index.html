@@ -5,180 +5,623 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1769aa">
 <title>Mission Lakshya NEET 2027</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#18202a}
-header{background:#1769aa;color:white;padding:22px 16px;text-align:center}
-header h1{margin:0 0 6px;font-size:25px}header p{margin:0}
-main{max-width:950px;margin:auto;padding:18px}
-.hero,.card{background:white;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #00000012}
-.hero{text-align:center}.creator{color:#555;font-size:14px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#18202a}
+header{background:#1769aa;color:#fff;padding:20px;text-align:center}
+header h1{margin:0 0 6px}
+main{max-width:1000px;margin:auto;padding:15px}
+.hero,.card{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #00000012}
+.hero{text-align:center}
+.creator{color:#555;font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.card{cursor:pointer;text-align:center;border:1px solid #e7edf4}.icon{font-size:35px}
-button,.linkbtn{border:0;border-radius:10px;padding:11px 15px;background:#1769aa;color:white;cursor:pointer;font-size:15px}
-input,textarea{width:100%;padding:12px;border:1px solid #ccd6e0;border-radius:10px;margin:7px 0 12px}
-.page{display:none}.page.active{display:block}.back{margin-bottom:14px}
+.card{text-align:center;cursor:pointer;border:1px solid #e7edf4}
+.icon{font-size:35px}
+.page{display:none}
+.page.active{display:block}
+.back{margin-bottom:14px}
+button,.linkbtn{border:0;border-radius:10px;padding:11px 15px;background:#1769aa;color:white;cursor:pointer;font-size:15px;margin:5px 3px}
+input,textarea{width:100%;padding:12px;border:1px solid #ccd6e0;border-radius:10px;margin:7px 0 12px;font-size:16px}
 .question{background:#f8fafc;padding:14px;border-radius:12px;margin:12px 0}
-.option{display:block;margin:8px 0;background:white;color:#18202a;border:1px solid #ccd6e0;text-align:left}
-.option:hover{background:#eef6ff}
+.option{display:block;width:100%;background:#fff;color:#18202a;border:1px solid #ccd6e0;text-align:left}
+.webgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.webcard{background:#f8fafc;border:1px solid #e1e8ef;padding:15px;border-radius:12px;text-align:center}
 footer{text-align:center;color:#667;padding:25px}
-a{color:#1769aa}
-@media(max-width:600px){.grid{grid-template-columns:1fr}main{padding:12px}header h1{font-size:22px}}
+.pwx{background:linear-gradient(90deg,#ff6a00,#ee0979);padding:18px;text-align:center;border-radius:12px;margin-bottom:16px}
+.pwx h2,.pwx p{color:white}
+.pwx a{background:white;color:#ee0979;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:bold}
+.status{font-size:14px;color:#555}
+@media(max-width:600px){
+.grid,.webgrid{grid-template-columns:1fr}
+main{padding:12px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>🎯 Mission Lakshya NEET 2027</h1>
-<p>पढ़ाई • वीडियो • टेस्ट • DPP • Quiz</p>
+<p>पढ़ाई • वीडियो • टेस्ट • DPP • Quiz • AI</p>
 </header>
 
 <main>
+
+<div class="pwx">
+<h2>🔥 PWX - Sabhi FREE Batches Ek Jagah!</h2>
+<p>IIT JEE, NEET, Foundation के free study resources</p>
+<a href="https://pwx.pages.dev" target="_blank" rel="noopener">Abhi Dekho →</a>
+</div>
+
 <section id="home" class="page active">
+
 <div class="hero">
 <h2>NEET 2027 की तैयारी</h2>
-<p>अपने अध्ययन सामग्री को एक जगह व्यवस्थित करें।</p>
+<p>अपने अध्ययन resources को एक जगह व्यवस्थित करें।</p>
 <p class="creator">Created by <b>Yashpal Aagri</b></p>
 </div>
+
 <div class="grid">
-<div class="card" onclick="showPage('books')"><div class="icon">📚</div><h3>Books</h3><p>अधिकृत PDF/बुक लिंक</p></div>
-<div class="card" onclick="showPage('videos')"><div class="icon">🎥</div><h3>Video Lectures</h3><p>अपने अधिकृत वीडियो जोड़ें</p></div>
-<div class="card" onclick="showPage('tests')"><div class="icon">📝</div><h3>Tests</h3><p>Practice test</p></div>
-<div class="card" onclick="showPage('dpp')"><div class="icon">📋</div><h3>DPP</h3><p>Daily practice</p></div>
-<div class="card" onclick="showPage('quiz')"><div class="icon">🧠</div><h3>Quiz</h3><p>अपना ज्ञान जांचें</p></div>
-<div class="card" onclick="showPage('websites')"><div class="icon">🌐</div><h3>Websites</h3><p>Useful study links</p></div>
-</div><div class="card" onclick="showPage('ai')">
-  <div class="icon">🤖</div>
-  <h3>AI Doubt Solver</h3>
-  <p>Physics • Chemistry • Biology</p>
+
+<div class="card" onclick="showPage('books')">
+<div class="icon">📚</div>
+<h3>Books</h3>
+<p>Study resources</p>
+</div>
+
+<div class="card" onclick="showPage('videos')">
+<div class="icon">🎥</div>
+<h3>Video Lectures</h3>
+<p>Video links</p>
+</div>
+
+<div class="card" onclick="showPage('tests')">
+<div class="icon">📝</div>
+<h3>Tests</h3>
+<p>Practice test</p>
+</div>
+
+<div class="card" onclick="showPage('dpp')">
+<div class="icon">📋</div>
+<h3>DPP</h3>
+<p>Daily practice</p>
+</div>
+
+<div class="card" onclick="showPage('quiz')">
+<div class="icon">🧠</div>
+<h3>Quiz</h3>
+<p>Knowledge test</p>
+</div>
+
+<div class="card" onclick="showPage('youtube')">
+<div class="icon">🔴</div>
+<h3>YouTube Live</h3>
+<p>Live classes</p>
+</div>
+
+<div class="card" onclick="showPage('websites')">
+<div class="icon">🌐</div>
+<h3>Websites</h3>
+<p>Study websites</p>
+</div>
+
+<div class="card" onclick="showPage('ai')">
+<div class="icon">🤖</div>
+<h3>AI Doubt Solver</h3>
+<p>Physics • Chemistry • Biology</p>
+</div>
+
+</div>
 </section>
 
-</section>
 
 <section id="books" class="page">
 <button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>📚 Books</h2><p>यहाँ केवल आपके पास अधिकार वाली सामग्री के लिंक जोड़ें।</p>
-<a class="linkbtn" href="#" onclick="alert('अपनी अधिकृत पुस्तक/PDF का लिंक यहाँ जोड़ें।');return false;">Book Link</a></div>
+<div class="hero">
+<h2>📚 Books</h2>
+<p>अधिकृत study resources यहाँ रखें।</p>
+<a class="linkbtn" href="https://ncert.nic.in/" target="_blank">📖 NCERT</a>
+<a class="linkbtn" href="https://www.nta.ac.in/" target="_blank">🎓 NTA</a>
+</div>
 </section>
+
 
 <section id="videos" class="page">
 <button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>🎥 Video Lectures</h2><p>अपने या अधिकृत YouTube/वीडियो लिंक यहाँ जोड़ें।</p>
-<input id="videoUrl" placeholder="https://youtube.com/...">
-<button onclick="openVideo()">वीडियो खोलें</button></div>
+<div class="hero">
+<h2>🎥 Video Lectures</h2>
+<input id="videoUrl" placeholder="YouTube video link डालें">
+<button onclick="openVideo()">▶️ वीडियो खोलें</button>
+</div>
 </section>
+
 
 <section id="tests" class="page">
 <button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>📝 Practice Test</h2><div id="testBox"></div></div>
+<div class="hero">
+<h2>📝 Practice Test</h2>
+<div id="testBox"></div>
+<button onclick="checkTest()">✅ Submit Test</button>
+<div id="testResult"></div>
+</div>
 </section>
+
 
 <section id="dpp" class="page">
 <button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>📋 DPP</h2><p>आज का DPP</p><button onclick="alert('आज का DPP पूरा करें और अपने उत्तर कॉपी में लिखें।')">Start DPP</button></div>
+<div class="hero">
+<h2>📋 Daily Practice Problems</h2>
+
+<div class="question">
+<b>Q1. Newton का दूसरा नियम क्या है?</b>
+<p>A) F = ma</p>
+<p>B) V = IR</p>
+<p>C) P = VI</p>
+<p>D) E = mc²</p>
+</div>
+
+<button onclick="alert('सही उत्तर: A) F = ma')">
+✅ Answer देखें
+</button>
+
+</div>
 </section>
+
 
 <section id="quiz" class="page">
 <button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>🧠 Biology Quiz</h2><div id="quizBox"></div></div>
-</section>
-
-<section id="websites" class="page"><section id="youtube-live" class="page">
-  <button class="back" onclick="showPage('home')">← Home</button>
-
-
-  </div>
-</section>
-<button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero"><h2>🌐 Useful Websites</h2>
-<p>नीचे केवल भरोसेमंद/अधिकृत study websites के लिंक रखें।</p>
-<a href="https://www.nta.ac.in/" target="_blank" rel="noopener">NTA</a><br><br>
-<a href="https://ncert.nic.in/" target="_blank" rel="noopener">NCERT</a>
+<div class="hero">
+<h2>🧠 Biology Quiz</h2>
+<div id="quizBox"></div>
 </div>
-</section><section id="ai" class="page">
-  <button class="back" onclick="showPage('home')">← Home</button>
-
-  <div class="hero">
-    <h2>🤖 AI Doubt Solver</h2>
-    <p>Physics, Chemistry और Biology के सवाल पूछें।</p>
-
-    <textarea
-      id="aiQuestion"
-      rows="5"
-      placeholder="अपना सवाल यहाँ लिखें..."
-    ></textarea>
-
-    <button onclick="askAI()">AI से पूछें</button>
-
-    <div id="aiAnswer" class="question" style="display:none;"></div>
-  </div>
 </section>
+
+
+<section id="ai" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+
+<div class="hero">
+<h2>🤖 AI Doubt Solver</h2>
+<p>Physics, Chemistry और Biology के सवाल पूछें।</p>
+
+<textarea id="aiQuestion" rows="5"
+placeholder="अपना सवाल यहाँ लिखें..."></textarea>
+
+<button onclick="askAI()">🤖 AI से पूछें</button>
+<button onclick="startVoice()">🎤 बोलें</button>
+
+<div id="aiStatus" class="status"></div>
+<div id="aiAnswer" class="question" style="display:none"></div>
+</div>
+</section>
+
+
+<section id="youtube" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+
+<div class="hero">
+<h2>🔴 YouTube Live Classes</h2>
+<p>Public और currently live study classes</p>
+
+<button onclick="loadYouTubeLive()">
+🔄 Live Classes Refresh करें
+</button>
+
+<div id="youtubeLiveBox">
+<div class="question">
+🔴 Refresh दबाकर live classes खोजें।
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section id="websites" class="page">
+<button class="back" onclick="showPage('home')">← Home</button>
+
+<div class="hero">
+<h2>🌐 Study Websites</h2>
+
+<div class="webgrid">
+
+<div class="webcard"><h3>📚 DeltaStudy</h3>
+<a class="linkbtn" href="http://DeltaStudy.site" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>📘 Eduzex PW</h3>
+<a class="linkbtn" href="http://eduzex-pw.pages.dev/" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>📚 StudyRays</h3>
+<a class="linkbtn" href="http://StudyRays.cc" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>🎓 Learntopper</h3>
+<a class="linkbtn" href="http://Learntopper.in" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>📖 Studyspark</h3>
+<a class="linkbtn" href="http://Studyspark.pro" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>📝 Studybeepro</h3>
+<a class="linkbtn" href="http://Studybeepro.site" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>🐼 StudyPanda</h3>
+<a class="linkbtn" href="http://StudyPanda.live" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>⚡ PWX Study</h3>
+<a class="linkbtn" href="https://pwxstudy.site/" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>🎯 PWThor</h3>
+<a class="linkbtn" href="https://pwthor.live" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>📚 Studystark</h3>
+<a class="linkbtn" href="http://studystark.in" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>🚀 PrepProNetwork</h3>
+<a class="linkbtn" href="https://PrepProNetwork.vercel.app" target="_blank">Open →</a></div>
+
+<div class="webcard"><h3>🔗 Shared Resource</h3>
+<a class="linkbtn" href="https://share.google/DHeSO9KKuPDPMdutj" target="_blank">Open →</a></div>
+
+</div>
+</div>
+</section>
+
 </main>
 
-<footer>© 2026 Mission Lakshya NEET 2027 • Created by Yashpal Aagri</footer>
+<footer>
+© 2026 Mission Lakshya NEET 2027<br>
+Created by <b>Yashpal Aagri</b>
+</footer>
+
 
 <script>
+
 function showPage(id){
- document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- window.scrollTo(0,0);
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+const page=document.getElementById(id);
+
+if(page) page.classList.add("active");
+
+window.scrollTo(0,0);
 }
+
+
 function openVideo(){
- const u=document.getElementById('videoUrl').value.trim();
- if(!u){alert('पहले वीडियो लिंक डालें।');return}
- try{const x=new URL(u); if(!/^https?:$/.test(x.protocol)) throw 0; window.open(x.href,'_blank','noopener');}
- catch(e){alert('सही http/https लिंक डालें।')}
+const url=document.getElementById("videoUrl").value.trim();
+
+if(!url){
+alert("पहले वीडियो लिंक डालें।");
+return;
 }
-const questions=[
- {q:'मानव शरीर में रक्त का लाल रंग किस कारण होता है?',a:['हीमोग्लोबिन','इंसुलिन','कैल्शियम','प्लाज्मा'],c:0},
- {q:'पौधों में प्रकाश संश्लेषण मुख्यतः किस अंगक में होता है?',a:['माइटोकॉन्ड्रिया','क्लोरोप्लास्ट','राइबोसोम','नाभिक'],c:1}
+
+try{
+const u=new URL(url);
+
+if(!["http:","https:"].includes(u.protocol))
+throw new Error();
+
+window.open(u.href,"_blank","noopener");
+}
+catch{
+alert("सही http/https लिंक डालें।");
+}
+}
+
+
+/* TEST */
+
+const testQuestions=[
+{
+q:"Ohm's law क्या है?",
+options:["V = IR","F = ma","P = VI","E = mc²"],
+correct:0
+},
+{
+q:"Molarity का formula क्या है?",
+options:[
+"moles / volume in litre",
+"mass × volume",
+"volume / mass",
+"mass + volume"
+],
+correct:0
+}
 ];
-function makeQuiz(target, title){
- const box=document.getElementById(target); box.innerHTML='';
- questions.forEach((x,i)=>{
-  const d=document.createElement('div');d.className='question';
-  d.innerHTML='<b>'+ (i+1)+'. '+x.q+'</b>';
-  x.a.forEach((o,j)=>{
-   const b=document.createElement('button');b.className='option';b.textContent=o;
-   b.onclick=()=>{b.style.borderColor=(j===x.c?'green':'crimson');};
-   d.appendChild(b);
-  });box.appendChild(d);
- });
+
+function makeTest(){
+
+const box=document.getElementById("testBox");
+box.innerHTML="";
+
+testQuestions.forEach((item,i)=>{
+
+let div=document.createElement("div");
+div.className="question";
+
+let html="<b>"+(i+1)+". "+item.q+"</b>";
+
+item.options.forEach((option,j)=>{
+html+=`
+<label style="display:block;margin:10px 0">
+<input type="radio" name="test${i}" value="${j}">
+${option}
+</label>`;
+});
+
+div.innerHTML=html;
+box.appendChild(div);
+
+});
+
 }
-makeQuiz('quizBox','');
-makeQuiz('testBox','');async function askAI() {
-  const question = document.getElementById("aiQuestion").value.trim();
-  const answerBox = document.getElementById("aiAnswer");
 
-  if (!question) {
-    alert("पहले अपना सवाल लिखें।");
-    return;
-  }
+makeTest();
 
-  answerBox.style.display = "block";
-  answerBox.textContent = "🤖 AI जवाब तैयार कर रहा है...";
 
-  try {
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: question
-      })
-    });
+function checkTest(){
 
-    const data = await response.json();
+let score=0;
 
-    if (!response.ok) {
-      throw new Error(data.error || "AI response failed");
-    }
+testQuestions.forEach((item,i)=>{
 
-    answerBox.innerHTML =
-      "<b>🤖 AI:</b><br><br>" +
-      data.answer.replace(/\n/g, "<br>");
+const selected=document.querySelector(
+'input[name="test'+i+'"]:checked'
+);
 
-  }
+if(selected && Number(selected.value)===item.correct){
+score++;
+}
+
+});
+
+document.getElementById("testResult").innerHTML=
+`<div class="question">
+<b>🎉 Score: ${score}/${testQuestions.length}</b>
+</div>`;
+
+}
+
+
+/* QUIZ */
+
+const quizQuestions=[
+{
+q:"रक्त का लाल रंग किस कारण होता है?",
+options:["हीमोग्लोबिन","इंसुलिन","कैल्शियम","प्लाज्मा"],
+correct:0
+},
+{
+q:"प्रकाश संश्लेषण मुख्यतः कहाँ होता है?",
+options:["माइटोकॉन्ड्रिया","क्लोरोप्लास्ट","राइबोसोम","नाभिक"],
+correct:1
+}
+];
+
+function makeQuiz(){
+
+const box=document.getElementById("quizBox");
+box.innerHTML="";
+
+quizQuestions.forEach((item,i)=>{
+
+let div=document.createElement("div");
+div.className="question";
+
+let html="<b>"+(i+1)+". "+item.q+"</b>";
+
+item.options.forEach((option,j)=>{
+html+=`
+<label style="display:block;margin:10px 0">
+<input type="radio" name="quiz${i}" value="${j}">
+${option}
+</label>`;
+});
+
+div.innerHTML=html;
+box.appendChild(div);
+
+});
+
+}
+
+makeQuiz();
+
+
+/* AI */
+
+async function askAI(){
+
+const question=document
+.getElementById("aiQuestion")
+.value.trim();
+
+const answerBox=document.getElementById("aiAnswer");
+const status=document.getElementById("aiStatus");
+
+if(!question){
+alert("पहले अपना सवाल लिखें।");
+return;
+}
+
+answerBox.style.display="block";
+answerBox.textContent="🤖 AI जवाब तैयार कर रहा है...";
+status.textContent="⏳ AI से connection हो रहा है...";
+
+try{
+
+const response=await fetch("/api/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+message:question
+})
+});
+
+const data=await response.json();
+
+if(!response.ok){
+throw new Error(data.error || "AI request failed");
+}
+
+answerBox.innerHTML=
+"<b>🤖 Mission Lakshya AI:</b><br><br>"+
+escapeHtml(data.answer || "AI ने कोई जवाब नहीं दिया।")
+.replace(/\n/g,"<br>");
+
+status.textContent="✅ जवाब तैयार है।";
+
+}
+catch(error){
+
+console.error(error);
+
+answerBox.textContent=
+"❌ AI अभी उपलब्ध नहीं है।";
+
+status.textContent=
+"AI backend या API key check करें।";
+
+}
+
+}
+
+
+/* VOICE */
+
+let recognition=null;
+
+function startVoice(){
+
+const SpeechRecognition=
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+alert("आपके browser में voice input उपलब्ध नहीं है।");
+return;
+}
+
+recognition=new SpeechRecognition();
+
+recognition.lang="hi-IN";
+recognition.continuous=false;
+recognition.interimResults=false;
+
+recognition.onstart=()=>{
+document.getElementById("aiStatus")
+.textContent="🎤 सुन रहा हूँ...";
+};
+
+recognition.onresult=(event)=>{
+
+const text=event.results[0][0].transcript;
+
+document.getElementById("aiQuestion")
+.value=text;
+
+document.getElementById("aiStatus")
+.textContent="✅ सवाल मिल गया।";
+
+};
+
+recognition.onerror=()=>{
+document.getElementById("aiStatus")
+.textContent="❌ Voice input में समस्या हुई।";
+};
+
+recognition.start();
+
+}
+
+
+/* YOUTUBE LIVE */
+
+async function loadYouTubeLive(){
+
+const box=document.getElementById("youtubeLiveBox");
+
+box.innerHTML=
+"<div class='question'>🔄 Live classes खोजी जा रही हैं...</div>";
+
+try{
+
+const response=await fetch("/api/youtube-live");
+const data=await response.json();
+
+if(!response.ok){
+throw new Error(data.error || "YouTube API error");
+}
+
+if(!data.liveClasses || data.liveClasses.length===0){
+
+box.innerHTML=
+`<div class="question">
+📺 अभी कोई public live class नहीं मिली।
+<br><br>
+🔄 थोड़ी देर बाद फिर Refresh करें।
+</div>`;
+
+return;
+}
+
+box.innerHTML="";
+
+data.liveClasses.forEach(video=>{
+
+const card=document.createElement("div");
+card.className="question";
+
+card.innerHTML=`
+<img src="${escapeHtml(video.thumbnail)}"
+style="width:100%;border-radius:12px"
+alt="Live class">
+
+<h3>🔴 ${escapeHtml(video.title)}</h3>
+
+<p>
+<b>Channel:</b>
+${escapeHtml(video.channelTitle)}
+</p>
+
+<button onclick="window.open('${escapeHtml(video.url)}','_blank')">
+▶️ YouTube पर Live देखें
+</button>
+`;
+
+box.appendChild(card);
+
+});
+
+}
+catch(error){
+
+console.error(error);
+
+box.innerHTML=
+`<div class="question">
+❌ YouTube Live अभी load नहीं हो सकी।
+<br><br>
+Backend/API setup check करें।
+</div>`;
+
+}
+
+}
+
+
+function escapeHtml(text){
+
+const div=document.createElement("div");
+div.textContent=text || "";
+return div.innerHTML;
+
+}
 
 </script>
+
 </body>
 </html>
