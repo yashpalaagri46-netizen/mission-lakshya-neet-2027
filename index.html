@@ -5,37 +5,179 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1769aa">
 <title>Mission Lakshya NEET 2027</title>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+<script>
+window.va = window.va || function () {
+  (window.vaq = window.vaq || []).push(arguments);
+};
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#18202a}
-header{background:#1769aa;color:#fff;padding:20px;text-align:center}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#18202a;
+}
+
+header{
+  background:#1769aa;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
 header h1{margin:0 0 6px}
-main{max-width:1000px;margin:auto;padding:15px}
-.hero,.card{background:#fff;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px #00000012}
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:15px;
+}
+
+.hero,.card{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:16px;
+  box-shadow:0 3px 12px #00000012;
+}
+
 .hero{text-align:center}
-.creator{color:#555;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.card{text-align:center;cursor:pointer;border:1px solid #e7edf4}
+
+.creator{
+  color:#555;
+  font-size:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.card{
+  text-align:center;
+  cursor:pointer;
+  border:1px solid #e7edf4;
+}
+
 .icon{font-size:35px}
+
 .page{display:none}
 .page.active{display:block}
-.back{margin-bottom:14px}
-button,.linkbtn{border:0;border-radius:10px;padding:11px 15px;background:#1769aa;color:white;cursor:pointer;font-size:15px;margin:5px 3px}
-input,textarea{width:100%;padding:12px;border:1px solid #ccd6e0;border-radius:10px;margin:7px 0 12px;font-size:16px}
-.question{background:#f8fafc;padding:14px;border-radius:12px;margin:12px 0}
-.option{display:block;width:100%;background:#fff;color:#18202a;border:1px solid #ccd6e0;text-align:left}
-.webgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.webcard{background:#f8fafc;border:1px solid #e1e8ef;padding:15px;border-radius:12px;text-align:center}
-footer{text-align:center;color:#667;padding:25px}
-.pwx{background:linear-gradient(90deg,#ff6a00,#ee0979);padding:18px;text-align:center;border-radius:12px;margin-bottom:16px}
+
+.back{
+  margin-bottom:14px;
+}
+
+button,.linkbtn{
+  border:0;
+  border-radius:10px;
+  padding:11px 15px;
+  background:#1769aa;
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  margin:5px 3px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.secondary{
+  background:#455a64;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd6e0;
+  border-radius:10px;
+  margin:7px 0 12px;
+  font-size:16px;
+}
+
+.question{
+  background:#f8fafc;
+  padding:14px;
+  border-radius:12px;
+  margin:12px 0;
+}
+
+.webgrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.webcard{
+  background:#f8fafc;
+  border:1px solid #e1e8ef;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  color:#667;
+  padding:25px;
+}
+
+.pwx{
+  background:linear-gradient(90deg,#ff6a00,#ee0979);
+  padding:18px;
+  text-align:center;
+  border-radius:12px;
+  margin-bottom:16px;
+}
+
 .pwx h2,.pwx p{color:white}
-.pwx a{background:white;color:#ee0979;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:bold}
-.status{font-size:14px;color:#555}
+
+.pwx a{
+  background:white;
+  color:#ee0979;
+  padding:10px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.status{
+  font-size:14px;
+  color:#555;
+}
+
+.player{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:12px;
+  background:#000;
+}
+
+.small{
+  font-size:13px;
+  color:#667;
+}
+
 @media(max-width:600px){
-.grid,.webgrid{grid-template-columns:1fr}
-main{padding:12px}
+
+.grid,.webgrid{
+  grid-template-columns:1fr;
+}
+
+.player{
+  min-height:220px;
+}
+
+main{
+  padding:12px;
+}
+
 }
 </style>
 </head>
@@ -43,305 +185,666 @@ main{padding:12px}
 <body>
 
 <header>
+
 <h1>🎯 Mission Lakshya NEET 2027</h1>
-<p>पढ़ाई • वीडियो • टेस्ट • DPP • Quiz • AI</p>
+
+<p>
+पढ़ाई • वीडियो • टेस्ट • DPP • Quiz • AI • Live Classes
+</p>
+
 </header>
 
 <main>
 
 <div class="pwx">
-<h2>🔥 PWX - Sabhi FREE Batches Ek Jagah!</h2>
-<p>IIT JEE, NEET, Foundation के free study resources</p>
-<a href="https://pwx.pages.dev" target="_blank" rel="noopener">Abhi Dekho →</a>
+
+<h2>🔥 PWX - Study Resources</h2>
+
+<p>
+Educational resources एक जगह
+</p>
+
+<a
+href="https://pwx.pages.dev"
+target="_blank"
+rel="noopener noreferrer">
+
+Open →
+
+</a>
+
 </div>
+
+
+<!-- HOME -->
 
 <section id="home" class="page active">
 
 <div class="hero">
+
 <h2>NEET 2027 की तैयारी</h2>
-<p>अपने अध्ययन resources को एक जगह व्यवस्थित करें।</p>
-<p class="creator">Created by <b>Yashpal Aagri</b></p>
+
+<p>
+अपने अध्ययन resources को एक जगह व्यवस्थित करें।
+</p>
+
+<p class="creator">
+Created by <b>Yashpal Aagri</b>
+</p>
+
 </div>
+
 
 <div class="grid">
 
 <div class="card" onclick="showPage('books')">
+
 <div class="icon">📚</div>
+
 <h3>Books</h3>
+
 <p>Study resources</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('videos')">
+
 <div class="icon">🎥</div>
+
 <h3>Video Lectures</h3>
-<p>Video links</p>
+
+<p>YouTube videos</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('tests')">
+
 <div class="icon">📝</div>
+
 <h3>Tests</h3>
+
 <p>Practice test</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('dpp')">
+
 <div class="icon">📋</div>
+
 <h3>DPP</h3>
+
 <p>Daily practice</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('quiz')">
+
 <div class="icon">🧠</div>
+
 <h3>Quiz</h3>
+
 <p>Knowledge test</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('youtube')">
+
 <div class="icon">🔴</div>
+
 <h3>YouTube Live</h3>
+
 <p>Live classes</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('websites')">
+
 <div class="icon">🌐</div>
+
 <h3>Websites</h3>
+
 <p>Study websites</p>
+
 </div>
+
 
 <div class="card" onclick="showPage('ai')">
+
 <div class="icon">🤖</div>
+
 <h3>AI Doubt Solver</h3>
+
 <p>Physics • Chemistry • Biology</p>
+
 </div>
 
 </div>
+
 </section>
 
+
+
+<!-- BOOKS -->
 
 <section id="books" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+
+<button class="back" onclick="showPage('home')">
+← Home
+</button>
+
 <div class="hero">
-<h2>📚 Books</h2>
-<p>अधिकृत study resources यहाँ रखें।</p>
-<a class="linkbtn" href="https://ncert.nic.in/" target="_blank">📖 NCERT</a>
-<a class="linkbtn" href="https://www.nta.ac.in/" target="_blank">🎓 NTA</a>
+
+<h2>📚 Books & Resources</h2>
+
+<a
+class="linkbtn"
+href="https://ncert.nic.in/"
+target="_blank"
+rel="noopener">
+
+📖 NCERT
+
+</a>
+
+
+<a
+class="linkbtn"
+href="https://www.nta.ac.in/"
+target="_blank"
+rel="noopener">
+
+🎓 NTA
+
+</a>
+
+
+<a
+class="linkbtn"
+href="https://studypanda.live/books"
+target="_blank"
+rel="noopener">
+
+📚 StudyPanda Books
+
+</a>
+
+
+<a
+class="linkbtn"
+href="https://t.me/bookhub75"
+target="_blank"
+rel="noopener">
+
+📚 BookHub
+
+</a>
+
+<p class="small">
+
+केवल ऐसे resources इस्तेमाल करें जिन्हें आपको
+देखने/डाउनलोड करने की अनुमति हो।
+
+</p>
+
 </div>
+
 </section>
 
+
+
+<!-- VIDEO -->
 
 <section id="videos" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+
+<button class="back" onclick="showPage('home')">
+← Home
+</button>
+
 <div class="hero">
+
 <h2>🎥 Video Lectures</h2>
-<input id="videoUrl" placeholder="YouTube video link डालें">
-<button onclick="openVideo()">▶️ वीडियो खोलें</button>
+
+<input
+id="videoUrl"
+placeholder="YouTube video link डालें"
+>
+
+<button onclick="playVideo()">
+
+▶️ Website में चलाएँ
+
+</button>
+
+
+<div
+id="videoBox"
+style="display:none;margin-top:15px"
+>
+
+<iframe
+id="videoPlayer"
+class="player"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
 </div>
+
+</div>
+
 </section>
 
+
+
+<!-- TEST -->
 
 <section id="tests" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Home
+
+</button>
+
 <div class="hero">
+
 <h2>📝 Practice Test</h2>
+
 <div id="testBox"></div>
-<button onclick="checkTest()">✅ Submit Test</button>
+
+<button onclick="checkTest()">
+
+✅ Submit Test
+
+</button>
+
 <div id="testResult"></div>
+
 </div>
+
 </section>
 
 
+
+<!-- DPP -->
+
 <section id="dpp" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Home
+
+</button>
+
 <div class="hero">
+
 <h2>📋 Daily Practice Problems</h2>
 
 <div class="question">
-<b>Q1. Newton का दूसरा नियम क्या है?</b>
+
+<b>
+Q1. Newton का दूसरा नियम क्या है?
+</b>
+
 <p>A) F = ma</p>
 <p>B) V = IR</p>
 <p>C) P = VI</p>
 <p>D) E = mc²</p>
-</div>
 
-<button onclick="alert('सही उत्तर: A) F = ma')">
+<button
+onclick="alert('सही उत्तर: A) F = ma')">
+
 ✅ Answer देखें
+
 </button>
 
 </div>
+
+</div>
+
 </section>
 
+
+
+<!-- QUIZ -->
 
 <section id="quiz" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
-<div class="hero">
-<h2>🧠 Biology Quiz</h2>
-<div id="quizBox"></div>
-</div>
-</section>
 
+<button
+class="back"
+onclick="showPage('home')">
 
-<section id="ai" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+← Home
 
-<div class="hero">
-<h2>🤖 AI Doubt Solver</h2>
-<p>Physics, Chemistry और Biology के सवाल पूछें।</p>
-
-<textarea id="aiQuestion" rows="5"
-placeholder="अपना सवाल यहाँ लिखें..."></textarea>
-
-<button onclick="askAI()">🤖 AI से पूछें</button>
-<button onclick="startVoice()">🎤 बोलें</button>
-
-<div id="aiStatus" class="status"></div>
-<div id="aiAnswer" class="question" style="display:none"></div>
-</div>
-</section>
-
-
-<section id="youtube" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
-
-<div class="hero">
-<h2>🔴 YouTube Live Classes</h2>
-<p>Public और currently live study classes</p>
-
-<button onclick="loadYouTubeLive()">
-🔄 Live Classes Refresh करें
 </button>
 
-<div id="youtubeLiveBox">
-  <div class="question">
-    🔴 Refresh दबाकर live classes खोजें।
-  </div>
-</div>
+<div class="hero">
 
-<div id="youtubePlayerBox" style="display:none;margin-top:15px;">
-  <div class="question">
-    <h3 id="liveVideoTitle">🔴 Live Class</h3>
+<h2>🧠 Biology Quiz</h2>
 
-    <iframe
-      id="youtubeLivePlayer"
-      width="100%"
-      height="400"
-      style="border:0;border-radius:12px;"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <button onclick="closeYouTubePlayer()">
-      ← Live Classes पर वापस
-    </button>
-
-    <button onclick="openLiveOnYouTube()">
-      ▶️ YouTube पर देखें
-    </button>
-  </div>
-</div>
+<div id="quizBox"></div>
 
 </div>
+
 </section>
 
 
-<section id="websites" class="page">
-<button class="back" onclick="showPage('home')">← Home</button>
+
+<!-- AI -->
+
+<section id="ai" class="page">
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Home
+
+</button>
 
 <div class="hero">
+
+<h2>🤖 AI Doubt Solver</h2>
+
+<p>
+Physics, Chemistry और Biology के सवाल पूछें।
+</p>
+
+<textarea
+id="aiQuestion"
+rows="5"
+placeholder="अपना सवाल यहाँ लिखें...">
+</textarea>
+
+<button onclick="askAI()">
+
+🤖 AI से पूछें
+
+</button>
+
+<button onclick="startVoice()">
+
+🎤 बोलें
+
+</button>
+
+<div id="aiStatus" class="status"></div>
+
+<div
+id="aiAnswer"
+class="question"
+style="display:none">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- YOUTUBE LIVE -->
+
+<section id="youtube" class="page">
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Home
+
+</button>
+
+<div class="hero">
+
+<h2>🔴 YouTube Live Classes</h2>
+
+<p>
+Currently public live study classes
+</p>
+
+<button onclick="loadYouTubeLive()">
+
+🔄 Live Classes Refresh करें
+
+</button>
+
+
+<div id="youtubeLiveBox">
+
+<div class="question">
+
+🔴 Refresh दबाकर live classes खोजें।
+
+</div>
+
+</div>
+
+
+<div
+id="youtubePlayerBox"
+style="display:none;margin-top:15px">
+
+<div class="question">
+
+<h3 id="liveVideoTitle">
+🔴 Live Class
+</h3>
+
+<iframe
+id="youtubeLivePlayer"
+class="player"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+
+<button
+class="secondary"
+onclick="closeYouTubePlayer()">
+
+← Live Classes पर वापस
+
+</button>
+
+
+<button
+onclick="openLiveOnYouTube()">
+
+▶️ YouTube पर देखें
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- WEBSITES -->
+
+<section id="websites" class="page">
+
+<button
+class="back"
+onclick="showPage('home')">
+
+← Home
+
+</button>
+
+<div class="hero">
+
 <h2>🌐 Study Websites</h2>
 
-<div class="webgrid">
+<p class="small">
 
-<div class="webcard"><h3>📚 DeltaStudy</h3>
-<a class="linkbtn" href="http://DeltaStudy.site" target="_blank">Open →</a></div>
+नीचे दिए गए links को पहले website के अंदर खोलने की
+कोशिश की जाएगी। अगर कोई site iframe की अनुमति नहीं
+देती, तो “नई tab में खोलें” इस्तेमाल करें।
 
-<div class="webcard"><h3>📘 Eduzex PW</h3>
-<a class="linkbtn" href="http://eduzex-pw.pages.dev/" target="_blank">Open →</a></div>
+</p>
 
-<div class="webcard"><h3>📚 StudyRays</h3>
-<a class="linkbtn" href="http://StudyRays.cc" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>🎓 Learntopper</h3>
-<a class="linkbtn" href="http://Learntopper.in" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>📖 Studyspark</h3>
-<a class="linkbtn" href="http://Studyspark.pro" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>📝 Studybeepro</h3>
-<a class="linkbtn" href="http://Studybeepro.site" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>🐼 StudyPanda</h3>
-<a class="linkbtn" href="http://StudyPanda.live" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>⚡ PWX Study</h3>
-<a class="linkbtn" href="https://pwxstudy.site/" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>🎯 PWThor</h3>
-<a class="linkbtn" href="https://pwthor.live" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>📚 Studystark</h3>
-<a class="linkbtn" href="http://studystark.in" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>🚀 PrepProNetwork</h3>
-<a class="linkbtn" href="https://PrepProNetwork.vercel.app" target="_blank">Open →</a></div>
-
-<div class="webcard"><h3>🔗 Shared Resource</h3>
-<a class="linkbtn" href="https://share.google/DHeSO9KKuPDPMdutj" target="_blank">Open →</a></div>
+<div
+class="webgrid"
+id="websiteGrid">
+</div>
 
 </div>
-</div>
+
 </section>
 
 </main>
 
+
+
 <footer>
-© 2026 Mission Lakshya NEET 2027<br>
+
+© 2026 Mission Lakshya NEET 2027
+
+<br>
+
 Created by <b>Yashpal Aagri</b>
+
 </footer>
+
 
 
 <script>
 
+
+/* PAGE */
+
 function showPage(id){
-document.querySelectorAll(".page")
+
+document
+.querySelectorAll(".page")
 .forEach(p=>p.classList.remove("active"));
 
 const page=document.getElementById(id);
 
-if(page) page.classList.add("active");
+if(page){
+page.classList.add("active");
+}
 
 window.scrollTo(0,0);
+
 }
 
 
-function openVideo(){
-const url=document.getElementById("videoUrl").value.trim();
 
-if(!url){
-alert("पहले वीडियो लिंक डालें।");
-return;
-}
+/* YOUTUBE VIDEO */
+
+function getYouTubeId(url){
 
 try{
+
 const u=new URL(url);
 
-if(!["http:","https:"].includes(u.protocol))
-throw new Error();
+if(u.hostname==="youtu.be"){
 
-window.open(u.href,"_blank","noopener");
+return u.pathname
+.slice(1)
+.split("/")[0];
+
 }
-catch{
-alert("सही http/https लिंक डालें।");
+
+if(u.hostname.includes("youtube.com")){
+
+if(u.pathname==="/watch"){
+
+return u.searchParams.get("v");
+
 }
+
+const parts=u.pathname.split("/");
+
+const liveIndex=parts.indexOf("live");
+
+if(liveIndex>=0){
+
+return parts[liveIndex+1];
+
 }
+
+const embedIndex=parts.indexOf("embed");
+
+if(embedIndex>=0){
+
+return parts[embedIndex+1];
+
+}
+
+}
+
+}catch(e){}
+
+return null;
+
+}
+
+
+
+function playVideo(){
+
+const url=
+document.getElementById("videoUrl")
+.value
+.trim();
+
+const id=getYouTubeId(url);
+
+if(!id){
+
+alert("सही YouTube video/live link डालें।");
+
+return;
+
+}
+
+document
+.getElementById("videoPlayer")
+.src=
+"https://www.youtube.com/embed/"
++
+encodeURIComponent(id);
+
+document
+.getElementById("videoBox")
+.style.display="block";
+
+}
+
 
 
 /* TEST */
 
 const testQuestions=[
+
 {
 q:"Ohm's law क्या है?",
-options:["V = IR","F = ma","P = VI","E = mc²"],
+options:[
+"V = IR",
+"F = ma",
+"P = VI",
+"E = mc²"
+],
 correct:0
 },
+
 {
 q:"Molarity का formula क्या है?",
 options:[
@@ -352,29 +855,47 @@ options:[
 ],
 correct:0
 }
+
 ];
+
 
 function makeTest(){
 
-const box=document.getElementById("testBox");
+const box=
+document.getElementById("testBox");
+
 box.innerHTML="";
 
 testQuestions.forEach((item,i)=>{
 
 let div=document.createElement("div");
+
 div.className="question";
 
-let html="<b>"+(i+1)+". "+item.q+"</b>";
+let html=
+"<b>"+(i+1)+". "+item.q+"</b>";
 
 item.options.forEach((option,j)=>{
+
 html+=`
+
 <label style="display:block;margin:10px 0">
-<input type="radio" name="test${i}" value="${j}">
-${option}
-</label>`;
+
+<input
+type="radio"
+name="test${i}"
+value="${j}">
+
+${escapeHtml(option)}
+
+</label>
+
+`;
+
 });
 
 div.innerHTML=html;
+
 box.appendChild(div);
 
 });
@@ -384,66 +905,113 @@ box.appendChild(div);
 makeTest();
 
 
+
 function checkTest(){
 
 let score=0;
 
 testQuestions.forEach((item,i)=>{
 
-const selected=document.querySelector(
+const selected=
+document.querySelector(
 'input[name="test'+i+'"]:checked'
 );
 
-if(selected && Number(selected.value)===item.correct){
+if(
+selected &&
+Number(selected.value)===item.correct
+){
+
 score++;
+
 }
 
 });
 
-document.getElementById("testResult").innerHTML=
-`<div class="question">
-<b>🎉 Score: ${score}/${testQuestions.length}</b>
-</div>`;
+document
+.getElementById("testResult")
+.innerHTML=
+`
+<div class="question">
+
+<b>
+🎉 Score:
+${score}/${testQuestions.length}
+</b>
+
+</div>
+`;
 
 }
+
 
 
 /* QUIZ */
 
 const quizQuestions=[
+
 {
 q:"रक्त का लाल रंग किस कारण होता है?",
-options:["हीमोग्लोबिन","इंसुलिन","कैल्शियम","प्लाज्मा"],
+options:[
+"हीमोग्लोबिन",
+"इंसुलिन",
+"कैल्शियम",
+"प्लाज्मा"
+],
 correct:0
 },
+
 {
 q:"प्रकाश संश्लेषण मुख्यतः कहाँ होता है?",
-options:["माइटोकॉन्ड्रिया","क्लोरोप्लास्ट","राइबोसोम","नाभिक"],
+options:[
+"माइटोकॉन्ड्रिया",
+"क्लोरोप्लास्ट",
+"राइबोसोम",
+"नाभिक"
+],
 correct:1
 }
+
 ];
+
 
 function makeQuiz(){
 
-const box=document.getElementById("quizBox");
+const box=
+document.getElementById("quizBox");
+
 box.innerHTML="";
 
 quizQuestions.forEach((item,i)=>{
 
 let div=document.createElement("div");
+
 div.className="question";
 
-let html="<b>"+(i+1)+". "+item.q+"</b>";
+let html=
+"<b>"+(i+1)+". "+item.q+"</b>";
 
 item.options.forEach((option,j)=>{
+
 html+=`
+
 <label style="display:block;margin:10px 0">
-<input type="radio" name="quiz${i}" value="${j}">
-${option}
-</label>`;
+
+<input
+type="radio"
+name="quiz${i}"
+value="${j}">
+
+${escapeHtml(option)}
+
+</label>
+
+`;
+
 });
 
 div.innerHTML=html;
+
 box.appendChild(div);
 
 });
@@ -453,29 +1021,45 @@ box.appendChild(div);
 makeQuiz();
 
 
+
 /* AI */
 
 async function askAI(){
 
-const question=document
+const question=
+document
 .getElementById("aiQuestion")
-.value.trim();
+.value
+.trim();
 
-const answerBox=document.getElementById("aiAnswer");
-const status=document.getElementById("aiStatus");
+const answerBox=
+document.getElementById("aiAnswer");
+
+const status=
+document.getElementById("aiStatus");
 
 if(!question){
+
 alert("पहले अपना सवाल लिखें।");
+
 return;
+
 }
 
 answerBox.style.display="block";
-answerBox.textContent="🤖 AI जवाब तैयार कर रहा है...";
-status.textContent="⏳ AI से connection हो रहा है...";
+
+answerBox.textContent=
+"🤖 AI जवाब तैयार कर रहा है...";
+
+status.textContent=
+"⏳ AI से connection हो रहा है...";
 
 try{
 
-const response=await fetch("/api/chat",{
+const response=
+await fetch(
+"/api/chat",
+{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -483,22 +1067,34 @@ headers:{
 body:JSON.stringify({
 message:question
 })
-});
+}
+);
 
-const data=await response.json();
+const data=
+await response.json();
 
 if(!response.ok){
-throw new Error(data.error || "AI request failed");
+
+throw new Error(
+data.error ||
+"AI request failed"
+);
+
 }
 
 answerBox.innerHTML=
 "<b>🤖 Mission Lakshya AI:</b><br><br>"+
-escapeHtml(data.answer || "AI ने कोई जवाब नहीं दिया।")
+escapeHtml(
+data.answer ||
+"AI ने कोई जवाब नहीं दिया।"
+)
 .replace(/\n/g,"<br>");
 
-status.textContent="✅ जवाब तैयार है।";
+status.textContent=
+"✅ जवाब तैयार है।";
 
 }
+
 catch(error){
 
 console.error(error);
@@ -514,6 +1110,7 @@ status.textContent=
 }
 
 
+
 /* VOICE */
 
 let recognition=null;
@@ -525,161 +1122,297 @@ window.SpeechRecognition ||
 window.webkitSpeechRecognition;
 
 if(!SpeechRecognition){
-alert("आपके browser में voice input उपलब्ध नहीं है।");
+
+alert(
+"आपके browser में voice input उपलब्ध नहीं है।"
+);
+
 return;
+
 }
 
-recognition=new SpeechRecognition();
+recognition=
+new SpeechRecognition();
 
 recognition.lang="hi-IN";
+
 recognition.continuous=false;
+
 recognition.interimResults=false;
 
 recognition.onstart=()=>{
-document.getElementById("aiStatus")
-.textContent="🎤 सुन रहा हूँ...";
+
+document
+.getElementById("aiStatus")
+.textContent=
+"🎤 सुन रहा हूँ...";
+
 };
 
 recognition.onresult=(event)=>{
 
-const text=event.results[0][0].transcript;
+const text=
+event.results[0][0].transcript;
 
-document.getElementById("aiQuestion")
+document
+.getElementById("aiQuestion")
 .value=text;
 
-document.getElementById("aiStatus")
-.textContent="✅ सवाल मिल गया।";
+document
+.getElementById("aiStatus")
+.textContent=
+"✅ सवाल मिल गया।";
 
 };
 
 recognition.onerror=()=>{
-document.getElementById("aiStatus")
-.textContent="❌ Voice input में समस्या हुई।";
+
+document
+.getElementById("aiStatus")
+.textContent=
+"❌ Voice input में समस्या हुई।";
+
 };
 
 recognition.start();
 
 }
 
+
+
 /* YOUTUBE LIVE */
 
-let currentLiveUrl = "";
+let currentLiveUrl="";
+
 
 async function loadYouTubeLive(){
 
-const box = document.getElementById("youtubeLiveBox");
+const box=
+document.getElementById(
+"youtubeLiveBox"
+);
 
-box.innerHTML =
-"<div class='question'>🔄 Live classes खोजी जा रही हैं...</div>";
+box.innerHTML=
+"<div class='question'>"+
+"🔄 Live classes खोजी जा रही हैं..."+
+"</div>";
 
 try{
 
-const response = await fetch("/api/youtube-live");
-const data = await response.json();
+const response=
+await fetch(
+"/api/youtube-live"
+);
+
+const data=
+await response.json();
 
 if(!response.ok){
-throw new Error(data.error || "YouTube API error");
+
+throw new Error(
+data.error ||
+"YouTube API error"
+);
+
 }
 
-if(!data.liveClasses || data.liveClasses.length === 0){
 
-box.innerHTML =
-`<div class="question">
+if(
+!data.liveClasses ||
+!data.liveClasses.length
+){
+
+box.innerHTML=
+`
+<div class="question">
+
 📺 अभी कोई public live class नहीं मिली।
+
 <br><br>
+
 🔄 थोड़ी देर बाद फिर Refresh करें।
-</div>`;
+
+</div>
+`;
 
 return;
+
 }
 
-box.innerHTML = "";
 
-data.liveClasses.forEach(video => {
+box.innerHTML="";
 
-const card = document.createElement("div");
-card.className = "question";
 
-card.innerHTML = `
-<img src="${escapeHtml(video.thumbnail)}"
-style="width:100%;border-radius:12px"
-alt="Live class">
+data.liveClasses.forEach(video=>{
 
-<h3>🔴 ${escapeHtml(video.title)}</h3>
+const card=
+document.createElement("div");
 
-<p>
-<b>Channel:</b>
-${escapeHtml(video.channelTitle)}
-</p>
+card.className="question";
 
-<button onclick="playLiveOnWebsite('${escapeHtml(video.videoId)}','${escapeHtml(video.title)}')">
-▶️ Website में Live देखें
-</button>
 
-<button onclick="window.open('${escapeHtml(video.url)}','_blank')">
-▶️ YouTube पर देखें
-</button>
-`;
+const img=
+document.createElement("img");
+
+img.src=
+video.thumbnail || "";
+
+img.style=
+"width:100%;border-radius:12px";
+
+img.alt="Live class";
+
+card.appendChild(img);
+
+
+const h=
+document.createElement("h3");
+
+h.textContent=
+"🔴 "+video.title;
+
+card.appendChild(h);
+
+
+const p=
+document.createElement("p");
+
+p.innerHTML=
+"<b>Channel:</b> "+
+escapeHtml(
+video.channelTitle
+);
+
+card.appendChild(p);
+
+
+const button=
+document.createElement("button");
+
+button.textContent=
+"▶️ Website में Live देखें";
+
+button.onclick=()=>{
+
+playLiveOnWebsite(
+video.videoId,
+video.title
+);
+
+};
+
+card.appendChild(button);
+
+
+const youtubeButton=
+document.createElement("button");
+
+youtubeButton.className=
+"secondary";
+
+youtubeButton.textContent=
+"▶️ YouTube पर देखें";
+
+youtubeButton.onclick=()=>{
+
+window.open(
+video.url,
+"_blank",
+"noopener,noreferrer"
+);
+
+};
+
+card.appendChild(youtubeButton);
+
 
 box.appendChild(card);
 
 });
 
 }
+
 catch(error){
 
 console.error(error);
 
-box.innerHTML =
-`<div class="question">
+box.innerHTML=
+`
+<div class="question">
+
 ❌ YouTube Live अभी load नहीं हो सकी।
+
 <br><br>
-Backend/API setup check करें।
-</div>`;
+
+YOUTUBE_API_KEY और backend check करें।
+
+</div>
+`;
 
 }
 
 }
+
 
 
 /* LIVE PLAYER */
 
-function playLiveOnWebsite(videoId, title){
+function playLiveOnWebsite(
+videoId,
+title
+){
 
-currentLiveUrl =
-"https://www.youtube.com/watch?v=" + videoId;
+currentLiveUrl=
+"https://www.youtube.com/watch?v="+
+videoId;
 
-document.getElementById("liveVideoTitle").textContent =
-"🔴 " + title;
 
-document.getElementById("youtubeLivePlayer").src =
-"https://www.youtube.com/embed/" + videoId;
+document
+.getElementById("liveVideoTitle")
+.textContent=
+"🔴 "+title;
 
-document.getElementById("youtubeLiveBox").style.display =
-"none";
 
-document.getElementById("youtubePlayerBox").style.display =
-"block";
+document
+.getElementById("youtubeLivePlayer")
+.src=
+"https://www.youtube.com/embed/"+
+encodeURIComponent(videoId);
 
-window.scrollTo(0,0);
+
+document
+.getElementById("youtubeLiveBox")
+.style.display="none";
+
+
+document
+.getElementById("youtubePlayerBox")
+.style.display="block";
 
 }
 
 
-/* CLOSE PLAYER */
+
+/* CLOSE LIVE */
 
 function closeYouTubePlayer(){
 
-document.getElementById("youtubeLivePlayer").src =
-"";
+document
+.getElementById("youtubeLivePlayer")
+.src="";
 
-document.getElementById("youtubePlayerBox").style.display =
-"none";
 
-document.getElementById("youtubeLiveBox").style.display =
-"block";
+document
+.getElementById("youtubePlayerBox")
+.style.display="none";
+
+
+document
+.getElementById("youtubeLiveBox")
+.style.display="block";
 
 }
+
 
 
 /* OPEN YOUTUBE */
@@ -687,8 +1420,13 @@ document.getElementById("youtubeLiveBox").style.display =
 function openLiveOnYouTube(){
 
 if(!currentLiveUrl){
-alert("पहले कोई Live Class खोलें।");
+
+alert(
+"पहले कोई Live Class खोलें।"
+);
+
 return;
+
 }
 
 window.open(
@@ -699,81 +1437,210 @@ currentLiveUrl,
 
 }
 
-const box=document.getElementById("youtubeLiveBox");
 
-box.innerHTML=
-"<div class='question'>🔄 Live classes खोजी जा रही हैं...</div>";
 
-try{
+/* WEBSITES */
 
-const response=await fetch("/api/youtube-live");
-const data=await response.json();
+const websites=[
 
-if(!response.ok){
-throw new Error(data.error || "YouTube API error");
-}
+[
+"📚 DeltaStudy",
+"http://DeltaStudy.site"
+],
 
-if(!data.liveClasses || data.liveClasses.length===0){
+[
+"📘 Eduzex PW",
+"http://eduzex-pw.pages.dev/"
+],
 
-box.innerHTML=
-`<div class="question">
-📺 अभी कोई public live class नहीं मिली।
-<br><br>
-🔄 थोड़ी देर बाद फिर Refresh करें।
-</div>`;
+[
+"📚 StudyRays",
+"http://StudyRays.cc"
+],
 
-return;
-}
+[
+"🎓 Learntopper",
+"http://Learntopper.in"
+],
 
-box.innerHTML="";
+[
+"📖 Studyspark",
+"http://Studyspark.pro"
+],
 
-data.liveClasses.forEach(video=>{
+[
+"📝 Studybeepro",
+"http://Studybeepro.site"
+],
 
-const card=document.createElement("div");
-card.className="question";
+[
+"🐼 StudyPanda",
+"http://StudyPanda.live"
+],
 
-card.innerHTML=`
-<img src="${escapeHtml(video.thumbnail)}"
-style="width:100%;border-radius:12px"
-alt="Live class">
+[
+"⚡ PWX Study",
+"https://pwxstudy.site/"
+],
 
-<h3>🔴 ${escapeHtml(video.title)}</h3>
+[
+"🎯 PWThor",
+"https://pwthor.live"
+],
 
-<p>
-<b>Channel:</b>
-${escapeHtml(video.channelTitle)}
-</p>
+[
+"📚 Studystark",
+"http://studystark.in"
+],
 
-<button onclick="window.open('${escapeHtml(video.url)}','_blank')">
-▶️ YouTube पर Live देखें
-</button>
-`;
+[
+"🚀 PrepProNetwork",
+"https://PrepProNetwork.vercel.app"
+],
 
-box.appendChild(card);
+[
+"🔗 Shared Resource",
+"https://share.google/DHeSO9KKuPDPMdutj"
+],
+
+[
+"🌐 Learnify",
+"https://learnify.deltaverse.site/"
+],
+
+[
+"🎓 PW Study Parcham",
+"https://pw.studyparcham.in/#home-view"
+],
+
+[
+"📚 AS Multiverse",
+"https://asmultiverse.com/?tab=home"
+]
+
+];
+
+
+
+function renderWebsites(){
+
+const grid=
+document.getElementById(
+"websiteGrid"
+);
+
+websites.forEach(
+([name,url],index)=>{
+
+const card=
+document.createElement("div");
+
+card.className=
+"webcard";
+
+
+const h=
+document.createElement("h3");
+
+h.textContent=name;
+
+card.appendChild(h);
+
+
+const inside=
+document.createElement("div");
+
+inside.id=
+"site-"+index;
+
+inside.style.display=
+"none";
+
+inside.style.marginTop=
+"10px";
+
+
+const frame=
+document.createElement("iframe");
+
+frame.className="player";
+
+frame.src="about:blank";
+
+frame.loading="lazy";
+
+frame.title=name;
+
+inside.appendChild(frame);
+
+card.appendChild(inside);
+
+
+const open=
+document.createElement("button");
+
+open.textContent=
+"🌐 Website में खोलें";
+
+open.onclick=()=>{
+
+inside.style.display=
+"block";
+
+frame.src=url;
+
+open.style.display=
+"none";
+
+fallback.style.display=
+"inline-block";
+
+};
+
+card.appendChild(open);
+
+
+const fallback=
+document.createElement("button");
+
+fallback.className=
+"secondary";
+
+fallback.textContent=
+"↗️ नई tab में खोलें";
+
+fallback.onclick=()=>{
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+};
+
+card.appendChild(fallback);
+
+grid.appendChild(card);
 
 });
 
 }
-catch(error){
 
-console.error(error);
+renderWebsites();
 
-box.innerHTML=
-`<div class="question">
-❌ YouTube Live अभी load नहीं हो सकी।
-<br><br>
-Backend/API setup check करें।
-</div>`;
 
-}
 
-}
-
+/* ESCAPE HTML */
 
 function escapeHtml(text){
 
-const div=document.createElement("div");
-div.textContent=text || "";
+const div=
+document.createElement("div");
+
+div.textContent=
+text || "";
+
 return div.innerHTML;
 
 }
