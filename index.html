@@ -210,9 +210,32 @@ placeholder="अपना सवाल यहाँ लिखें..."></textar
 </button>
 
 <div id="youtubeLiveBox">
-<div class="question">
-🔴 Refresh दबाकर live classes खोजें।
+  <div class="question">
+    🔴 Refresh दबाकर live classes खोजें।
+  </div>
 </div>
+
+<div id="youtubePlayerBox" style="display:none;margin-top:15px;">
+  <div class="question">
+    <h3 id="liveVideoTitle">🔴 Live Class</h3>
+
+    <iframe
+      id="youtubeLivePlayer"
+      width="100%"
+      height="400"
+      style="border:0;border-radius:12px;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
+    <button onclick="closeYouTubePlayer()">
+      ← Live Classes पर वापस
+    </button>
+
+    <button onclick="openLiveOnYouTube()">
+      ▶️ YouTube पर देखें
+    </button>
+  </div>
 </div>
 
 </div>
@@ -538,10 +561,143 @@ recognition.start();
 
 }
 
-
 /* YOUTUBE LIVE */
 
+let currentLiveUrl = "";
+
 async function loadYouTubeLive(){
+
+const box = document.getElementById("youtubeLiveBox");
+
+box.innerHTML =
+"<div class='question'>🔄 Live classes खोजी जा रही हैं...</div>";
+
+try{
+
+const response = await fetch("/api/youtube-live");
+const data = await response.json();
+
+if(!response.ok){
+throw new Error(data.error || "YouTube API error");
+}
+
+if(!data.liveClasses || data.liveClasses.length === 0){
+
+box.innerHTML =
+`<div class="question">
+📺 अभी कोई public live class नहीं मिली।
+<br><br>
+🔄 थोड़ी देर बाद फिर Refresh करें।
+</div>`;
+
+return;
+}
+
+box.innerHTML = "";
+
+data.liveClasses.forEach(video => {
+
+const card = document.createElement("div");
+card.className = "question";
+
+card.innerHTML = `
+<img src="${escapeHtml(video.thumbnail)}"
+style="width:100%;border-radius:12px"
+alt="Live class">
+
+<h3>🔴 ${escapeHtml(video.title)}</h3>
+
+<p>
+<b>Channel:</b>
+${escapeHtml(video.channelTitle)}
+</p>
+
+<button onclick="playLiveOnWebsite('${escapeHtml(video.videoId)}','${escapeHtml(video.title)}')">
+▶️ Website में Live देखें
+</button>
+
+<button onclick="window.open('${escapeHtml(video.url)}','_blank')">
+▶️ YouTube पर देखें
+</button>
+`;
+
+box.appendChild(card);
+
+});
+
+}
+catch(error){
+
+console.error(error);
+
+box.innerHTML =
+`<div class="question">
+❌ YouTube Live अभी load नहीं हो सकी।
+<br><br>
+Backend/API setup check करें।
+</div>`;
+
+}
+
+}
+
+
+/* LIVE PLAYER */
+
+function playLiveOnWebsite(videoId, title){
+
+currentLiveUrl =
+"https://www.youtube.com/watch?v=" + videoId;
+
+document.getElementById("liveVideoTitle").textContent =
+"🔴 " + title;
+
+document.getElementById("youtubeLivePlayer").src =
+"https://www.youtube.com/embed/" + videoId;
+
+document.getElementById("youtubeLiveBox").style.display =
+"none";
+
+document.getElementById("youtubePlayerBox").style.display =
+"block";
+
+window.scrollTo(0,0);
+
+}
+
+
+/* CLOSE PLAYER */
+
+function closeYouTubePlayer(){
+
+document.getElementById("youtubeLivePlayer").src =
+"";
+
+document.getElementById("youtubePlayerBox").style.display =
+"none";
+
+document.getElementById("youtubeLiveBox").style.display =
+"block";
+
+}
+
+
+/* OPEN YOUTUBE */
+
+function openLiveOnYouTube(){
+
+if(!currentLiveUrl){
+alert("पहले कोई Live Class खोलें।");
+return;
+}
+
+window.open(
+currentLiveUrl,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
 
 const box=document.getElementById("youtubeLiveBox");
 
