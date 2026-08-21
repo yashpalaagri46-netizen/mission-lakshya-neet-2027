@@ -16,69 +16,179 @@ window.va = window.va || function () {
 <style>
 *{box-sizing:border-box}
 
+:root{
+  --bg:#f4f7fb;
+  --surface:#fff;
+  --text:#18202a;
+  --muted:#667085;
+  --primary:#1769aa;
+  --soft:#f8fafc;
+  --border:#e1e8ef;
+}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#18202a;
+  background:var(--bg);
+  color:var(--text);
+  transition:.25s;
 }
+
+body.dark{
+  --bg:#0b1220;
+  --surface:#111827;
+  --text:#e5e7eb;
+  --muted:#aab4c3;
+  --primary:#42a5f5;
+  --soft:#172235;
+  --border:#263244;
+}
+
+body.blue{
+  --bg:#eaf6ff;
+  --surface:#fff;
+  --text:#102a43;
+  --muted:#486581;
+  --primary:#0077b6;
+  --soft:#eef9ff;
+  --border:#c7e6f8;
+}
+
+body.green{
+  --bg:#edf8f1;
+  --surface:#fff;
+  --text:#16351f;
+  --muted:#557060;
+  --primary:#198754;
+  --soft:#f1fbf4;
+  --border:#cfe9d8;
+}
+
+body.purple{
+  --bg:#f5efff;
+  --surface:#fff;
+  --text:#2d1b45;
+  --muted:#6c5a7e;
+  --primary:#7b3fb6;
+  --soft:#faf5ff;
+  --border:#e2d2f1;
+}
+
+/* MODE BAR */
+
+.modebar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+  padding:10px;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+
+.modebar button{
+  margin:0;
+  padding:8px 12px;
+  border-radius:20px;
+  background:var(--soft);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+
+.modebar button.active{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* HEADER */
 
 header{
-  background:#1769aa;
+  background:linear-gradient(
+    135deg,
+    #0d47a1,
+    #1769aa,
+    #0288d1
+  );
   color:#fff;
-  padding:20px;
   text-align:center;
+  padding:28px 15px;
 }
 
-header h1{margin:0 0 6px}
+.logo{
+  width:180px;
+  height:180px;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+  filter:drop-shadow(0 5px 12px #0005);
+}
+
+header h1{
+  margin:10px 0 6px;
+  font-size:clamp(25px,5vw,42px);
+}
+
+header p{
+  margin:0;
+  font-size:clamp(14px,2.5vw,19px);
+}
+
+/* MAIN */
 
 main{
-  max-width:1000px;
+  width:min(1400px,96%);
   margin:auto;
-  padding:15px;
+  padding:24px 10px;
 }
 
 .hero,.card{
-  background:#fff;
-  border-radius:16px;
-  padding:20px;
-  margin-bottom:16px;
-  box-shadow:0 3px 12px #00000012;
+  background:var(--surface);
+  color:var(--text);
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:18px;
+  box-shadow:0 4px 16px #00000014;
 }
 
 .hero{text-align:center}
 
 .creator{
-  color:#555;
-  font-size:14px;
+  color:var(--muted);
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
 .card{
   text-align:center;
   cursor:pointer;
-  border:1px solid #e7edf4;
+  border:1px solid var(--border);
+  min-height:150px;
+  transition:.2s;
 }
 
-.icon{font-size:35px}
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.icon{
+  font-size:45px;
+}
 
 .page{display:none}
 .page.active{display:block}
 
-.back{
-  margin-bottom:14px;
-}
-
 button,.linkbtn{
   border:0;
   border-radius:10px;
-  padding:11px 15px;
-  background:#1769aa;
+  padding:12px 16px;
+  background:var(--primary);
   color:white;
   cursor:pointer;
   font-size:15px;
@@ -93,63 +203,67 @@ button,.linkbtn{
 
 input,textarea{
   width:100%;
-  padding:12px;
-  border:1px solid #ccd6e0;
+  padding:13px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
   border-radius:10px;
   margin:7px 0 12px;
   font-size:16px;
 }
 
 .question{
-  background:#f8fafc;
-  padding:14px;
-  border-radius:12px;
-  margin:12px 0;
-}
-
-.webgrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.webcard{
-  background:#f8fafc;
-  border:1px solid #e1e8ef;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
-}
-
-footer{
-  text-align:center;
-  color:#667;
-  padding:25px;
+  background:var(--soft);
+  color:var(--text);
+  padding:16px;
+  border-radius:14px;
+  margin:14px 0;
 }
 
 .pwx{
   background:linear-gradient(90deg,#ff6a00,#ee0979);
-  padding:18px;
+  padding:20px;
   text-align:center;
-  border-radius:12px;
-  margin-bottom:16px;
+  border-radius:14px;
+  margin-bottom:18px;
 }
 
-.pwx h2,.pwx p{color:white}
+.pwx h2,.pwx p{color:#fff}
 
 .pwx a{
-  background:white;
+  background:#fff;
   color:#ee0979;
-  padding:10px 20px;
+  padding:11px 22px;
   border-radius:8px;
   text-decoration:none;
   font-weight:bold;
 }
 
-.status{
-  font-size:14px;
-  color:#555;
+/* BOOKS */
+
+.bookgrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
+
+.bookcard{
+  background:var(--soft);
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:14px;
+  text-align:center;
+}
+
+.bookcover{
+  width:100%;
+  aspect-ratio:5/4;
+  object-fit:cover;
+  border-radius:12px;
+  background:#1769aa;
+}
+
+/* VIDEO */
 
 .player{
   width:100%;
@@ -159,48 +273,151 @@ footer{
   background:#000;
 }
 
-.small{
-  font-size:13px;
-  color:#667;
+/* LIVE */
+
+.live-layout{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:16px;
+}
+
+.chat-frame{
+  width:100%;
+  min-height:500px;
+  border:0;
+  border-radius:12px;
+  background:#111;
+}
+
+/* WEBSITES */
+
+.webgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.webcard{
+  background:var(--soft);
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:14px;
+  text-align:center;
+}
+
+.status,.small{
+  color:var(--muted);
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:30px;
+}
+
+@media(max-width:1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .bookgrid{grid-template-columns:repeat(2,1fr)}
+  .webgrid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:600px){
+  .grid,.bookgrid,.webgrid{
+    grid-template-columns:1fr;
+  }
 
-.grid,.webgrid{
-  grid-template-columns:1fr;
-}
+  .live-layout{
+    grid-template-columns:1fr;
+  }
 
-.player{
-  min-height:220px;
-}
+  .logo{
+    width:145px;
+    height:145px;
+  }
 
-main{
-  padding:12px;
-}
+  main{
+    width:100%;
+    padding:14px 9px;
+  }
 
+  .modebar{
+    justify-content:flex-start;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+  }
+
+  .modebar button{
+    white-space:nowrap;
+  }
 }
 </style>
- <header>
+</head>
 
-<img src="logo.png" alt="Mission Lakshya NEET 2027" class="site-logo">
+<body>
 
-<h1>Mission Lakshya NEET 2027</h1>
+<!-- MODE -->
+
+<div class="modebar">
+
+<button onclick="setMode('auto')" data-mode="auto">
+📱 Auto
+</button>
+
+<button onclick="setMode('light')" data-mode="light">
+☀️ Light
+</button>
+
+<button onclick="setMode('dark')" data-mode="dark">
+🌙 Dark
+</button>
+
+<button onclick="setMode('blue')" data-mode="blue">
+💙 Blue
+</button>
+
+<button onclick="setMode('green')" data-mode="green">
+💚 Green
+</button>
+
+<button onclick="setMode('purple')" data-mode="purple">
+💜 Purple
+</button>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<img
+src="logo.png"
+class="logo"
+alt="Mission Lakshya NEET 2027 Logo"
+onerror="this.style.display='none'"
+>
+
+<h1>
+🎯 Mission Lakshya NEET 2027
+</h1>
 
 <p>
 पढ़ाई • वीडियो • टेस्ट • DPP • Quiz • AI • Live Classes
 </p>
 
- </header>
+</header>
+
 
 <main>
+
+<!-- PWX -->
 
 <div class="pwx">
 
 <h2>🔥 PWX - Study Resources</h2>
 
-<p>
-Educational resources एक जगह
-</p>
+<p>Educational resources एक जगह</p>
 
 <a
 href="https://pwx.pages.dev"
@@ -236,96 +453,56 @@ Created by <b>Yashpal Aagri</b>
 <div class="grid">
 
 <div class="card" onclick="showPage('books')">
-
 <div class="icon">📚</div>
-
 <h3>Books</h3>
-
-<p>Study resources</p>
-
+<p>PDF Study Resources</p>
 </div>
-
 
 <div class="card" onclick="showPage('videos')">
-
 <div class="icon">🎥</div>
-
 <h3>Video Lectures</h3>
-
-<p>YouTube videos</p>
-
+<p>YouTube Videos</p>
 </div>
-
 
 <div class="card" onclick="showPage('tests')">
-
 <div class="icon">📝</div>
-
 <h3>Tests</h3>
-
-<p>Practice test</p>
-
+<p>Practice Test</p>
 </div>
-
 
 <div class="card" onclick="showPage('dpp')">
-
 <div class="icon">📋</div>
-
 <h3>DPP</h3>
-
-<p>Daily practice</p>
-
+<p>Daily Practice</p>
 </div>
-
 
 <div class="card" onclick="showPage('quiz')">
-
 <div class="icon">🧠</div>
-
 <h3>Quiz</h3>
-
-<p>Knowledge test</p>
-
+<p>Knowledge Test</p>
 </div>
-
 
 <div class="card" onclick="showPage('youtube')">
-
 <div class="icon">🔴</div>
-
 <h3>YouTube Live</h3>
-
-<p>Live classes</p>
-
+<p>Live Classes</p>
 </div>
-
 
 <div class="card" onclick="showPage('websites')">
-
 <div class="icon">🌐</div>
-
 <h3>Websites</h3>
-
-<p>Study websites</p>
-
+<p>Study Websites</p>
 </div>
 
-
 <div class="card" onclick="showPage('ai')">
-
 <div class="icon">🤖</div>
-
 <h3>AI Doubt Solver</h3>
-
 <p>Physics • Chemistry • Biology</p>
-
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- BOOKS -->
@@ -338,65 +515,16 @@ Created by <b>Yashpal Aagri</b>
 
 <div class="hero">
 
-<h2>📚 Books & Resources</h2>
+<h2>📚 Books & PDF Resources</h2>
 
-<a
-class="linkbtn"
-href="https://ncert.nic.in/"
-target="_blank"
-rel="noopener">
-
-📖 NCERT
-
-</a>
-
-
-<a
-class="linkbtn"
-href="https://www.nta.ac.in/"
-target="_blank"
-rel="noopener">
-
-🎓 NTA
-
-</a>
-
-
-<a
-class="linkbtn"
-href="https://studypanda.live/books"
-target="_blank"
-rel="noopener">
-
-📚 StudyPanda Books
-
-</a>
-
-
-<a
-class="linkbtn"
-href="https://t.me/bookhub75"
-target="_blank"
-rel="noopener">
-
-📚 BookHub
-
-</a>
-
-<p class="small">
-
-केवल ऐसे resources इस्तेमाल करें जिन्हें आपको
-देखने/डाउनलोड करने की अनुमति हो।
-
-</p>
+<div class="bookgrid" id="bookGrid"></div>
 
 </div>
 
 </section>
 
 
-
-<!-- VIDEO -->
+<!-- VIDEOS -->
 
 <section id="videos" class="page">
 
@@ -410,20 +538,14 @@ rel="noopener">
 
 <input
 id="videoUrl"
-placeholder="YouTube video link डालें"
+placeholder="YouTube video/live link डालें"
 >
 
 <button onclick="playVideo()">
-
 ▶️ Website में चलाएँ
-
 </button>
 
-
-<div
-id="videoBox"
-style="display:none;margin-top:15px"
->
+<div id="videoBox" style="display:none">
 
 <iframe
 id="videoPlayer"
@@ -439,17 +561,12 @@ allowfullscreen>
 </section>
 
 
-
 <!-- TEST -->
 
 <section id="tests" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
@@ -459,9 +576,7 @@ onclick="showPage('home')">
 <div id="testBox"></div>
 
 <button onclick="checkTest()">
-
 ✅ Submit Test
-
 </button>
 
 <div id="testResult"></div>
@@ -471,17 +586,12 @@ onclick="showPage('home')">
 </section>
 
 
-
 <!-- DPP -->
 
 <section id="dpp" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
@@ -499,11 +609,8 @@ Q1. Newton का दूसरा नियम क्या है?
 <p>C) P = VI</p>
 <p>D) E = mc²</p>
 
-<button
-onclick="alert('सही उत्तर: A) F = ma')">
-
+<button onclick="alert('सही उत्तर: A) F = ma')">
 ✅ Answer देखें
-
 </button>
 
 </div>
@@ -513,17 +620,12 @@ onclick="alert('सही उत्तर: A) F = ma')">
 </section>
 
 
-
 <!-- QUIZ -->
 
 <section id="quiz" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
@@ -537,17 +639,12 @@ onclick="showPage('home')">
 </section>
 
 
-
 <!-- AI -->
 
 <section id="ai" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
@@ -565,15 +662,11 @@ placeholder="अपना सवाल यहाँ लिखें...">
 </textarea>
 
 <button onclick="askAI()">
-
 🤖 AI से पूछें
-
 </button>
 
 <button onclick="startVoice()">
-
 🎤 बोलें
-
 </button>
 
 <div id="aiStatus" class="status"></div>
@@ -589,17 +682,12 @@ style="display:none">
 </section>
 
 
-
 <!-- YOUTUBE LIVE -->
 
 <section id="youtube" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
@@ -611,18 +699,13 @@ Currently public live study classes
 </p>
 
 <button onclick="loadYouTubeLive()">
-
 🔄 Live Classes Refresh करें
-
 </button>
-
 
 <div id="youtubeLiveBox">
 
 <div class="question">
-
 🔴 Refresh दबाकर live classes खोजें।
-
 </div>
 
 </div>
@@ -630,13 +713,17 @@ Currently public live study classes
 
 <div
 id="youtubePlayerBox"
-style="display:none;margin-top:15px">
+style="display:none">
 
 <div class="question">
 
 <h3 id="liveVideoTitle">
 🔴 Live Class
 </h3>
+
+<div class="live-layout">
+
+<div>
 
 <iframe
 id="youtubeLivePlayer"
@@ -645,21 +732,30 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen>
 </iframe>
 
+</div>
+
+<div>
+
+<h3>💬 Live Chat</h3>
+
+<iframe
+id="liveChatFrame"
+class="chat-frame"
+title="YouTube Live Chat">
+</iframe>
+
+</div>
+
+</div>
 
 <button
 class="secondary"
 onclick="closeYouTubePlayer()">
-
-← Live Classes पर वापस
-
+← वापस
 </button>
 
-
-<button
-onclick="openLiveOnYouTube()">
-
+<button onclick="openLiveOnYouTube()">
 ▶️ YouTube पर देखें
-
 </button>
 
 </div>
@@ -671,30 +767,17 @@ onclick="openLiveOnYouTube()">
 </section>
 
 
-
 <!-- WEBSITES -->
 
 <section id="websites" class="page">
 
-<button
-class="back"
-onclick="showPage('home')">
-
+<button class="back" onclick="showPage('home')">
 ← Home
-
 </button>
 
 <div class="hero">
 
 <h2>🌐 Study Websites</h2>
-
-<p class="small">
-
-नीचे दिए गए links को पहले website के अंदर खोलने की
-कोशिश की जाएगी। अगर कोई site iframe की अनुमति नहीं
-देती, तो “नई tab में खोलें” इस्तेमाल करें।
-
-</p>
 
 <div
 class="webgrid"
@@ -708,7 +791,6 @@ id="websiteGrid">
 </main>
 
 
-
 <footer>
 
 © 2026 Mission Lakshya NEET 2027
@@ -720,19 +802,87 @@ Created by <b>Yashpal Aagri</b>
 </footer>
 
 
-
 <script>
 
+/* =====================
+   MODE
+===================== */
 
-/* PAGE */
+function setMode(mode){
+
+localStorage.setItem(
+"mission-theme",
+mode
+);
+
+applyMode(mode);
+
+}
+
+function applyMode(mode){
+
+document.body.classList.remove(
+"dark",
+"blue",
+"green",
+"purple"
+);
+
+let realMode=mode;
+
+if(mode==="auto"){
+
+realMode=
+window.matchMedia(
+"(prefers-color-scheme:dark)"
+).matches
+?"dark"
+:"light";
+
+}
+
+if(realMode!=="light"){
+
+document.body.classList.add(
+realMode
+);
+
+}
+
+document
+.querySelectorAll("[data-mode]")
+.forEach(btn=>{
+
+btn.classList.toggle(
+"active",
+btn.dataset.mode===mode
+);
+
+});
+
+}
+
+applyMode(
+localStorage.getItem(
+"mission-theme"
+)||"auto"
+);
+
+
+/* =====================
+   PAGE
+===================== */
 
 function showPage(id){
 
 document
 .querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+.forEach(p=>{
+p.classList.remove("active");
+});
 
-const page=document.getElementById(id);
+const page=
+document.getElementById(id);
 
 if(page){
 page.classList.add("active");
@@ -743,8 +893,113 @@ window.scrollTo(0,0);
 }
 
 
+/* =====================
+   BOOKS
+===================== */
 
-/* YOUTUBE VIDEO */
+/*
+IMPORTANT:
+
+नीचे दिए PDF filenames को
+तुम्हारे project के books folder
+में रखना है।
+
+अगर actual filename अलग है,
+तो इसी जगह actual filename डालना।
+*/
+
+const books=[
+
+{
+title:"📘 Biology – 30 Years",
+subject:"Biology • NEET",
+pdf:"books/biology-30years.pdf"
+},
+
+{
+title:"📕 MTG Physics – 38 Years",
+subject:"Physics • Class 11 • NEET Hindi Medium",
+pdf:"books/physics-38years.pdf"
+},
+
+{
+title:"📗 MTG Chemistry – 38 Years",
+subject:"Chemistry • Class 11 • NEET Hindi Medium",
+pdf:"books/chemistry-38years.pdf"
+},
+
+{
+title:"📙 MTG Fingertips Chemistry 2026",
+subject:"Chemistry • NEET",
+pdf:"books/fingertips-chemistry-2026.pdf"
+}
+
+];
+
+
+function renderBooks(){
+
+const grid=
+document.getElementById(
+"bookGrid"
+);
+
+grid.innerHTML="";
+
+books.forEach(book=>{
+
+const card=
+document.createElement("div");
+
+card.className="bookcard";
+
+card.innerHTML=`
+
+<div
+class="bookcover"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:55px;
+">
+
+📚
+
+</div>
+
+<h3>
+${escapeHtml(book.title)}
+</h3>
+
+<p>
+${escapeHtml(book.subject)}
+</p>
+
+<a
+class="linkbtn"
+href="${book.pdf}"
+target="_blank"
+rel="noopener">
+
+📖 PDF खोलें
+
+</a>
+
+`;
+
+grid.appendChild(card);
+
+});
+
+}
+
+renderBooks();
+
+
+/* =====================
+   YOUTUBE VIDEO
+===================== */
 
 function getYouTubeId(url){
 
@@ -768,9 +1023,11 @@ return u.searchParams.get("v");
 
 }
 
-const parts=u.pathname.split("/");
+const parts=
+u.pathname.split("/");
 
-const liveIndex=parts.indexOf("live");
+const liveIndex=
+parts.indexOf("live");
 
 if(liveIndex>=0){
 
@@ -778,7 +1035,8 @@ return parts[liveIndex+1];
 
 }
 
-const embedIndex=parts.indexOf("embed");
+const embedIndex=
+parts.indexOf("embed");
 
 if(embedIndex>=0){
 
@@ -795,40 +1053,42 @@ return null;
 }
 
 
-
 function playVideo(){
 
 const url=
-document.getElementById("videoUrl")
-.value
-.trim();
+document.getElementById(
+"videoUrl"
+).value.trim();
 
 const id=getYouTubeId(url);
 
 if(!id){
 
-alert("सही YouTube video/live link डालें।");
+alert(
+"सही YouTube link डालें।"
+);
 
 return;
 
 }
 
-document
-.getElementById("videoPlayer")
-.src=
+document.getElementById(
+"videoPlayer"
+).src=
 "https://www.youtube.com/embed/"
 +
 encodeURIComponent(id);
 
-document
-.getElementById("videoBox")
-.style.display="block";
+document.getElementById(
+"videoBox"
+).style.display="block";
 
 }
 
 
-
-/* TEST */
+/* =====================
+   TEST
+===================== */
 
 const testQuestions=[
 
@@ -860,24 +1120,32 @@ correct:0
 function makeTest(){
 
 const box=
-document.getElementById("testBox");
+document.getElementById(
+"testBox"
+);
 
 box.innerHTML="";
 
 testQuestions.forEach((item,i)=>{
 
-let div=document.createElement("div");
+const div=
+document.createElement("div");
 
 div.className="question";
 
 let html=
-"<b>"+(i+1)+". "+item.q+"</b>";
+"<b>"+
+(i+1)+
+". "+
+escapeHtml(item.q)+
+"</b>";
 
 item.options.forEach((option,j)=>{
 
 html+=`
 
-<label style="display:block;margin:10px 0">
+<label
+style="display:block;margin:10px 0">
 
 <input
 type="radio"
@@ -903,7 +1171,6 @@ box.appendChild(div);
 makeTest();
 
 
-
 function checkTest(){
 
 let score=0;
@@ -926,10 +1193,10 @@ score++;
 
 });
 
-document
-.getElementById("testResult")
-.innerHTML=
-`
+document.getElementById(
+"testResult"
+).innerHTML=`
+
 <div class="question">
 
 <b>
@@ -938,13 +1205,15 @@ ${score}/${testQuestions.length}
 </b>
 
 </div>
+
 `;
 
 }
 
 
-
-/* QUIZ */
+/* =====================
+   QUIZ
+===================== */
 
 const quizQuestions=[
 
@@ -976,24 +1245,32 @@ correct:1
 function makeQuiz(){
 
 const box=
-document.getElementById("quizBox");
+document.getElementById(
+"quizBox"
+);
 
 box.innerHTML="";
 
 quizQuestions.forEach((item,i)=>{
 
-let div=document.createElement("div");
+const div=
+document.createElement("div");
 
 div.className="question";
 
 let html=
-"<b>"+(i+1)+". "+item.q+"</b>";
+"<b>"+
+(i+1)+
+". "+
+escapeHtml(item.q)+
+"</b>";
 
 item.options.forEach((option,j)=>{
 
 html+=`
 
-<label style="display:block;margin:10px 0">
+<label
+style="display:block;margin:10px 0">
 
 <input
 type="radio"
@@ -1019,26 +1296,32 @@ box.appendChild(div);
 makeQuiz();
 
 
-
-/* AI */
+/* =====================
+   AI
+===================== */
 
 async function askAI(){
 
 const question=
-document
-.getElementById("aiQuestion")
-.value
-.trim();
+document.getElementById(
+"aiQuestion"
+).value.trim();
 
 const answerBox=
-document.getElementById("aiAnswer");
+document.getElementById(
+"aiAnswer"
+);
 
 const status=
-document.getElementById("aiStatus");
+document.getElementById(
+"aiStatus"
+);
 
 if(!question){
 
-alert("पहले अपना सवाल लिखें।");
+alert(
+"पहले अपना सवाल लिखें।"
+);
 
 return;
 
@@ -1060,7 +1343,8 @@ await fetch(
 {
 method:"POST",
 headers:{
-"Content-Type":"application/json"
+"Content-Type":
+"application/json"
 },
 body:JSON.stringify({
 message:question
@@ -1083,7 +1367,7 @@ data.error ||
 answerBox.innerHTML=
 "<b>🤖 Mission Lakshya AI:</b><br><br>"+
 escapeHtml(
-data.answer ||
+data.answer||
 "AI ने कोई जवाब नहीं दिया।"
 )
 .replace(/\n/g,"<br>");
@@ -1091,9 +1375,7 @@ data.answer ||
 status.textContent=
 "✅ जवाब तैयार है।";
 
-}
-
-catch(error){
+}catch(error){
 
 console.error(error);
 
@@ -1108,15 +1390,16 @@ status.textContent=
 }
 
 
-
-/* VOICE */
+/* =====================
+   VOICE
+===================== */
 
 let recognition=null;
 
 function startVoice(){
 
 const SpeechRecognition=
-window.SpeechRecognition ||
+window.SpeechRecognition||
 window.webkitSpeechRecognition;
 
 if(!SpeechRecognition){
@@ -1140,34 +1423,32 @@ recognition.interimResults=false;
 
 recognition.onstart=()=>{
 
-document
-.getElementById("aiStatus")
-.textContent=
+document.getElementById(
+"aiStatus"
+).textContent=
 "🎤 सुन रहा हूँ...";
 
 };
 
 recognition.onresult=(event)=>{
 
-const text=
+document.getElementById(
+"aiQuestion"
+).value=
 event.results[0][0].transcript;
 
-document
-.getElementById("aiQuestion")
-.value=text;
-
-document
-.getElementById("aiStatus")
-.textContent=
+document.getElementById(
+"aiStatus"
+).textContent=
 "✅ सवाल मिल गया।";
 
 };
 
 recognition.onerror=()=>{
 
-document
-.getElementById("aiStatus")
-.textContent=
+document.getElementById(
+"aiStatus"
+).textContent=
 "❌ Voice input में समस्या हुई।";
 
 };
@@ -1177,11 +1458,11 @@ recognition.start();
 }
 
 
-
-/* YOUTUBE LIVE */
+/* =====================
+   YOUTUBE LIVE
+===================== */
 
 let currentLiveUrl="";
-
 
 async function loadYouTubeLive(){
 
@@ -1190,10 +1471,11 @@ document.getElementById(
 "youtubeLiveBox"
 );
 
-box.innerHTML=
-"<div class='question'>"+
-"🔄 Live classes खोजी जा रही हैं..."+
-"</div>";
+box.innerHTML=`
+<div class="question">
+🔄 Live classes खोजी जा रही हैं...
+</div>
+`;
 
 try{
 
@@ -1208,27 +1490,25 @@ await response.json();
 if(!response.ok){
 
 throw new Error(
-data.error ||
+data.error||
 "YouTube API error"
 );
 
 }
 
-
 if(
-!data.liveClasses ||
+!data.liveClasses||
 !data.liveClasses.length
 ){
 
-box.innerHTML=
-`
+box.innerHTML=`
 <div class="question">
 
 📺 अभी कोई public live class नहीं मिली।
 
 <br><br>
 
-🔄 थोड़ी देर बाद फिर Refresh करें।
+🔄 थोड़ी देर बाद Refresh करें।
 
 </div>
 `;
@@ -1237,9 +1517,7 @@ return;
 
 }
 
-
 box.innerHTML="";
-
 
 data.liveClasses.forEach(video=>{
 
@@ -1248,12 +1526,12 @@ document.createElement("div");
 
 card.className="question";
 
+if(video.thumbnail){
 
 const img=
 document.createElement("img");
 
-img.src=
-video.thumbnail || "";
+img.src=video.thumbnail;
 
 img.style=
 "width:100%;border-radius:12px";
@@ -1262,6 +1540,7 @@ img.alt="Live class";
 
 card.appendChild(img);
 
+}
 
 const h=
 document.createElement("h3");
@@ -1271,18 +1550,16 @@ h.textContent=
 
 card.appendChild(h);
 
-
 const p=
 document.createElement("p");
 
 p.innerHTML=
 "<b>Channel:</b> "+
 escapeHtml(
-video.channelTitle
+video.channelTitle||""
 );
 
 card.appendChild(p);
-
 
 const button=
 document.createElement("button");
@@ -1294,24 +1571,23 @@ button.onclick=()=>{
 
 playLiveOnWebsite(
 video.videoId,
-video.title
+video.title,
+video.url
 );
 
 };
 
 card.appendChild(button);
 
-
-const youtubeButton=
+const yt=
 document.createElement("button");
 
-youtubeButton.className=
-"secondary";
+yt.className="secondary";
 
-youtubeButton.textContent=
+yt.textContent=
 "▶️ YouTube पर देखें";
 
-youtubeButton.onclick=()=>{
+yt.onclick=()=>{
 
 window.open(
 video.url,
@@ -1321,28 +1597,25 @@ video.url,
 
 };
 
-card.appendChild(youtubeButton);
-
+card.appendChild(yt);
 
 box.appendChild(card);
 
 });
 
-}
-
-catch(error){
+}catch(error){
 
 console.error(error);
 
-box.innerHTML=
-`
+box.innerHTML=`
 <div class="question">
 
-❌ YouTube Live अभी load नहीं हो सकी।
+❌ YouTube Live load नहीं हो सकी।
 
 <br><br>
 
-YOUTUBE_API_KEY और backend check करें।
+YOUTUBE_API_KEY और
+backend check करें।
 
 </div>
 `;
@@ -1352,68 +1625,74 @@ YOUTUBE_API_KEY और backend check करें।
 }
 
 
-
-/* LIVE PLAYER */
+/* =====================
+   LIVE PLAYER + CHAT
+===================== */
 
 function playLiveOnWebsite(
 videoId,
-title
+title,
+url
 ){
 
 currentLiveUrl=
+url||
 "https://www.youtube.com/watch?v="+
 videoId;
 
-
-document
-.getElementById("liveVideoTitle")
-.textContent=
+document.getElementById(
+"liveVideoTitle"
+).textContent=
 "🔴 "+title;
 
-
-document
-.getElementById("youtubeLivePlayer")
-.src=
+document.getElementById(
+"youtubeLivePlayer"
+).src=
 "https://www.youtube.com/embed/"+
 encodeURIComponent(videoId);
 
+const domain=
+location.hostname;
 
-document
-.getElementById("youtubeLiveBox")
-.style.display="none";
+document.getElementById(
+"liveChatFrame"
+).src=
+"https://www.youtube.com/live_chat?v="+
+encodeURIComponent(videoId)+
+"&embed_domain="+
+encodeURIComponent(domain);
 
+document.getElementById(
+"youtubeLiveBox"
+).style.display="none";
 
-document
-.getElementById("youtubePlayerBox")
-.style.display="block";
+document.getElementById(
+"youtubePlayerBox"
+).style.display="block";
 
 }
 
-
-
-/* CLOSE LIVE */
 
 function closeYouTubePlayer(){
 
-document
-.getElementById("youtubeLivePlayer")
-.src="";
+document.getElementById(
+"youtubeLivePlayer"
+).src="";
 
+document.getElementById(
+"liveChatFrame"
+).src="";
 
-document
-.getElementById("youtubePlayerBox")
-.style.display="none";
+document.getElementById(
+"youtubePlayerBox"
+).style.display="none";
 
-
-document
-.getElementById("youtubeLiveBox")
-.style.display="block";
+document.getElementById(
+"youtubeLiveBox"
+).style.display="block";
 
 }
 
-
-
-/* OPEN YOUTUBE */
 
 function openLiveOnYouTube(){
 
@@ -1436,88 +1715,43 @@ currentLiveUrl,
 }
 
 
-
-/* WEBSITES */
+/* =====================
+   WEBSITES
+===================== */
 
 const websites=[
 
-[
-"📚 DeltaStudy",
-"http://DeltaStudy.site"
-],
+["📚 DeltaStudy","http://DeltaStudy.site"],
 
-[
-"📘 Eduzex PW",
-"http://eduzex-pw.pages.dev/"
-],
+["📘 Eduzex PW","http://eduzex-pw.pages.dev/"],
 
-[
-"📚 StudyRays",
-"http://StudyRays.cc"
-],
+["📚 StudyRays","http://StudyRays.cc"],
 
-[
-"🎓 Learntopper",
-"http://Learntopper.in"
-],
+["🎓 Learntopper","http://Learntopper.in"],
 
-[
-"📖 Studyspark",
-"http://Studyspark.pro"
-],
+["📖 Studyspark","http://Studyspark.pro"],
 
-[
-"📝 Studybeepro",
-"http://Studybeepro.site"
-],
+["📝 Studybeepro","http://Studybeepro.site"],
 
-[
-"🐼 StudyPanda",
-"http://StudyPanda.live"
-],
+["🐼 StudyPanda","http://StudyPanda.live"],
 
-[
-"⚡ PWX Study",
-"https://pwxstudy.site/"
-],
+["⚡ PWX Study","https://pwxstudy.site/"],
 
-[
-"🎯 PWThor",
-"https://pwthor.live"
-],
+["🎯 PWThor","https://pwthor.live"],
 
-[
-"📚 Studystark",
-"http://studystark.in"
-],
+["📚 Studystark","http://studystark.in"],
 
-[
-"🚀 PrepProNetwork",
-"https://PrepProNetwork.vercel.app"
-],
+["🚀 PrepProNetwork","https://PrepProNetwork.vercel.app"],
 
-[
-"🔗 Shared Resource",
-"https://share.google/DHeSO9KKuPDPMdutj"
-],
+["🔗 Shared Resource","https://share.google/DHeSO9KKuPDPMdutj"],
 
-[
-"🌐 Learnify",
-"https://learnify.deltaverse.site/"
-],
+["🌐 Learnify","https://learnify.deltaverse.site/"],
 
-[
-"🎓 PW Study Parcham",
-"https://pw.studyparcham.in/#home-view"
-],
+["🎓 PW Study Parcham","https://pw.studyparcham.in/#home-view"],
 
-[
-"📚 AS Multiverse",
-"https://asmultiverse.com/?tab=home"
-]
+["📚 AS Multiverse","https://asmultiverse.com/?tab=home"]
 
 ];
-
 
 
 function renderWebsites(){
@@ -1528,14 +1762,12 @@ document.getElementById(
 );
 
 websites.forEach(
-([name,url],index)=>{
+([name,url])=>{
 
 const card=
 document.createElement("div");
 
-card.className=
-"webcard";
-
+card.className="webcard";
 
 const h=
 document.createElement("h3");
@@ -1544,70 +1776,13 @@ h.textContent=name;
 
 card.appendChild(h);
 
-
-const inside=
-document.createElement("div");
-
-inside.id=
-"site-"+index;
-
-inside.style.display=
-"none";
-
-inside.style.marginTop=
-"10px";
-
-
-const frame=
-document.createElement("iframe");
-
-frame.className="player";
-
-frame.src="about:blank";
-
-frame.loading="lazy";
-
-frame.title=name;
-
-inside.appendChild(frame);
-
-card.appendChild(inside);
-
-
-const open=
+const button=
 document.createElement("button");
 
-open.textContent=
-"🌐 Website में खोलें";
+button.textContent=
+"🌐 नई tab में खोलें";
 
-open.onclick=()=>{
-
-inside.style.display=
-"block";
-
-frame.src=url;
-
-open.style.display=
-"none";
-
-fallback.style.display=
-"inline-block";
-
-};
-
-card.appendChild(open);
-
-
-const fallback=
-document.createElement("button");
-
-fallback.className=
-"secondary";
-
-fallback.textContent=
-"↗️ नई tab में खोलें";
-
-fallback.onclick=()=>{
+button.onclick=()=>{
 
 window.open(
 url,
@@ -1617,7 +1792,7 @@ url,
 
 };
 
-card.appendChild(fallback);
+card.appendChild(button);
 
 grid.appendChild(card);
 
@@ -1628,8 +1803,9 @@ grid.appendChild(card);
 renderWebsites();
 
 
-
-/* ESCAPE HTML */
+/* =====================
+   ESCAPE
+===================== */
 
 function escapeHtml(text){
 
@@ -1637,7 +1813,7 @@ const div=
 document.createElement("div");
 
 div.textContent=
-text || "";
+text||"";
 
 return div.innerHTML;
 
