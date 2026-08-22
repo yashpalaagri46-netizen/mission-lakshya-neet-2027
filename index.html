@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#2563eb">
+<meta name="description" content="Mission Lakshya NEET 2027 - Study, Practice, DPP, Test, YouTube and AI">
 <title>Mission Lakshya NEET 2027</title>
 
 <style>
@@ -12,14 +13,20 @@
  --secondary:#7c3aed;
  --accent:#06b6d4;
  --bg:#f3f6fb;
- --card:#ffffff;
+ --card:#fff;
  --text:#172033;
  --muted:#64748b;
  --border:#e2e8f0;
+ --success:#16a34a;
+ --danger:#ef4444;
  --shadow:0 12px 35px rgba(15,23,42,.10);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+}
 
 html,body{
  width:100%;
@@ -62,15 +69,60 @@ body.orange{
  --accent:#f59e0b;
 }
 
-button,input,textarea,select{font:inherit}
+body.red{
+ --primary:#dc2626;
+ --secondary:#991b1b;
+ --accent:#fb7185;
+}
 
-/* HEADER */
+body.sunset{
+ --primary:#f97316;
+ --secondary:#db2777;
+ --accent:#facc15;
+}
+
+body.cyber{
+ --primary:#06b6d4;
+ --secondary:#8b5cf6;
+ --accent:#22d3ee;
+}
+
+body.rose{
+ --primary:#e11d48;
+ --secondary:#be185d;
+ --accent:#fb7185;
+}
+
+body.emerald{
+ --primary:#059669;
+ --secondary:#047857;
+ --accent:#34d399;
+}
+
+body.midnight{
+ --primary:#4f46e5;
+ --secondary:#1e3a8a;
+ --accent:#38bdf8;
+}
+
+body.gold{
+ --primary:#ca8a04;
+ --secondary:#b45309;
+ --accent:#facc15;
+}
+
+button,input,textarea,select{
+ font:inherit;
+}
+
+/* ================= HEADER ================= */
+
 .topbar{
  position:fixed;
  top:0;
  left:0;
  right:0;
- height:70px;
+ height:72px;
  z-index:1000;
  display:flex;
  align-items:center;
@@ -78,6 +130,7 @@ button,input,textarea,select{font:inherit}
  padding:0 18px;
  background:var(--card);
  border-bottom:1px solid var(--border);
+ backdrop-filter:blur(12px);
 }
 
 .brand{
@@ -88,18 +141,23 @@ button,input,textarea,select{font:inherit}
  font-weight:800;
 }
 
-.logo3d{
- width:46px;
- height:46px;
- border-radius:15px;
- display:grid;
- place-items:center;
- color:white;
- font-size:25px;
+.logoWrap{
+ width:52px;
+ height:52px;
+ border-radius:16px;
+ padding:2px;
  background:linear-gradient(145deg,var(--primary),var(--secondary));
  box-shadow:
  0 7px 0 rgba(0,0,0,.15),
- 0 14px 25px rgba(0,0,0,.15);
+ 0 15px 28px rgba(0,0,0,.18);
+ overflow:hidden;
+}
+
+.logoWrap img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ border-radius:14px;
 }
 
 .actions{
@@ -116,15 +174,22 @@ button,input,textarea,select{font:inherit}
  border-radius:13px;
  cursor:pointer;
  font-size:18px;
+ transition:.2s;
 }
 
-/* SIDEBAR */
+.icon:hover{
+ transform:translateY(-2px);
+ box-shadow:var(--shadow);
+}
+
+/* ================= SIDEBAR ================= */
+
 .sidebar{
  position:fixed;
- top:70px;
+ top:72px;
  left:0;
  bottom:0;
- width:260px;
+ width:265px;
  padding:15px 10px;
  overflow-y:auto;
  background:var(--card);
@@ -150,6 +215,7 @@ button,input,textarea,select{font:inherit}
  text-align:left;
  cursor:pointer;
  font-size:14px;
+ transition:.2s;
 }
 
 .nav:hover,
@@ -157,13 +223,15 @@ button,input,textarea,select{font:inherit}
  background:rgba(37,99,235,.10);
  color:var(--primary);
  font-weight:700;
+ transform:translateX(3px);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
+
 .main{
- margin-left:260px;
- width:calc(100% - 260px);
- padding:92px 24px 40px;
+ margin-left:265px;
+ width:calc(100% - 265px);
+ padding:95px 24px 50px;
 }
 
 .page{
@@ -178,7 +246,7 @@ button,input,textarea,select{font:inherit}
 @keyframes fade{
  from{
   opacity:0;
-  transform:translateY(7px);
+  transform:translateY(8px);
  }
  to{
   opacity:1;
@@ -186,18 +254,21 @@ button,input,textarea,select{font:inherit}
  }
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
  padding:32px;
  border-radius:25px;
  color:white;
  background:
- radial-gradient(circle at 90% 10%,rgba(255,255,255,.25),transparent 30%),
+ radial-gradient(circle at 90% 10%,rgba(255,255,255,.28),transparent 30%),
  linear-gradient(135deg,var(--primary),var(--secondary));
  box-shadow:
  0 8px 0 rgba(0,0,0,.15),
  0 18px 35px rgba(0,0,0,.18);
  margin-bottom:24px;
+ position:relative;
+ overflow:hidden;
 }
 
 .hero h1{
@@ -210,7 +281,20 @@ button,input,textarea,select{font:inherit}
  margin-bottom:20px;
 }
 
-/* GRIDS */
+.heroLogo{
+ width:105px;
+ height:105px;
+ border-radius:25px;
+ object-fit:cover;
+ float:right;
+ margin-left:20px;
+ box-shadow:
+ 0 8px 0 rgba(0,0,0,.2),
+ 0 15px 30px rgba(0,0,0,.25);
+}
+
+/* ================= GRID ================= */
+
 .grid{
  display:grid;
  grid-template-columns:repeat(4,1fr);
@@ -230,7 +314,8 @@ button,input,textarea,select{font:inherit}
  gap:17px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .card{
  background:var(--card);
  border:1px solid var(--border);
@@ -247,14 +332,17 @@ button,input,textarea,select{font:inherit}
 }
 
 .card3d:hover{
- transform:translateY(-6px);
+ transform:translateY(-6px) rotateX(1deg);
 }
 
-/* 3D ICON */
+/* ================= 3D ICON ================= */
+
 .subjectIcon{
  font-size:48px;
  margin-bottom:12px;
- filter:drop-shadow(5px 7px 3px rgba(0,0,0,.25));
+ filter:
+ drop-shadow(4px 5px 1px rgba(0,0,0,.18))
+ drop-shadow(7px 10px 5px rgba(0,0,0,.15));
 }
 
 .websiteIcon{
@@ -263,12 +351,12 @@ button,input,textarea,select{font:inherit}
  border-radius:22px;
  display:grid;
  place-items:center;
- font-size:48px;
+ font-size:46px;
  margin-bottom:15px;
  background:linear-gradient(
-  145deg,
-  rgba(255,255,255,.9),
-  rgba(226,232,240,.55)
+ 145deg,
+ rgba(255,255,255,.95),
+ rgba(226,232,240,.55)
  );
  box-shadow:
  0 8px 0 rgba(0,0,0,.12),
@@ -291,13 +379,14 @@ button,input,textarea,select{font:inherit}
  place-items:center;
  font-size:27px;
  background:linear-gradient(
-  145deg,
-  rgba(37,99,235,.16),
-  rgba(124,58,237,.12)
+ 145deg,
+ rgba(37,99,235,.16),
+ rgba(124,58,237,.12)
  );
  box-shadow:
  0 6px 0 rgba(0,0,0,.10),
  0 12px 22px rgba(0,0,0,.10);
+ filter:drop-shadow(3px 4px 2px rgba(0,0,0,.12));
 }
 
 .value{
@@ -321,6 +410,7 @@ button,input,textarea,select{font:inherit}
  0 5px 0 rgba(0,0,0,.15),
  0 8px 18px rgba(37,99,235,.18);
  transition:.15s;
+ margin:3px;
 }
 
 .btn:hover{
@@ -339,6 +429,14 @@ button,input,textarea,select{font:inherit}
  box-shadow:none;
 }
 
+.btn.success{
+ background:#16a34a;
+}
+
+.btn.danger{
+ background:#dc2626;
+}
+
 .tag{
  display:inline-block;
  padding:5px 9px;
@@ -350,7 +448,8 @@ button,input,textarea,select{font:inherit}
  font-weight:700;
 }
 
-/* WEBSITE CARDS */
+/* ================= WEBSITE ================= */
+
 .website-card{
  cursor:pointer;
  text-decoration:none;
@@ -364,7 +463,8 @@ button,input,textarea,select{font:inherit}
  font-weight:800;
 }
 
-/* VIEWER */
+/* ================= VIEWER ================= */
+
 .viewer{
  display:none;
  position:fixed;
@@ -379,7 +479,7 @@ button,input,textarea,select{font:inherit}
 }
 
 .viewerHeader{
- height:65px;
+ min-height:65px;
  flex-shrink:0;
  display:flex;
  align-items:center;
@@ -404,7 +504,8 @@ button,input,textarea,select{font:inherit}
  background:white;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
+
 .search{
  display:flex;
  align-items:center;
@@ -424,7 +525,8 @@ button,input,textarea,select{font:inherit}
  color:var(--text);
 }
 
-/* PROGRESS */
+/* ================= PROGRESS ================= */
+
 .progress{
  height:8px;
  border-radius:20px;
@@ -439,7 +541,8 @@ button,input,textarea,select{font:inherit}
  background:linear-gradient(90deg,var(--primary),var(--secondary));
 }
 
-/* QUIZ */
+/* ================= QUIZ ================= */
+
 .option{
  width:100%;
  text-align:left;
@@ -450,6 +553,12 @@ button,input,textarea,select{font:inherit}
  background:var(--card);
  color:var(--text);
  cursor:pointer;
+ transition:.2s;
+}
+
+.option:hover{
+ border-color:var(--primary);
+ transform:translateX(3px);
 }
 
 .option.correct{
@@ -462,7 +571,8 @@ button,input,textarea,select{font:inherit}
  border-color:#ef4444;
 }
 
-/* INPUT */
+/* ================= INPUT ================= */
+
 .input{
  width:100%;
  padding:12px;
@@ -474,7 +584,8 @@ button,input,textarea,select{font:inherit}
  margin-top:6px;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
+
 .table{
  width:100%;
  border-collapse:collapse;
@@ -487,7 +598,8 @@ button,input,textarea,select{font:inherit}
  text-align:left;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
+
 .modal{
  display:none;
  position:fixed;
@@ -504,7 +616,7 @@ button,input,textarea,select{font:inherit}
 }
 
 .modalBox{
- width:min(800px,100%);
+ width:min(850px,100%);
  max-height:90vh;
  overflow:auto;
  background:var(--card);
@@ -513,7 +625,8 @@ button,input,textarea,select{font:inherit}
  padding:23px;
 }
 
-/* TOAST */
+/* ================= TOAST ================= */
+
 .toast{
  position:fixed;
  right:18px;
@@ -531,12 +644,59 @@ button,input,textarea,select{font:inherit}
  display:block;
 }
 
-/* MOBILE */
+/* ================= FLAG CARDS ================= */
+
+.flagCard{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ padding:18px;
+ border:1px solid var(--border);
+ border-radius:18px;
+ background:var(--card);
+ box-shadow:var(--shadow);
+}
+
+.flagDot{
+ width:12px;
+ height:12px;
+ border-radius:50%;
+ background:#22c55e;
+ display:inline-block;
+ margin-right:7px;
+}
+
+.numberBig{
+ font-size:32px;
+ font-weight:900;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+ text-align:center;
+ padding:25px 10px;
+ margin-top:30px;
+ color:var(--muted);
+}
+
+.footerLogo{
+ width:65px;
+ height:65px;
+ object-fit:cover;
+ border-radius:18px;
+ margin-bottom:8px;
+}
+
+/* ================= MOBILE ================= */
+
 .mobile{
  display:none;
 }
 
 @media(max-width:1100px){
+
  .grid{
   grid-template-columns:repeat(2,1fr);
  }
@@ -544,6 +704,7 @@ button,input,textarea,select{font:inherit}
  .grid3{
   grid-template-columns:repeat(2,1fr);
  }
+
 }
 
 @media(max-width:800px){
@@ -581,27 +742,45 @@ button,input,textarea,select{font:inherit}
   font-size:27px;
  }
 
+ .heroLogo{
+  width:75px;
+  height:75px;
+ }
+
  .viewerHeader{
-  height:60px;
+  min-height:60px;
  }
 
  .viewer iframe{
   height:calc(100vh - 60px);
  }
+
+ .actions{
+  gap:4px;
+ }
+
+ .actions .icon{
+  width:38px;
+  height:38px;
+ }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header class="topbar">
 
  <div class="brand">
 
   <button class="icon mobile" onclick="toggleMenu()">☰</button>
 
-  <div class="logo3d">🎓</div>
+  <div class="logoWrap">
+   <img src="logo.png" alt="Mission Lakshya Logo">
+  </div>
 
   <span>Mission Lakshya NEET 2027</span>
 
@@ -622,7 +801,8 @@ button,input,textarea,select{font:inherit}
 </header>
 
 
-<!-- SIDEBAR -->
+<!-- ================= SIDEBAR ================= -->
+
 <aside class="sidebar" id="sidebar">
 
  <div class="nav-title">MAIN</div>
@@ -658,7 +838,10 @@ button,input,textarea,select{font:inherit}
   🎥 Video Lectures
  </button>
 
- <!-- NEW PW BATCH -->
+ <button class="nav" onclick="go('youtube',this)">
+  ▶️ YouTube Study
+ </button>
+
  <button class="nav" onclick="go('pwbatch',this)">
   🎓 PW Batch
  </button>
@@ -716,6 +899,10 @@ button,input,textarea,select{font:inherit}
   🏅 Achievements
  </button>
 
+ <button class="nav" onclick="go('flags',this)">
+  🚩 Flags & Visitors
+ </button>
+
  <button class="nav" onclick="go('notifications',this)">
   🔔 Notifications
  </button>
@@ -734,19 +921,23 @@ button,input,textarea,select{font:inherit}
 </aside>
 
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
+
 <main class="main">
 
 
 <!-- HOME -->
+
 <section class="page active" id="home">
 
  <div class="hero">
 
+  <img class="heroLogo" src="logo.png" alt="Logo">
+
   <h1>🎓 Mission Lakshya NEET 2027</h1>
 
   <p>
-   Study • Practice • DPP • Test • AI • Progress
+   Study • Practice • DPP • Test • YouTube • AI • Progress
   </p>
 
   <button class="btn" onclick="go('tests')">
@@ -755,6 +946,10 @@ button,input,textarea,select{font:inherit}
 
   <button class="btn" onclick="go('dpp')">
    📄 Today's DPP
+  </button>
+
+  <button class="btn" onclick="go('youtube')">
+   ▶️ YouTube
   </button>
 
   <button class="btn" onclick="go('pwbatch')">
@@ -784,7 +979,7 @@ button,input,textarea,select{font:inherit}
 
    <div>
     <div class="muted">Accuracy</div>
-    <div class="value">0%</div>
+    <div class="value" id="statAccuracy">0%</div>
    </div>
 
   </div>
@@ -808,7 +1003,7 @@ button,input,textarea,select{font:inherit}
 
    <div>
     <div class="muted">XP</div>
-    <div class="value">0</div>
+    <div class="value" id="xp">0</div>
    </div>
 
   </div>
@@ -835,7 +1030,7 @@ button,input,textarea,select{font:inherit}
     <span style="width:25%"></span>
    </div>
 
-   <button class="btn" onclick="go('questions')">
+   <button class="btn" onclick="startQuiz('Physics')">
     Practice
    </button>
 
@@ -854,7 +1049,7 @@ button,input,textarea,select{font:inherit}
     <span style="width:20%"></span>
    </div>
 
-   <button class="btn" onclick="go('questions')">
+   <button class="btn" onclick="startQuiz('Chemistry')">
     Practice
    </button>
 
@@ -873,7 +1068,7 @@ button,input,textarea,select{font:inherit}
     <span style="width:30%"></span>
    </div>
 
-   <button class="btn" onclick="go('questions')">
+   <button class="btn" onclick="startQuiz('Biology')">
     Practice
    </button>
 
@@ -881,37 +1076,42 @@ button,input,textarea,select{font:inherit}
 
  </div>
 
-</section>
 
+ <div class="card card3d" style="margin-top:20px;text-align:center">
 
-<!-- ==================================================
-     PW BATCH
-=================================================== -->
-<section class="page" id="pwbatch">
+  <img src="logo.png"
+       class="footerLogo"
+       alt="Mission Lakshya">
 
- <div class="header">
+  <h3>🎓 Mission Lakshya NEET 2027</h3>
 
-  <div>
-   <h1>🎓 PW Batch</h1>
+  <p class="muted" style="margin-top:8px">
+   Your Success, Our Mission ❤️
+  </p>
 
-   <p>
-    Study websites — सभी एक ही Mission Lakshya platform के अंदर
-   </p>
-  </div>
+  <strong style="display:block;margin-top:8px">
+   Created by Yashpal Aagri
+  </strong>
 
  </div>
 
+</section>
+
+
+<!-- PW BATCH -->
+
+<section class="page" id="pwbatch">
 
  <div class="hero">
 
-  <h1>🚀 PW Batch Study Hub</h1>
+  <h1>🎓 PW Batch Study Hub</h1>
 
   <p>
-   नीचे दिए गए study platforms को open करके पढ़ाई शुरू करें।
+   सभी study platforms एक ही जगह।
   </p>
 
   <span class="tag" style="background:rgba(255,255,255,.18);color:white">
-   9 Websites
+   9+ Websites
   </span>
 
   <span class="tag" style="background:rgba(255,255,255,.18);color:white">
@@ -927,241 +1127,112 @@ button,input,textarea,select{font:inherit}
 
  <div class="grid3">
 
-
-  <!-- 1 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://studypanda.live/books',
-       '🐼 StudyPanda Books'
-       )">
+       onclick="openWebsite('https://studypanda.live/books','🐼 StudyPanda Books')">
 
    <div class="websiteIcon">🐼</div>
-
    <h2>StudyPanda</h2>
-
-   <p class="muted">
-    Books & Study Material
-   </p>
-
+   <p class="muted">Books & Study Material</p>
    <span class="tag">Books</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 2 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://learnify.deltaverse.site/',
-       '🧠 Learnify'
-       )">
+       onclick="openWebsite('https://learnify.deltaverse.site/','🧠 Learnify')">
 
    <div class="websiteIcon">🧠</div>
-
    <h2>Learnify</h2>
-
-   <p class="muted">
-    Learning Platform
-   </p>
-
+   <p class="muted">Learning Platform</p>
    <span class="tag">Learning</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 3 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://pw.studyparcham.in/#home-view',
-       '🎯 PW StudyParcham'
-       )">
+       onclick="openWebsite('https://pw.studyparcham.in/#home-view','🎯 PW StudyParcham')">
 
    <div class="websiteIcon">🎯</div>
-
    <h2>PW StudyParcham</h2>
-
-   <p class="muted">
-    Study Platform
-   </p>
-
+   <p class="muted">Study Platform</p>
    <span class="tag">PW</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 4 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://asmultiverse.com/?tab=home',
-       '🌌 AS Multiverse'
-       )">
+       onclick="openWebsite('https://asmultiverse.com/?tab=home','🌌 AS Multiverse')">
 
    <div class="websiteIcon">🌌</div>
-
    <h2>AS Multiverse</h2>
-
-   <p class="muted">
-    Educational Platform
-   </p>
-
+   <p class="muted">Educational Platform</p>
    <span class="tag">Study</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 5 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://studyrays.cc',
-       '📗 StudyRays'
-       )">
+       onclick="openWebsite('https://studyrays.cc','📗 StudyRays')">
 
    <div class="websiteIcon">📗</div>
-
    <h2>StudyRays</h2>
-
-   <p class="muted">
-    Study Resources
-   </p>
-
+   <p class="muted">Study Resources</p>
    <span class="tag">Study</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 6 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://learntopper.in',
-       '📙 LearnTopper'
-       )">
+       onclick="openWebsite('https://learntopper.in','📙 LearnTopper')">
 
    <div class="websiteIcon">📙</div>
-
    <h2>LearnTopper</h2>
-
-   <p class="muted">
-    Learning Resources
-   </p>
-
+   <p class="muted">Learning Resources</p>
    <span class="tag">Education</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 7 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://studyspark.pro',
-       '⚡ StudySpark'
-       )">
+       onclick="openWebsite('https://studyspark.pro','⚡ StudySpark')">
 
    <div class="websiteIcon">⚡</div>
-
    <h2>StudySpark</h2>
-
-   <p class="muted">
-    Study Platform
-   </p>
-
+   <p class="muted">Study Platform</p>
    <span class="tag">Study</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 8 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'http://eduzex-pw.pages.dev',
-       '📘 Eduzex PW'
-       )">
+       onclick="openWebsite('http://eduzex-pw.pages.dev','📘 Eduzex PW')">
 
    <div class="websiteIcon">📘</div>
-
    <h2>Eduzex PW</h2>
-
-   <p class="muted">
-    PW Study Resources
-   </p>
-
+   <p class="muted">PW Study Resources</p>
    <span class="tag">PW</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
 
-  <!-- 9 -->
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'http://deltastudy.site',
-       '🌐 DeltaStudy'
-       )">
+       onclick="openWebsite('http://deltastudy.site','🌐 DeltaStudy')">
 
    <div class="websiteIcon">🌐</div>
-
    <h2>DeltaStudy</h2>
-
-   <p class="muted">
-    Educational Resources
-   </p>
-
+   <p class="muted">Educational Resources</p>
    <span class="tag">Study</span>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
-
-
- </div>
-
-
- <div class="card" style="margin-top:20px">
-
-  <h3>ℹ️ Website Viewer</h3>
-
-  <p class="muted" style="margin-top:8px">
-
-   Website cards पर click करने पर platform को
-   Mission Lakshya के full-screen viewer में
-   खोलने की कोशिश की जाएगी।
-
-   अगर कोई external website iframe embedding
-   को block करती है, तो वह इस viewer में load
-   नहीं हो पाएगी।
-
-  </p>
 
  </div>
 
@@ -1169,13 +1240,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- BOOKS -->
+
 <section class="page" id="books">
 
- <div class="header">
-  <div>
-   <h1>📚 Books Library</h1>
-   <p>Hindi + English study books</p>
-  </div>
+ <div class="hero">
+  <h1>📚 Books Library</h1>
+  <p>Hindi + English NEET study books</p>
  </div>
 
  <div class="grid3">
@@ -1185,7 +1255,9 @@ button,input,textarea,select{font:inherit}
    <h2>Physics</h2>
    <p class="muted">NEET Physics Books</p>
    <br>
-   <button class="btn">Open Books</button>
+   <button class="btn" onclick="toast('Physics books यहाँ add करें 📚')">
+    📖 Open Books
+   </button>
   </div>
 
   <div class="card card3d">
@@ -1193,7 +1265,9 @@ button,input,textarea,select{font:inherit}
    <h2>Chemistry</h2>
    <p class="muted">NEET Chemistry Books</p>
    <br>
-   <button class="btn">Open Books</button>
+   <button class="btn" onclick="toast('Chemistry books यहाँ add करें 📚')">
+    📖 Open Books
+   </button>
   </div>
 
   <div class="card card3d">
@@ -1201,7 +1275,9 @@ button,input,textarea,select{font:inherit}
    <h2>Biology</h2>
    <p class="muted">NCERT Biology</p>
    <br>
-   <button class="btn">Open Books</button>
+   <button class="btn" onclick="toast('Biology books यहाँ add करें 📚')">
+    📖 Open Books
+   </button>
   </div>
 
  </div>
@@ -1210,13 +1286,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- NOTES -->
+
 <section class="page" id="notes">
 
- <div class="header">
-  <div>
-   <h1>📖 Notes</h1>
-   <p>Chapter-wise notes</p>
-  </div>
+ <div class="hero">
+  <h1>📖 Notes</h1>
+  <p>Chapter-wise NEET revision notes</p>
  </div>
 
  <div class="grid3">
@@ -1226,7 +1301,7 @@ button,input,textarea,select{font:inherit}
    <h2>Physics</h2>
    <p class="muted">Formula + Revision Notes</p>
    <br>
-   <button class="btn">Open Notes</button>
+   <button class="btn">📖 Open Notes</button>
   </div>
 
   <div class="card card3d">
@@ -1234,7 +1309,7 @@ button,input,textarea,select{font:inherit}
    <h2>Chemistry</h2>
    <p class="muted">Short Notes</p>
    <br>
-   <button class="btn">Open Notes</button>
+   <button class="btn">📖 Open Notes</button>
   </div>
 
   <div class="card card3d">
@@ -1242,7 +1317,7 @@ button,input,textarea,select{font:inherit}
    <h2>Biology</h2>
    <p class="muted">NCERT Notes</p>
    <br>
-   <button class="btn">Open Notes</button>
+   <button class="btn">📖 Open Notes</button>
   </div>
 
  </div>
@@ -1251,13 +1326,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- VIDEOS -->
+
 <section class="page" id="videos">
 
- <div class="header">
-  <div>
-   <h1>🎥 Video Lectures</h1>
-   <p>NEET video learning</p>
-  </div>
+ <div class="hero">
+  <h1>🎥 Video Lectures</h1>
+  <p>NEET Physics • Chemistry • Biology</p>
  </div>
 
  <div class="grid3">
@@ -1268,10 +1342,7 @@ button,input,textarea,select{font:inherit}
    <p class="muted">NEET Physics Lectures</p>
    <br>
    <button class="btn"
-    onclick="openWebsite(
-    'https://www.youtube.com/results?search_query=NEET+Physics',
-    '⚛️ NEET Physics'
-    )">
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Physics','⚛️ NEET Physics YouTube')">
     ▶️ Watch
    </button>
   </div>
@@ -1282,10 +1353,7 @@ button,input,textarea,select{font:inherit}
    <p class="muted">NEET Chemistry Lectures</p>
    <br>
    <button class="btn"
-    onclick="openWebsite(
-    'https://www.youtube.com/results?search_query=NEET+Chemistry',
-    '🧪 NEET Chemistry'
-    )">
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Chemistry','🧪 NEET Chemistry YouTube')">
     ▶️ Watch
    </button>
   </div>
@@ -1296,10 +1364,7 @@ button,input,textarea,select{font:inherit}
    <p class="muted">NEET Biology Lectures</p>
    <br>
    <button class="btn"
-    onclick="openWebsite(
-    'https://www.youtube.com/results?search_query=NEET+Biology',
-    '🧬 NEET Biology'
-    )">
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Biology','🧬 NEET Biology YouTube')">
     ▶️ Watch
    </button>
   </div>
@@ -1309,14 +1374,95 @@ button,input,textarea,select{font:inherit}
 </section>
 
 
-<!-- QUESTION BANK -->
+<!-- YOUTUBE -->
+
+<section class="page" id="youtube">
+
+ <div class="hero">
+  <h1>▶️ YouTube Study Hub</h1>
+  <p>NEET के लिए video lectures और live study खोजें</p>
+ </div>
+
+ <div class="grid3">
+
+  <div class="card card3d">
+   <div class="websiteIcon">🔴</div>
+   <h2>NEET Live Classes</h2>
+   <p class="muted">Current NEET live classes खोजें</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+live+class','🔴 NEET Live Classes')">
+    ▶️ Open YouTube
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="websiteIcon">⚛️</div>
+   <h2>Physics</h2>
+   <p class="muted">NEET Physics lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Physics+lecture','⚛️ Physics')">
+    ▶️ Watch
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="websiteIcon">🧪</div>
+   <h2>Chemistry</h2>
+   <p class="muted">NEET Chemistry lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Chemistry+lecture','🧪 Chemistry')">
+    ▶️ Watch
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="websiteIcon">🧬</div>
+   <h2>Biology</h2>
+   <p class="muted">NEET Biology lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+Biology+lecture','🧬 Biology')">
+    ▶️ Watch
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="websiteIcon">📚</div>
+   <h2>NCERT Revision</h2>
+   <p class="muted">NCERT based revision videos</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NCERT+NEET+revision','📚 NCERT Revision')">
+    ▶️ Watch
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="websiteIcon">🎯</div>
+   <h2>NEET 2027</h2>
+   <p class="muted">NEET 2027 preparation</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite('https://www.youtube.com/results?search_query=NEET+2027+preparation','🎯 NEET 2027')">
+    ▶️ Watch
+   </button>
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- QUESTIONS -->
+
 <section class="page" id="questions">
 
- <div class="header">
-  <div>
-   <h1>📝 Question Bank</h1>
-   <p>Chapter-wise NEET questions</p>
-  </div>
+ <div class="hero">
+  <h1>📝 Question Bank</h1>
+  <p>Chapter-wise NEET questions</p>
  </div>
 
  <div class="grid3">
@@ -1357,13 +1503,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- QUIZ -->
+
 <section class="page" id="quiz">
 
- <div class="header">
-  <div>
-   <h1>🧠 Quiz</h1>
-   <p>Instant answer + explanation</p>
-  </div>
+ <div class="hero">
+  <h1>🧠 NEET Quiz</h1>
+  <p>Instant answer + explanation</p>
  </div>
 
  <div class="card">
@@ -1375,11 +1520,11 @@ button,input,textarea,select{font:inherit}
    <h2>NEET Practice Quiz</h2>
 
    <p class="muted" style="margin:10px 0 20px">
-    Question Bank से questions load होंगे।
+    Subject चुनकर practice शुरू करें।
    </p>
 
    <button class="btn" onclick="startQuiz()">
-    Start Quiz
+    🚀 Start Quiz
    </button>
 
   </div>
@@ -1410,13 +1555,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- DPP -->
+
 <section class="page" id="dpp">
 
- <div class="header">
-  <div>
-   <h1>📄 DPP Center</h1>
-   <p>Daily Practice Problems</p>
-  </div>
+ <div class="hero">
+  <h1>📄 DPP Center</h1>
+  <p>Daily Practice Problems</p>
  </div>
 
  <div class="grid3">
@@ -1428,9 +1572,8 @@ button,input,textarea,select{font:inherit}
    <br>
    <span class="tag">30 Questions</span>
    <br><br>
-   <button class="btn"
-    onclick="startDPP('Physics')">
-    Start DPP
+   <button class="btn" onclick="startDPP('Physics')">
+    🚀 Start DPP
    </button>
   </div>
 
@@ -1441,9 +1584,8 @@ button,input,textarea,select{font:inherit}
    <br>
    <span class="tag">30 Questions</span>
    <br><br>
-   <button class="btn"
-    onclick="startDPP('Chemistry')">
-    Start DPP
+   <button class="btn" onclick="startDPP('Chemistry')">
+    🚀 Start DPP
    </button>
   </div>
 
@@ -1454,9 +1596,8 @@ button,input,textarea,select{font:inherit}
    <br>
    <span class="tag">30 Questions</span>
    <br><br>
-   <button class="btn"
-    onclick="startDPP('Biology')">
-    Start DPP
+   <button class="btn" onclick="startDPP('Biology')">
+    🚀 Start DPP
    </button>
   </div>
 
@@ -1466,13 +1607,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- TESTS -->
+
 <section class="page" id="tests">
 
- <div class="header">
-  <div>
-   <h1>🏆 Test Center</h1>
-   <p>NEET test system</p>
-  </div>
+ <div class="hero">
+  <h1>🏆 Test Center</h1>
+  <p>NEET test system</p>
  </div>
 
  <div class="grid3">
@@ -1484,7 +1624,7 @@ button,input,textarea,select{font:inherit}
    <br>
    <button class="btn"
     onclick="startTest('Chapter Test',300)">
-    Start
+    🚀 Start
    </button>
   </div>
 
@@ -1495,7 +1635,7 @@ button,input,textarea,select{font:inherit}
    <br>
    <button class="btn"
     onclick="startTest('Subject Test',100)">
-    Start
+    🚀 Start
    </button>
   </div>
 
@@ -1506,7 +1646,47 @@ button,input,textarea,select{font:inherit}
    <br>
    <button class="btn"
     onclick="startTest('NEET Mock Test',200)">
-    Start
+    🚀 Start
+   </button>
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- PYQ -->
+
+<section class="page" id="pyq">
+
+ <div class="hero">
+  <h1>📜 NEET PYQ</h1>
+  <p>Previous Year Questions practice</p>
+ </div>
+
+ <div class="grid3">
+
+  <div class="card card3d">
+   <div class="subjectIcon">⚛️</div>
+   <h2>Physics PYQ</h2>
+   <button class="btn" onclick="startQuiz('Physics')">
+    📝 Practice
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🧪</div>
+   <h2>Chemistry PYQ</h2>
+   <button class="btn" onclick="startQuiz('Chemistry')">
+    📝 Practice
+   </button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🧬</div>
+   <h2>Biology PYQ</h2>
+   <button class="btn" onclick="startQuiz('Biology')">
+    📝 Practice
    </button>
   </div>
 
@@ -1516,13 +1696,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- AI -->
+
 <section class="page" id="ai">
 
- <div class="header">
-  <div>
-   <h1>🤖 AI Doubt Solver</h1>
-   <p>Physics • Chemistry • Biology</p>
-  </div>
+ <div class="hero">
+  <h1>🤖 AI Doubt Solver</h1>
+  <p>Physics • Chemistry • Biology</p>
  </div>
 
  <div class="card">
@@ -1534,7 +1713,7 @@ button,input,textarea,select{font:inherit}
    placeholder="अपना NEET question लिखें...">
   </textarea>
 
-  <br><br>
+  <br>
 
   <button class="btn" onclick="askAI()">
    🤖 Ask AI
@@ -1548,33 +1727,36 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- ANALYTICS -->
+
 <section class="page" id="analytics">
 
- <div class="header">
-  <div>
-   <h1>📊 Analytics</h1>
-   <p>Preparation progress</p>
-  </div>
+ <div class="hero">
+  <h1>📊 Analytics</h1>
+  <p>आपकी preparation progress</p>
  </div>
 
  <div class="grid">
 
-  <div class="card">
+  <div class="card card3d">
+   <div class="subjectIcon">📝</div>
    <h3>Questions</h3>
    <div class="value" id="aQ">0</div>
   </div>
 
-  <div class="card">
+  <div class="card card3d">
+   <div class="subjectIcon">🎯</div>
    <h3>Accuracy</h3>
-   <div class="value">0%</div>
+   <div class="value" id="aAccuracy">0%</div>
   </div>
 
-  <div class="card">
+  <div class="card card3d">
+   <div class="subjectIcon">🏆</div>
    <h3>Tests</h3>
-   <div class="value">0</div>
+   <div class="value" id="testCount">0</div>
   </div>
 
-  <div class="card">
+  <div class="card card3d">
+   <div class="subjectIcon">⏱️</div>
    <h3>Study Time</h3>
    <div class="value">0h</div>
   </div>
@@ -1585,13 +1767,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- PLANNER -->
+
 <section class="page" id="planner">
 
- <div class="header">
-  <div>
-   <h1>🗓️ Study Planner</h1>
-   <p>Daily study plan</p>
-  </div>
+ <div class="hero">
+  <h1>🗓️ Study Planner</h1>
+  <p>अपना daily study target बनाइए</p>
  </div>
 
  <div class="card">
@@ -1608,6 +1789,7 @@ button,input,textarea,select{font:inherit}
   <label>Study Hours</label>
 
   <input
+   id="studyHours"
    class="input"
    type="number"
    placeholder="Hours">
@@ -1615,9 +1797,11 @@ button,input,textarea,select{font:inherit}
   <br><br>
 
   <button class="btn"
-   onclick="toast('Study plan saved ✅')">
-   Save Plan
+   onclick="savePlan()">
+   💾 Save Plan
   </button>
+
+  <div id="savedPlan" style="margin-top:18px"></div>
 
  </div>
 
@@ -1625,64 +1809,73 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- WEBSITES -->
+
 <section class="page" id="websites">
 
- <div class="header">
-  <div>
-   <h1>🌐 Study Websites</h1>
-   <p>Official and useful resources</p>
-  </div>
+ <div class="hero">
+  <h1>🌐 Study Websites</h1>
+  <p>Useful educational resources</p>
  </div>
 
  <div class="grid3">
 
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://ncert.nic.in/',
-       '📚 NCERT'
-       )">
+   onclick="openWebsite('https://ncert.nic.in/','📚 NCERT')">
 
    <div class="websiteIcon">📚</div>
    <h2>NCERT</h2>
    <p class="muted">Official NCERT</p>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
-
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://neet.nta.nic.in/',
-       '🏛️ NEET Official'
-       )">
+   onclick="openWebsite('https://neet.nta.nic.in/','🏛️ NEET Official')">
 
    <div class="websiteIcon">🏛️</div>
    <h2>NEET Official</h2>
    <p class="muted">NTA NEET Portal</p>
-
-   <div class="open-label">
-    Open inside website →
-   </div>
+   <div class="open-label">Open →</div>
 
   </div>
 
-
   <div class="card card3d website-card"
-       onclick="openWebsite(
-       'https://www.nta.ac.in/',
-       '🏛️ NTA'
-       )">
+   onclick="openWebsite('https://www.nta.ac.in/','🏛️ NTA')">
 
    <div class="websiteIcon">🏛️</div>
    <h2>NTA</h2>
    <p class="muted">National Testing Agency</p>
+   <div class="open-label">Open →</div>
 
-   <div class="open-label">
-    Open inside website →
-   </div>
+  </div>
+
+  <div class="card card3d website-card"
+   onclick="openWebsite('https://www.youtube.com/','▶️ YouTube')">
+
+   <div class="websiteIcon">▶️</div>
+   <h2>YouTube</h2>
+   <p class="muted">Video learning</p>
+   <div class="open-label">Open →</div>
+
+  </div>
+
+  <div class="card card3d website-card"
+   onclick="openWebsite('https://studypanda.live/books','🐼 StudyPanda')">
+
+   <div class="websiteIcon">🐼</div>
+   <h2>StudyPanda</h2>
+   <p class="muted">Books</p>
+   <div class="open-label">Open →</div>
+
+  </div>
+
+  <div class="card card3d website-card"
+   onclick="openWebsite('https://learnify.deltaverse.site/','🧠 Learnify')">
+
+   <div class="websiteIcon">🧠</div>
+   <h2>Learnify</h2>
+   <p class="muted">Learning</p>
+   <div class="open-label">Open →</div>
 
   </div>
 
@@ -1692,13 +1885,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- THEMES -->
+
 <section class="page" id="themes">
 
- <div class="header">
-  <div>
-   <h1>🎨 Themes</h1>
-   <p>Website का look बदलें</p>
-  </div>
+ <div class="hero">
+  <h1>🎨 Themes</h1>
+  <p>Website का पूरा look बदलें</p>
  </div>
 
  <div class="grid3">
@@ -1706,59 +1898,80 @@ button,input,textarea,select{font:inherit}
   <div class="card card3d">
    <div class="subjectIcon">🔵</div>
    <h3>Blue</h3>
-   <br>
-   <button class="btn"
-    onclick="theme('default')">
-    Apply
-   </button>
+   <button class="btn" onclick="theme('default')">Apply</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟣</div>
    <h3>Purple</h3>
-   <br>
-   <button class="btn"
-    onclick="theme('purple')">
-    Apply
-   </button>
+   <button class="btn" onclick="theme('purple')">Apply</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟢</div>
    <h3>Green</h3>
-   <br>
-   <button class="btn"
-    onclick="theme('green')">
-    Apply
-   </button>
+   <button class="btn" onclick="theme('green')">Apply</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🌊</div>
    <h3>Ocean</h3>
-   <br>
-   <button class="btn"
-    onclick="theme('ocean')">
-    Apply
-   </button>
+   <button class="btn" onclick="theme('ocean')">Apply</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟠</div>
    <h3>Orange</h3>
-   <br>
-   <button class="btn"
-    onclick="theme('orange')">
-    Apply
-   </button>
+   <button class="btn" onclick="theme('orange')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🔴</div>
+   <h3>Red</h3>
+   <button class="btn" onclick="theme('red')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🌅</div>
+   <h3>Sunset</h3>
+   <button class="btn" onclick="theme('sunset')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">⚡</div>
+   <h3>Cyber</h3>
+   <button class="btn" onclick="theme('cyber')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🌹</div>
+   <h3>Rose</h3>
+   <button class="btn" onclick="theme('rose')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">💚</div>
+   <h3>Emerald</h3>
+   <button class="btn" onclick="theme('emerald')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🌌</div>
+   <h3>Midnight</h3>
+   <button class="btn" onclick="theme('midnight')">Apply</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🟡</div>
+   <h3>Gold</h3>
+   <button class="btn" onclick="theme('gold')">Apply</button>
   </div>
 
  </div>
 
- <div class="card" style="margin-top:18px">
+ <div class="card" style="margin-top:18px;text-align:center">
 
-  <button class="btn"
-   onclick="darkMode()">
+  <button class="btn" onclick="darkMode()">
    🌙 Dark / ☀️ Light
   </button>
 
@@ -1768,13 +1981,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- GAMIFICATION -->
+
 <section class="page" id="gamification">
 
- <div class="header">
-  <div>
-   <h1>🏅 Achievements</h1>
-   <p>XP • Badges • Streak</p>
-  </div>
+ <div class="hero">
+  <h1>🏅 Achievements</h1>
+  <p>XP • Badges • Streak</p>
  </div>
 
  <div class="grid3">
@@ -1802,18 +2014,110 @@ button,input,textarea,select{font:inherit}
 </section>
 
 
+<!-- FLAGS -->
+
+<section class="page" id="flags">
+
+ <div class="hero">
+  <h1>🚩 Flags & Visitors</h1>
+  <p>Feature flags और visitor dashboard</p>
+ </div>
+
+ <div class="grid">
+
+  <div class="card card3d">
+   <div class="subjectIcon">🚩</div>
+   <div class="muted">Flags</div>
+   <div class="numberBig" id="flagTotal">0</div>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">👀</div>
+   <div class="muted">Visitors</div>
+   <div class="numberBig" id="visitorTotal">0</div>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">📊</div>
+   <div class="muted">Total</div>
+   <div class="numberBig" id="totalViews">0</div>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🚫</div>
+   <div class="muted">No Flags</div>
+   <div class="numberBig">0</div>
+  </div>
+
+ </div>
+
+
+ <div class="card" style="margin-top:18px">
+
+  <h2>🚩 Feature Flags</h2>
+
+  <br>
+
+  <div class="flagCard">
+   <div>
+    <span class="flagDot"></span>
+    YouTube Study Hub
+   </div>
+   <strong>ON</strong>
+  </div>
+
+  <br>
+
+  <div class="flagCard">
+   <div>
+    <span class="flagDot"></span>
+    PW Batch
+   </div>
+   <strong>ON</strong>
+  </div>
+
+  <br>
+
+  <div class="flagCard">
+   <div>
+    <span class="flagDot"></span>
+    AI Doubt Solver
+   </div>
+   <strong>ON</strong>
+  </div>
+
+  <br>
+
+  <div class="flagCard">
+   <div>
+    <span class="flagDot"></span>
+    New Themes
+   </div>
+   <strong>ON</strong>
+  </div>
+
+  <br>
+
+  <p class="muted">
+   ℹ️ अभी visitor count इस browser में local demo tracking से चल रहा है।
+   सभी users का real global data देखने के लिए backend/analytics जोड़ना होगा।
+  </p>
+
+ </div>
+
+</section>
+
+
 <!-- NOTIFICATIONS -->
+
 <section class="page" id="notifications">
 
- <div class="header">
-  <div>
-   <h1>🔔 Notifications</h1>
-   <p>Study updates</p>
-  </div>
+ <div class="hero">
+  <h1>🔔 Notifications</h1>
+  <p>Study updates</p>
  </div>
 
  <div class="card">
-
   <h3>📢 Mission Lakshya NEET 2027</h3>
 
   <p class="muted" style="margin-top:8px">
@@ -1826,20 +2130,45 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- PROFILE -->
+
 <section class="page" id="profile">
 
- <div class="header">
-  <div>
-   <h1>👤 Student Profile</h1>
-   <p>Student information</p>
-  </div>
+ <div class="hero">
+  <img class="heroLogo" src="logo.png" alt="Logo">
+  <h1>👤 Student Profile</h1>
+  <p>Mission Lakshya Student</p>
  </div>
 
  <div class="card">
 
+  <div style="text-align:center">
+
+   <img src="logo.png"
+        style="
+        width:120px;
+        height:120px;
+        object-fit:cover;
+        border-radius:30px;
+        box-shadow:0 8px 0 rgba(0,0,0,.15);
+        "
+        alt="Logo">
+
+   <h2 style="margin-top:15px">
+    Yashpal Aagri
+   </h2>
+
+   <p class="muted">
+    Mission Lakshya NEET 2027
+   </p>
+
+  </div>
+
+  <br>
+
   <label>Name</label>
 
   <input
+   id="profileName"
    class="input"
    value="Yashpal Aagri">
 
@@ -1848,14 +2177,15 @@ button,input,textarea,select{font:inherit}
   <label>Target</label>
 
   <input
+   id="profileTarget"
    class="input"
    value="NEET 2027">
 
   <br><br>
 
   <button class="btn"
-   onclick="toast('Profile saved ✅')">
-   Save Profile
+   onclick="saveProfile()">
+   💾 Save Profile
   </button>
 
  </div>
@@ -1864,13 +2194,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- SEARCH -->
+
 <section class="page" id="search">
 
- <div class="header">
-  <div>
-   <h1>🔍 Global Search</h1>
-   <p>Search resources</p>
-  </div>
+ <div class="hero">
+  <h1>🔍 Global Search</h1>
+  <p>Questions और study resources खोजें</p>
  </div>
 
  <div class="search">
@@ -1892,30 +2221,34 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- FAVORITES -->
+
 <section class="page" id="favorites">
 
- <div class="header">
-  <div>
-   <h1>⭐ Favorites</h1>
-   <p>Saved resources</p>
-  </div>
+ <div class="hero">
+  <h1>⭐ Favorites</h1>
+  <p>Saved resources</p>
  </div>
 
  <div class="card">
+
   <h3>⭐ अभी कोई favorite नहीं है</h3>
+
+  <p class="muted" style="margin-top:10px">
+   Future version में resources को यहाँ save किया जा सकता है।
+  </p>
+
  </div>
 
 </section>
 
 
 <!-- SUPPORT -->
+
 <section class="page" id="support">
 
- <div class="header">
-  <div>
-   <h1>📞 Support</h1>
-   <p>Help and feedback</p>
-  </div>
+ <div class="hero">
+  <h1>📞 Support</h1>
+  <p>Help and feedback</p>
  </div>
 
  <div class="grid3">
@@ -1924,21 +2257,28 @@ button,input,textarea,select{font:inherit}
    <div class="subjectIcon">❓</div>
    <h3>FAQ</h3>
    <br>
-   <button class="btn">Open</button>
+   <button class="btn" onclick="openInfo('❓ FAQ',
+   '<p>Website के study sections से पढ़ाई शुरू करें।</p>')">
+    Open
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">💬</div>
    <h3>Feedback</h3>
    <br>
-   <button class="btn">Send</button>
+   <button class="btn" onclick="toast('Feedback system जल्द add किया जा सकता है 💬')">
+    Send
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🐞</div>
    <h3>Report Problem</h3>
    <br>
-   <button class="btn">Report</button>
+   <button class="btn" onclick="toast('Problem reporting system तैयार है 🐞')">
+    Report
+   </button>
   </div>
 
  </div>
@@ -1947,13 +2287,12 @@ button,input,textarea,select{font:inherit}
 
 
 <!-- ADMIN -->
+
 <section class="page" id="admin">
 
- <div class="header">
-  <div>
-   <h1>🛠️ Admin Panel</h1>
-   <p>Content management</p>
-  </div>
+ <div class="hero">
+  <h1>🛠️ Admin Panel</h1>
+  <p>Mission Lakshya content management</p>
  </div>
 
  <div class="grid3">
@@ -1962,22 +2301,21 @@ button,input,textarea,select{font:inherit}
    <div class="subjectIcon">📚</div>
    <h3>Books</h3>
    <br>
-   <button class="btn">Manage</button>
+   <button class="btn" onclick="go('books')">Manage</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🎥</div>
    <h3>Videos</h3>
    <br>
-   <button class="btn">Manage</button>
+   <button class="btn" onclick="go('videos')">Manage</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">📝</div>
    <h3>Questions</h3>
    <br>
-   <button class="btn"
-    onclick="addDemoQuestion()">
+   <button class="btn" onclick="addDemoQuestion()">
     Add Question
    </button>
   </div>
@@ -1986,8 +2324,7 @@ button,input,textarea,select{font:inherit}
    <div class="subjectIcon">📄</div>
    <h3>DPP</h3>
    <br>
-   <button class="btn"
-    onclick="go('dpp')">
+   <button class="btn" onclick="go('dpp')">
     Manage
    </button>
   </div>
@@ -1996,8 +2333,7 @@ button,input,textarea,select{font:inherit}
    <div class="subjectIcon">🏆</div>
    <h3>Tests</h3>
    <br>
-   <button class="btn"
-    onclick="go('tests')">
+   <button class="btn" onclick="go('tests')">
     Manage
    </button>
   </div>
@@ -2006,8 +2342,7 @@ button,input,textarea,select{font:inherit}
    <div class="subjectIcon">🎓</div>
    <h3>PW Batch</h3>
    <br>
-   <button class="btn"
-    onclick="go('pwbatch')">
+   <button class="btn" onclick="go('pwbatch')">
     Manage
    </button>
   </div>
@@ -2016,12 +2351,33 @@ button,input,textarea,select{font:inherit}
 
 </section>
 
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+ <img src="logo.png"
+      class="footerLogo"
+      alt="Mission Lakshya Logo">
+
+ <div>
+  🎓 <strong>Mission Lakshya NEET 2027</strong>
+ </div>
+
+ <div style="margin-top:6px">
+  Created by <strong>Yashpal Aagri</strong> ❤️
+ </div>
+
+ <div style="margin-top:6px;font-size:12px">
+  Study • Practice • Success
+ </div>
+
+</footer>
+
 </main>
 
 
-<!-- ==================================================
-     FULL SCREEN WEBSITE VIEWER
-=================================================== -->
+<!-- ================= WEBSITE VIEWER ================= -->
 
 <div class="viewer" id="websiteViewer">
 
@@ -2032,14 +2388,18 @@ button,input,textarea,select{font:inherit}
    ← Back
   </button>
 
-  <div class="viewerTitle"
-       id="websiteTitle">
+  <div class="viewerTitle" id="websiteTitle">
    Website
   </div>
 
   <button class="btn"
+   onclick="openCurrentExternal()">
+   ↗️ External
+  </button>
+
+  <button class="btn"
    onclick="reloadWebsite()">
-   🔄 Reload
+   🔄
   </button>
 
  </div>
@@ -2047,14 +2407,15 @@ button,input,textarea,select{font:inherit}
  <iframe
    id="websiteFrame"
    src=""
-   title="Study Website Viewer"
+   title="Mission Lakshya Website Viewer"
    allowfullscreen>
  </iframe>
 
 </div>
 
 
-<!-- MODAL -->
+<!-- ================= MODAL ================= -->
+
 <div class="modal" id="modal">
 
  <div class="modalBox">
@@ -2075,25 +2436,23 @@ button,input,textarea,select{font:inherit}
 
   </div>
 
-  <div
-   id="modalBody"
-   style="margin-top:18px">
-  </div>
+  <div id="modalBody" style="margin-top:18px"></div>
 
  </div>
 
 </div>
 
 
-<!-- TOAST -->
+<!-- ================= TOAST ================= -->
+
 <div class="toast" id="toast"></div>
 
 
 <script>
 
-/* ==========================================
+/* =====================================================
    QUESTION DATABASE
-========================================== */
+===================================================== */
 
 const questionBank=[
 
@@ -2161,14 +2520,69 @@ const questionBank=[
   options:["Ribosome","Nucleus","Golgi body","Lysosome"],
   answer:1,
   explanation:"Nucleus cell activities को regulate करता है।"
+ },
+
+ {
+  id:7,
+  subject:"Physics",
+  chapter:"Work Energy Power",
+  difficulty:"Easy",
+  q:"Power की SI unit क्या है?",
+  options:["Joule","Newton","Watt","Pascal"],
+  answer:2,
+  explanation:"Power की SI unit Watt है।"
+ },
+
+ {
+  id:8,
+  subject:"Chemistry",
+  chapter:"Periodic Table",
+  difficulty:"Easy",
+  q:"Periodic table में elements को किस आधार पर arrange किया जाता है?",
+  options:["Atomic number","Mass only","Colour","Density"],
+  answer:0,
+  explanation:"Modern periodic table atomic number पर आधारित है।"
+ },
+
+ {
+  id:9,
+  subject:"Biology",
+  chapter:"Plant Physiology",
+  difficulty:"Easy",
+  q:"Photosynthesis में मुख्य pigment कौन सा है?",
+  options:["Haemoglobin","Chlorophyll","Melanin","Keratin"],
+  answer:1,
+  explanation:"Photosynthesis में chlorophyll प्रमुख pigment है।"
  }
 
 ];
 
 
-/* ==========================================
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+let quizQuestions=[];
+let current=0;
+let score=0;
+let questionsAttempted=
+ Number(localStorage.getItem("questionsAttempted")||0);
+
+let correctAnswers=
+ Number(localStorage.getItem("correctAnswers")||0);
+
+let testCount=
+ Number(localStorage.getItem("testCount")||0);
+
+let xp=
+ Number(localStorage.getItem("xp")||0);
+
+let currentWebsite="";
+
+
+/* =====================================================
    NAVIGATION
-========================================== */
+===================================================== */
 
 function go(id,button){
 
@@ -2211,24 +2625,25 @@ function toggleMenu(){
 }
 
 
-/* ==========================================
+/* =====================================================
    WEBSITE VIEWER
-========================================== */
+===================================================== */
 
 function openWebsite(url,title){
 
- const viewer=
-  document.getElementById("websiteViewer");
+ currentWebsite=url;
 
- const frame=
-  document.getElementById("websiteFrame");
-
- document.getElementById("websiteTitle")
+ document
+  .getElementById("websiteTitle")
   .textContent=title;
 
- frame.src=url;
+ document
+  .getElementById("websiteFrame")
+  .src=url;
 
- viewer.classList.add("active");
+ document
+  .getElementById("websiteViewer")
+  .classList.add("active");
 
  document.body.style.overflow="hidden";
 
@@ -2237,15 +2652,13 @@ function openWebsite(url,title){
 
 function closeWebsite(){
 
- const viewer=
-  document.getElementById("websiteViewer");
+ document
+  .getElementById("websiteFrame")
+  .src="";
 
- const frame=
-  document.getElementById("websiteFrame");
-
- frame.src="";
-
- viewer.classList.remove("active");
+ document
+  .getElementById("websiteViewer")
+  .classList.remove("active");
 
  document.body.style.overflow="";
 
@@ -2257,18 +2670,29 @@ function reloadWebsite(){
  const frame=
   document.getElementById("websiteFrame");
 
- if(frame.src){
-
-  frame.src=frame.src;
-
+ if(currentWebsite){
+  frame.src=currentWebsite;
  }
 
 }
 
 
-/* ==========================================
+function openCurrentExternal(){
+
+ if(currentWebsite){
+  window.open(
+   currentWebsite,
+   "_blank",
+   "noopener,noreferrer"
+  );
+ }
+
+}
+
+
+/* =====================================================
    DARK MODE
-========================================== */
+===================================================== */
 
 function darkMode(){
 
@@ -2282,18 +2706,28 @@ function darkMode(){
 }
 
 
-/* ==========================================
+/* =====================================================
    THEMES
-========================================== */
+===================================================== */
+
+const allThemes=[
+ "purple",
+ "green",
+ "ocean",
+ "orange",
+ "red",
+ "sunset",
+ "cyber",
+ "rose",
+ "emerald",
+ "midnight",
+ "gold"
+];
+
 
 function theme(name){
 
- document.body.classList.remove(
-  "purple",
-  "green",
-  "ocean",
-  "orange"
- );
+ document.body.classList.remove(...allThemes);
 
  if(name!=="default"){
   document.body.classList.add(name);
@@ -2308,9 +2742,7 @@ function theme(name){
 
 window.addEventListener("load",()=>{
 
- if(
-  localStorage.getItem("dark")==="true"
- ){
+ if(localStorage.getItem("dark")==="true"){
   document.body.classList.add("dark");
  }
 
@@ -2320,18 +2752,20 @@ window.addEventListener("load",()=>{
   document.body.classList.add(t);
  }
 
+ updateStats();
+
+ updateVisitors();
+
+ loadPlan();
+
+ loadProfile();
+
 });
 
 
-/* ==========================================
+/* =====================================================
    QUIZ
-========================================== */
-
-let quizQuestions=[];
-let current=0;
-let score=0;
-let questionsAttempted=0;
-
+===================================================== */
 
 function startQuiz(subject){
 
@@ -2434,8 +2868,10 @@ function answerQuestion(button,index){
   button.classList.add("correct");
 
   score++;
+  correctAnswers++;
+  xp+=10;
 
-  toast("Correct! 🎉");
+  toast("Correct! 🎉 +10 XP");
 
  }else{
 
@@ -2449,6 +2885,21 @@ function answerQuestion(button,index){
 
  }
 
+ localStorage.setItem(
+  "questionsAttempted",
+  questionsAttempted
+ );
+
+ localStorage.setItem(
+  "correctAnswers",
+  correctAnswers
+ );
+
+ localStorage.setItem(
+  "xp",
+  xp
+ );
+
  document
   .getElementById("qExplanation")
   .style.display="block";
@@ -2457,7 +2908,7 @@ function answerQuestion(button,index){
   .getElementById("qExplanation")
   .innerHTML=
   `<strong>💡 Explanation</strong>
-   <br><br>${q.explanation}`;
+   <br><br>${escapeHTML(q.explanation)}`;
 
  updateStats();
 
@@ -2466,10 +2917,7 @@ function answerQuestion(button,index){
 
 function nextQuestion(){
 
- if(
-  current<
-  quizQuestions.length-1
- ){
+ if(current<quizQuestions.length-1){
 
   current++;
 
@@ -2496,24 +2944,32 @@ function nextQuestion(){
      </strong>
     </p>
 
+    <p class="muted">
+     XP: +${score*10}
+    </p>
+
+    <br>
+
     <button
      class="btn"
      onclick="startQuiz()">
-     Try Again
+     🔄 Try Again
     </button>
 
    </div>
 
   `;
 
+  updateStats();
+
  }
 
 }
 
 
-/* ==========================================
+/* =====================================================
    DPP
-========================================== */
+===================================================== */
 
 function startDPP(subject){
 
@@ -2535,7 +2991,6 @@ function startDPP(subject){
  quizQuestions=questions;
 
  current=0;
-
  score=0;
 
  go("quiz");
@@ -2555,16 +3010,23 @@ function startDPP(subject){
 }
 
 
-/* ==========================================
+/* =====================================================
    TEST
-========================================== */
+===================================================== */
 
 function startTest(name,maxQuestions){
+
+ testCount++;
+
+ localStorage.setItem(
+  "testCount",
+  testCount
+ );
 
  openInfo(
   `${name}`,
   `
-   <h3>🏆 ${name}</h3>
+   <h3>🏆 ${escapeHTML(name)}</h3>
 
    <p style="margin:12px 0">
     Maximum:
@@ -2576,8 +3038,6 @@ function startTest(name,maxQuestions){
     अभी demo database में
     ${questionBank.length}
     questions हैं।
-    Database में questions बढ़ाने पर
-    इन्हें Test में इस्तेमाल किया जा सकता है।
    </p>
 
    <br>
@@ -2585,17 +3045,19 @@ function startTest(name,maxQuestions){
    <button
     class="btn"
     onclick="closeModal();startQuiz()">
-    Start Demo Test
+    🚀 Start Demo Test
    </button>
   `
  );
 
+ updateStats();
+
 }
 
 
-/* ==========================================
-   ADD QUESTION
-========================================== */
+/* =====================================================
+   ADD DEMO QUESTION
+===================================================== */
 
 function addDemoQuestion(){
 
@@ -2609,7 +3071,7 @@ function addDemoQuestion(){
 
   difficulty:"Medium",
 
-  q:"Demo question — इसे Admin Panel से बदला जा सकता है।",
+  q:"Demo question — Admin Panel से question database बढ़ाया जा सकता है।",
 
   options:[
    "Option A",
@@ -2632,15 +3094,17 @@ function addDemoQuestion(){
 }
 
 
-/* ==========================================
+/* =====================================================
    AI
-========================================== */
+===================================================== */
 
-function askAI(){
+async function askAI(){
 
  const q=
-  document.getElementById("aiQ")
-  .value.trim();
+  document
+   .getElementById("aiQ")
+   .value
+   .trim();
 
  if(!q){
 
@@ -2650,47 +3114,106 @@ function askAI(){
 
  }
 
- document
-  .getElementById("aiResult")
-  .innerHTML=`
+ const result=
+  document.getElementById("aiResult");
 
-   <div class="card">
+ result.innerHTML=`
 
-    <h3>🤖 Mission Lakshya AI</h3>
+  <div class="card">
 
-    <p style="margin-top:10px">
-     आपका सवाल:
-    </p>
+   <h3>🤖 Mission Lakshya AI</h3>
 
-    <p class="muted">
-     ${escapeHTML(q)}
-    </p>
+   <p class="muted" style="margin-top:10px">
+    आपका सवाल:
+   </p>
 
-    <hr style="margin:15px 0">
+   <p style="margin-top:5px">
+    ${escapeHTML(q)}
+   </p>
 
-    <p>
-     AI backend connect होने पर यहाँ
-     Physics, Chemistry और Biology का
-     step-by-step answer आएगा।
-    </p>
+   <hr style="margin:15px 0">
 
-   </div>
-  `;
+   <p>
+    🤖 AI backend connect होने पर यहाँ
+    Physics, Chemistry और Biology का
+    step-by-step answer आएगा।
+   </p>
+
+   <p class="muted" style="margin-top:10px">
+    सुरक्षित तरीके से AI API को backend में रखना चाहिए।
+   </p>
+
+  </div>
+ `;
+
+
+ /* यदि backend /api/chat मौजूद है तो उसे call करने की कोशिश */
+
+ try{
+
+  const response=
+   await fetch("/api/chat",{
+    method:"POST",
+    headers:{
+     "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+     message:q
+    })
+   });
+
+  if(response.ok){
+
+   const data=
+    await response.json();
+
+   const answer=
+    data.answer ||
+    data.output ||
+    data.message;
+
+   if(answer){
+
+    result.innerHTML=`
+
+     <div class="card">
+
+      <h3>🤖 Mission Lakshya AI</h3>
+
+      <hr style="margin:15px 0">
+
+      <p>
+       ${escapeHTML(answer)}
+      </p>
+
+     </div>
+    `;
+
+   }
+
+  }
+
+ }catch(error){
+
+  console.log("AI backend not connected yet.");
+
+ }
 
 }
 
 
-/* ==========================================
+/* =====================================================
    SEARCH
-========================================== */
+===================================================== */
 
 function searchAll(){
 
  const q=
   document
-  .getElementById("searchInput")
-  .value
-  .toLowerCase();
+   .getElementById("searchInput")
+   .value
+   .toLowerCase()
+   .trim();
 
  const result=
   document.getElementById("searchResult");
@@ -2718,16 +3241,14 @@ function searchAll(){
   <br>
 
   <p>
-   ${found.length}
-   questions मिले।
+   ${found.length} questions मिले।
   </p>
 
   <br>
 
   ${found.map(x=>`
 
-   <div class="card"
-    style="margin-bottom:10px">
+   <div class="card" style="margin-bottom:10px">
 
     <strong>
      ${escapeHTML(x.q)}
@@ -2736,11 +3257,11 @@ function searchAll(){
     <br><br>
 
     <span class="tag">
-     ${x.subject}
+     ${escapeHTML(x.subject)}
     </span>
 
     <span class="tag">
-     ${x.difficulty}
+     ${escapeHTML(x.difficulty)}
     </span>
 
    </div>
@@ -2752,9 +3273,251 @@ function searchAll(){
 }
 
 
-/* ==========================================
+/* =====================================================
+   PROFILE
+===================================================== */
+
+function saveProfile(){
+
+ const name=
+  document
+   .getElementById("profileName")
+   .value;
+
+ const target=
+  document
+   .getElementById("profileTarget")
+   .value;
+
+ localStorage.setItem("profileName",name);
+ localStorage.setItem("profileTarget",target);
+
+ toast("Profile saved ✅");
+
+}
+
+
+function loadProfile(){
+
+ const name=
+  localStorage.getItem("profileName");
+
+ const target=
+  localStorage.getItem("profileTarget");
+
+ if(name){
+  document.getElementById("profileName").value=name;
+ }
+
+ if(target){
+  document.getElementById("profileTarget").value=target;
+ }
+
+}
+
+
+/* =====================================================
+   PLANNER
+===================================================== */
+
+function savePlan(){
+
+ const target=
+  document
+   .getElementById("target")
+   .value
+   .trim();
+
+ const hours=
+  document
+   .getElementById("studyHours")
+   .value;
+
+ if(!target){
+
+  toast("आज का target लिखें");
+
+  return;
+
+ }
+
+ localStorage.setItem(
+  "studyPlan",
+  JSON.stringify({
+   target,
+   hours
+  })
+ );
+
+ loadPlan();
+
+ toast("Study plan saved ✅");
+
+}
+
+
+function loadPlan(){
+
+ const saved=
+  localStorage.getItem("studyPlan");
+
+ if(!saved){
+  return;
+ }
+
+ try{
+
+  const data=
+   JSON.parse(saved);
+
+  document.getElementById("target").value=
+   data.target || "";
+
+  document.getElementById("studyHours").value=
+   data.hours || "";
+
+  document.getElementById("savedPlan").innerHTML=`
+
+   <div class="card">
+
+    <strong>🗓️ Saved Plan</strong>
+
+    <p style="margin-top:8px">
+     ${escapeHTML(data.target||"")}
+    </p>
+
+    <span class="tag">
+     ${escapeHTML(String(data.hours||0))} Hours
+    </span>
+
+   </div>
+  `;
+
+ }catch(e){}
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+function updateStats(){
+
+ const accuracy=
+  questionsAttempted
+   ? Math.round(
+      correctAnswers /
+      questionsAttempted *
+      100
+     )
+   : 0;
+
+ const statQ=
+  document.getElementById("statQ");
+
+ const aQ=
+  document.getElementById("aQ");
+
+ const statAccuracy=
+  document.getElementById("statAccuracy");
+
+ const aAccuracy=
+  document.getElementById("aAccuracy");
+
+ const xpEl=
+  document.getElementById("xp");
+
+ const testEl=
+  document.getElementById("testCount");
+
+ if(statQ)
+  statQ.textContent=questionsAttempted;
+
+ if(aQ)
+  aQ.textContent=questionsAttempted;
+
+ if(statAccuracy)
+  statAccuracy.textContent=accuracy+"%";
+
+ if(aAccuracy)
+  aAccuracy.textContent=accuracy+"%";
+
+ if(xpEl)
+  xpEl.textContent=xp;
+
+ if(testEl)
+  testEl.textContent=testCount;
+
+}
+
+
+/* =====================================================
+   VISITOR / FLAGS DEMO
+===================================================== */
+
+function updateVisitors(){
+
+ let total=
+  Number(
+   localStorage.getItem("mlTotalViews")||0
+  );
+
+ total++;
+
+ localStorage.setItem(
+  "mlTotalViews",
+  total
+ );
+
+ const visitorKey=
+  "mlVisitor_"+new Date().toDateString();
+
+ let visitors=
+  Number(
+   localStorage.getItem("mlVisitors")||0
+  );
+
+ if(!localStorage.getItem(visitorKey)){
+
+  visitors++;
+
+  localStorage.setItem(
+   visitorKey,
+   "true"
+  );
+
+  localStorage.setItem(
+   "mlVisitors",
+   visitors
+  );
+
+ }
+
+ const visitorEl=
+  document.getElementById("visitorTotal");
+
+ const totalEl=
+  document.getElementById("totalViews");
+
+ const flagEl=
+  document.getElementById("flagTotal");
+
+ if(visitorEl)
+  visitorEl.textContent=visitors;
+
+ if(totalEl)
+  totalEl.textContent=total;
+
+ if(flagEl)
+  flagEl.textContent="4";
+
+}
+
+
+/* =====================================================
    MODAL
-========================================== */
+===================================================== */
 
 function openInfo(title,body){
 
@@ -2786,9 +3549,9 @@ function closeModal(){
 }
 
 
-/* ==========================================
+/* =====================================================
    TOAST
-========================================== */
+===================================================== */
 
 function toast(text){
 
@@ -2799,39 +3562,25 @@ function toast(text){
 
  t.classList.add("show");
 
- setTimeout(()=>{
+ clearTimeout(window.toastTimer);
 
-  t.classList.remove("show");
+ window.toastTimer=
+  setTimeout(()=>{
 
- },2300);
+   t.classList.remove("show");
 
-}
-
-
-/* ==========================================
-   STATS
-========================================== */
-
-function updateStats(){
-
- document
-  .getElementById("statQ")
-  .textContent=questionsAttempted;
-
- document
-  .getElementById("aQ")
-  .textContent=questionsAttempted;
+  },2300);
 
 }
 
 
-/* ==========================================
+/* =====================================================
    HTML ESCAPE
-========================================== */
+===================================================== */
 
 function escapeHTML(text){
 
- return text
+ return String(text)
   .replaceAll("&","&amp;")
   .replaceAll("<","&lt;")
   .replaceAll(">","&gt;")
@@ -2841,17 +3590,32 @@ function escapeHTML(text){
 }
 
 
+/* =====================================================
+   MODAL OUTSIDE CLICK
+===================================================== */
+
 document
  .getElementById("modal")
- .addEventListener("click",function(e){
+ .addEventListener(
+  "click",
+  function(e){
 
-  if(e.target===this){
-   closeModal();
+   if(e.target===this){
+    closeModal();
+   }
+
   }
+ );
 
- });
+
+/* =====================================================
+   INITIAL DATA
+===================================================== */
+
+updateStats();
+updateVisitors();
 
 </script>
 
 </body>
- </html>
+  </html>
