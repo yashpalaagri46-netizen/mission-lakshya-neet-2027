@@ -12,12 +12,11 @@
  --secondary:#7c3aed;
  --accent:#06b6d4;
  --bg:#f3f6fb;
- --card:#fff;
+ --card:#ffffff;
  --text:#172033;
  --muted:#64748b;
  --border:#e2e8f0;
  --shadow:0 12px 35px rgba(15,23,42,.10);
- --shadow3d:0 8px 0 rgba(15,23,42,.10),0 15px 30px rgba(15,23,42,.12);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -31,13 +30,12 @@ html,body{
 }
 
 body.dark{
- --bg:#08111f;
+ --bg:#07111f;
  --card:#111c2d;
  --text:#f8fafc;
  --muted:#94a3b8;
  --border:#26364d;
- --shadow:0 12px 35px rgba(0,0,0,.3);
- --shadow3d:0 8px 0 rgba(0,0,0,.35),0 15px 35px rgba(0,0,0,.4);
+ --shadow:0 12px 35px rgba(0,0,0,.35);
 }
 
 body.purple{
@@ -45,32 +43,39 @@ body.purple{
  --secondary:#db2777;
  --accent:#a855f7;
 }
+
 body.green{
  --primary:#16a34a;
  --secondary:#059669;
  --accent:#84cc16;
 }
+
 body.ocean{
  --primary:#0891b2;
  --secondary:#2563eb;
  --accent:#14b8a6;
 }
+
 body.orange{
  --primary:#ea580c;
  --secondary:#dc2626;
  --accent:#f59e0b;
 }
 
+button,input,textarea,select{font:inherit}
+
 /* HEADER */
 .topbar{
  position:fixed;
- top:0;left:0;right:0;
- height:72px;
+ top:0;
+ left:0;
+ right:0;
+ height:70px;
  z-index:1000;
  display:flex;
  align-items:center;
  justify-content:space-between;
- padding:0 20px;
+ padding:0 18px;
  background:var(--card);
  border-bottom:1px solid var(--border);
 }
@@ -79,41 +84,48 @@ body.orange{
  display:flex;
  align-items:center;
  gap:12px;
- font-size:19px;
+ font-size:18px;
  font-weight:800;
 }
 
 .logo3d{
- width:46px;height:46px;
+ width:46px;
+ height:46px;
  border-radius:15px;
  display:grid;
  place-items:center;
  color:white;
  font-size:25px;
  background:linear-gradient(145deg,var(--primary),var(--secondary));
- box-shadow:var(--shadow3d);
- transform:perspective(500px) rotateX(8deg);
+ box-shadow:
+ 0 7px 0 rgba(0,0,0,.15),
+ 0 14px 25px rgba(0,0,0,.15);
 }
 
-.actions{display:flex;gap:8px}
+.actions{
+ display:flex;
+ gap:8px;
+}
 
 .icon{
- width:42px;height:42px;
+ width:42px;
+ height:42px;
  border:1px solid var(--border);
  background:var(--card);
  color:var(--text);
  border-radius:13px;
  cursor:pointer;
- font-size:19px;
- box-shadow:0 3px 8px rgba(0,0,0,.06);
+ font-size:18px;
 }
 
 /* SIDEBAR */
 .sidebar{
  position:fixed;
- top:72px;bottom:0;left:0;
+ top:70px;
+ left:0;
+ bottom:0;
  width:260px;
- padding:15px 11px;
+ padding:15px 10px;
  overflow-y:auto;
  background:var(--card);
  border-right:1px solid var(--border);
@@ -121,7 +133,7 @@ body.orange{
 }
 
 .nav-title{
- margin:17px 11px 7px;
+ margin:18px 10px 7px;
  color:var(--muted);
  font-size:11px;
  font-weight:800;
@@ -129,7 +141,7 @@ body.orange{
 
 .nav{
  width:100%;
- padding:12px 13px;
+ padding:12px;
  margin:3px 0;
  border:0;
  border-radius:13px;
@@ -140,7 +152,8 @@ body.orange{
  font-size:14px;
 }
 
-.nav:hover,.nav.active{
+.nav:hover,
+.nav.active{
  background:rgba(37,99,235,.10);
  color:var(--primary);
  font-weight:700;
@@ -150,27 +163,28 @@ body.orange{
 .main{
  margin-left:260px;
  width:calc(100% - 260px);
- padding:95px 25px 45px;
+ padding:92px 24px 40px;
 }
 
-.page{display:none}
-.page.active{display:block;animation:fade .25s}
+.page{
+ display:none;
+}
+
+.page.active{
+ display:block;
+ animation:fade .25s ease;
+}
 
 @keyframes fade{
- from{opacity:0;transform:translateY(7px)}
- to{opacity:1;transform:none}
+ from{
+  opacity:0;
+  transform:translateY(7px);
+ }
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
-
-.header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
- margin-bottom:22px;
-}
-
-.header h1{font-size:30px}
-.header p{color:var(--muted);margin-top:5px}
 
 /* HERO */
 .hero{
@@ -180,47 +194,87 @@ body.orange{
  background:
  radial-gradient(circle at 90% 10%,rgba(255,255,255,.25),transparent 30%),
  linear-gradient(135deg,var(--primary),var(--secondary));
- box-shadow:var(--shadow3d);
+ box-shadow:
+ 0 8px 0 rgba(0,0,0,.15),
+ 0 18px 35px rgba(0,0,0,.18);
  margin-bottom:24px;
 }
 
-.hero h1{font-size:34px;margin-bottom:9px}
-.hero p{opacity:.9;margin-bottom:20px}
+.hero h1{
+ font-size:34px;
+ margin-bottom:10px;
+}
 
-/* GRID */
+.hero p{
+ opacity:.92;
+ margin-bottom:20px;
+}
+
+/* GRIDS */
 .grid{
  display:grid;
  grid-template-columns:repeat(4,1fr);
  gap:16px;
  margin-bottom:22px;
 }
+
 .grid3{
  display:grid;
  grid-template-columns:repeat(3,1fr);
- gap:16px;
+ gap:17px;
 }
+
 .grid2{
  display:grid;
  grid-template-columns:repeat(2,1fr);
- gap:16px;
+ gap:17px;
 }
 
 /* CARD */
 .card{
  background:var(--card);
  border:1px solid var(--border);
- border-radius:19px;
+ border-radius:20px;
  padding:20px;
  box-shadow:var(--shadow);
 }
 
 .card3d{
- transition:.2s;
- box-shadow:var(--shadow3d);
+ transition:.22s;
+ box-shadow:
+ 0 7px 0 rgba(15,23,42,.10),
+ 0 14px 28px rgba(15,23,42,.10);
 }
 
 .card3d:hover{
- transform:translateY(-5px);
+ transform:translateY(-6px);
+}
+
+/* 3D ICON */
+.subjectIcon{
+ font-size:48px;
+ margin-bottom:12px;
+ filter:drop-shadow(5px 7px 3px rgba(0,0,0,.25));
+}
+
+.websiteIcon{
+ width:80px;
+ height:80px;
+ border-radius:22px;
+ display:grid;
+ place-items:center;
+ font-size:48px;
+ margin-bottom:15px;
+ background:linear-gradient(
+  145deg,
+  rgba(255,255,255,.9),
+  rgba(226,232,240,.55)
+ );
+ box-shadow:
+ 0 8px 0 rgba(0,0,0,.12),
+ 0 14px 25px rgba(0,0,0,.15),
+ inset 0 2px 3px rgba(255,255,255,.8);
+ filter:drop-shadow(3px 5px 2px rgba(0,0,0,.12));
 }
 
 .stat{
@@ -230,17 +284,30 @@ body.orange{
 }
 
 .statIcon{
- width:55px;height:55px;
+ width:55px;
+ height:55px;
  border-radius:16px;
  display:grid;
  place-items:center;
  font-size:27px;
- background:linear-gradient(145deg,rgba(37,99,235,.16),rgba(124,58,237,.12));
- box-shadow:var(--shadow3d);
+ background:linear-gradient(
+  145deg,
+  rgba(37,99,235,.16),
+  rgba(124,58,237,.12)
+ );
+ box-shadow:
+ 0 6px 0 rgba(0,0,0,.10),
+ 0 12px 22px rgba(0,0,0,.10);
 }
 
-.value{font-size:25px;font-weight:800}
-.muted{color:var(--muted)}
+.value{
+ font-size:25px;
+ font-weight:800;
+}
+
+.muted{
+ color:var(--muted);
+}
 
 .btn{
  border:0;
@@ -250,7 +317,9 @@ body.orange{
  color:white;
  cursor:pointer;
  font-weight:700;
- box-shadow:0 5px 0 rgba(0,0,0,.15),0 8px 18px rgba(37,99,235,.18);
+ box-shadow:
+ 0 5px 0 rgba(0,0,0,.15),
+ 0 8px 18px rgba(37,99,235,.18);
  transition:.15s;
 }
 
@@ -263,7 +332,7 @@ body.orange{
  box-shadow:0 2px 0 rgba(0,0,0,.15);
 }
 
-.btn2{
+.btn.secondary{
  background:transparent;
  color:var(--text);
  border:1px solid var(--border);
@@ -281,37 +350,72 @@ body.orange{
  font-weight:700;
 }
 
-/* SUBJECT */
-.subjectIcon{
- font-size:45px;
- margin-bottom:10px;
- filter:drop-shadow(4px 6px 3px rgba(0,0,0,.18));
+/* WEBSITE CARDS */
+.website-card{
+ cursor:pointer;
+ text-decoration:none;
+ color:inherit;
 }
 
-.progress{
- height:8px;
- border-radius:20px;
- background:var(--border);
- margin:12px 0;
- overflow:hidden;
+.website-card .open-label{
+ margin-top:15px;
+ color:var(--primary);
+ font-size:13px;
+ font-weight:800;
 }
-.progress span{
- display:block;
- height:100%;
- background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+/* VIEWER */
+.viewer{
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:2500;
+ background:var(--bg);
+}
+
+.viewer.active{
+ display:flex;
+ flex-direction:column;
+}
+
+.viewerHeader{
+ height:65px;
+ flex-shrink:0;
+ display:flex;
+ align-items:center;
+ gap:10px;
+ padding:8px 12px;
+ background:var(--card);
+ border-bottom:1px solid var(--border);
+}
+
+.viewerTitle{
+ flex:1;
+ font-weight:800;
+ overflow:hidden;
+ text-overflow:ellipsis;
+ white-space:nowrap;
+}
+
+.viewer iframe{
+ width:100%;
+ height:calc(100vh - 65px);
+ border:0;
+ background:white;
 }
 
 /* SEARCH */
 .search{
  display:flex;
- gap:10px;
  align-items:center;
- padding:11px 14px;
+ gap:10px;
+ padding:12px 14px;
  background:var(--card);
  border:1px solid var(--border);
  border-radius:14px;
  margin-bottom:18px;
 }
+
 .search input{
  flex:1;
  border:0;
@@ -320,16 +424,19 @@ body.orange{
  color:var(--text);
 }
 
-/* BOOK */
-.cover,.thumb{
- height:145px;
- border-radius:15px;
- display:grid;
- place-items:center;
- font-size:55px;
- margin-bottom:14px;
- background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(124,58,237,.20));
- box-shadow:inset 0 0 25px rgba(255,255,255,.2);
+/* PROGRESS */
+.progress{
+ height:8px;
+ border-radius:20px;
+ background:var(--border);
+ margin:12px 0;
+ overflow:hidden;
+}
+
+.progress span{
+ display:block;
+ height:100%;
+ background:linear-gradient(90deg,var(--primary),var(--secondary));
 }
 
 /* QUIZ */
@@ -344,11 +451,12 @@ body.orange{
  color:var(--text);
  cursor:pointer;
 }
-.option:hover{border-color:var(--primary)}
+
 .option.correct{
  background:rgba(22,163,74,.15);
  border-color:#16a34a;
 }
+
 .option.wrong{
  background:rgba(239,68,68,.15);
  border-color:#ef4444;
@@ -366,14 +474,14 @@ body.orange{
  margin-top:6px;
 }
 
-textarea.input{resize:vertical}
-
 /* TABLE */
 .table{
  width:100%;
  border-collapse:collapse;
 }
-.table th,.table td{
+
+.table th,
+.table td{
  padding:12px;
  border-bottom:1px solid var(--border);
  text-align:left;
@@ -384,13 +492,17 @@ textarea.input{resize:vertical}
  display:none;
  position:fixed;
  inset:0;
- z-index:2000;
+ z-index:3000;
  background:rgba(0,0,0,.65);
  align-items:center;
  justify-content:center;
  padding:15px;
 }
-.modal.show{display:flex}
+
+.modal.show{
+ display:flex;
+}
+
 .modalBox{
  width:min(800px,100%);
  max-height:90vh;
@@ -406,7 +518,7 @@ textarea.input{resize:vertical}
  position:fixed;
  right:18px;
  bottom:18px;
- z-index:3000;
+ z-index:4000;
  background:var(--card);
  border:1px solid var(--border);
  border-radius:13px;
@@ -414,7 +526,10 @@ textarea.input{resize:vertical}
  box-shadow:var(--shadow);
  display:none;
 }
-.toast.show{display:block}
+
+.toast.show{
+ display:block;
+}
 
 /* MOBILE */
 .mobile{
@@ -422,28 +537,56 @@ textarea.input{resize:vertical}
 }
 
 @media(max-width:1100px){
- .grid{grid-template-columns:repeat(2,1fr)}
- .grid3{grid-template-columns:repeat(2,1fr)}
+ .grid{
+  grid-template-columns:repeat(2,1fr);
+ }
+
+ .grid3{
+  grid-template-columns:repeat(2,1fr);
+ }
 }
 
 @media(max-width:800px){
+
  .sidebar{
   transform:translateX(-100%);
   transition:.25s;
  }
- .sidebar.open{transform:translateX(0)}
- .mobile{display:block}
+
+ .sidebar.open{
+  transform:translateX(0);
+ }
+
+ .mobile{
+  display:block;
+ }
+
  .main{
   margin-left:0;
   width:100%;
-  padding:90px 14px 35px;
+  padding:88px 13px 30px;
  }
- .grid,.grid2,.grid3{grid-template-columns:1fr}
- .brand span{display:none}
- .hero h1{font-size:27px}
- .header{
-  flex-direction:column;
-  align-items:flex-start;
+
+ .grid,
+ .grid2,
+ .grid3{
+  grid-template-columns:1fr;
+ }
+
+ .brand span{
+  display:none;
+ }
+
+ .hero h1{
+  font-size:27px;
+ }
+
+ .viewerHeader{
+  height:60px;
+ }
+
+ .viewer iframe{
+  height:calc(100vh - 60px);
  }
 }
 </style>
@@ -451,350 +594,829 @@ textarea.input{resize:vertical}
 
 <body>
 
+<!-- HEADER -->
 <header class="topbar">
+
  <div class="brand">
+
   <button class="icon mobile" onclick="toggleMenu()">☰</button>
+
   <div class="logo3d">🎓</div>
+
   <span>Mission Lakshya NEET 2027</span>
+
  </div>
 
  <div class="actions">
+
   <button class="icon" onclick="go('search')">🔍</button>
+
   <button class="icon" onclick="darkMode()">🌙</button>
+
   <button class="icon" onclick="go('notifications')">🔔</button>
+
   <button class="icon" onclick="go('profile')">👤</button>
+
  </div>
+
 </header>
 
+
+<!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
 
  <div class="nav-title">MAIN</div>
- <button class="nav active" onclick="go('home',this)">🏠 Dashboard</button>
- <button class="nav" onclick="go('profile',this)">👤 Student Profile</button>
- <button class="nav" onclick="go('search',this)">🔍 Global Search</button>
- <button class="nav" onclick="go('favorites',this)">⭐ Favorites</button>
- <button class="nav" onclick="go('recent',this)">🕒 Recently Viewed</button>
+
+ <button class="nav active" onclick="go('home',this)">
+  🏠 Dashboard
+ </button>
+
+ <button class="nav" onclick="go('profile',this)">
+  👤 Student Profile
+ </button>
+
+ <button class="nav" onclick="go('search',this)">
+  🔍 Global Search
+ </button>
+
+ <button class="nav" onclick="go('favorites',this)">
+  ⭐ Favorites
+ </button>
+
 
  <div class="nav-title">STUDY</div>
- <button class="nav" onclick="go('books',this)">📚 Books Library</button>
- <button class="nav" onclick="go('notes',this)">📖 Notes</button>
- <button class="nav" onclick="go('videos',this)">🎥 Video Lectures</button>
- <button class="nav" onclick="go('youtube',this)">▶️ YouTube Hub</button>
+
+ <button class="nav" onclick="go('books',this)">
+  📚 Books Library
+ </button>
+
+ <button class="nav" onclick="go('notes',this)">
+  📖 Notes
+ </button>
+
+ <button class="nav" onclick="go('videos',this)">
+  🎥 Video Lectures
+ </button>
+
+ <!-- NEW PW BATCH -->
+ <button class="nav" onclick="go('pwbatch',this)">
+  🎓 PW Batch
+ </button>
+
 
  <div class="nav-title">PRACTICE</div>
- <button class="nav" onclick="go('questions',this)">📝 Question Bank</button>
- <button class="nav" onclick="go('quiz',this)">🧠 Quiz</button>
- <button class="nav" onclick="go('dpp',this)">📄 DPP</button>
- <button class="nav" onclick="go('tests',this)">🏆 Tests</button>
- <button class="nav" onclick="go('pyq',this)">📜 NEET PYQ</button>
+
+ <button class="nav" onclick="go('questions',this)">
+  📝 Question Bank
+ </button>
+
+ <button class="nav" onclick="go('quiz',this)">
+  🧠 Quiz
+ </button>
+
+ <button class="nav" onclick="go('dpp',this)">
+  📄 DPP
+ </button>
+
+ <button class="nav" onclick="go('tests',this)">
+  🏆 Tests
+ </button>
+
+ <button class="nav" onclick="go('pyq',this)">
+  📜 NEET PYQ
+ </button>
+
 
  <div class="nav-title">SMART STUDY</div>
- <button class="nav" onclick="go('ai',this)">🤖 AI Doubt Solver</button>
- <button class="nav" onclick="go('analytics',this)">📊 Analytics</button>
- <button class="nav" onclick="go('planner',this)">🗓️ Study Planner</button>
+
+ <button class="nav" onclick="go('ai',this)">
+  🤖 AI Doubt Solver
+ </button>
+
+ <button class="nav" onclick="go('analytics',this)">
+  📊 Analytics
+ </button>
+
+ <button class="nav" onclick="go('planner',this)">
+  🗓️ Study Planner
+ </button>
+
 
  <div class="nav-title">MORE</div>
- <button class="nav" onclick="go('websites',this)">🌐 Study Websites</button>
- <button class="nav" onclick="go('youtube',this)">📺 YouTube Classes</button>
- <button class="nav" onclick="go('themes',this)">🎨 Themes</button>
- <button class="nav" onclick="go('gamification',this)">🏅 Achievements</button>
- <button class="nav" onclick="go('notifications',this)">🔔 Notifications</button>
- <button class="nav" onclick="go('support',this)">📞 Support</button>
+
+ <button class="nav" onclick="go('websites',this)">
+  🌐 Study Websites
+ </button>
+
+ <button class="nav" onclick="go('themes',this)">
+  🎨 Themes
+ </button>
+
+ <button class="nav" onclick="go('gamification',this)">
+  🏅 Achievements
+ </button>
+
+ <button class="nav" onclick="go('notifications',this)">
+  🔔 Notifications
+ </button>
+
+ <button class="nav" onclick="go('support',this)">
+  📞 Support
+ </button>
+
 
  <div class="nav-title">ADMIN</div>
- <button class="nav" onclick="go('admin',this)">🛠️ Admin Panel</button>
+
+ <button class="nav" onclick="go('admin',this)">
+  🛠️ Admin Panel
+ </button>
+
 </aside>
 
+
+<!-- MAIN -->
 <main class="main">
+
 
 <!-- HOME -->
 <section class="page active" id="home">
 
  <div class="hero">
-  <h1>🎓 Mission Lakshya NEET 2027</h1>
-  <p>Professional NEET preparation platform — Study • Practice • Test • Improve</p>
 
-  <button class="btn" onclick="go('tests')">🏆 Start Test</button>
-  <button class="btn" onclick="go('dpp')">📄 Today's DPP</button>
-  <button class="btn" onclick="go('ai')">🤖 Ask AI</button>
+  <h1>🎓 Mission Lakshya NEET 2027</h1>
+
+  <p>
+   Study • Practice • DPP • Test • AI • Progress
+  </p>
+
+  <button class="btn" onclick="go('tests')">
+   🏆 Start Test
+  </button>
+
+  <button class="btn" onclick="go('dpp')">
+   📄 Today's DPP
+  </button>
+
+  <button class="btn" onclick="go('pwbatch')">
+   🎓 PW Batch
+  </button>
+
  </div>
+
 
  <div class="grid">
 
   <div class="card stat card3d">
+
    <div class="statIcon">📝</div>
-   <div><div class="muted">Questions</div><div class="value" id="statQ">0</div></div>
+
+   <div>
+    <div class="muted">Questions</div>
+    <div class="value" id="statQ">0</div>
+   </div>
+
   </div>
 
+
   <div class="card stat card3d">
+
    <div class="statIcon">🎯</div>
-   <div><div class="muted">Accuracy</div><div class="value">0%</div></div>
+
+   <div>
+    <div class="muted">Accuracy</div>
+    <div class="value">0%</div>
+   </div>
+
   </div>
 
+
   <div class="card stat card3d">
+
    <div class="statIcon">🔥</div>
-   <div><div class="muted">Streak</div><div class="value">0 Days</div></div>
+
+   <div>
+    <div class="muted">Streak</div>
+    <div class="value">0 Days</div>
+   </div>
+
   </div>
 
+
   <div class="card stat card3d">
+
    <div class="statIcon">⭐</div>
-   <div><div class="muted">XP</div><div class="value">0</div></div>
+
+   <div>
+    <div class="muted">XP</div>
+    <div class="value">0</div>
+   </div>
+
   </div>
 
  </div>
 
- <h2 style="margin-bottom:15px">📚 Subjects</h2>
+
+ <h2 style="margin-bottom:15px">
+  📚 Subjects
+ </h2>
+
+
+ <div class="grid3">
+
+  <div class="card card3d">
+
+   <div class="subjectIcon">⚛️</div>
+
+   <h2>Physics</h2>
+
+   <p class="muted">Class 11 & 12</p>
+
+   <div class="progress">
+    <span style="width:25%"></span>
+   </div>
+
+   <button class="btn" onclick="go('questions')">
+    Practice
+   </button>
+
+  </div>
+
+
+  <div class="card card3d">
+
+   <div class="subjectIcon">🧪</div>
+
+   <h2>Chemistry</h2>
+
+   <p class="muted">Class 11 & 12</p>
+
+   <div class="progress">
+    <span style="width:20%"></span>
+   </div>
+
+   <button class="btn" onclick="go('questions')">
+    Practice
+   </button>
+
+  </div>
+
+
+  <div class="card card3d">
+
+   <div class="subjectIcon">🧬</div>
+
+   <h2>Biology</h2>
+
+   <p class="muted">Class 11 & 12</p>
+
+   <div class="progress">
+    <span style="width:30%"></span>
+   </div>
+
+   <button class="btn" onclick="go('questions')">
+    Practice
+   </button>
+
+  </div>
+
+ </div>
+
+</section>
+
+
+<!-- ==================================================
+     PW BATCH
+=================================================== -->
+<section class="page" id="pwbatch">
+
+ <div class="header">
+
+  <div>
+   <h1>🎓 PW Batch</h1>
+
+   <p>
+    Study websites — सभी एक ही Mission Lakshya platform के अंदर
+   </p>
+  </div>
+
+ </div>
+
+
+ <div class="hero">
+
+  <h1>🚀 PW Batch Study Hub</h1>
+
+  <p>
+   नीचे दिए गए study platforms को open करके पढ़ाई शुरू करें।
+  </p>
+
+  <span class="tag" style="background:rgba(255,255,255,.18);color:white">
+   9 Websites
+  </span>
+
+  <span class="tag" style="background:rgba(255,255,255,.18);color:white">
+   3D UI
+  </span>
+
+  <span class="tag" style="background:rgba(255,255,255,.18);color:white">
+   In-App Viewer
+  </span>
+
+ </div>
+
+
+ <div class="grid3">
+
+
+  <!-- 1 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://studypanda.live/books',
+       '🐼 StudyPanda Books'
+       )">
+
+   <div class="websiteIcon">🐼</div>
+
+   <h2>StudyPanda</h2>
+
+   <p class="muted">
+    Books & Study Material
+   </p>
+
+   <span class="tag">Books</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 2 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://learnify.deltaverse.site/',
+       '🧠 Learnify'
+       )">
+
+   <div class="websiteIcon">🧠</div>
+
+   <h2>Learnify</h2>
+
+   <p class="muted">
+    Learning Platform
+   </p>
+
+   <span class="tag">Learning</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 3 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://pw.studyparcham.in/#home-view',
+       '🎯 PW StudyParcham'
+       )">
+
+   <div class="websiteIcon">🎯</div>
+
+   <h2>PW StudyParcham</h2>
+
+   <p class="muted">
+    Study Platform
+   </p>
+
+   <span class="tag">PW</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 4 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://asmultiverse.com/?tab=home',
+       '🌌 AS Multiverse'
+       )">
+
+   <div class="websiteIcon">🌌</div>
+
+   <h2>AS Multiverse</h2>
+
+   <p class="muted">
+    Educational Platform
+   </p>
+
+   <span class="tag">Study</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 5 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://studyrays.cc',
+       '📗 StudyRays'
+       )">
+
+   <div class="websiteIcon">📗</div>
+
+   <h2>StudyRays</h2>
+
+   <p class="muted">
+    Study Resources
+   </p>
+
+   <span class="tag">Study</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 6 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://learntopper.in',
+       '📙 LearnTopper'
+       )">
+
+   <div class="websiteIcon">📙</div>
+
+   <h2>LearnTopper</h2>
+
+   <p class="muted">
+    Learning Resources
+   </p>
+
+   <span class="tag">Education</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 7 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://studyspark.pro',
+       '⚡ StudySpark'
+       )">
+
+   <div class="websiteIcon">⚡</div>
+
+   <h2>StudySpark</h2>
+
+   <p class="muted">
+    Study Platform
+   </p>
+
+   <span class="tag">Study</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 8 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'http://eduzex-pw.pages.dev',
+       '📘 Eduzex PW'
+       )">
+
+   <div class="websiteIcon">📘</div>
+
+   <h2>Eduzex PW</h2>
+
+   <p class="muted">
+    PW Study Resources
+   </p>
+
+   <span class="tag">PW</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <!-- 9 -->
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'http://deltastudy.site',
+       '🌐 DeltaStudy'
+       )">
+
+   <div class="websiteIcon">🌐</div>
+
+   <h2>DeltaStudy</h2>
+
+   <p class="muted">
+    Educational Resources
+   </p>
+
+   <span class="tag">Study</span>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+ </div>
+
+
+ <div class="card" style="margin-top:20px">
+
+  <h3>ℹ️ Website Viewer</h3>
+
+  <p class="muted" style="margin-top:8px">
+
+   Website cards पर click करने पर platform को
+   Mission Lakshya के full-screen viewer में
+   खोलने की कोशिश की जाएगी।
+
+   अगर कोई external website iframe embedding
+   को block करती है, तो वह इस viewer में load
+   नहीं हो पाएगी।
+
+  </p>
+
+ </div>
+
+</section>
+
+
+<!-- BOOKS -->
+<section class="page" id="books">
+
+ <div class="header">
+  <div>
+   <h1>📚 Books Library</h1>
+   <p>Hindi + English study books</p>
+  </div>
+ </div>
 
  <div class="grid3">
 
   <div class="card card3d">
    <div class="subjectIcon">⚛️</div>
    <h2>Physics</h2>
-   <p class="muted">Class 11 & 12</p>
-   <div class="progress"><span style="width:25%"></span></div>
-   <button class="btn" onclick="go('questions')">Practice</button>
+   <p class="muted">NEET Physics Books</p>
+   <br>
+   <button class="btn">Open Books</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🧪</div>
    <h2>Chemistry</h2>
-   <p class="muted">Class 11 & 12</p>
-   <div class="progress"><span style="width:20%"></span></div>
-   <button class="btn" onclick="go('questions')">Practice</button>
+   <p class="muted">NEET Chemistry Books</p>
+   <br>
+   <button class="btn">Open Books</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🧬</div>
    <h2>Biology</h2>
-   <p class="muted">Class 11 & 12</p>
-   <div class="progress"><span style="width:30%"></span></div>
-   <button class="btn" onclick="go('questions')">Practice</button>
+   <p class="muted">NCERT Biology</p>
+   <br>
+   <button class="btn">Open Books</button>
   </div>
 
  </div>
-</section>
 
-
-<!-- BOOKS -->
-<section class="page" id="books">
- <div class="header">
-  <div><h1>📚 Books Library</h1><p>Subject-wise study books</p></div>
- </div>
-
- <div class="search">🔍<input placeholder="Book search..."></div>
-
- <div class="grid3">
-
-  <div class="card card3d">
-   <div class="cover">⚛️</div>
-   <h3>Physics NEET Books</h3>
-   <p class="muted">Hindi + English</p><br>
-   <button class="btn" onclick="openInfo('Physics Books')">Open</button>
-  </div>
-
-  <div class="card card3d">
-   <div class="cover">🧪</div>
-   <h3>Chemistry NEET Books</h3>
-   <p class="muted">Hindi + English</p><br>
-   <button class="btn" onclick="openInfo('Chemistry Books')">Open</button>
-  </div>
-
-  <div class="card card3d">
-   <div class="cover">🧬</div>
-   <h3>Biology NCERT Books</h3>
-   <p class="muted">Class 11 + 12</p><br>
-   <button class="btn" onclick="openInfo('Biology Books')">Open</button>
-  </div>
-
- </div>
 </section>
 
 
 <!-- NOTES -->
 <section class="page" id="notes">
+
  <div class="header">
-  <div><h1>📖 Notes</h1><p>Chapter-wise notes</p></div>
+  <div>
+   <h1>📖 Notes</h1>
+   <p>Chapter-wise notes</p>
+  </div>
  </div>
 
  <div class="grid3">
 
   <div class="card card3d">
-   <h2>⚛️ Physics</h2><br>
-   <p>Units & Measurements</p>
-   <p>Motion in Straight Line</p>
-   <p>Motion in Plane</p>
-   <p>Laws of Motion</p>
-   <p>Work Energy Power</p><br>
+   <div class="subjectIcon">⚛️</div>
+   <h2>Physics</h2>
+   <p class="muted">Formula + Revision Notes</p>
+   <br>
    <button class="btn">Open Notes</button>
   </div>
 
   <div class="card card3d">
-   <h2>🧪 Chemistry</h2><br>
-   <p>Some Basic Concepts</p>
-   <p>Atomic Structure</p>
-   <p>Periodic Table</p>
-   <p>Chemical Bonding</p>
-   <p>Thermodynamics</p><br>
+   <div class="subjectIcon">🧪</div>
+   <h2>Chemistry</h2>
+   <p class="muted">Short Notes</p>
+   <br>
    <button class="btn">Open Notes</button>
   </div>
 
   <div class="card card3d">
-   <h2>🧬 Biology</h2><br>
-   <p>The Living World</p>
-   <p>Biological Classification</p>
-   <p>Plant Kingdom</p>
-   <p>Animal Kingdom</p>
-   <p>Cell Structure</p><br>
+   <div class="subjectIcon">🧬</div>
+   <h2>Biology</h2>
+   <p class="muted">NCERT Notes</p>
+   <br>
    <button class="btn">Open Notes</button>
   </div>
 
  </div>
+
 </section>
 
 
 <!-- VIDEOS -->
 <section class="page" id="videos">
+
  <div class="header">
-  <div><h1>🎥 Video Lectures</h1><p>Subject-wise videos</p></div>
+  <div>
+   <h1>🎥 Video Lectures</h1>
+   <p>NEET video learning</p>
+  </div>
  </div>
 
  <div class="grid3">
 
   <div class="card card3d">
-   <div class="thumb">▶️</div>
-   <h3>Physics Lecture</h3><p class="muted">NEET Physics</p><br>
-   <button class="btn" onclick="external('https://www.youtube.com/')">Watch</button>
+   <div class="subjectIcon">⚛️</div>
+   <h2>Physics</h2>
+   <p class="muted">NEET Physics Lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite(
+    'https://www.youtube.com/results?search_query=NEET+Physics',
+    '⚛️ NEET Physics'
+    )">
+    ▶️ Watch
+   </button>
   </div>
 
   <div class="card card3d">
-   <div class="thumb">▶️</div>
-   <h3>Chemistry Lecture</h3><p class="muted">NEET Chemistry</p><br>
-   <button class="btn" onclick="external('https://www.youtube.com/')">Watch</button>
+   <div class="subjectIcon">🧪</div>
+   <h2>Chemistry</h2>
+   <p class="muted">NEET Chemistry Lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite(
+    'https://www.youtube.com/results?search_query=NEET+Chemistry',
+    '🧪 NEET Chemistry'
+    )">
+    ▶️ Watch
+   </button>
   </div>
 
   <div class="card card3d">
-   <div class="thumb">▶️</div>
-   <h3>Biology Lecture</h3><p class="muted">NEET Biology</p><br>
-   <button class="btn" onclick="external('https://www.youtube.com/')">Watch</button>
+   <div class="subjectIcon">🧬</div>
+   <h2>Biology</h2>
+   <p class="muted">NEET Biology Lectures</p>
+   <br>
+   <button class="btn"
+    onclick="openWebsite(
+    'https://www.youtube.com/results?search_query=NEET+Biology',
+    '🧬 NEET Biology'
+    )">
+    ▶️ Watch
+   </button>
   </div>
 
  </div>
-</section>
 
-
-<!-- YOUTUBE -->
-<section class="page" id="youtube">
- <div class="header">
-  <div><h1>▶️ YouTube Study Hub</h1><p>Study channels और searches</p></div>
- </div>
-
- <div class="grid3">
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/')">
-   <div class="subjectIcon">▶️</div><h3>YouTube</h3><p class="muted">Study Videos</p>
-  </div>
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/results?search_query=NEET+Hindi+classes')">
-   <div class="subjectIcon">🇮🇳</div><h3>NEET Hindi</h3><p class="muted">Hindi lectures</p>
-  </div>
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/results?search_query=NEET+English+classes')">
-   <div class="subjectIcon">🌐</div><h3>NEET English</h3><p class="muted">English lectures</p>
-  </div>
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/results?search_query=NEET+Physics')">
-   <div class="subjectIcon">⚛️</div><h3>Physics</h3><p class="muted">Physics search</p>
-  </div>
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/results?search_query=NEET+Chemistry')">
-   <div class="subjectIcon">🧪</div><h3>Chemistry</h3><p class="muted">Chemistry search</p>
-  </div>
-
-  <div class="card card3d" onclick="external('https://www.youtube.com/results?search_query=NEET+Biology')">
-   <div class="subjectIcon">🧬</div><h3>Biology</h3><p class="muted">Biology search</p>
-  </div>
-
- </div>
 </section>
 
 
 <!-- QUESTION BANK -->
 <section class="page" id="questions">
+
  <div class="header">
-  <div><h1>📝 Question Bank</h1><p>Questions DPP और Tests में भी इस्तेमाल हो सकते हैं</p></div>
+  <div>
+   <h1>📝 Question Bank</h1>
+   <p>Chapter-wise NEET questions</p>
+  </div>
  </div>
 
  <div class="grid3">
 
   <div class="card card3d">
-   <h2>⚛️ Physics</h2>
-   <p class="muted">Chapter-wise questions</p><br>
-   <span class="tag">Easy</span>
-   <span class="tag">Medium</span>
-   <span class="tag">Hard</span><br><br>
-   <button class="btn" onclick="startQuiz('Physics')">Practice</button>
+   <div class="subjectIcon">⚛️</div>
+   <h2>Physics</h2>
+   <p class="muted">Easy • Medium • Hard</p>
+   <br>
+   <button class="btn" onclick="startQuiz('Physics')">
+    Practice
+   </button>
   </div>
 
   <div class="card card3d">
-   <h2>🧪 Chemistry</h2>
-   <p class="muted">Chapter-wise questions</p><br>
-   <span class="tag">Easy</span>
-   <span class="tag">Medium</span>
-   <span class="tag">Hard</span><br><br>
-   <button class="btn" onclick="startQuiz('Chemistry')">Practice</button>
+   <div class="subjectIcon">🧪</div>
+   <h2>Chemistry</h2>
+   <p class="muted">Easy • Medium • Hard</p>
+   <br>
+   <button class="btn" onclick="startQuiz('Chemistry')">
+    Practice
+   </button>
   </div>
 
   <div class="card card3d">
-   <h2>🧬 Biology</h2>
-   <p class="muted">Chapter-wise questions</p><br>
-   <span class="tag">Easy</span>
-   <span class="tag">Medium</span>
-   <span class="tag">Hard</span><br><br>
-   <button class="btn" onclick="startQuiz('Biology')">Practice</button>
+   <div class="subjectIcon">🧬</div>
+   <h2>Biology</h2>
+   <p class="muted">Easy • Medium • Hard</p>
+   <br>
+   <button class="btn" onclick="startQuiz('Biology')">
+    Practice
+   </button>
   </div>
 
  </div>
 
- <div class="card" style="margin-top:18px">
-  <h3>📌 Question Bank System</h3>
-  <p class="muted" style="margin-top:8px">
-   यहाँ से questions को बाद में DPP, Chapter Test और Full Mock Test में select किया जा सकेगा।
-   Code में question array को 300+ questions तक बढ़ाया जा सकता है।
-  </p>
- </div>
 </section>
 
 
 <!-- QUIZ -->
 <section class="page" id="quiz">
+
  <div class="header">
-  <div><h1>🧠 Quiz Mode</h1><p>Instant answer और explanation</p></div>
+  <div>
+   <h1>🧠 Quiz</h1>
+   <p>Instant answer + explanation</p>
+  </div>
  </div>
 
  <div class="card">
+
   <div id="quizStart">
+
+   <div class="subjectIcon">🧠</div>
+
    <h2>NEET Practice Quiz</h2>
+
    <p class="muted" style="margin:10px 0 20px">
-    Questions Question Bank से load होंगे।
+    Question Bank से questions load होंगे।
    </p>
-   <button class="btn" onclick="startQuiz()">Start Quiz</button>
+
+   <button class="btn" onclick="startQuiz()">
+    Start Quiz
+   </button>
+
   </div>
 
+
   <div id="quizBox" style="display:none">
-   <p id="qNo" class="tag"></p>
+
+   <span id="qNo" class="tag"></span>
+
    <h2 id="qText" style="margin:15px 0"></h2>
+
    <div id="qOptions"></div>
-   <div id="qExplanation" class="card" style="display:none;margin:15px 0"></div>
-   <button class="btn" onclick="nextQuestion()">Next</button>
+
+   <div id="qExplanation"
+        class="card"
+        style="display:none;margin:15px 0">
+   </div>
+
+   <button class="btn" onclick="nextQuestion()">
+    Next →
+   </button>
+
   </div>
+
  </div>
+
 </section>
 
 
 <!-- DPP -->
 <section class="page" id="dpp">
+
  <div class="header">
-  <div><h1>📄 DPP Center</h1><p>हर DPP में questions और quiz mode</p></div>
+  <div>
+   <h1>📄 DPP Center</h1>
+   <p>Daily Practice Problems</p>
+  </div>
  </div>
 
  <div class="grid3">
@@ -802,45 +1424,55 @@ textarea.input{resize:vertical}
   <div class="card card3d">
    <div class="subjectIcon">⚛️</div>
    <h2>Physics DPP</h2>
-   <p class="muted">Daily Practice Problems</p><br>
+   <p class="muted">Daily Questions</p>
+   <br>
    <span class="tag">30 Questions</span>
-   <span class="tag">Quiz</span><br><br>
-   <button class="btn" onclick="startDPP('Physics')">Start DPP</button>
+   <br><br>
+   <button class="btn"
+    onclick="startDPP('Physics')">
+    Start DPP
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🧪</div>
    <h2>Chemistry DPP</h2>
-   <p class="muted">Daily Practice Problems</p><br>
+   <p class="muted">Daily Questions</p>
+   <br>
    <span class="tag">30 Questions</span>
-   <span class="tag">Quiz</span><br><br>
-   <button class="btn" onclick="startDPP('Chemistry')">Start DPP</button>
+   <br><br>
+   <button class="btn"
+    onclick="startDPP('Chemistry')">
+    Start DPP
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🧬</div>
    <h2>Biology DPP</h2>
-   <p class="muted">Daily Practice Problems</p><br>
+   <p class="muted">Daily Questions</p>
+   <br>
    <span class="tag">30 Questions</span>
-   <span class="tag">Quiz</span><br><br>
-   <button class="btn" onclick="startDPP('Biology')">Start DPP</button>
+   <br><br>
+   <button class="btn"
+    onclick="startDPP('Biology')">
+    Start DPP
+   </button>
   </div>
 
  </div>
 
- <div class="card" style="margin-top:18px">
-  <h3>⚙️ DPP Question Capacity</h3>
-  <p class="muted">
-   प्रत्येक DPP को बाद में 10, 20, 30, 50, 100 या जरूरत के अनुसार questions के साथ बनाया जा सकता है।
-  </p>
- </div>
 </section>
 
 
 <!-- TESTS -->
 <section class="page" id="tests">
+
  <div class="header">
-  <div><h1>🏆 Test Center</h1><p>Chapter Test से Full Mock Test तक</p></div>
+  <div>
+   <h1>🏆 Test Center</h1>
+   <p>NEET test system</p>
+  </div>
  </div>
 
  <div class="grid3">
@@ -848,306 +1480,480 @@ textarea.input{resize:vertical}
   <div class="card card3d">
    <div class="subjectIcon">📚</div>
    <h2>Chapter Test</h2>
-   <p class="muted">एक chapter के questions</p><br>
-   <span class="tag">Up to 300 Questions</span><br><br>
-   <button class="btn" onclick="startTest('Chapter Test',300)">Start</button>
+   <p class="muted">Up to 300 Questions</p>
+   <br>
+   <button class="btn"
+    onclick="startTest('Chapter Test',300)">
+    Start
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">📝</div>
    <h2>Subject Test</h2>
-   <p class="muted">Physics / Chemistry / Biology</p><br>
-   <span class="tag">Custom Questions</span><br><br>
-   <button class="btn" onclick="startTest('Subject Test',100)">Start</button>
+   <p class="muted">Subject-wise Test</p>
+   <br>
+   <button class="btn"
+    onclick="startTest('Subject Test',100)">
+    Start
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🏆</div>
    <h2>NEET Mock Test</h2>
-   <p class="muted">Full syllabus practice</p><br>
-   <span class="tag">Timer</span>
-   <span class="tag">Result</span><br><br>
-   <button class="btn" onclick="startTest('NEET Mock Test',200)">Start</button>
+   <p class="muted">Full Syllabus</p>
+   <br>
+   <button class="btn"
+    onclick="startTest('NEET Mock Test',200)">
+    Start
+   </button>
   </div>
 
  </div>
 
- <div class="card" style="margin-top:18px">
-  <h3>⏱️ Test Features</h3><br>
-  <span class="tag">Question Palette</span>
-  <span class="tag">Mark for Review</span>
-  <span class="tag">Timer</span>
-  <span class="tag">Auto Submit</span>
-  <span class="tag">Result</span>
-  <span class="tag">Analysis</span>
- </div>
-</section>
-
-
-<!-- PYQ -->
-<section class="page" id="pyq">
- <div class="header">
-  <div><h1>📜 NEET PYQ</h1><p>Previous Year Questions</p></div>
- </div>
-
- <div class="card">
-  <table class="table">
-   <tr><th>Year</th><th>Subject</th><th>Mode</th><th></th></tr>
-   <tr><td>2026</td><td>Physics</td><td>Quiz</td><td><button class="btn">Open</button></td></tr>
-   <tr><td>2026</td><td>Chemistry</td><td>Quiz</td><td><button class="btn">Open</button></td></tr>
-   <tr><td>2026</td><td>Biology</td><td>Quiz</td><td><button class="btn">Open</button></td></tr>
-  </table>
- </div>
 </section>
 
 
 <!-- AI -->
 <section class="page" id="ai">
+
  <div class="header">
-  <div><h1>🤖 AI Doubt Solver</h1><p>Physics • Chemistry • Biology</p></div>
+  <div>
+   <h1>🤖 AI Doubt Solver</h1>
+   <p>Physics • Chemistry • Biology</p>
+  </div>
  </div>
 
  <div class="card">
-  <label>अपना सवाल लिखें</label>
-  <textarea id="aiQ" class="input" rows="6"
-   placeholder="जैसे: Newton का second law समझाइए..."></textarea>
+
+  <textarea
+   id="aiQ"
+   class="input"
+   rows="6"
+   placeholder="अपना NEET question लिखें...">
+  </textarea>
+
   <br><br>
-  <button class="btn" onclick="askAI()">🤖 Ask AI</button>
+
+  <button class="btn" onclick="askAI()">
+   🤖 Ask AI
+  </button>
+
   <div id="aiResult" style="margin-top:18px"></div>
+
  </div>
+
 </section>
 
 
 <!-- ANALYTICS -->
 <section class="page" id="analytics">
+
  <div class="header">
-  <div><h1>📊 Analytics</h1><p>आपकी preparation progress</p></div>
+  <div>
+   <h1>📊 Analytics</h1>
+   <p>Preparation progress</p>
+  </div>
  </div>
 
  <div class="grid">
-  <div class="card"><h3>Questions</h3><div class="value" id="aQ">0</div></div>
-  <div class="card"><h3>Accuracy</h3><div class="value">0%</div></div>
-  <div class="card"><h3>Tests</h3><div class="value">0</div></div>
-  <div class="card"><h3>Study Time</h3><div class="value">0h</div></div>
+
+  <div class="card">
+   <h3>Questions</h3>
+   <div class="value" id="aQ">0</div>
+  </div>
+
+  <div class="card">
+   <h3>Accuracy</h3>
+   <div class="value">0%</div>
+  </div>
+
+  <div class="card">
+   <h3>Tests</h3>
+   <div class="value">0</div>
+  </div>
+
+  <div class="card">
+   <h3>Study Time</h3>
+   <div class="value">0h</div>
+  </div>
+
  </div>
 
- <div class="card">
-  <h3>📈 Subject Progress</h3><br>
-  Physics<div class="progress"><span style="width:25%"></span></div>
-  Chemistry<div class="progress"><span style="width:20%"></span></div>
-  Biology<div class="progress"><span style="width:35%"></span></div>
- </div>
 </section>
 
 
 <!-- PLANNER -->
 <section class="page" id="planner">
+
  <div class="header">
-  <div><h1>🗓️ Study Planner</h1><p>Daily target और revision plan</p></div>
+  <div>
+   <h1>🗓️ Study Planner</h1>
+   <p>Daily study plan</p>
+  </div>
  </div>
 
  <div class="card">
+
   <label>Today's Target</label>
-  <input id="target" class="input" placeholder="आज क्या पढ़ना है?"><br><br>
+
+  <input
+   id="target"
+   class="input"
+   placeholder="आज क्या पढ़ना है?">
+
+  <br><br>
+
   <label>Study Hours</label>
-  <input class="input" type="number" placeholder="Hours"><br><br>
-  <button class="btn" onclick="toast('Study plan saved ✅')">Save Plan</button>
+
+  <input
+   class="input"
+   type="number"
+   placeholder="Hours">
+
+  <br><br>
+
+  <button class="btn"
+   onclick="toast('Study plan saved ✅')">
+   Save Plan
+  </button>
+
  </div>
+
 </section>
 
 
 <!-- WEBSITES -->
 <section class="page" id="websites">
+
  <div class="header">
-  <div><h1>🌐 Study Websites Hub</h1><p>Useful educational websites</p></div>
+  <div>
+   <h1>🌐 Study Websites</h1>
+   <p>Official and useful resources</p>
+  </div>
  </div>
 
  <div class="grid3">
 
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://ncert.nic.in/" target="_blank" rel="noopener">
-   <div class="subjectIcon">📚</div><h3>NCERT</h3>
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://ncert.nic.in/',
+       '📚 NCERT'
+       )">
+
+   <div class="websiteIcon">📚</div>
+   <h2>NCERT</h2>
    <p class="muted">Official NCERT</p>
-  </a>
 
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://neet.nta.nic.in/" target="_blank" rel="noopener">
-   <div class="subjectIcon">🏛️</div><h3>NEET Official</h3>
-   <p class="muted">Official NEET portal</p>
-  </a>
+   <div class="open-label">
+    Open inside website →
+   </div>
 
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://www.nta.ac.in/" target="_blank" rel="noopener">
-   <div class="subjectIcon">🏛️</div><h3>NTA</h3>
+  </div>
+
+
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://neet.nta.nic.in/',
+       '🏛️ NEET Official'
+       )">
+
+   <div class="websiteIcon">🏛️</div>
+   <h2>NEET Official</h2>
+   <p class="muted">NTA NEET Portal</p>
+
+   <div class="open-label">
+    Open inside website →
+   </div>
+
+  </div>
+
+
+  <div class="card card3d website-card"
+       onclick="openWebsite(
+       'https://www.nta.ac.in/',
+       '🏛️ NTA'
+       )">
+
+   <div class="websiteIcon">🏛️</div>
+   <h2>NTA</h2>
    <p class="muted">National Testing Agency</p>
-  </a>
 
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://www.youtube.com/" target="_blank" rel="noopener">
-   <div class="subjectIcon">▶️</div><h3>YouTube</h3>
-   <p class="muted">Video learning</p>
-  </a>
+   <div class="open-label">
+    Open inside website →
+   </div>
 
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://scholar.google.com/" target="_blank" rel="noopener">
-   <div class="subjectIcon">🎓</div><h3>Google Scholar</h3>
-   <p class="muted">Academic search</p>
-  </a>
-
-  <a class="card card3d" style="text-decoration:none;color:inherit"
-   href="https://www.google.com/" target="_blank" rel="noopener">
-   <div class="subjectIcon">🔎</div><h3>Google</h3>
-   <p class="muted">Search</p>
-  </a>
+  </div>
 
  </div>
+
 </section>
 
 
 <!-- THEMES -->
 <section class="page" id="themes">
+
  <div class="header">
-  <div><h1>🎨 Themes</h1><p>Website का look बदलें</p></div>
+  <div>
+   <h1>🎨 Themes</h1>
+   <p>Website का look बदलें</p>
+  </div>
  </div>
 
  <div class="grid3">
 
   <div class="card card3d">
    <div class="subjectIcon">🔵</div>
-   <h3>Blue</h3><br>
-   <button class="btn" onclick="theme('default')">Apply</button>
+   <h3>Blue</h3>
+   <br>
+   <button class="btn"
+    onclick="theme('default')">
+    Apply
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟣</div>
-   <h3>Purple</h3><br>
-   <button class="btn" onclick="theme('purple')">Apply</button>
+   <h3>Purple</h3>
+   <br>
+   <button class="btn"
+    onclick="theme('purple')">
+    Apply
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟢</div>
-   <h3>Green</h3><br>
-   <button class="btn" onclick="theme('green')">Apply</button>
+   <h3>Green</h3>
+   <br>
+   <button class="btn"
+    onclick="theme('green')">
+    Apply
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🌊</div>
-   <h3>Ocean</h3><br>
-   <button class="btn" onclick="theme('ocean')">Apply</button>
+   <h3>Ocean</h3>
+   <br>
+   <button class="btn"
+    onclick="theme('ocean')">
+    Apply
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🟠</div>
-   <h3>Orange</h3><br>
-   <button class="btn" onclick="theme('orange')">Apply</button>
+   <h3>Orange</h3>
+   <br>
+   <button class="btn"
+    onclick="theme('orange')">
+    Apply
+   </button>
   </div>
 
  </div>
 
  <div class="card" style="margin-top:18px">
-  <button class="btn" onclick="darkMode()">🌙 Dark / ☀️ Light</button>
+
+  <button class="btn"
+   onclick="darkMode()">
+   🌙 Dark / ☀️ Light
+  </button>
+
  </div>
+
 </section>
 
 
 <!-- GAMIFICATION -->
 <section class="page" id="gamification">
+
  <div class="header">
-  <div><h1>🏅 Achievements</h1><p>XP • Badges • Streak</p></div>
+  <div>
+   <h1>🏅 Achievements</h1>
+   <p>XP • Badges • Streak</p>
+  </div>
  </div>
 
  <div class="grid3">
-  <div class="card card3d"><div class="subjectIcon">🔥</div><h3>Study Streak</h3><p class="muted">0 Days</p></div>
-  <div class="card card3d"><div class="subjectIcon">🎯</div><h3>Question Master</h3><p class="muted">0 Questions</p></div>
-  <div class="card card3d"><div class="subjectIcon">🏆</div><h3>Test Champion</h3><p class="muted">0 Tests</p></div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🔥</div>
+   <h3>Study Streak</h3>
+   <p class="muted">0 Days</p>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🎯</div>
+   <h3>Question Master</h3>
+   <p class="muted">0 Questions</p>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🏆</div>
+   <h3>Test Champion</h3>
+   <p class="muted">0 Tests</p>
+  </div>
+
  </div>
+
 </section>
 
 
 <!-- NOTIFICATIONS -->
 <section class="page" id="notifications">
+
  <div class="header">
-  <div><h1>🔔 Notifications</h1><p>Study updates</p></div>
+  <div>
+   <h1>🔔 Notifications</h1>
+   <p>Study updates</p>
+  </div>
  </div>
 
  <div class="card">
-  <h3>📢 Welcome to Mission Lakshya NEET 2027</h3>
-  <p class="muted">New books, DPP, tests और videos के updates यहाँ आएंगे।</p>
+
+  <h3>📢 Mission Lakshya NEET 2027</h3>
+
+  <p class="muted" style="margin-top:8px">
+   New DPP, Test, Books और Videos के updates यहाँ आएंगे।
+  </p>
+
  </div>
+
 </section>
 
 
 <!-- PROFILE -->
 <section class="page" id="profile">
+
  <div class="header">
-  <div><h1>👤 Student Profile</h1><p>Profile information</p></div>
+  <div>
+   <h1>👤 Student Profile</h1>
+   <p>Student information</p>
+  </div>
  </div>
 
  <div class="card">
+
   <label>Name</label>
-  <input class="input" value="Yashpal Aagri"><br><br>
+
+  <input
+   class="input"
+   value="Yashpal Aagri">
+
+  <br><br>
 
   <label>Target</label>
-  <input class="input" value="NEET 2027"><br><br>
 
-  <label>Class</label>
-  <select class="input">
-   <option>Class 11</option>
-   <option>Class 12</option>
-   <option>Dropper</option>
-  </select><br><br>
+  <input
+   class="input"
+   value="NEET 2027">
 
-  <button class="btn" onclick="toast('Profile saved ✅')">Save Profile</button>
+  <br><br>
+
+  <button class="btn"
+   onclick="toast('Profile saved ✅')">
+   Save Profile
+  </button>
+
  </div>
+
 </section>
 
 
 <!-- SEARCH -->
 <section class="page" id="search">
+
  <div class="header">
-  <div><h1>🔍 Global Search</h1><p>Books, videos, notes और questions</p></div>
+  <div>
+   <h1>🔍 Global Search</h1>
+   <p>Search resources</p>
+  </div>
  </div>
 
  <div class="search">
-  🔍<input id="searchInput" oninput="searchAll()" placeholder="Physics, Chemistry, Biology...">
+
+  🔍
+
+  <input
+   id="searchInput"
+   oninput="searchAll()"
+   placeholder="Physics, Chemistry, Biology...">
+
  </div>
 
  <div class="card" id="searchResult">
   Search करने के लिए ऊपर लिखें।
  </div>
+
 </section>
 
 
 <!-- FAVORITES -->
 <section class="page" id="favorites">
- <div class="header"><div><h1>⭐ Favorites</h1><p>Saved resources</p></div></div>
- <div class="card"><h3>⭐ अभी कोई favorite नहीं है</h3></div>
-</section>
 
+ <div class="header">
+  <div>
+   <h1>⭐ Favorites</h1>
+   <p>Saved resources</p>
+  </div>
+ </div>
 
-<!-- RECENT -->
-<section class="page" id="recent">
- <div class="header"><div><h1>🕒 Recently Viewed</h1><p>Recent activity</p></div></div>
- <div class="card"><h3>🕒 अभी कोई recent activity नहीं है</h3></div>
+ <div class="card">
+  <h3>⭐ अभी कोई favorite नहीं है</h3>
+ </div>
+
 </section>
 
 
 <!-- SUPPORT -->
 <section class="page" id="support">
- <div class="header"><div><h1>📞 Support</h1><p>Help और feedback</p></div></div>
+
+ <div class="header">
+  <div>
+   <h1>📞 Support</h1>
+   <p>Help and feedback</p>
+  </div>
+ </div>
 
  <div class="grid3">
-  <div class="card card3d"><div class="subjectIcon">❓</div><h3>FAQ</h3><button class="btn">Open</button></div>
-  <div class="card card3d"><div class="subjectIcon">💬</div><h3>Feedback</h3><button class="btn">Send</button></div>
-  <div class="card card3d"><div class="subjectIcon">🐞</div><h3>Report Problem</h3><button class="btn">Report</button></div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">❓</div>
+   <h3>FAQ</h3>
+   <br>
+   <button class="btn">Open</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">💬</div>
+   <h3>Feedback</h3>
+   <br>
+   <button class="btn">Send</button>
+  </div>
+
+  <div class="card card3d">
+   <div class="subjectIcon">🐞</div>
+   <h3>Report Problem</h3>
+   <br>
+   <button class="btn">Report</button>
+  </div>
+
  </div>
+
 </section>
 
 
 <!-- ADMIN -->
 <section class="page" id="admin">
+
  <div class="header">
-  <div><h1>🛠️ Admin Panel</h1><p>Content management</p></div>
+  <div>
+   <h1>🛠️ Admin Panel</h1>
+   <p>Content management</p>
+  </div>
  </div>
 
  <div class="grid3">
@@ -1155,74 +1961,141 @@ textarea.input{resize:vertical}
   <div class="card card3d">
    <div class="subjectIcon">📚</div>
    <h3>Books</h3>
-   <p class="muted">Add / Edit / Delete</p><br>
-   <button class="btn" onclick="openInfo('Book Manager')">Manage</button>
+   <br>
+   <button class="btn">Manage</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🎥</div>
    <h3>Videos</h3>
-   <p class="muted">Add lectures</p><br>
+   <br>
    <button class="btn">Manage</button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">📝</div>
    <h3>Questions</h3>
-   <p class="muted">Add questions</p><br>
-   <button class="btn" onclick="addDemoQuestion()">Add Question</button>
+   <br>
+   <button class="btn"
+    onclick="addDemoQuestion()">
+    Add Question
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">📄</div>
    <h3>DPP</h3>
-   <p class="muted">Create DPP</p><br>
-   <button class="btn" onclick="go('dpp')">Manage DPP</button>
+   <br>
+   <button class="btn"
+    onclick="go('dpp')">
+    Manage
+   </button>
   </div>
 
   <div class="card card3d">
    <div class="subjectIcon">🏆</div>
    <h3>Tests</h3>
-   <p class="muted">Create tests</p><br>
-   <button class="btn" onclick="go('tests')">Manage Tests</button>
+   <br>
+   <button class="btn"
+    onclick="go('tests')">
+    Manage
+   </button>
   </div>
 
   <div class="card card3d">
-   <div class="subjectIcon">👥</div>
-   <h3>Users</h3>
-   <p class="muted">Student management</p><br>
-   <button class="btn">Manage</button>
+   <div class="subjectIcon">🎓</div>
+   <h3>PW Batch</h3>
+   <br>
+   <button class="btn"
+    onclick="go('pwbatch')">
+    Manage
+   </button>
   </div>
 
  </div>
+
 </section>
 
 </main>
 
 
-<!-- MODAL -->
-<div class="modal" id="modal">
- <div class="modalBox">
-  <div style="display:flex;justify-content:space-between;align-items:center">
-   <h2 id="modalTitle">Mission Lakshya</h2>
-   <button class="icon" onclick="closeModal()">✕</button>
+<!-- ==================================================
+     FULL SCREEN WEBSITE VIEWER
+=================================================== -->
+
+<div class="viewer" id="websiteViewer">
+
+ <div class="viewerHeader">
+
+  <button class="btn"
+   onclick="closeWebsite()">
+   ← Back
+  </button>
+
+  <div class="viewerTitle"
+       id="websiteTitle">
+   Website
   </div>
-  <div id="modalBody" style="margin-top:18px"></div>
+
+  <button class="btn"
+   onclick="reloadWebsite()">
+   🔄 Reload
+  </button>
+
  </div>
+
+ <iframe
+   id="websiteFrame"
+   src=""
+   title="Study Website Viewer"
+   allowfullscreen>
+ </iframe>
+
 </div>
 
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+ <div class="modalBox">
+
+  <div style="
+   display:flex;
+   justify-content:space-between;
+   align-items:center">
+
+   <h2 id="modalTitle">
+    Mission Lakshya
+   </h2>
+
+   <button class="icon"
+    onclick="closeModal()">
+    ✕
+   </button>
+
+  </div>
+
+  <div
+   id="modalBody"
+   style="margin-top:18px">
+  </div>
+
+ </div>
+
+</div>
+
+
+<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 
 <script>
 
-/* ================= QUESTION DATABASE =================
-   यहाँ questions रखे जा सकते हैं।
-   इसी database से Quiz, DPP और Test questions लिए जा सकते हैं.
-   300 तक या उससे ज्यादा questions add किए जा सकते हैं.
-======================================================= */
+/* ==========================================
+   QUESTION DATABASE
+========================================== */
 
-const questionBank = [
+const questionBank=[
 
  {
   id:1,
@@ -1251,7 +2124,7 @@ const questionBank = [
   subject:"Biology",
   chapter:"Human Physiology",
   difficulty:"Easy",
-  q:"मानव शरीर में blood को pump करने वाला organ कौन सा है?",
+  q:"Blood को pump करने वाला organ कौन सा है?",
   options:["Lungs","Kidney","Heart","Liver"],
   answer:2,
   explanation:"Heart blood को पूरे शरीर में pump करता है।"
@@ -1265,7 +2138,7 @@ const questionBank = [
   q:"Velocity की SI unit क्या है?",
   options:["m/s","m/s²","N","J"],
   answer:0,
-  explanation:"Velocity की SI unit metre per second (m/s) है।"
+  explanation:"Velocity की SI unit metre per second है।"
  },
 
  {
@@ -1276,7 +2149,7 @@ const questionBank = [
   q:"Electron का charge कैसा होता है?",
   options:["Positive","Negative","Neutral","Variable"],
   answer:1,
-  explanation:"Electron का electric charge negative होता है।"
+  explanation:"Electron का charge negative होता है।"
  },
 
  {
@@ -1287,51 +2160,139 @@ const questionBank = [
   q:"Cell का control centre किसे कहा जाता है?",
   options:["Ribosome","Nucleus","Golgi body","Lysosome"],
   answer:1,
-  explanation:"Nucleus genetic material रखता है और cell activities को regulate करता है।"
+  explanation:"Nucleus cell activities को regulate करता है।"
  }
 
 ];
 
 
-/* ================= NAVIGATION ================= */
+/* ==========================================
+   NAVIGATION
+========================================== */
 
 function go(id,button){
 
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document
+  .querySelectorAll(".page")
+  .forEach(p=>p.classList.remove("active"));
 
  const page=document.getElementById(id);
- if(page) page.classList.add("active");
 
- document.querySelectorAll(".nav").forEach(n=>n.classList.remove("active"));
+ if(page){
+  page.classList.add("active");
+ }
 
- if(button) button.classList.add("active");
+ document
+  .querySelectorAll(".nav")
+  .forEach(n=>n.classList.remove("active"));
 
- document.getElementById("sidebar").classList.remove("open");
+ if(button){
+  button.classList.add("active");
+ }
 
- window.scrollTo({top:0,behavior:"smooth"});
+ document
+  .getElementById("sidebar")
+  .classList.remove("open");
+
+ window.scrollTo({
+  top:0,
+  behavior:"smooth"
+ });
+
 }
 
 
 function toggleMenu(){
- document.getElementById("sidebar").classList.toggle("open");
+
+ document
+  .getElementById("sidebar")
+  .classList.toggle("open");
+
 }
 
 
-/* ================= THEME ================= */
+/* ==========================================
+   WEBSITE VIEWER
+========================================== */
+
+function openWebsite(url,title){
+
+ const viewer=
+  document.getElementById("websiteViewer");
+
+ const frame=
+  document.getElementById("websiteFrame");
+
+ document.getElementById("websiteTitle")
+  .textContent=title;
+
+ frame.src=url;
+
+ viewer.classList.add("active");
+
+ document.body.style.overflow="hidden";
+
+}
+
+
+function closeWebsite(){
+
+ const viewer=
+  document.getElementById("websiteViewer");
+
+ const frame=
+  document.getElementById("websiteFrame");
+
+ frame.src="";
+
+ viewer.classList.remove("active");
+
+ document.body.style.overflow="";
+
+}
+
+
+function reloadWebsite(){
+
+ const frame=
+  document.getElementById("websiteFrame");
+
+ if(frame.src){
+
+  frame.src=frame.src;
+
+ }
+
+}
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
 
 function darkMode(){
+
  document.body.classList.toggle("dark");
+
  localStorage.setItem(
   "dark",
   document.body.classList.contains("dark")
  );
+
 }
 
+
+/* ==========================================
+   THEMES
+========================================== */
 
 function theme(name){
 
  document.body.classList.remove(
-  "purple","green","ocean","orange"
+  "purple",
+  "green",
+  "ocean",
+  "orange"
  );
 
  if(name!=="default"){
@@ -1341,12 +2302,15 @@ function theme(name){
  localStorage.setItem("theme",name);
 
  toast("Theme changed 🎨");
+
 }
 
 
 window.addEventListener("load",()=>{
 
- if(localStorage.getItem("dark")==="true"){
+ if(
+  localStorage.getItem("dark")==="true"
+ ){
   document.body.classList.add("dark");
  }
 
@@ -1359,7 +2323,9 @@ window.addEventListener("load",()=>{
 });
 
 
-/* ================= QUIZ ================= */
+/* ==========================================
+   QUIZ
+========================================== */
 
 let quizQuestions=[];
 let current=0;
@@ -1372,54 +2338,84 @@ function startQuiz(subject){
  go("quiz");
 
  if(subject){
-  quizQuestions=questionBank.filter(q=>q.subject===subject);
+
+  quizQuestions=
+   questionBank.filter(
+    q=>q.subject===subject
+   );
+
  }else{
-  quizQuestions=[...questionBank];
+
+  quizQuestions=[
+   ...questionBank
+  ];
+
  }
 
  current=0;
  score=0;
 
- document.getElementById("quizStart").style.display="none";
- document.getElementById("quizBox").style.display="block";
+ document
+  .getElementById("quizStart")
+  .style.display="none";
+
+ document
+  .getElementById("quizBox")
+  .style.display="block";
 
  loadQuestion();
+
 }
 
 
 function loadQuestion(){
 
  if(!quizQuestions.length){
+
   toast("Questions उपलब्ध नहीं हैं");
+
   return;
+
  }
 
  const q=quizQuestions[current];
 
- document.getElementById("qNo").textContent=
+ document
+  .getElementById("qNo")
+  .textContent=
   `Question ${current+1} / ${quizQuestions.length}`;
 
- document.getElementById("qText").textContent=q.q;
+ document
+  .getElementById("qText")
+  .textContent=q.q;
 
- const box=document.getElementById("qOptions");
+ const box=
+  document.getElementById("qOptions");
 
  box.innerHTML="";
 
- document.getElementById("qExplanation").style.display="none";
+ document
+  .getElementById("qExplanation")
+  .style.display="none";
 
  q.options.forEach((option,index)=>{
 
-  const b=document.createElement("button");
+  const b=
+   document.createElement("button");
 
   b.className="option";
 
   b.textContent=
    `${String.fromCharCode(65+index)}. ${option}`;
 
-  b.onclick=()=>answerQuestion(b,index);
+  b.onclick=()=>{
+   answerQuestion(b,index);
+  };
 
   box.appendChild(b);
+
  });
+
 }
 
 
@@ -1427,7 +2423,9 @@ function answerQuestion(button,index){
 
  const q=quizQuestions[current];
 
- document.querySelectorAll(".option").forEach(b=>b.disabled=true);
+ document
+  .querySelectorAll(".option")
+  .forEach(b=>b.disabled=true);
 
  questionsAttempted++;
 
@@ -1443,195 +2441,275 @@ function answerQuestion(button,index){
 
   button.classList.add("wrong");
 
-  document.querySelectorAll(".option")[q.answer]
+  document
+   .querySelectorAll(".option")[q.answer]
    .classList.add("correct");
 
   toast("Wrong answer");
 
  }
 
- document.getElementById("qExplanation").style.display="block";
+ document
+  .getElementById("qExplanation")
+  .style.display="block";
 
- document.getElementById("qExplanation").innerHTML=
-  `<strong>💡 Explanation</strong><br><br>${q.explanation}`;
+ document
+  .getElementById("qExplanation")
+  .innerHTML=
+  `<strong>💡 Explanation</strong>
+   <br><br>${q.explanation}`;
 
  updateStats();
+
 }
 
 
 function nextQuestion(){
 
- if(current<quizQuestions.length-1){
+ if(
+  current<
+  quizQuestions.length-1
+ ){
 
   current++;
+
   loadQuestion();
 
  }else{
 
-  document.getElementById("quizBox").innerHTML=`
+  document
+   .getElementById("quizBox")
+   .innerHTML=`
 
    <div style="text-align:center">
 
-    <div class="subjectIcon">🏆</div>
+    <div class="subjectIcon">
+     🏆
+    </div>
 
     <h2>Quiz Complete!</h2>
 
     <p style="margin:15px">
-     Score: <strong>${score}/${quizQuestions.length}</strong>
+     Score:
+     <strong>
+      ${score}/${quizQuestions.length}
+     </strong>
     </p>
 
-    <button class="btn" onclick="startQuiz()">
+    <button
+     class="btn"
+     onclick="startQuiz()">
      Try Again
     </button>
 
    </div>
+
   `;
+
  }
+
 }
 
 
-/* ================= DPP ================= */
+/* ==========================================
+   DPP
+========================================== */
 
 function startDPP(subject){
 
- const questions=questionBank.filter(
-  q=>q.subject===subject
- );
+ const questions=
+  questionBank.filter(
+   q=>q.subject===subject
+  );
 
  if(!questions.length){
-  toast("इस subject के DPP questions अभी add नहीं हैं");
+
+  toast(
+   "इस subject के DPP questions अभी add नहीं हैं"
+  );
+
   return;
+
  }
 
  quizQuestions=questions;
 
  current=0;
+
  score=0;
 
  go("quiz");
 
- document.getElementById("quizStart").style.display="none";
- document.getElementById("quizBox").style.display="block";
+ document
+  .getElementById("quizStart")
+  .style.display="none";
+
+ document
+  .getElementById("quizBox")
+  .style.display="block";
 
  loadQuestion();
 
  toast(`${subject} DPP शुरू हो गया 📄`);
+
 }
 
 
-/* ================= TEST ================= */
+/* ==========================================
+   TEST
+========================================== */
 
 function startTest(name,maxQuestions){
 
- const available=questionBank.length;
-
  openInfo(
-  `${name} तैयार है`,
+  `${name}`,
   `
    <h3>🏆 ${name}</h3>
 
    <p style="margin:12px 0">
-    इस test में अधिकतम <strong>${maxQuestions}</strong>
-    questions रखे जा सकते हैं।
+    Maximum:
+    <strong>${maxQuestions}</strong>
+    Questions
    </p>
 
    <p class="muted">
-    अभी database में ${available} demo questions हैं।
-    जैसे-जैसे questions add होंगे, test automatically
-    उसी question bank से questions ले सकता है।
+    अभी demo database में
+    ${questionBank.length}
+    questions हैं।
+    Database में questions बढ़ाने पर
+    इन्हें Test में इस्तेमाल किया जा सकता है।
    </p>
 
    <br>
 
-   <button class="btn"
+   <button
+    class="btn"
     onclick="closeModal();startQuiz()">
     Start Demo Test
    </button>
   `
  );
+
 }
 
 
-/* ================= ADD QUESTION DEMO ================= */
+/* ==========================================
+   ADD QUESTION
+========================================== */
 
 function addDemoQuestion(){
 
- const newQuestion={
-  id:questionBank.length+1,
-  subject:"Physics",
-  chapter:"Demo Chapter",
-  difficulty:"Medium",
-  q:"Demo question — इसे बाद में Admin Panel से बदला जा सकता है।",
-  options:["Option A","Option B","Option C","Option D"],
-  answer:0,
-  explanation:"यह demo question है।"
- };
+ questionBank.push({
 
- questionBank.push(newQuestion);
+  id:questionBank.length+1,
+
+  subject:"Physics",
+
+  chapter:"Demo Chapter",
+
+  difficulty:"Medium",
+
+  q:"Demo question — इसे Admin Panel से बदला जा सकता है।",
+
+  options:[
+   "Option A",
+   "Option B",
+   "Option C",
+   "Option D"
+  ],
+
+  answer:0,
+
+  explanation:
+   "यह demo question है।"
+
+ });
 
  updateStats();
 
  toast("New question added 📝");
+
 }
 
 
-/* ================= AI ================= */
+/* ==========================================
+   AI
+========================================== */
 
 function askAI(){
 
- const q=document.getElementById("aiQ").value.trim();
+ const q=
+  document.getElementById("aiQ")
+  .value.trim();
 
  if(!q){
+
   toast("पहले सवाल लिखें");
+
   return;
+
  }
 
- document.getElementById("aiResult").innerHTML=`
+ document
+  .getElementById("aiResult")
+  .innerHTML=`
 
-  <div class="card">
+   <div class="card">
 
-   <h3>🤖 Mission Lakshya AI</h3>
+    <h3>🤖 Mission Lakshya AI</h3>
 
-   <p style="margin-top:10px">
-    आपका सवाल:
-   </p>
+    <p style="margin-top:10px">
+     आपका सवाल:
+    </p>
 
-   <p class="muted">${escapeHTML(q)}</p>
+    <p class="muted">
+     ${escapeHTML(q)}
+    </p>
 
-   <hr style="margin:15px 0;border-color:var(--border)">
+    <hr style="margin:15px 0">
 
-   <p>
-    AI backend connect होने पर यहाँ
-    Physics, Chemistry और Biology का
-    step-by-step solution आएगा।
-   </p>
+    <p>
+     AI backend connect होने पर यहाँ
+     Physics, Chemistry और Biology का
+     step-by-step answer आएगा।
+    </p>
 
-  </div>
- `;
+   </div>
+  `;
+
 }
 
 
-/* ================= SEARCH ================= */
+/* ==========================================
+   SEARCH
+========================================== */
 
 function searchAll(){
 
- const q=document
+ const q=
+  document
   .getElementById("searchInput")
   .value
   .toLowerCase();
 
- const result=document.getElementById("searchResult");
+ const result=
+  document.getElementById("searchResult");
 
  if(!q){
-  result.innerHTML="Search करने के लिए ऊपर लिखें।";
+
+  result.innerHTML=
+   "Search करने के लिए ऊपर लिखें।";
+
   return;
+
  }
 
- const found=questionBank.filter(x=>
-  x.q.toLowerCase().includes(q) ||
-  x.subject.toLowerCase().includes(q) ||
-  x.chapter.toLowerCase().includes(q)
- );
+ const found=
+  questionBank.filter(x=>
+   x.q.toLowerCase().includes(q) ||
+   x.subject.toLowerCase().includes(q) ||
+   x.chapter.toLowerCase().includes(q)
+  );
 
  result.innerHTML=`
 
@@ -1640,79 +2718,116 @@ function searchAll(){
   <br>
 
   <p>
-   ${found.length} question/resource मिला।
+   ${found.length}
+   questions मिले।
   </p>
 
   <br>
 
   ${found.map(x=>`
-   <div class="card" style="margin-bottom:10px">
-    <strong>${escapeHTML(x.q)}</strong>
+
+   <div class="card"
+    style="margin-bottom:10px">
+
+    <strong>
+     ${escapeHTML(x.q)}
+    </strong>
+
     <br><br>
-    <span class="tag">${x.subject}</span>
-    <span class="tag">${x.difficulty}</span>
+
+    <span class="tag">
+     ${x.subject}
+    </span>
+
+    <span class="tag">
+     ${x.difficulty}
+    </span>
+
    </div>
+
   `).join("")}
 
  `;
+
 }
 
 
-/* ================= EXTERNAL WEBSITE ================= */
-
-function external(url){
- window.open(url,"_blank","noopener,noreferrer");
-}
-
-
-/* ================= MODAL ================= */
+/* ==========================================
+   MODAL
+========================================== */
 
 function openInfo(title,body){
 
- document.getElementById("modalTitle").textContent=title;
+ document
+  .getElementById("modalTitle")
+  .textContent=title;
 
- document.getElementById("modalBody").innerHTML=
- body || `
-  <p class="muted">
-   यह section तैयार है। यहाँ वास्तविक content/PDF
-   database से connect किया जा सकता है।
-  </p>
- `;
+ document
+  .getElementById("modalBody")
+  .innerHTML=
+  body ||
+  `<p class="muted">
+   Mission Lakshya section
+  </p>`;
 
- document.getElementById("modal").classList.add("show");
+ document
+  .getElementById("modal")
+  .classList.add("show");
+
 }
 
 
 function closeModal(){
- document.getElementById("modal").classList.remove("show");
+
+ document
+  .getElementById("modal")
+  .classList.remove("show");
+
 }
 
 
-/* ================= TOAST ================= */
+/* ==========================================
+   TOAST
+========================================== */
 
 function toast(text){
 
- const t=document.getElementById("toast");
+ const t=
+  document.getElementById("toast");
 
  t.textContent=text;
+
  t.classList.add("show");
 
  setTimeout(()=>{
+
   t.classList.remove("show");
+
  },2300);
+
 }
 
 
-/* ================= STATS ================= */
+/* ==========================================
+   STATS
+========================================== */
 
 function updateStats(){
 
- document.getElementById("statQ").textContent=questionsAttempted;
- document.getElementById("aQ").textContent=questionsAttempted;
+ document
+  .getElementById("statQ")
+  .textContent=questionsAttempted;
+
+ document
+  .getElementById("aQ")
+  .textContent=questionsAttempted;
+
 }
 
 
-/* ================= SECURITY ================= */
+/* ==========================================
+   HTML ESCAPE
+========================================== */
 
 function escapeHTML(text){
 
@@ -1722,14 +2837,19 @@ function escapeHTML(text){
   .replaceAll(">","&gt;")
   .replaceAll('"',"&quot;")
   .replaceAll("'","&#039;");
+
 }
 
 
-document.getElementById("modal").addEventListener("click",function(e){
+document
+ .getElementById("modal")
+ .addEventListener("click",function(e){
 
- if(e.target===this) closeModal();
+  if(e.target===this){
+   closeModal();
+  }
 
-});
+ });
 
 </script>
 
