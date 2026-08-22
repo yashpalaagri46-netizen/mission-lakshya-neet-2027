@@ -1,0 +1,1601 @@
+/* =========================================================
+   MISSION LAKSHYA NEET 2027
+   STYLE.CSS
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #06111f;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 200, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 30%, rgba(100, 80, 255, 0.15), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(0, 255, 170, 0.10), transparent 28%),
+    #06111f;
+}
+
+.live-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  font-size: 35px;
+  opacity: 0.16;
+  filter: drop-shadow(0 0 15px rgba(0, 220, 255, 0.5));
+  animation: floatingParticle 12s ease-in-out infinite;
+}
+
+.particle-1 {
+  left: 5%;
+  top: 20%;
+}
+
+.particle-2 {
+  left: 88%;
+  top: 15%;
+  animation-delay: 1s;
+}
+
+.particle-3 {
+  left: 75%;
+  top: 65%;
+  animation-delay: 2s;
+}
+
+.particle-4 {
+  left: 15%;
+  top: 75%;
+  animation-delay: 3s;
+}
+
+.particle-5 {
+  left: 48%;
+  top: 12%;
+  animation-delay: 4s;
+}
+
+.particle-6 {
+  left: 92%;
+  top: 80%;
+  animation-delay: 5s;
+}
+
+.particle-7 {
+  left: 35%;
+  top: 82%;
+  animation-delay: 6s;
+}
+
+.particle-8 {
+  left: 60%;
+  top: 40%;
+  animation-delay: 7s;
+}
+
+@keyframes floatingParticle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -35px, 0) rotate(15deg);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  min-height: 75px;
+  padding: 12px 4%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: rgba(5, 17, 31, 0.86);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-3d {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 30px;
+
+  border-radius: 16px;
+
+  background: rgba(0, 200, 255, 0.12);
+  border: 1px solid rgba(0, 220, 255, 0.25);
+
+  box-shadow:
+    0 0 25px rgba(0, 210, 255, 0.18),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotateY(12deg);
+  }
+}
+
+.logo-area h1 {
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.logo-area span {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: #b8c7d9;
+
+  padding: 9px 10px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: #ffffff;
+  background: rgba(0, 210, 255, 0.13);
+  transform: translateY(-2px);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button,
+.login-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border-radius: 10px;
+
+  padding: 9px 12px;
+
+  transition: 0.25s ease;
+}
+
+.icon-button:hover,
+.login-button:hover {
+  background: rgba(0, 210, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PAGE SECTIONS
+========================================================= */
+
+.page-section {
+  display: none;
+
+  width: min(1250px, 92%);
+
+  margin: 0 auto;
+
+  padding: 55px 0;
+}
+
+.active-section {
+  display: block;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+  min-height: 650px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  margin-bottom: 18px;
+
+  border-radius: 30px;
+
+  background: rgba(0, 220, 255, 0.10);
+
+  border: 1px solid rgba(0, 220, 255, 0.25);
+
+  color: #6eeaff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-content h2 {
+  font-size: clamp(42px, 6vw, 76px);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  margin-bottom: 22px;
+}
+
+.hero-content h2 span {
+  display: block;
+
+  color: #00d9ff;
+
+  text-shadow:
+    0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+.hero-content p {
+  color: #b8c7d9;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button,
+.card-button,
+.small-button {
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.primary-button {
+  padding: 13px 20px;
+
+  color: #03121d;
+
+  background: #00d9ff;
+
+  box-shadow:
+    0 8px 25px rgba(0, 217, 255, 0.18);
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(0, 217, 255, 0.30);
+}
+
+.secondary-button {
+  padding: 13px 20px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.secondary-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card-button,
+.small-button {
+  margin-top: 15px;
+
+  padding: 10px 13px;
+
+  color: #ffffff;
+
+  background: rgba(0, 210, 255, 0.10);
+
+  border: 1px solid rgba(0, 210, 255, 0.18);
+}
+
+.card-button:hover,
+.small-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 210, 255, 0.18);
+}
+
+
+/* =========================================================
+   3D MEDICAL DISPLAY
+========================================================= */
+
+.medical-3d {
+  position: relative;
+
+  width: min(520px, 90vw);
+
+  height: 520px;
+
+  margin: auto;
+
+  display: grid;
+
+  place-items: center;
+
+  perspective: 1000px;
+}
+
+.doctor-3d {
+  width: 190px;
+  height: 190px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 105px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 220, 255, 0.18),
+      rgba(0, 100, 180, 0.05),
+      transparent 70%
+    );
+
+  box-shadow:
+    0 0 70px rgba(0, 220, 255, 0.18);
+
+  animation:
+    doctorFloat 4s ease-in-out infinite,
+    doctorRotate 7s ease-in-out infinite;
+
+  z-index: 5;
+}
+
+@keyframes doctorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes doctorRotate {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(0, 220, 255, 0.1));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 25px rgba(0, 220, 255, 0.35));
+  }
+}
+
+.medical-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(0, 220, 255, 0.18);
+
+  border-radius: 50%;
+
+  transform-style: preserve-3d;
+
+  animation: orbitSpin 10s linear infinite;
+}
+
+.orbit-1 {
+  width: 270px;
+  height: 270px;
+}
+
+.orbit-2 {
+  width: 360px;
+  height: 180px;
+
+  transform: rotateX(65deg);
+}
+
+.orbit-3 {
+  width: 430px;
+  height: 220px;
+
+  transform: rotateY(65deg);
+
+  animation-duration: 14s;
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotateZ(0deg) rotateX(65deg);
+  }
+
+  to {
+    transform: rotateZ(360deg) rotateX(65deg);
+  }
+}
+
+.floating-icon {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 35px;
+
+  border-radius: 20px;
+
+  background: rgba(7, 25, 42, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(10px);
+
+  animation: iconFloat 4s ease-in-out infinite;
+
+  z-index: 10;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+}
+
+.icon-dna {
+  left: 5%;
+  top: 15%;
+}
+
+.icon-microscope {
+  right: 4%;
+  top: 12%;
+  animation-delay: 0.5s;
+}
+
+.icon-book {
+  left: 3%;
+  bottom: 15%;
+  animation-delay: 1s;
+}
+
+.icon-heart {
+  right: 4%;
+  bottom: 17%;
+  animation-delay: 1.5s;
+}
+
+.icon-atom {
+  left: 42%;
+  top: 0;
+  animation-delay: 2s;
+}
+
+.icon-test {
+  left: 42%;
+  bottom: 0;
+  animation-delay: 2.5s;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading,
+.page-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.section-heading > span,
+.page-title > span {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 28px;
+
+  border-radius: 15px;
+
+  background: rgba(0, 210, 255, 0.09);
+
+  border: 1px solid rgba(0, 210, 255, 0.16);
+}
+
+.section-heading h3,
+.page-title h2 {
+  margin-bottom: 4px;
+}
+
+.section-heading p,
+.page-title p {
+  color: #8fa3b8;
+}
+
+
+/* =========================================================
+   SUBJECT CARDS
+========================================================= */
+
+.subject-grid,
+.feature-grid,
+.test-grid,
+.website-grid,
+.video-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.subject-card,
+.feature-card,
+.test-card,
+.website-card,
+.video-card {
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.subject-card:hover,
+.feature-card:hover,
+.test-card:hover,
+.website-card:hover,
+.video-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(0, 210, 255, 0.25);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.subject-icon,
+.feature-icon,
+.test-icon {
+  font-size: 42px;
+
+  margin-bottom: 18px;
+
+  display: inline-block;
+
+  animation: smallIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes smallIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+}
+
+.subject-card h4,
+.feature-card h4 {
+  font-size: 20px;
+
+  margin-bottom: 8px;
+}
+
+.subject-card p,
+.feature-card p,
+.test-card p,
+.website-card p,
+.video-card p {
+  color: #91a5ba;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.feature-grid {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  margin-bottom: 20px;
+}
+
+.ai-feature-card {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.ai-feature-card::after {
+  content: "AI";
+
+  position: absolute;
+
+  right: -15px;
+  top: -15px;
+
+  font-size: 80px;
+
+  font-weight: 900;
+
+  opacity: 0.035;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title {
+  margin-bottom: 35px;
+}
+
+.page-title h2 {
+  font-size: 32px;
+}
+
+
+/* =========================================================
+   EMPTY CONTENT
+========================================================= */
+
+.empty-content {
+  min-height: 350px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.large-icon {
+  font-size: 75px;
+
+  margin-bottom: 18px;
+
+  animation: largeIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes largeIconFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+.empty-content p {
+  color: #93a7bb;
+
+  margin: 10px 0 20px;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-placeholder {
+  height: 180px;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 60px;
+
+  border-radius: 16px;
+
+  margin-bottom: 18px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 210, 255, 0.16),
+      rgba(0, 210, 255, 0.03)
+    );
+}
+
+.video-card h3 {
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   TEST
+========================================================= */
+
+.test-grid {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+.test-card {
+  text-align: center;
+}
+
+.test-card .primary-button {
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-box {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quiz-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #8fa3b8;
+
+  margin-bottom: 30px;
+}
+
+.quiz-box h3 {
+  font-size: 22px;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+.quiz-options {
+  display: grid;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.quiz-option {
+  padding: 14px 16px;
+
+  text-align: left;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.quiz-option:hover {
+  transform: translateX(4px);
+
+  background: rgba(0, 210, 255, 0.10);
+
+  border-color: rgba(0, 210, 255, 0.22);
+}
+
+
+/* =========================================================
+   WEBSITES
+========================================================= */
+
+.website-card {
+  text-align: center;
+}
+
+.website-card > span {
+  display: block;
+
+  font-size: 45px;
+
+  margin-bottom: 15px;
+}
+
+.website-card h3 {
+  margin-bottom: 8px;
+}
+
+.website-card .secondary-button {
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   AI
+========================================================= */
+
+.ai-container {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.ai-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 22px;
+
+  background: rgba(0, 210, 255, 0.06);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ai-avatar {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 30px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 210, 255, 0.12);
+
+  animation: aiPulse 2s ease-in-out infinite;
+}
+
+@keyframes aiPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 210, 255, 0);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.18);
+  }
+}
+
+.ai-header h3 {
+  margin-bottom: 4px;
+}
+
+.ai-header p {
+  color: #8fa3b8;
+
+  font-size: 13px;
+}
+
+.chat-messages {
+  min-height: 350px;
+
+  max-height: 500px;
+
+  overflow-y: auto;
+
+  padding: 25px;
+}
+
+.ai-message {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  max-width: 90%;
+
+  margin-bottom: 20px;
+}
+
+.message-icon {
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: rgba(0, 210, 255, 0.10);
+}
+
+.ai-message strong {
+  display: block;
+
+  margin-bottom: 5px;
+}
+
+.ai-message p {
+  color: #bdcbd9;
+
+  line-height: 1.7;
+}
+
+.user-message {
+  margin-left: auto;
+
+  padding: 12px 15px;
+
+  max-width: 80%;
+
+  border-radius: 15px;
+
+  background: rgba(0, 210, 255, 0.10);
+
+  border: 1px solid rgba(0, 210, 255, 0.13);
+}
+
+.ai-input-area {
+  display: flex;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ai-input-area textarea {
+  flex: 1;
+
+  resize: vertical;
+
+  min-height: 55px;
+
+  padding: 14px;
+
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.20);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 13px;
+
+  outline: none;
+
+  font-family: inherit;
+}
+
+.ai-input-area textarea:focus {
+  border-color: rgba(0, 210, 255, 0.35);
+}
+
+.ai-send-button {
+  align-self: flex-end;
+}
+
+.ai-note {
+  padding: 0 20px 18px;
+
+  color: #71869b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOGIN MODAL
+========================================================= */
+
+.modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.70);
+
+  backdrop-filter: blur(8px);
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  position: relative;
+
+  width: min(420px, 100%);
+
+  padding: 35px;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background: #0b1b2c;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.modal-icon {
+  font-size: 50px;
+
+  margin-bottom: 12px;
+}
+
+.modal-box h2 {
+  margin-bottom: 7px;
+}
+
+.modal-box > p {
+  color: #8fa3b8;
+
+  margin-bottom: 20px;
+}
+
+.modal-box input {
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding: 13px 14px;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
+}
+
+.modal-box input:focus {
+  border-color: rgba(0, 210, 255, 0.35);
+}
+
+.modal-box .primary-button {
+  width: 100%;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.main-footer {
+  text-align: center;
+
+  padding: 35px 20px;
+
+  margin-top: 30px;
+
+  color: #75899d;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.footer-logo {
+  color: #ffffff;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.main-footer p {
+  margin: 6px 0;
+}
+
+.creator strong {
+  color: #00d9ff;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light-theme {
+  color: #142033;
+
+  background: #eef7fb;
+}
+
+body.light-theme::before {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 180, 255, 0.15), transparent 28%),
+    radial-gradient(circle at 85% 30%, rgba(90, 100, 255, 0.10), transparent 30%),
+    #eef7fb;
+}
+
+body.light-theme .main-header {
+  background: rgba(255, 255, 255, 0.88);
+
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .nav-btn {
+  color: #536174;
+}
+
+body.light-theme .nav-btn:hover,
+body.light-theme .nav-btn.active {
+  color: #087c9d;
+
+  background: rgba(0, 180, 220, 0.10);
+}
+
+body.light-theme .hero-content p,
+body.light-theme .subject-card p,
+body.light-theme .feature-card p,
+body.light-theme .test-card p,
+body.light-theme .website-card p,
+body.light-theme .video-card p,
+body.light-theme .section-heading p,
+body.light-theme .page-title p {
+  color: #536174;
+}
+
+body.light-theme .subject-card,
+body.light-theme .feature-card,
+body.light-theme .test-card,
+body.light-theme .website-card,
+body.light-theme .video-card,
+body.light-theme .quiz-box,
+body.light-theme .empty-content,
+body.light-theme .ai-container {
+  background: rgba(255, 255, 255, 0.75);
+
+  border-color: rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 15px 35px rgba(40, 70, 90, 0.08);
+}
+
+body.light-theme .subject-card h4,
+body.light-theme .feature-card h4,
+body.light-theme .test-card h3,
+body.light-theme .website-card h3,
+body.light-theme .video-card h3,
+body.light-theme .quiz-box h3,
+body.light-theme .ai-header h3 {
+  color: #142033;
+}
+
+body.light-theme .ai-input-area textarea,
+body.light-theme .modal-box input {
+  color: #142033;
+
+  background: rgba(255, 255, 255, 0.75);
+}
+
+body.light-theme .modal-box {
+  background: #ffffff;
+
+  color: #142033;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .main-header {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .main-nav {
+    order: 3;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    padding-bottom: 4px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding-top: 20px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .medical-3d {
+    height: 450px;
+  }
+
+  .subject-grid,
+  .feature-grid,
+  .video-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .main-header {
+    padding: 10px 3%;
+  }
+
+  .logo-area h1 {
+    font-size: 16px;
+  }
+
+  .logo-3d {
+    width: 44px;
+    height: 44px;
+
+    font-size: 25px;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .login-button {
+    padding: 8px 10px;
+  }
+
+  .page-section {
+    width: 92%;
+
+    padding: 35px 0;
+  }
+
+  .hero-section {
+    min-height: auto;
+
+    gap: 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 43px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .medical-3d {
+    width: 100%;
+
+    height: 390px;
+  }
+
+  .doctor-3d {
+    width: 145px;
+    height: 145px;
+
+    font-size: 78px;
+  }
+
+  .medical-orbit.orbit-1 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .medical-orbit.orbit-2 {
+    width: 280px;
+    height: 145px;
+  }
+
+  .medical-orbit.orbit-3 {
+    width: 330px;
+    height: 170px;
+  }
+
+  .floating-icon {
+    width: 56px;
+    height: 56px;
+
+    font-size: 27px;
+  }
+
+  .subject-grid,
+  .feature-grid,
+  .test-grid,
+  .website-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .page-title {
+    align-items: flex-start;
+  }
+
+  .page-title h2 {
+    font-size: 27px;
+  }
+
+  .quiz-box {
+    padding: 20px;
+  }
+
+  .ai-input-area {
+    flex-direction: column;
+  }
+
+  .ai-send-button {
+    width: 100%;
+  }
+
+  .ai-message {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .hero-content h2 {
+    font-size: 37px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  .medical-3d {
+    height: 350px;
+  }
+
+  .floating-icon {
+    transform: scale(0.85);
+  }
+
+}
