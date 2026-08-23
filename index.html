@@ -1,1 +1,1285 @@
-<!coding-academy-ruddy.vercel.apphtml >
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Lakshya NEET 2027</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Animation -->
+  <div id="particles"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="logo-area">
+      <img src="logo.png" alt="Mission Lakshya Logo" class="logo">
+
+      <div>
+        <div class="brand">Mission Lakshya</div>
+        <div class="brand-year">NEET 2027</div>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input
+        id="globalSearch"
+        type="text"
+        placeholder="Search Books, Videos, Tests..."
+      >
+      <button onclick="globalSearch()">🔍</button>
+    </div>
+
+    <div class="top-actions">
+      <button onclick="showPage('themes')">🎨</button>
+      <button onclick="toggleLightDark()">🌙</button>
+    </div>
+
+  </header>
+
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+
+    <button class="nav active" onclick="showPage('home',this)">
+      🏠 Home
+    </button>
+
+    <button class="nav" onclick="showPage('books',this)">
+      📚 Books
+    </button>
+
+    <button class="nav" onclick="showPage('videos',this)">
+      ▶️ Video Lectures
+    </button>
+
+    <button class="nav" onclick="showPage('tests',this)">
+      📝 Tests
+    </button>
+
+    <button class="nav" onclick="showPage('dpp',this)">
+      📋 DPP
+    </button>
+
+    <button class="nav" onclick="showPage('quiz',this)">
+      🧠 Quiz
+    </button>
+
+    <button class="nav" onclick="showPage('ai',this)">
+      🤖 AI Doubt Solver
+    </button>
+
+    <button class="nav" onclick="showPage('youtube',this)">
+      🔴 YouTube Live
+    </button>
+
+    <button class="nav" onclick="showPage('websites',this)">
+      🌐 Study Websites
+    </button>
+
+    <button class="nav" onclick="showPage('themes',this)">
+      🎨 Themes & Modes
+    </button>
+
+    <button class="nav" onclick="showPage('support',this)">
+      📲 Support
+    </button>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main>
+
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+
+      <div class="hero">
+
+        <div class="hero-content">
+
+          <div class="small-title">
+            🚀 DREAM • STUDY • PRACTICE • CRACK
+          </div>
+
+          <h1>
+            Mission Lakshya
+            <span>NEET 2027</span>
+          </h1>
+
+          <p>
+            NEET preparation के लिए आपका complete study platform
+          </p>
+
+          <button class="main-btn" onclick="showPage('books')">
+            🚀 Start Learning
+          </button>
+
+          <button class="secondary-btn" onclick="showPage('ai')">
+            🤖 Ask AI
+          </button>
+
+        </div>
+
+        <div class="hero-animation">
+          🧑‍⚕️
+        </div>
+
+      </div>
+
+
+      <h2 class="section-title">
+        🚀 Explore & Start Learning
+      </h2>
+
+      <p class="section-subtitle">
+        अपनी NEET preparation शुरू करें
+      </p>
+
+
+      <div class="card-grid">
+
+        <div class="feature-card" onclick="showPage('books')">
+          <div>📚</div>
+          <h3>Books</h3>
+          <p>PDF & Study Material</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('videos')">
+          <div>▶️</div>
+          <h3>Video Lectures</h3>
+          <p>Learn from lectures</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('tests')">
+          <div>📝</div>
+          <h3>Tests</h3>
+          <p>NEET Mock Tests</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('dpp')">
+          <div>📋</div>
+          <h3>DPP</h3>
+          <p>Daily Practice</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('quiz')">
+          <div>🧠</div>
+          <h3>Quiz</h3>
+          <p>Practice Questions</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('ai')">
+          <div>🤖</div>
+          <h3>AI Doubt Solver</h3>
+          <p>Ask your doubts</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('youtube')">
+          <div>🔴</div>
+          <h3>YouTube Live</h3>
+          <p>Live Classes</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('websites')">
+          <div>🌐</div>
+          <h3>Study Websites</h3>
+          <p>Useful resources</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('themes')">
+          <div>🎨</div>
+          <h3>Themes</h3>
+          <p>35 Color Modes</p>
+        </div>
+
+        <div class="feature-card" onclick="showPage('support')">
+          <div>📲</div>
+          <h3>Support</h3>
+          <p>Telegram Support</p>
+        </div>
+
+      </div>
+
+
+      <div class="progress-box">
+
+        <h2>🔥 Your Progress</h2>
+
+        <div class="progress">
+          <div></div>
+        </div>
+
+        <h3>78% Completed</h3>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- BOOKS -->
+    <section id="books" class="page">
+
+      <h2>📚 Books & Notes</h2>
+
+      <p class="section-subtitle">
+        Physics, Chemistry और Biology की study material
+      </p>
+
+      <div class="card-grid">
+
+        <div class="feature-card">
+          <div>⚡</div>
+          <h3>Physics</h3>
+          <p>Physics Books & Notes</p>
+          <button class="main-btn">Open</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧪</div>
+          <h3>Chemistry</h3>
+          <p>Chemistry Books & Notes</p>
+          <button class="main-btn">Open</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧬</div>
+          <h3>Biology</h3>
+          <p>Biology Books & Notes</p>
+          <button class="main-btn">Open</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- VIDEOS -->
+    <section id="videos" class="page">
+
+      <h2>▶️ Video Lectures</h2>
+
+      <div class="search-panel">
+
+        <input
+          id="videoSearch"
+          placeholder="YouTube पर lecture search करें..."
+        >
+
+        <button
+          class="main-btn"
+          onclick="searchYouTube()"
+        >
+          🔍 Search
+        </button>
+
+      </div>
+
+      <div class="card-grid">
+
+        <div class="feature-card">
+          <div>⚡</div>
+          <h3>Physics</h3>
+          <button
+            class="main-btn"
+            onclick="youtubeSearch('NEET Physics Hindi')"
+          >
+            Watch
+          </button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧪</div>
+          <h3>Chemistry</h3>
+          <button
+            class="main-btn"
+            onclick="youtubeSearch('NEET Chemistry Hindi')"
+          >
+            Watch
+          </button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧬</div>
+          <h3>Biology</h3>
+          <button
+            class="main-btn"
+            onclick="youtubeSearch('NEET Biology Hindi')"
+          >
+            Watch
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TESTS -->
+    <section id="tests" class="page">
+
+      <h2>📝 NEET Tests</h2>
+
+      <div class="card-grid">
+
+        <div class="feature-card">
+          <div>🏆</div>
+          <h3>Full NEET Mock Test</h3>
+          <p>NEET pattern test</p>
+          <button class="main-btn">Start</button>
+        </div>
+
+        <div class="feature-card">
+          <div>📖</div>
+          <h3>Chapter Test</h3>
+          <p>Chapter-wise practice</p>
+          <button class="main-btn">Start</button>
+        </div>
+
+        <div class="feature-card">
+          <div>⚡</div>
+          <h3>Physics Test</h3>
+          <button class="main-btn">Start</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧪</div>
+          <h3>Chemistry Test</h3>
+          <button class="main-btn">Start</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧬</div>
+          <h3>Biology Test</h3>
+          <button class="main-btn">Start</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- DPP -->
+    <section id="dpp" class="page">
+
+      <h2>📋 Daily Practice Problems</h2>
+
+      <div class="card-grid">
+
+        <div class="feature-card">
+          <div>⚡</div>
+          <h3>Physics DPP</h3>
+          <button class="main-btn">Solve</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧪</div>
+          <h3>Chemistry DPP</h3>
+          <button class="main-btn">Solve</button>
+        </div>
+
+        <div class="feature-card">
+          <div>🧬</div>
+          <h3>Biology DPP</h3>
+          <button class="main-btn">Solve</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="page">
+
+      <h2>🧠 NEET Quiz</h2>
+
+      <div class="quiz-box">
+
+        <h3>
+          DNA का full form क्या है?
+        </h3>
+
+        <button onclick="quizAnswer(false)">
+          A. Ribonucleic Acid
+        </button>
+
+        <button onclick="quizAnswer(true)">
+          B. Deoxyribonucleic Acid
+        </button>
+
+        <button onclick="quizAnswer(false)">
+          C. Amino Acid
+        </button>
+
+        <button onclick="quizAnswer(false)">
+          D. Nitrogen Acid
+        </button>
+
+        <p id="quizResult"></p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- AI -->
+    <section id="ai" class="page">
+
+      <h2>🤖 Mission Lakshya AI</h2>
+
+      <p class="section-subtitle">
+        Physics • Chemistry • Biology Doubt Solver
+      </p>
+
+      <div class="ai-box">
+
+        <textarea
+          id="aiQuestion"
+          placeholder="अपना NEET doubt यहाँ लिखें..."
+        ></textarea>
+
+        <button
+          class="main-btn"
+          onclick="askAI()"
+        >
+          🤖 Ask AI
+        </button>
+
+        <div id="aiAnswer" class="ai-answer">
+          AI का जवाब यहाँ दिखाई देगा।
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- YOUTUBE -->
+    <section id="youtube" class="page">
+
+      <h2>🔴 YouTube Live Classes</h2>
+
+      <div class="youtube-box">
+
+        <div class="search-panel">
+
+          <input
+            id="youtubeQuery"
+            placeholder="YouTube video search..."
+          >
+
+          <button
+            class="main-btn"
+            onclick="searchYouTube()"
+          >
+            🔍 Search
+          </button>
+
+        </div>
+
+
+        <div id="liveStatus">
+          🔄 Live classes load हो रही हैं...
+        </div>
+
+
+        <div id="liveVideos" class="video-grid">
+        </div>
+
+
+        <iframe
+          id="youtubePlayer"
+          class="video-frame"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- WEBSITES -->
+    <section id="websites" class="page">
+
+      <h2>🌐 Study Websites</h2>
+
+      <p class="section-subtitle">
+        सभी study websites एक जगह
+      </p>
+
+      <div id="websiteList" class="website-grid">
+      </div>
+
+    </section>
+
+
+
+    <!-- THEMES -->
+    <section id="themes" class="page">
+
+      <h2>🎨 Themes & Modes</h2>
+
+      <p class="section-subtitle">
+        35 अलग-अलग colors और themes
+      </p>
+
+      <div id="themeList" class="theme-grid">
+      </div>
+
+    </section>
+
+
+
+    <!-- SUPPORT -->
+    <section id="support" class="page">
+
+      <h2>📲 Support</h2>
+
+      <div class="support-box">
+
+        <h2>💙 Telegram Support</h2>
+
+        <p>
+          Website से जुड़ी मदद के लिए Telegram पर संपर्क करें।
+        </p>
+
+        <a
+          href="https://t.me/Yashpal_aagri"
+          target="_blank"
+          class="telegram-btn"
+        >
+          📲 Telegram — @Yashpal_aagri
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      <p>
+        © 2026 Mission Lakshya NEET 2027
+      </p>
+
+      <p>
+        Created by <b>Yashpal Aagri</b>
+      </p>
+    </footer>
+
+  </main>
+
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    /* SIDEBAR */
+
+    function toggleSidebar(){
+
+      document
+        .getElementById("sidebar")
+        .classList.toggle("open");
+
+    }
+
+
+    /* PAGE NAVIGATION */
+
+    function showPage(pageId, button){
+
+      document
+        .querySelectorAll(".page")
+        .forEach(page => {
+          page.classList.remove("active");
+        });
+
+      const page =
+        document.getElementById(pageId);
+
+      if(page){
+        page.classList.add("active");
+      }
+
+
+      document
+        .querySelectorAll(".nav")
+        .forEach(nav => {
+          nav.classList.remove("active");
+        });
+
+
+      if(button){
+        button.classList.add("active");
+      }
+
+
+      document
+        .getElementById("sidebar")
+        .classList.remove("open");
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+
+      if(pageId === "youtube"){
+        loadYouTubeLive();
+      }
+
+    }
+
+
+
+    /* LIGHT / DARK */
+
+    function toggleLightDark(){
+
+      document.body.classList.toggle("light");
+
+    }
+
+
+
+    /* SEARCH */
+
+    function globalSearch(){
+
+      const q =
+        document
+        .getElementById("globalSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+      if(q.includes("book")){
+        showPage("books");
+      }
+
+      else if(q.includes("video")){
+        showPage("videos");
+      }
+
+      else if(q.includes("test")){
+        showPage("tests");
+      }
+
+      else if(q.includes("dpp")){
+        showPage("dpp");
+      }
+
+      else if(q.includes("quiz")){
+        showPage("quiz");
+      }
+
+      else if(
+        q.includes("ai") ||
+        q.includes("doubt")
+      ){
+        showPage("ai");
+      }
+
+      else if(
+        q.includes("youtube") ||
+        q.includes("live")
+      ){
+        showPage("youtube");
+      }
+
+      else if(q){
+        showPage("websites");
+      }
+
+    }
+
+
+
+    /* QUIZ */
+
+    function quizAnswer(correct){
+
+      const result =
+        document.getElementById("quizResult");
+
+      if(correct){
+
+        result.innerHTML =
+          "✅ सही उत्तर!";
+
+      }else{
+
+        result.innerHTML =
+          "❌ गलत उत्तर। फिर कोशिश करें।";
+
+      }
+
+    }
+
+
+
+    /* AI */
+
+    async function askAI(){
+
+      const question =
+        document
+        .getElementById("aiQuestion")
+        .value
+        .trim();
+
+      const answer =
+        document
+        .getElementById("aiAnswer");
+
+
+      if(!question){
+
+        answer.innerText =
+          "⚠️ पहले अपना सवाल लिखें।";
+
+        return;
+
+      }
+
+
+      answer.innerText =
+        "🤖 AI सोच रहा है...";
+
+
+      try{
+
+        const response =
+          await fetch(
+            "/api/chat",
+            {
+              method:"POST",
+
+              headers:{
+                "Content-Type":
+                  "application/json"
+              },
+
+              body:JSON.stringify({
+                message:question
+              })
+
+            }
+          );
+
+
+        const data =
+          await response.json();
+
+
+        answer.innerText =
+          data.answer ||
+          data.error ||
+          "AI response नहीं मिला।";
+
+
+      }catch(error){
+
+        answer.innerText =
+          "❌ AI server से connection नहीं हुआ।";
+
+      }
+
+    }
+
+
+
+    /* YOUTUBE SEARCH */
+
+    function youtubeSearch(query){
+
+      if(!query){
+
+        query =
+          document
+          .getElementById("youtubeQuery")
+          .value
+          .trim();
+
+      }
+
+
+      if(!query){
+
+        alert(
+          "पहले YouTube search लिखें।"
+        );
+
+        return;
+
+      }
+
+
+      const url =
+        "https://www.youtube.com/results?search_query="
+        +
+        encodeURIComponent(query);
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+
+
+    function searchYouTube(){
+
+      youtubeSearch();
+
+    }
+
+
+
+    /* YOUTUBE LIVE */
+
+    async function loadYouTubeLive(){
+
+      const status =
+        document
+        .getElementById("liveStatus");
+
+      const container =
+        document
+        .getElementById("liveVideos");
+
+
+      status.innerText =
+        "🔄 Live classes खोजी जा रही हैं...";
+
+
+      container.innerHTML = "";
+
+
+      try{
+
+        const response =
+          await fetch(
+            "/api/youtube-live"
+          );
+
+
+        const data =
+          await response.json();
+
+
+        if(!response.ok){
+
+          throw new Error(
+            data.error ||
+            "YouTube API error"
+          );
+
+        }
+
+
+        if(
+          !data.liveClasses ||
+          data.liveClasses.length === 0
+        ){
+
+          status.innerText =
+            "🔴 अभी कोई live class नहीं मिली।";
+
+          return;
+
+        }
+
+
+        status.innerText =
+          "🔴 "
+          +
+          data.liveClasses.length
+          +
+          " live classes";
+
+
+        data.liveClasses.forEach(video => {
+
+          const card =
+            document.createElement("div");
+
+          card.className =
+            "live-card";
+
+
+          card.innerHTML = `
+
+            <img
+              src="${video.thumbnail}"
+              alt=""
+            >
+
+            <h3>
+              ${escapeHTML(video.title)}
+            </h3>
+
+            <p>
+              ${escapeHTML(
+                video.channelTitle || ""
+              )}
+            </p>
+
+            <button
+              class="main-btn"
+              onclick="playLive('${video.videoId}')"
+            >
+              ▶️ Play Live
+            </button>
+
+            <button
+              class="secondary-btn"
+              onclick="window.open('${video.url}','_blank')"
+            >
+              💬 Comments
+            </button>
+
+          `;
+
+
+          container.appendChild(card);
+
+        });
+
+
+      }catch(error){
+
+        status.innerText =
+          "⚠️ YouTube Live नहीं चल रही। "
+          +
+          error.message;
+
+      }
+
+    }
+
+
+
+    function playLive(videoId){
+
+      const player =
+        document
+        .getElementById("youtubePlayer");
+
+
+      player.src =
+        "https://www.youtube.com/embed/"
+        +
+        encodeURIComponent(videoId)
+        +
+        "?autoplay=1";
+
+
+      player.scrollIntoView({
+        behavior:"smooth"
+      });
+
+    }
+
+
+
+    function escapeHTML(text){
+
+      return String(text)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+    }
+
+
+
+    /* STUDY WEBSITES */
+
+    const studyWebsites = [
+
+      ["StudyBee Pro",
+       "http://studybeepro.site/"],
+
+      ["Rolex CoderZ",
+       "http://RolexCoderZ.in/"],
+
+      ["VedStudy",
+       "https://vedstudy.com/"],
+
+      ["PrepPro Network",
+       "https://preppronetwork.vercel.app/"],
+
+      ["StudyPanda Books",
+       "https://studypanda.live/books"],
+
+      ["Learnify",
+       "https://learnify.deltaverse.site/"],
+
+      ["PW StudyParcham",
+       "https://pw.studyparcham.in/"],
+
+      ["AS Multiverse",
+       "https://asmultiverse.com/"],
+
+      ["DeltaStudy",
+       "http://DeltaStudy.site"],
+
+      ["Eduzex PW",
+       "http://eduzex-pw.pages.dev/"],
+
+      ["StudyRays",
+       "http://StudyRays.cc"],
+
+      ["LearnTopper",
+       "http://Learntopper.in"],
+
+      ["StudySpark",
+       "http://Studyspark.pro"]
+
+    ];
+
+
+
+    function renderWebsites(){
+
+      const container =
+        document
+        .getElementById("websiteList");
+
+
+      studyWebsites.forEach(site => {
+
+        const card =
+          document.createElement("div");
+
+        card.className =
+          "website-card";
+
+
+        card.innerHTML = `
+
+          <h3>🌐 ${site[0]}</h3>
+
+          <p>
+            Study resource
+          </p>
+
+          <button
+            class="main-btn"
+            onclick="window.open('${site[1]}','_blank')"
+          >
+            Open Website
+          </button>
+
+        `;
+
+
+        container.appendChild(card);
+
+      });
+
+    }
+
+
+
+    renderWebsites();
+
+
+
+    /* 35 THEMES */
+
+    const themes = [
+
+      ["Ocean","#06122f","#287cff","#7c3cff"],
+      ["Purple","#16072e","#a855f7","#ec4899"],
+      ["Emerald","#031d18","#10b981","#34d399"],
+      ["Crimson","#240608","#ef4444","#fb7185"],
+      ["Sunset","#281003","#f97316","#facc15"],
+      ["Sky","#041b2e","#0ea5e9","#38bdf8"],
+      ["Pink","#25071b","#ec4899","#f472b6"],
+      ["Gold","#241b02","#eab308","#fde047"],
+      ["Galaxy","#09051f","#6366f1","#a855f7"],
+      ["Forest","#031a08","#16a34a","#4ade80"],
+      ["Arctic","#031d2b","#06b6d4","#67e8f9"],
+      ["Midnight","#020617","#334155","#6366f1"],
+      ["Solar","#211000","#f59e0b","#fde68a"],
+      ["Diamond","#0b1620","#67e8f9","#e0f2fe"],
+      ["Cyber","#030712","#00ffcc","#ff00ff"],
+      ["Medical","#061a19","#14b8a6","#22d3ee"],
+      ["Space","#03051a","#3b82f6","#8b5cf6"],
+      ["Neon","#090909","#39ff14","#00ffff"],
+      ["Atomic","#071a29","#22d3ee","#60a5fa"],
+      ["Electric","#050d22","#2563eb","#38bdf8"],
+      ["Chemistry","#10100a","#eab308","#84cc16"],
+      ["Biology","#03190c","#22c55e","#a3e635"],
+      ["Doctor","#07111f","#38bdf8","#60a5fa"],
+      ["Rocket","#1d0903","#f97316","#ef4444"],
+      ["Aurora","#04151a","#14b8a6","#a855f7"],
+      ["Royal","#10051f","#8b5cf6","#c084fc"],
+      ["Matrix","#001005","#22c55e","#4ade80"],
+      ["Sapphire","#020d2b","#2563eb","#60a5fa"],
+      ["Amber","#1b0e00","#f59e0b","#fb923c"],
+      ["Cosmic","#0b0320","#9333ea","#ec4899"],
+      ["Oceanic","#031b2a","#0284c7","#06b6d4"],
+      ["Lime","#071a00","#84cc16","#bef264"],
+      ["Ruby","#240006","#e11d48","#fb7185"],
+      ["Violet","#12052a","#7c3aed","#c4b5fd"],
+      ["Aqua","#001c1c","#14b8a6","#67e8f9"],
+      ["Monochrome","#111111","#888888","#ffffff"]
+
+    ];
+
+
+
+    function renderThemes(){
+
+      const container =
+        document
+        .getElementById("themeList");
+
+
+      themes.forEach((theme,index) => {
+
+        const button =
+          document.createElement("button");
+
+
+        button.className =
+          "theme-card";
+
+
+        button.innerText =
+          (index + 1)
+          +
+          ". "
+          +
+          theme[0];
+
+
+        button.style.background =
+          `linear-gradient(
+            135deg,
+            ${theme[1]},
+            ${theme[2]}
+          )`;
+
+
+        button.onclick =
+          function(){
+
+            document.documentElement
+              .style
+              .setProperty(
+                "--bg",
+                theme[1]
+              );
+
+            document.documentElement
+              .style
+              .setProperty(
+                "--accent",
+                theme[2]
+              );
+
+            document.documentElement
+              .style
+              .setProperty(
+                "--accent2",
+                theme[3]
+              );
+
+
+            localStorage.setItem(
+              "mlTheme",
+              JSON.stringify(theme)
+            );
+
+          };
+
+
+        container.appendChild(button);
+
+      });
+
+    }
+
+
+    renderThemes();
+
+
+
+    /* PARTICLES */
+
+    function createParticles(){
+
+      const container =
+        document
+        .getElementById("particles");
+
+
+      for(let i=0;i<60;i++){
+
+        const particle =
+          document.createElement("span");
+
+
+        particle.className =
+          "particle";
+
+
+        particle.style.left =
+          Math.random()*100
+          +
+          "%";
+
+
+        particle.style.animationDuration =
+          (6 + Math.random()*10)
+          +
+          "s";
+
+
+        particle.style.animationDelay =
+          Math.random()*8
+          +
+          "s";
+
+
+        container.appendChild(
+          particle
+        );
+
+      }
+
+    }
+
+
+    createParticles();
+
+
+  </script>
+
+</body>
+          </html>
