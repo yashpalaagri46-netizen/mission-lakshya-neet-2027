@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mission Lakshya NEET 2027</title>
+
+<style>
+:root{
+  --bg:#06122f;
+  --panel:#0b1d45;
+  --card:#10275a;
+  --accent:#287cff;
+  --accent2:#7c3cff;
+  --text:#fff;
+  --muted:#b9c7e8;
+  --border:#315aa5;
+  --shadow:0 0 25px rgba(45,120,255,.25);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(0,140,255,.15),transparent 25%),
+    radial-gradient(circle at 80% 10%,rgba(150,0,255,.15),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+  border:0;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.particle{
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#69b7ff;
+  box-shadow:0 0 15px #69b7ff;
+  animation:float 10s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(110vh) rotate(0)}
+  100%{transform:translateY(-20vh) rotate(360deg)}
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:82px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  padding:10px 22px;
+  background:rgba(3,10,30,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:280px;
+}
+
+.logo img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+}
+
+/* अगर logo.png नहीं है */
+.logo-icon{
+  font-size:48px;
+}
+
+.logo-text h1{
+  margin:0;
+  font-size:22px;
+}
+
+.logo-text b{
+  color:#ffd21c;
+  font-size:24px;
+}
+
+.search{
+  flex:1;
+  max-width:600px;
+  display:flex;
+  background:#101f46;
+  border:1px solid #4266aa;
+  border-radius:40px;
+  overflow:hidden;
+}
+
+.search input{
+  flex:1;
+  padding:15px 20px;
+  background:none;
+  border:0;
+  outline:0;
+  color:white;
+}
+
+.search button{
+  width:60px;
+  background:var(--accent);
+  color:white;
+  font-size:22px;
+}
+
+.header-buttons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.icon-btn{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#10204a;
+  color:white;
+  border:1px solid #4266aa;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  position:fixed;
+  top:82px;
+  left:0;
+  bottom:0;
+  width:220px;
+  padding:18px 12px;
+  background:rgba(5,16,42,.95);
+  border-right:1px solid var(--border);
+  overflow-y:auto;
+  z-index:90;
+}
+
+.nav{
+  width:100%;
+  padding:13px 15px;
+  margin:5px 0;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:white;
+  background:transparent;
+  border-radius:14px;
+  text-align:left;
+  transition:.25s;
+}
+
+.nav:hover,
+.nav.active{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  box-shadow:var(--shadow);
+  transform:translateX(3px);
+}
+
+.nav span{
+  font-size:22px;
+}
+
+/* MAIN */
+
+main{
+  margin-left:220px;
+  padding:105px 22px 30px;
+}
+
+.hero{
+  min-height:320px;
+  border-radius:25px;
+  padding:35px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:
+    radial-gradient(circle at 15% 50%,rgba(0,200,255,.3),transparent 25%),
+    radial-gradient(circle at 85% 40%,rgba(150,0,255,.25),transparent 25%),
+    linear-gradient(135deg,#07194a,#11104b);
+  border:1px solid #456be0;
+  box-shadow:0 0 40px rgba(55,100,255,.3);
+  overflow:hidden;
+  position:relative;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  border:2px solid rgba(100,180,255,.3);
+  right:-100px;
+  top:-100px;
+  animation:spin 12s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+.hero h2{
+  font-size:48px;
+  margin:8px 0;
+}
+
+.hero h2 span{
+  color:#ffd21c;
+}
+
+.hero p{
+  font-size:19px;
+  color:var(--muted);
+}
+
+.hero-character{
+  font-size:130px;
+  animation:bounce3d 4s ease-in-out infinite;
+  filter:drop-shadow(0 0 20px rgba(0,180,255,.5));
+}
+
+@keyframes bounce3d{
+  0%,100%{transform:translateY(0) rotateY(0)}
+  50%{transform:translateY(-18px) rotateY(15deg)}
+}
+
+.btn{
+  padding:12px 22px;
+  border-radius:25px;
+  color:white;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  box-shadow:var(--shadow);
+  margin-top:10px;
+}
+
+/* SECTION */
+
+.section-title{
+  margin:28px 0 15px;
+}
+
+.section-title h2{
+  margin:0;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.card{
+  min-height:180px;
+  padding:20px;
+  border-radius:20px;
+  background:linear-gradient(145deg,var(--card),#091a3b);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  transition:.3s;
+  text-align:center;
+}
+
+.card:hover{
+  transform:translateY(-8px) rotateX(3deg);
+  box-shadow:0 15px 35px rgba(50,130,255,.35);
+}
+
+.card .emoji{
+  font-size:55px;
+  display:block;
+  margin-bottom:8px;
+}
+
+.card h3{
+  margin:5px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* PROGRESS */
+
+.progress{
+  margin-top:20px;
+  padding:25px;
+  border-radius:22px;
+  background:var(--panel);
+  border:1px solid var(--border);
+}
+
+.progress-bar{
+  height:18px;
+  background:#182b55;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-bar div{
+  width:78%;
+  height:100%;
+  background:linear-gradient(90deg,#00e5ff,#00ff7f);
+}
+
+/* PAGES */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* AI */
+
+.ai-box{
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+  border-radius:25px;
+  background:var(--panel);
+  border:1px solid var(--border);
+}
+
+.ai-input{
+  width:100%;
+  min-height:120px;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid var(--border);
+  background:#06142f;
+  color:white;
+  outline:none;
+  resize:vertical;
+}
+
+.ai-answer{
+  margin-top:20px;
+  padding:20px;
+  min-height:100px;
+  white-space:pre-wrap;
+  background:#07183a;
+  border-radius:15px;
+  border:1px solid #294f8e;
+}
+
+/* YOUTUBE */
+
+.youtube-box{
+  padding:20px;
+  background:var(--panel);
+  border-radius:22px;
+  border:1px solid var(--border);
+}
+
+.youtube-search{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.youtube-search input{
+  flex:1;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#06142f;
+  color:white;
+}
+
+.video-frame{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:18px;
+}
+
+/* WEBSITES */
+
+.website-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.website{
+  padding:20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.website a{
+  color:white;
+  text-decoration:none;
+}
+
+/* THEMES */
+
+.theme-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.theme{
+  height:75px;
+  border-radius:15px;
+  border:2px solid transparent;
+  color:white;
+  font-weight:bold;
+}
+
+/* SUPPORT */
+
+.support{
+  padding:25px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+}
+
+.telegram{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:30px;
+  background:#168de2;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* MOBILE */
+
+.menu{
+  display:none;
+}
+
+@media(max-width:1100px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .website-grid{grid-template-columns:repeat(2,1fr)}
+  .theme-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+@media(max-width:750px){
+
+  header{
+    height:70px;
+    padding:8px 12px;
+  }
+
+  .logo{
+    min-width:auto;
+  }
+
+  .logo-text{
+    display:none;
+  }
+
+  .logo img{
+    width:45px;
+    height:45px;
+  }
+
+  .search{
+    display:none;
+  }
+
+  .sidebar{
+    transform:translateX(-100%);
+    transition:.3s;
+    top:70px;
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+  }
+
+  .menu{
+    display:block;
+  }
+
+  main{
+    margin-left:0;
+    padding:85px 12px 25px;
+  }
+
+  .hero{
+    padding:25px;
+    min-height:300px;
+  }
+
+  .hero h2{
+    font-size:32px;
+  }
+
+  .hero-character{
+    display:none;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .website-grid{
+    grid-template-columns:1fr;
+  }
+
+  .theme-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<header>
+
+  <button class="icon-btn menu" onclick="toggleMenu()">☰</button>
+
+  <div class="logo">
+
+    <!-- तुम्हारा पुराना logo.png यहाँ रहेगा -->
+    <img src="logo.png"
+         onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'">
+
+    <div id="logoFallback" class="logo-icon" style="display:none">🎯</div>
+
+    <div class="logo-text">
+      <h1>Mission Lakshya</h1>
+      <b>NEET 2027</b>
+    </div>
+
+  </div>
+
+  <div class="search">
+    <input id="searchInput"
+           placeholder="Search books, videos, tests, notes...">
+    <button onclick="globalSearch()">🔍</button>
+  </div>
+
+  <div class="header-buttons">
+    <button class="icon-btn" onclick="showPage('themes')">🎨</button>
+    <button class="icon-btn" onclick="toggleTheme()">☀️</button>
+    <button class="icon-btn" onclick="alert('Notifications जल्द उपलब्ध होंगे 🔔')">🔔</button>
+  </div>
+
+</header>
+
+
+<aside class="sidebar" id="sidebar">
+
+  <button class="nav active" onclick="showPage('home',this)">
+    <span>🏠</span> Home
+  </button>
+
+  <button class="nav" onclick="showPage('books',this)">
+    <span>📚</span> Books
+  </button>
+
+  <button class="nav" onclick="showPage('videos',this)">
+    <span>▶️</span> Video Lectures
+  </button>
+
+  <button class="nav" onclick="showPage('tests',this)">
+    <span>📝</span> Tests
+  </button>
+
+  <button class="nav" onclick="showPage('dpp',this)">
+    <span>📋</span> DPP
+  </button>
+
+  <button class="nav" onclick="showPage('quiz',this)">
+    <span>🧠</span> Quiz
+  </button>
+
+  <button class="nav" onclick="showPage('ai',this)">
+    <span>🤖</span> AI Doubt Solver
+  </button>
+
+  <button class="nav" onclick="showPage('youtube',this)">
+    <span>🔴</span> YouTube Live
+  </button>
+
+  <button class="nav" onclick="showPage('websites',this)">
+    <span>🌐</span> Websites
+  </button>
+
+  <button class="nav" onclick="showPage('themes',this)">
+    <span>🎨</span> Themes & Modes
+  </button>
+
+  <button class="nav" onclick="showPage('support',this)">
+    <span>📲</span> Support
+  </button>
+
+</aside>
+
+
+<main>
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <div>
+      <p>🚀 DREAM • STUDY • PRACTICE • CRACK</p>
+
+      <h2>
+        Mission Lakshya
+        <span>NEET 2027</span>
+      </h2>
+
+      <p>
+        NEET preparation के लिए आपका complete study platform
+      </p>
+
+      <button class="btn" onclick="showPage('books')">
+        🚀 Start Learning →
+      </button>
+    </div>
+
+    <div class="hero-character">
+      👨‍⚕️
+    </div>
+
+  </div>
+
+
+  <div class="section-title">
+    <h2>🚀 Explore & Start Learning</h2>
+    <p>Choose any section and begin your NEET journey</p>
+  </div>
+
+
+  <div class="grid">
+
+    <div class="card" onclick="showPage('home')">
+      <span class="emoji">🏠</span>
+      <h3>Home</h3>
+      <p>Overview & Updates</p>
+    </div>
+
+    <div class="card" onclick="showPage('books')">
+      <span class="emoji">📚</span>
+      <h3>Books</h3>
+      <p>PDF & Notes</p>
+    </div>
+
+    <div class="card" onclick="showPage('videos')">
+      <span class="emoji">▶️</span>
+      <h3>Video Lectures</h3>
+      <p>Watch & Learn</p>
+    </div>
+
+    <div class="card" onclick="showPage('tests')">
+      <span class="emoji">📝</span>
+      <h3>Tests</h3>
+      <p>Mock & Chapter</p>
+    </div>
+
+    <div class="card" onclick="showPage('dpp')">
+      <span class="emoji">📋</span>
+      <h3>DPP</h3>
+      <p>Daily Practice</p>
+    </div>
+
+    <div class="card" onclick="showPage('quiz')">
+      <span class="emoji">🧠</span>
+      <h3>Quiz</h3>
+      <p>Quick Questions</p>
+    </div>
+
+    <div class="card" onclick="showPage('ai')">
+      <span class="emoji">🤖</span>
+      <h3>AI Doubt Solver</h3>
+      <p>Ask Any Question</p>
+    </div>
+
+    <div class="card" onclick="showPage('youtube')">
+      <span class="emoji">🔴</span>
+      <h3>YouTube Live</h3>
+      <p>Live Classes</p>
+    </div>
+
+    <div class="card" onclick="showPage('websites')">
+      <span class="emoji">🌐</span>
+      <h3>Websites</h3>
+      <p>Useful Study Links</p>
+    </div>
+
+    <div class="card" onclick="showPage('support')">
+      <span class="emoji">📲</span>
+      <h3>Support</h3>
+      <p>Telegram Help</p>
+    </div>
+
+  </div>
+
+
+  <div class="progress">
+
+    <h2>🔥 Your Progress</h2>
+
+    <p>Keep learning every day!</p>
+
+    <div class="progress-bar">
+      <div></div>
+    </div>
+
+    <h3>78% Completed</h3>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKS -->
+
+<section id="books" class="page">
+
+  <div class="section-title">
+    <h2>📚 Books</h2>
+    <p>Physics • Chemistry • Biology</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="emoji">⚡</span>
+      <h3>Physics</h3>
+      <p>NCERT & Notes</p>
+      <button class="btn">Open →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧪</span>
+      <h3>Chemistry</h3>
+      <p>NCERT & Notes</p>
+      <button class="btn">Open →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧬</span>
+      <h3>Biology</h3>
+      <p>NCERT & Notes</p>
+      <button class="btn">Open →</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos" class="page">
+
+  <div class="section-title">
+    <h2>▶️ Video Lectures</h2>
+    <p>Physics • Chemistry • Biology</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="emoji">⚡</span>
+      <h3>Physics</h3>
+      <button class="btn"
+              onclick="youtubeSearch('NEET Physics Hindi')">
+        Search →
+      </button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧪</span>
+      <h3>Chemistry</h3>
+      <button class="btn"
+              onclick="youtubeSearch('NEET Chemistry Hindi')">
+        Search →
+      </button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧬</span>
+      <h3>Biology</h3>
+      <button class="btn"
+              onclick="youtubeSearch('NEET Biology Hindi')">
+        Search →
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TESTS -->
+
+<section id="tests" class="page">
+
+  <div class="section-title">
+    <h2>📝 Tests</h2>
+    <p>NEET Mock Test • Chapter Test</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="emoji">🏆</span>
+      <h3>Full NEET Mock</h3>
+      <p>NEET Pattern</p>
+      <button class="btn">Start →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">📖</span>
+      <h3>Chapter Test</h3>
+      <p>Chapter-wise</p>
+      <button class="btn">Start →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">⚡</span>
+      <h3>Physics Test</h3>
+      <p>Practice</p>
+      <button class="btn">Start →</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DPP -->
+
+<section id="dpp" class="page">
+
+  <div class="section-title">
+    <h2>📋 Daily Practice Problems</h2>
+    <p>Physics • Chemistry • Biology</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="emoji">⚡</span>
+      <h3>Physics DPP</h3>
+      <button class="btn">Solve →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧪</span>
+      <h3>Chemistry DPP</h3>
+      <button class="btn">Solve →</button>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🧬</span>
+      <h3>Biology DPP</h3>
+      <button class="btn">Solve →</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz" class="page">
+
+  <div class="section-title">
+    <h2>🧠 Quiz</h2>
+    <p>Quick NEET Practice</p>
+  </div>
+
+  <div class="card">
+
+    <h2>Biology Question</h2>
+
+    <p>
+      DNA का full form क्या है?
+    </p>
+
+    <button class="btn" onclick="quizAnswer(false)">
+      A. RNA
+    </button>
+
+    <button class="btn" onclick="quizAnswer(true)">
+      B. Deoxyribonucleic Acid
+    </button>
+
+    <button class="btn" onclick="quizAnswer(false)">
+      C. Amino Acid
+    </button>
+
+    <button class="btn" onclick="quizAnswer(false)">
+      D. Nitrogen Acid
+    </button>
+
+    <p id="quizResult"></p>
+
+  </div>
+
+</section>
+
+
+<!-- AI -->
+
+<section id="ai" class="page">
+
+  <div class="section-title">
+    <h2>🤖 Mission Lakshya AI</h2>
+    <p>Physics • Chemistry • Biology Doubt Solver</p>
+  </div>
+
+  <div class="ai-box">
+
+    <textarea
+      id="aiQuestion"
+      class="ai-input"
+      placeholder="अपना NEET doubt यहाँ लिखें...">
+    </textarea>
+
+    <button class="btn" onclick="askAI()">
+      🤖 Ask AI
+    </button>
+
+    <div id="aiAnswer" class="ai-answer">
+      AI का जवाब यहाँ दिखाई देगा।
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- YOUTUBE -->
+
+<section id="youtube" class="page">
+
+  <div class="section-title">
+    <h2>🔴 YouTube Live & Search</h2>
+    <p>Live classes और educational videos</p>
+  </div>
+
+  <div class="youtube-box">
+
+    <div class="youtube-search">
+
+      <input
+        id="ytSearch"
+        placeholder="YouTube पर video search करें...">
+
+      <button class="btn"
+              onclick="searchYouTube()">
+        🔍 Search
+      </button>
+
+    </div>
+
+    <iframe
+      id="ytFrame"
+      class="video-frame"
+      src="https://www.youtube.com/embed/live_stream?channel="
+      allowfullscreen>
+    </iframe>
+
+    <br>
+
+    <button class="btn"
+            onclick="openYouTube()">
+      ▶️ YouTube पर खोलें
+    </button>
+
+    <button class="btn"
+            onclick="openYouTubeComments()">
+      💬 Comment करने के लिए YouTube खोलें
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- WEBSITES -->
+
+<section id="websites" class="page">
+
+  <div class="section-title">
+    <h2>🌐 Study Websites</h2>
+    <p>तुम्हारी study resources की collection</p>
+  </div>
+
+  <div class="website-grid">
+
+    <div class="website">
+      <h3>📚 StudyPanda Books</h3>
+      <a href="https://studypanda.live/books"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+    <div class="website">
+      <h3>📚 Learnify</h3>
+      <a href="https://learnify.deltaverse.site/"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+    <div class="website">
+      <h3>📚 PW StudyParcham</h3>
+      <a href="https://pw.studyparcham.in/"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+    <div class="website">
+      <h3>🌐 AS Multiverse</h3>
+      <a href="https://asmultiverse.com/"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+    <div class="website">
+      <h3>🎓 PrepPro Network</h3>
+      <a href="https://preppronetwork.vercel.app/"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+    <div class="website">
+      <h3>📖 StudyRays</h3>
+      <a href="http://studyrays.cc"
+         target="_blank">
+        Open Website →
+      </a>
+    </div>
+
+  </div>
+
+  <p style="color:var(--muted);margin-top:20px">
+    अगर किसी website ने iframe/inside-page खोलना बंद किया है,
+    तो उसका Open Website button इस्तेमाल करें।
+  </p>
+
+</section>
+
+
+<!-- THEMES -->
+
+<section id="themes" class="page">
+
+  <div class="section-title">
+    <h2>🎨 Themes & Modes</h2>
+    <p>30 अलग-अलग colors में website customize करें</p>
+  </div>
+
+  <div class="theme-grid" id="themeGrid"></div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section id="support" class="page">
+
+  <div class="section-title">
+    <h2>📲 Support</h2>
+    <p>Mission Lakshya NEET 2027 Support</p>
+  </div>
+
+  <div class="support">
+
+    <h2>💙 Telegram Support</h2>
+
+    <p>
+      Website से जुड़ी मदद के लिए Telegram पर contact करें।
+    </p>
+
+    <a
+      class="telegram"
+      href="https://t.me/Yashpal_aagri"
+      target="_blank">
+      📲 Telegram Support
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+/* PARTICLES */
+
+for(let i=0;i<70;i++){
+
+  const p=document.createElement("div");
+
+  p.className="particle";
+
+  p.style.left=Math.random()*100+"%";
+
+  p.style.animationDelay=(Math.random()*10)+"s";
+
+  p.style.animationDuration=(6+Math.random()*10)+"s";
+
+  document.getElementById("particles").appendChild(p);
+}
+
+
+/* NAVIGATION */
+
+function showPage(id,btn){
+
+  document.querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
+
+  const page=document.getElementById(id);
+
+  if(page) page.classList.add("active");
+
+  document.querySelectorAll(".nav")
+    .forEach(n=>n.classList.remove("active"));
+
+  if(btn) btn.classList.add("active");
+
+  document.getElementById("sidebar")
+    .classList.remove("open");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+  document.getElementById("sidebar")
+    .classList.toggle("open");
+
+}
+
+
+/* SEARCH */
+
+function globalSearch(){
+
+  const q=document.getElementById("searchInput")
+    .value.trim();
+
+  if(!q) return;
+
+  const text=q.toLowerCase();
+
+  if(text.includes("book"))
+    showPage("books");
+
+  else if(text.includes("video"))
+    showPage("videos");
+
+  else if(text.includes("test"))
+    showPage("tests");
+
+  else if(text.includes("dpp"))
+    showPage("dpp");
+
+  else if(text.includes("quiz"))
+    showPage("quiz");
+
+  else if(text.includes("ai") || text.includes("doubt"))
+    showPage("ai");
+
+  else if(text.includes("youtube") || text.includes("live"))
+    showPage("youtube");
+
+  else
+    showPage("websites");
+}
+
+
+/* YOUTUBE */
+
+function youtubeSearch(query){
+
+  const q=query ||
+    document.getElementById("ytSearch").value.trim();
+
+  if(!q){
+    alert("पहले video का नाम लिखें।");
+    return;
+  }
+
+  window.open(
+    "https://www.youtube.com/results?search_query="+
+    encodeURIComponent(q),
+    "_blank"
+  );
+}
+
+function searchYouTube(){
+
+  youtubeSearch();
+}
+
+function openYouTube(){
+
+  window.open(
+    "https://www.youtube.com/",
+    "_blank"
+  );
+}
+
+function openYouTubeComments(){
+
+  alert(
+    "YouTube comments करने के लिए video को YouTube पर खोलना होगा।"
+  );
+
+  window.open(
+    "https://www.youtube.com/",
+    "_blank"
+  );
+}
+
+
+/* AI */
+
+async function askAI(){
+
+  const question=
+    document.getElementById("aiQuestion")
+    .value.trim();
+
+  const answer=
+    document.getElementById("aiAnswer");
+
+  if(!question){
+
+    answer.textContent=
+      "कृपया अपना सवाल लिखें।";
+
+    return;
+  }
+
+  answer.textContent=
+    "🤖 AI सोच रहा है...";
+
+  try{
+
+    const response=await fetch(
+      "/api/ai",
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          question
+        })
+      }
+    );
+
+    const data=await response.json();
+
+    if(!response.ok){
+
+      answer.textContent=
+        data.answer ||
+        "AI service में समस्या है।";
+
+      return;
+    }
+
+    answer.textContent=
+      data.answer ||
+      "AI ने कोई उत्तर नहीं दिया।";
+
+  }catch(error){
+
+    console.error(error);
+
+    answer.textContent=
+      "AI server से connection नहीं हो पाया।";
+
+  }
+}
+
+
+/* QUIZ */
+
+function quizAnswer(correct){
+
+  document.getElementById("quizResult")
+    .textContent=correct
+    ? "✅ सही उत्तर!"
+    : "❌ गलत उत्तर। फिर से कोशिश करें।";
+
+}
+
+
+/* 30 THEMES */
+
+const themes=[
+
+ ["Ocean","#06122f","#10275a","#287cff","#7c3cff"],
+ ["Purple","#16072e","#32105c","#a855f7","#ec4899"],
+ ["Emerald","#031d18","#083b31","#10b981","#34d399"],
+ ["Crimson","#240608","#4a1015","#ef4444","#fb7185"],
+ ["Sunset","#281003","#54230a","#f97316","#facc15"],
+ ["Sky","#041b2e","#083e61","#0ea5e9","#38bdf8"],
+ ["Pink","#25071b","#541238","#ec4899","#f472b6"],
+ ["Gold","#241b02","#4d3a05","#eab308","#fde047"],
+ ["Galaxy","#09051f","#21104d","#6366f1","#a855f7"],
+ ["Forest","#031a08","#0b3513","#16a34a","#4ade80"],
+ ["Arctic","#031d2b","#0c4057","#06b6d4","#67e8f9"],
+ ["Midnight","#020617","#111827","#334155","#6366f1"],
+ ["Solar","#211000","#492800","#f59e0b","#fde68a"],
+ ["Diamond","#0b1620","#173044","#67e8f9","#e0f2fe"],
+ ["Cyber","#030712","#111827","#00ffcc","#ff00ff"],
+ ["Medical","#061a19","#103c3a","#14b8a6","#22d3ee"],
+ ["Space","#03051a","#11134a","#3b82f6","#8b5cf6"],
+ ["Neon","#090909","#1c1c1c","#39ff14","#00ffff"],
+ ["Atomic","#071a29","#0c354d","#22d3ee","#60a5fa"],
+ ["Electric","#050d22","#11245a","#2563eb","#38bdf8"],
+ ["Chemistry","#10100a","#332e05","#eab308","#84cc16"],
+ ["Biology","#03190c","#0b3b1d","#22c55e","#a3e635"],
+ ["Doctor","#07111f","#132b44","#38bdf8","#60a5fa"],
+ ["Rocket","#1d0903","#40170b","#f97316","#ef4444"],
+ ["Aurora","#04151a","#12313a","#14b8a6","#a855f7"],
+ ["Royal","#10051f","#2c0d52","#8b5cf6","#c084fc"],
+ ["Matrix","#001005","#002b0e","#22c55e","#4ade80"],
+ ["Sapphire","#020d2b","#0b2555","#2563eb","#60a5fa"],
+ ["Amber","#1b0e00","#422000","#f59e0b","#fb923c"],
+ ["Cosmic","#0b0320","#24104d","#9333ea","#ec4899"]
+
+];
+
+
+const themeGrid=
+  document.getElementById("themeGrid");
+
+
+themes.forEach((t,index)=>{
+
+  const button=
+    document.createElement("button");
+
+  button.className="theme";
+
+  button.textContent=
+    (index+1)+". "+t[0];
+
+  button.style.background=
+    `linear-gradient(135deg,${t[1]},${t[3]})`;
+
+  button.onclick=()=>{
+
+    document.documentElement.style
+      .setProperty("--bg",t[1]);
+
+    document.documentElement.style
+      .setProperty("--card",t[2]);
+
+    document.documentElement.style
+      .setProperty("--accent",t[3]);
+
+    document.documentElement.style
+      .setProperty("--accent2",t[4]);
+
+    localStorage.setItem(
+      "missionTheme",
+      JSON.stringify(t)
+    );
+
+  };
+
+  themeGrid.appendChild(button);
+
+});
+
+
+/* LOAD SAVED THEME */
+
+const saved=
+  localStorage.getItem("missionTheme");
+
+if(saved){
+
+  const t=JSON.parse(saved);
+
+  document.documentElement.style
+    .setProperty("--bg",t[1]);
+
+  document.documentElement.style
+    .setProperty("--card",t[2]);
+
+  document.documentElement.style
+    .setProperty("--accent",t[3]);
+
+  document.documentElement.style
+    .setProperty("--accent2",t[4]);
+
+}
+
+
+/* SIMPLE DARK/LIGHT */
+
+function toggleTheme(){
+
+  const root=document.documentElement;
+
+  const current=
+    getComputedStyle(root)
+      .getPropertyValue("--bg")
+      .trim();
+
+  if(current==="#06122f"){
+
+    root.style.setProperty(
+      "--bg","#f3f7ff"
+    );
+
+    root.style.setProperty(
+      "--panel","#ffffff"
+    );
+
+    root.style.setProperty(
+      "--card","#e7efff"
+    );
+
+    root.style.setProperty(
+      "--text","#081329"
+    );
+
+  }else{
+
+    root.style.setProperty(
+      "--bg","#06122f"
+    );
+
+    root.style.setProperty(
+      "--panel","#0b1d45"
+    );
+
+    root.style.setProperty(
+      "--card","#10275a"
+    );
+
+    root.style.setProperty(
+      "--text","#ffffff"
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
