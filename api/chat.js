@@ -14,26 +14,49 @@ export default async function handler(req, res) {
       });
     }
 
-    if (!process.env.OPENAI_API_KEY) {
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
       return res.status(500).json({
-        error: "OPENAI_API_KEY अभी Vercel में सेट नहीं है।"
+        error: "GEMINI_API_KEY Vercel में नहीं मिली।"
       });
     }
 
     const response = await fetch(
-      "https://api.openai.com/v1/responses",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" +
+        encodeURIComponent(apiKey),
       {
         method: "POST",
+
         headers: {
-          "Content-Type": "application/json",
-          "Authorization":
-            `Bearer ${process.env.OPENAI_API_KEY}`
+          "Content-Type": "application/json"
         },
+
         body: JSON.stringify({
-          model: "gpt-5.6",
-          instructions:
-            "You are Mission Lakshya NEET 2027 AI Tutor. Help students with NEET Physics, Chemistry and Biology. Explain concepts clearly in simple Hindi. For numerical questions, show steps. Give educational answers suitable for students.",
-          input: message
+          system_instruction: {
+            parts: [
+              {
+                text:
+                  "You are Mission Lakshya NEET 2027 AI Tutor. " +
+                  "Help students with NEET Physics, Chemistry and Biology. " +
+                  "Explain concepts clearly in simple Hindi. " +
+                  "For numerical questions, explain step by step. " +
+                  "Give educational answers suitable for students."
+              }
+            ]
+          },
+
+          contents: [
+            {
+              role: "user",
+
+              parts: [
+                {
+                  text: message
+                }
+              ]
+            }
+          ]
         })
       }
     );
@@ -44,12 +67,14 @@ export default async function handler(req, res) {
       return res.status(response.status).json({
         error:
           data?.error?.message ||
-          "OpenAI API में समस्या हुई।"
+          "Gemini API में समस्या हुई।"
       });
     }
 
     const answer =
-      data.output_text ||
+      data?.candidates?.[0]?.content?.parts
+        ?.map(part => part.text || "")
+        .join("") ||
       "AI से जवाब नहीं मिला।";
 
     return res.status(200).json({
@@ -57,7 +82,8 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error(error);
+
+    console.error("Gemini Error:", error);
 
     return res.status(500).json({
       error: "AI server में समस्या हुई।"
