@@ -389,13 +389,13 @@ async function askAI() {
 
   }
 
-  catch (error) {
+catch (error) {
 
-    console.error(error);
+  console.error("AI Error:", error);
 
-    answerBox.innerText =
-      "❌ AI से connection नहीं हो पाया।";
-  }
+  answerBox.innerText =
+    "❌ AI Error: " + (error.message || "Unknown error");
+}
 }
 
 
