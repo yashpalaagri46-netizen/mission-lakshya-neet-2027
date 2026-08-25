@@ -1461,3 +1461,423 @@ body.light .dpp-card{
     scroll-behavior:auto!important;
   }
 }
+/* =========================================
+   MISSION LAKSHYA NEET 2027
+   35 THEMES + MODES SYSTEM
+========================================= */
+
+.mode-panel {
+  margin: 25px 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.mode-panel h3 {
+  margin-bottom: 15px;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.theme-card {
+  position: relative;
+  min-height: 105px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 18px;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .25s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.theme-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.15),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.theme-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,.3);
+}
+
+.theme-card.active {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  transform: translateY(-4px) scale(1.02);
+}
+
+.theme-name {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+}
+
+.theme-description {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+  opacity: .85;
+}
+
+.mode-card {
+  min-height: 75px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+  font-weight: 900;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.mode-card:hover {
+  background: var(--card2);
+  transform: translateY(-4px);
+}
+
+.mode-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(40,124,255,.25);
+}
+
+/* =========================================
+   THEME COLORS
+========================================= */
+
+.theme-midnight {
+  --bg:#06122f;
+  --bg2:#0b1d46;
+  --accent:#287cff;
+  --accent2:#7c3cff;
+}
+
+.theme-ocean {
+  --bg:#032b43;
+  --bg2:#075985;
+  --accent:#06b6d4;
+  --accent2:#2563eb;
+}
+
+.theme-purple {
+  --bg:#16052f;
+  --bg2:#32105c;
+  --accent:#a855f7;
+  --accent2:#7c3aed;
+}
+
+.theme-cyber {
+  --bg:#050014;
+  --bg2:#12002b;
+  --accent:#00f5ff;
+  --accent2:#ff00e6;
+}
+
+.theme-rose {
+  --bg:#310816;
+  --bg2:#5c1027;
+  --accent:#fb7185;
+  --accent2:#ec4899;
+}
+
+.theme-sunset {
+  --bg:#321000;
+  --bg2:#641f00;
+  --accent:#ff7a18;
+  --accent2:#ff3d81;
+}
+
+.theme-orange {
+  --bg:#2a1000;
+  --bg2:#4a1d00;
+  --accent:#ff8a00;
+  --accent2:#ff4500;
+}
+
+.theme-red {
+  --bg:#250303;
+  --bg2:#500808;
+  --accent:#ef4444;
+  --accent2:#b91c1c;
+}
+
+.theme-gold {
+  --bg:#241900;
+  --bg2:#493300;
+  --accent:#facc15;
+  --accent2:#f59e0b;
+}
+
+.theme-sky {
+  --bg:#031b30;
+  --bg2:#064e73;
+  --accent:#38bdf8;
+  --accent2:#0284c7;
+}
+
+.theme-violet {
+  --bg:#16002b;
+  --bg2:#350061;
+  --accent:#8b5cf6;
+  --accent2:#c026d3;
+}
+
+.theme-indigo {
+  --bg:#080d35;
+  --bg2:#172554;
+  --accent:#6366f1;
+  --accent2:#4338ca;
+}
+
+.theme-blue {
+  --bg:#02152f;
+  --bg2:#063b73;
+  --accent:#3b82f6;
+  --accent2:#1d4ed8;
+}
+
+.theme-aqua {
+  --bg:#002629;
+  --bg2:#004f52;
+  --accent:#22d3ee;
+  --accent2:#14b8a6;
+}
+
+.theme-turquoise {
+  --bg:#002b2b;
+  --bg2:#005454;
+  --accent:#2dd4bf;
+  --accent2:#06b6d4;
+}
+
+.theme-lavender {
+  --bg:#18112e;
+  --bg2:#30215a;
+  --accent:#c4b5fd;
+  --accent2:#a78bfa;
+}
+
+.theme-plum {
+  --bg:#21051f;
+  --bg2:#4a1045;
+  --accent:#d946ef;
+  --accent2:#a21caf;
+}
+
+.theme-crimson {
+  --bg:#26030b;
+  --bg2:#520713;
+  --accent:#f43f5e;
+  --accent2:#be123c;
+}
+
+.theme-cherry {
+  --bg:#26000d;
+  --bg2:#510018;
+  --accent:#fb7185;
+  --accent2:#e11d48;
+}
+
+.theme-coffee {
+  --bg:#1c0d06;
+  --bg2:#3b1c0d;
+  --accent:#d6a15d;
+  --accent2:#92400e;
+}
+
+.theme-chocolate {
+  --bg:#170b05;
+  --bg2:#3b1a0b;
+  --accent:#f59e0b;
+  --accent2:#b45309;
+}
+
+.theme-silver {
+  --bg:#111827;
+  --bg2:#374151;
+  --accent:#d1d5db;
+  --accent2:#9ca3af;
+}
+
+.theme-steel {
+  --bg:#0b1720;
+  --bg2:#1f3442;
+  --accent:#94a3b8;
+  --accent2:#64748b;
+}
+
+.theme-neon-blue {
+  --bg:#00101f;
+  --bg2:#002b55;
+  --accent:#00aaff;
+  --accent2:#0066ff;
+}
+
+.theme-neon-purple {
+  --bg:#10001f;
+  --bg2:#2c0050;
+  --accent:#bf00ff;
+  --accent2:#7200ff;
+}
+
+.theme-neon-pink {
+  --bg:#20000f;
+  --bg2:#4b0025;
+  --accent:#ff1493;
+  --accent2:#ff00cc;
+}
+
+.theme-neon-orange {
+  --bg:#200b00;
+  --bg2:#4a1800;
+  --accent:#ff6a00;
+  --accent2:#ff2d00;
+}
+
+.theme-ice {
+  --bg:#061a24;
+  --bg2:#0e3545;
+  --accent:#67e8f9;
+  --accent2:#38bdf8;
+}
+
+.theme-space {
+  --bg:#020617;
+  --bg2:#111827;
+  --accent:#818cf8;
+  --accent2:#22d3ee;
+}
+
+.theme-galaxy {
+  --bg:#090014;
+  --bg2:#25004d;
+  --accent:#e879f9;
+  --accent2:#6366f1;
+}
+
+.theme-matrix {
+  --bg:#001006;
+  --bg2:#002b12;
+  --accent:#22c55e;
+  --accent2:#16a34a;
+}
+
+.theme-diamond {
+  --bg:#07111f;
+  --bg2:#142b46;
+  --accent:#e0f2fe;
+  --accent2:#7dd3fc;
+}
+
+.theme-fire {
+  --bg:#1f0500;
+  --bg2:#481000;
+  --accent:#f97316;
+  --accent2:#dc2626;
+}
+
+.theme-aurora {
+  --bg:#03151b;
+  --bg2:#12234b;
+  --accent:#2dd4bf;
+  --accent2:#8b5cf6;
+}
+
+/* =========================================
+   THEME TRANSITION
+========================================= */
+
+body,
+.topbar,
+#sidebar,
+.hero,
+.feature-card,
+.website-card,
+.live-card,
+.progress-box,
+.quiz-box,
+.ai-box,
+.youtube-box,
+.support-box,
+.test-card,
+.dpp-card,
+.mode-panel {
+  transition:
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+/* =========================================
+   3D THEME EFFECT
+========================================= */
+
+.theme-card,
+.mode-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.theme-card:hover {
+  transform:
+    translateY(-7px)
+    rotateX(3deg)
+    rotateY(-3deg)
+    scale(1.02);
+}
+
+/* =========================================
+   MOBILE THEMES
+========================================= */
+
+@media(max-width:560px){
+
+  .theme-grid {
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .theme-card {
+    min-height:95px;
+    padding:12px;
+  }
+
+  .theme-name {
+    font-size:14px;
+  }
+
+  .theme-description {
+    font-size:10px;
+  }
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.theme-card:focus-visible,
+.mode-card:focus-visible {
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
