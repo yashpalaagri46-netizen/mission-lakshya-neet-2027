@@ -1045,3 +1045,270 @@ document.addEventListener(
 
   }
 );
+/* =========================================
+   35 THEMES SYSTEM
+========================================= */
+
+const themes = [
+  {name:"Ocean", accent:"#287cff", accent2:"#00c6ff", bg:"#06122f", bg2:"#0b1d46"},
+  {name:"Purple", accent:"#7c3cff", accent2:"#c026ff", bg:"#17052f", bg2:"#2b0b46"},
+  {name:"Cyber", accent:"#00f5ff", accent2:"#ff00e5", bg:"#050510", bg2:"#10102b"},
+  {name:"Sunset", accent:"#ff6b35", accent2:"#ff006e", bg:"#2b0b12", bg2:"#461b0b"},
+  {name:"Royal", accent:"#8b5cf6", accent2:"#ec4899", bg:"#10072b", bg2:"#241044"},
+  {name:"Sky", accent:"#38bdf8", accent2:"#2563eb", bg:"#071a2f", bg2:"#0b2d50"},
+  {name:"Rose", accent:"#fb7185", accent2:"#e11d48", bg:"#2b0713", bg2:"#4a0b20"},
+  {name:"Gold", accent:"#fbbf24", accent2:"#f97316", bg:"#211505", bg2:"#3b2307"},
+  {name:"Emerald", accent:"#10b981", accent2:"#22c55e", bg:"#031f18", bg2:"#073b2c"},
+  {name:"Ruby", accent:"#ef4444", accent2:"#be123c", bg:"#280608", bg2:"#450a12"},
+  {name:"Neon Blue", accent:"#00e5ff", accent2:"#2979ff", bg:"#020d1c", bg2:"#061d3a"},
+  {name:"Neon Green", accent:"#39ff14", accent2:"#00c853", bg:"#031405", bg2:"#082d0d"},
+  {name:"Neon Pink", accent:"#ff1493", accent2:"#ff00ff", bg:"#1f0317", bg2:"#3d062f"},
+  {name:"Neon Purple", accent:"#b026ff", accent2:"#7c00ff", bg:"#12021f", bg2:"#270744"},
+  {name:"Midnight", accent:"#6366f1", accent2:"#312e81", bg:"#020617", bg2:"#0f172a"},
+  {name:"Forest", accent:"#16a34a", accent2:"#15803d", bg:"#041b0b", bg2:"#092e14"},
+  {name:"Lavender", accent:"#a78bfa", accent2:"#c084fc", bg:"#170d2b", bg2:"#28164a"},
+  {name:"Mint", accent:"#2dd4bf", accent2:"#34d399", bg:"#031c1a", bg2:"#073b35"},
+  {name:"Fire", accent:"#f97316", accent2:"#dc2626", bg:"#210704", bg2:"#42100a"},
+  {name:"Ice", accent:"#67e8f9", accent2:"#38bdf8", bg:"#031722", bg2:"#082d40"},
+  {name:"Matrix", accent:"#22c55e", accent2:"#84cc16", bg:"#020b04", bg2:"#071a09"},
+  {name:"Galaxy", accent:"#8b5cf6", accent2:"#3b82f6", bg:"#09051c", bg2:"#171044"},
+  {name:"Deep Sea", accent:"#06b6d4", accent2:"#0e7490", bg:"#02151d", bg2:"#06313e"},
+  {name:"Cherry", accent:"#f43f5e", accent2:"#be185d", bg:"#22040d", bg2:"#430819"},
+  {name:"Coffee", accent:"#d6a66a", accent2:"#92400e", bg:"#160d07", bg2:"#2d180c"},
+  {name:"Silver", accent:"#94a3b8", accent2:"#64748b", bg:"#0f172a", bg2:"#1e293b"},
+  {name:"Platinum", accent:"#e2e8f0", accent2:"#94a3b8", bg:"#111827", bg2:"#273449"},
+  {name:"Electric", accent:"#2563eb", accent2:"#9333ea", bg:"#030712", bg2:"#111827"},
+  {name:"Tropical", accent:"#14b8a6", accent2:"#f59e0b", bg:"#05201d", bg2:"#14351e"},
+  {name:"Aurora", accent:"#4ade80", accent2:"#a855f7", bg:"#06120f", bg2:"#18102e"},
+  {name:"Cosmic", accent:"#ec4899", accent2:"#6366f1", bg:"#14051c", bg2:"#24104a"},
+  {name:"Royal Blue", accent:"#3b82f6", accent2:"#1d4ed8", bg:"#04102b", bg2:"#0b2050"},
+  {name:"Orange", accent:"#fb923c", accent2:"#ea580c", bg:"#241005", bg2:"#421d09"},
+  {name:"Teal", accent:"#14b8a6", accent2:"#0f766e", bg:"#031c1b", bg2:"#063633"},
+  {name:"Violet", accent:"#8b5cf6", accent2:"#6d28d9", bg:"#10051f", bg2:"#251044"}
+];
+
+
+/* CREATE THEME BUTTONS */
+
+function loadThemes(){
+
+  const container =
+    document.getElementById("themeList");
+
+  if(!container) return;
+
+  container.innerHTML = "";
+
+  themes.forEach((theme,index)=>{
+
+    const button =
+      document.createElement("button");
+
+    button.className = "theme-card";
+
+    button.innerHTML = `
+      🎨 ${index + 1}. ${theme.name}
+    `;
+
+    button.style.background =
+      `linear-gradient(135deg,
+        ${theme.accent},
+        ${theme.accent2})`;
+
+    button.onclick = () => {
+      applyTheme(theme,index);
+    };
+
+    container.appendChild(button);
+
+  });
+
+}
+
+
+/* APPLY THEME */
+
+function applyTheme(theme,index){
+
+  const root =
+    document.documentElement;
+
+  root.style.setProperty(
+    "--accent",
+    theme.accent
+  );
+
+  root.style.setProperty(
+    "--accent2",
+    theme.accent2
+  );
+
+  root.style.setProperty(
+    "--bg",
+    theme.bg
+  );
+
+  root.style.setProperty(
+    "--bg2",
+    theme.bg2
+  );
+
+  document.body.classList.remove("light");
+
+  localStorage.setItem(
+    "mlThemeIndex",
+    index
+  );
+
+  localStorage.setItem(
+    "mlTheme",
+    JSON.stringify(theme)
+  );
+
+}
+
+
+/* LOAD SAVED THEME */
+
+function loadSavedTheme(){
+
+  const saved =
+    localStorage.getItem("mlTheme");
+
+  if(!saved) return;
+
+  try{
+
+    const theme =
+      JSON.parse(saved);
+
+    const root =
+      document.documentElement;
+
+    root.style.setProperty(
+      "--accent",
+      theme.accent
+    );
+
+    root.style.setProperty(
+      "--accent2",
+      theme.accent2
+    );
+
+    root.style.setProperty(
+      "--bg",
+      theme.bg
+    );
+
+    root.style.setProperty(
+      "--bg2",
+      theme.bg2
+    );
+
+  }catch(error){
+
+    console.error(
+      "Theme load error:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   DISPLAY MODE
+========================================= */
+
+function setDisplayMode(mode){
+
+  if(mode === "light"){
+
+    document.body.classList.add("light");
+
+    localStorage.setItem(
+      "mlLightMode",
+      "light"
+    );
+
+  }
+
+  else{
+
+    document.body.classList.remove("light");
+
+    localStorage.setItem(
+      "mlLightMode",
+      "dark"
+    );
+
+  }
+
+}
+
+
+/* CREATE DARK / LIGHT BUTTONS */
+
+function loadModes(){
+
+  const container =
+    document.getElementById("modeList");
+
+  if(!container) return;
+
+  container.innerHTML = "";
+
+  const dark =
+    document.createElement("button");
+
+  dark.className = "theme-card";
+
+  dark.innerHTML =
+    "🌙 Dark";
+
+  dark.style.background =
+    "linear-gradient(135deg,#111827,#312e81)";
+
+  dark.onclick = () =>
+    setDisplayMode("dark");
+
+
+  const light =
+    document.createElement("button");
+
+  light.className = "theme-card";
+
+  light.innerHTML =
+    "☀️ Light";
+
+  light.style.background =
+    "linear-gradient(135deg,#dbeafe,#ffffff)";
+
+  light.style.color =
+    "#172033";
+
+  light.onclick = () =>
+    setDisplayMode("light");
+
+
+  container.appendChild(dark);
+  container.appendChild(light);
+
+}
+
+
+/* =========================================
+   START THEME SYSTEM
+========================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    loadThemes();
+    loadModes();
+    loadSavedTheme();
+
+  }
+);
