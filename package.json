@@ -1,0 +1,25 @@
+{
+  "name": "mission-lakshya-neet-2027",
+  "version": "1.0.0",
+  "description": "Mission Lakshya NEET 2027 - Complete digital study platform for NEET preparation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashpalaagri46-netizen/mission-lakshya-neet-2027.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashpalaagri46-netizen/mission-lakshya-neet-2027/issues"
+  },
+  "homepage": "https://github.com/yashpalaagri46-netizen/mission-lakshya-neet-2027#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
+    "express": "^5.2.1"
+  }
+}
