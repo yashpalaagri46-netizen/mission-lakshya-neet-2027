@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "functions": {
+    "api/ai.js": {
+      "maxDuration": 60
+    },
+    "api/youtube-live.js": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ]
+}
