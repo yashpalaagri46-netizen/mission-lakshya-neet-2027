@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#12082f">
+  <meta name="description" content="Mission Lakshya – NEET & JEE learning platform">
+
+  <title>Mission Lakshya – NEET & JEE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       APP
+  ========================================================== -->
+  <div id="app">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- =======================================================
+         SIDEBAR
+    ======================================================== -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-brand">
+
+        <div class="brand-logo">
+          <img
+            src="images/logo.png"
+            alt="Mission Lakshya"
+            onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"
+          >
+          <span class="logo-fallback-text">ML</span>
+        </div>
+
+        <div class="brand-text">
+          <strong>MISSION</strong>
+          <span>LAKSHYA</span>
+          <small>NEET & JEE</small>
+        </div>
+
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+          ×
+        </button>
+
+      </div>
+
+      <!-- USER MINI CARD -->
+      <div class="sidebar-user">
+
+        <div class="avatar">YA</div>
+
+        <div>
+          <strong id="sidebarUserName">Yashpal Aagri</strong>
+          <span>Student</span>
+        </div>
+
+        <span class="online-dot"></span>
+
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="main-nav">
+
+        <p class="nav-title">MAIN</p>
+
+        <button class="nav-item active" data-page="home">
+          <span class="nav-icon">⌂</span>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-page="library">
+          <span class="nav-icon">▦</span>
+          <span>Library</span>
+        </button>
+
+        <button class="nav-item" data-page="books">
+          <span class="nav-icon">📚</span>
+          <span>Books</span>
+        </button>
+
+        <button class="nav-item" data-page="videos">
+          <span class="nav-icon">▶</span>
+          <span>Video Lectures</span>
+        </button>
+
+        <button class="nav-item" data-page="questions">
+          <span class="nav-icon">❓</span>
+          <span>Question Bank</span>
+        </button>
+
+        <button class="nav-item" data-page="dpp">
+          <span class="nav-icon">📝</span>
+          <span>DPP</span>
+        </button>
+
+        <button class="nav-item" data-page="quiz">
+          <span class="nav-icon">🧠</span>
+          <span>Quiz</span>
+        </button>
+
+        <button class="nav-item" data-page="mock">
+          <span class="nav-icon">🎯</span>
+          <span>Mock Test</span>
+        </button>
+
+        <p class="nav-title">SMART STUDY</p>
+
+        <button class="nav-item" data-page="ai">
+          <span class="nav-icon">✦</span>
+          <span>Aria AI</span>
+          <span class="nav-badge">AI</span>
+        </button>
+
+        <button class="nav-item" data-page="planner">
+          <span class="nav-icon">📅</span>
+          <span>Planner</span>
+        </button>
+
+        <button class="nav-item" data-page="analytics">
+          <span class="nav-icon">📊</span>
+          <span>Analytics</span>
+        </button>
+
+        <button class="nav-item" data-page="bookmarks">
+          <span class="nav-icon">🔖</span>
+          <span>Bookmarks</span>
+        </button>
+
+        <p class="nav-title">LEARNING LAB</p>
+
+        <button class="nav-item" data-page="lab3d">
+          <span class="nav-icon">🧊</span>
+          <span>3D Learning Lab</span>
+          <span class="nav-badge new">NEW</span>
+        </button>
+
+        <button class="nav-item" data-page="tools">
+          <span class="nav-icon">∑</span>
+          <span>PCMB Tools</span>
+        </button>
+
+        <button class="nav-item" data-page="youtube">
+          <span class="nav-icon">▶</span>
+          <span>YouTube LIVE</span>
+        </button>
+
+        <button class="nav-item" data-page="websites">
+          <span class="nav-icon">🌐</span>
+          <span>Study Websites</span>
+        </button>
+
+        <p class="nav-title">PERSONAL</p>
+
+        <button class="nav-item" data-page="themes">
+          <span class="nav-icon">🎨</span>
+          <span>Themes</span>
+        </button>
+
+        <button class="nav-item" data-page="settings">
+          <span class="nav-icon">⚙</span>
+          <span>Settings</span>
+        </button>
+
+      </nav>
+
+      <!-- SIDEBAR FOOTER -->
+      <div class="sidebar-footer">
+
+        <div class="streak-mini">
+          <span>🔥</span>
+          <div>
+            <strong>6 Days</strong>
+            <small>Study Streak</small>
+          </div>
+        </div>
+
+        <div class="creator-mini">
+          Created by <strong>Yashpal Aagri</strong>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =======================================================
+         MAIN AREA
+    ======================================================== -->
+    <main class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+          ☰
+        </button>
+
+        <!-- SEARCH -->
+        <div class="global-search">
+
+          <span class="search-icon">⌕</span>
+
+          <input
+            type="search"
+            id="globalSearch"
+            placeholder="Search anything..."
+            autocomplete="off"
+          >
+
+          <kbd>⌘ K</kbd>
+
+        </div>
+
+        <div class="top-actions">
+
+          <!-- LANGUAGE -->
+          <button class="top-button language-button" id="languageButton">
+            <span id="languageText">HI</span>
+            <span class="language-divider">|</span>
+            <span>EN</span>
+          </button>
+
+          <!-- THEME -->
+          <button class="top-button" id="themeButton" aria-label="Change theme">
+            ☼
+          </button>
+
+          <!-- NOTIFICATIONS -->
+          <button class="top-button notification-button" id="notificationButton">
+            ♢
+            <span class="notification-dot"></span>
+          </button>
+
+          <!-- PROFILE -->
+          <button class="profile-button" id="profileButton">
+
+            <div class="avatar small-avatar">YA</div>
+
+            <div class="profile-info">
+              <strong id="topUserName">Yashpal Aagri</strong>
+              <span>Student</span>
+            </div>
+
+            <span>⌄</span>
+
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           PAGE CONTAINER
+      ====================================================== -->
+      <section class="page-container">
+
+        <!-- ===================================================
+             HOME PAGE
+        ==================================================== -->
+        <div class="page active-page" id="page-home">
+
+          <!-- HERO -->
+          <section class="hero-dashboard">
+
+            <div class="hero-content">
+
+              <div class="hero-kicker">
+                <span class="pulse"></span>
+                YOUR SUCCESS, OUR MISSION
+              </div>
+
+              <h1>
+                MISSION
+                <span>LAKSHYA</span>
+              </h1>
+
+              <div class="hero-exam">
+                NEET & JEE
+                <span>2027</span>
+              </div>
+
+              <p class="hero-hindi">
+                सपने नहीं, अब लक्ष्य है।
+                <br>
+                पढ़ाई आज से, सफलता कल से।
+              </p>
+
+              <div class="hero-buttons">
+
+                <button class="primary-button" data-page="library">
+                  Start Learning
+                  <span>→</span>
+                </button>
+
+                <button class="secondary-button" data-page="ai">
+                  Ask Aria AI
+                  <span>✦</span>
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- DECORATIVE HERO VISUAL -->
+            <div class="hero-visual">
+
+              <div class="orb orb-one"></div>
+              <div class="orb orb-two"></div>
+
+              <div class="floating-symbol symbol-one">⚛</div>
+              <div class="floating-symbol symbol-two">🧬</div>
+              <div class="floating-symbol symbol-three">∑</div>
+
+              <div class="hero-core">
+                <div class="core-ring ring-one"></div>
+                <div class="core-ring ring-two"></div>
+                <div class="core-center">
+                  ML
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- WELCOME -->
+          <div class="page-heading">
+
+            <div>
+              <p class="eyebrow">WELCOME BACK</p>
+              <h2>Ready to continue your journey?</h2>
+            </div>
+
+            <div class="date-chip" id="currentDate">
+              Today
+            </div>
+
+          </div>
+
+
+          <!-- PROGRESS CARDS -->
+          <section class="stats-grid">
+
+            <article class="stat-card progress-card">
+
+              <div class="stat-icon purple">◔</div>
+
+              <div class="stat-content">
+                <span>Today's Progress</span>
+                <strong>42%</strong>
+                <small>Keep going!</small>
+              </div>
+
+              <div class="circular-progress" style="--progress:42%">
+                <span>42%</span>
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-icon orange">🔥</div>
+
+              <div class="stat-content">
+                <span>Study Streak</span>
+                <strong>6 Days</strong>
+                <small>Personal best: 12</small>
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-icon blue">◷</div>
+
+              <div class="stat-content">
+                <span>Total Study Hours</span>
+                <strong>123h</strong>
+                <small>+8h this week</small>
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-icon green">✓</div>
+
+              <div class="stat-content">
+                <span>Completed Chapters</span>
+                <strong>18 / 37</strong>
+                <small>49% completed</small>
+              </div>
+
+            </article>
+
+          </section>
+
+
+          <!-- QUICK ACCESS -->
+          <section class="content-section">
+
+            <div class="section-header">
+
+              <div>
+                <p class="eyebrow">QUICK ACCESS</p>
+                <h2>Start studying</h2>
+              </div>
+
+              <button class="text-button" data-page="library">
+                View All →
+              </button>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+              <button class="quick-card physics" data-page="questions">
+
+                <div class="quick-icon">⚛</div>
+
+                <div>
+                  <strong>Physics</strong>
+                  <span>NEET + JEE</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+
+              <button class="quick-card chemistry" data-page="questions">
+
+                <div class="quick-icon">⚗</div>
+
+                <div>
+                  <strong>Chemistry</strong>
+                  <span>NEET + JEE</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+
+              <button class="quick-card biology" data-page="questions">
+
+                <div class="quick-icon">🧬</div>
+
+                <div>
+                  <strong>Biology</strong>
+                  <span>NEET</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+
+              <button class="quick-card maths" data-page="questions">
+
+                <div class="quick-icon">∑</div>
+
+                <div>
+                  <strong>Mathematics</strong>
+                  <span>JEE</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+
+              <button class="quick-card dpp-card" data-page="dpp">
+
+                <div class="quick-icon">📝</div>
+
+                <div>
+                  <strong>Today's DPP</strong>
+                  <span>90 Questions</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+
+              <button class="quick-card quiz-card" data-page="quiz">
+
+                <div class="quick-icon">🧠</div>
+
+                <div>
+                  <strong>Daily Quiz</strong>
+                  <span>Test yourself</span>
+                </div>
+
+                <b>→</b>
+
+              </button>
+
+            </div>
+
+          </section>
+
+
+          <!-- CONTINUE LEARNING + RECENT ACTIVITY -->
+          <section class="two-column-section">
+
+            <!-- CONTINUE -->
+            <div class="panel">
+
+              <div class="section-header compact">
+
+                <div>
+                  <p class="eyebrow">CONTINUE LEARNING</p>
+                  <h2>Pick up where you left off</h2>
+                </div>
+
+                <button class="icon-button">⋮</button>
+
+              </div>
+
+
+              <div class="continue-card">
+
+                <div class="subject-icon physics-icon">
+                  ⚡
+                </div>
+
+                <div class="continue-info">
+
+                  <div class="continue-top">
+                    <span>Physics • Class 12</span>
+                    <strong>60%</strong>
+                  </div>
+
+                  <h3>Current Electricity</h3>
+
+                  <div class="progress-bar">
+                    <span style="width:60%"></span>
+                  </div>
+
+                  <small>
+                    Last studied 25 minutes ago
+                  </small>
+
+                </div>
+
+                <button
+                  class="round-arrow"
+                  data-page="videos"
+                  aria-label="Continue"
+                >
+                  →
+                </button>
+
+              </div>
+
+
+              <div class="continue-card">
+
+                <div class="subject-icon chemistry-icon">
+                  ⚗
+                </div>
+
+                <div class="continue-info">
+
+                  <div class="continue-top">
+                    <span>Chemistry • Class 11</span>
+                    <strong>35%</strong>
+                  </div>
+
+                  <h3>Some Basic Concepts</h3>
+
+                  <div class="progress-bar">
+                    <span style="width:35%"></span>
+                  </div>
+
+                  <small>
+                    Continue chapter
+                  </small>
+
+                </div>
+
+                <button
+                  class="round-arrow"
+                  data-page="videos"
+                  aria-label="Continue"
+                >
+                  →
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- RECENT ACTIVITY -->
+            <div class="panel">
+
+              <div class="section-header compact">
+
+                <div>
+                  <p class="eyebrow">RECENT ACTIVITY</p>
+                  <h2>Your latest activity</h2>
+                </div>
+
+                <button class="text-button" data-page="analytics">
+                  View All
+                </button>
+
+              </div>
+
+
+              <div class="activity-list">
+
+                <div class="activity-item">
+
+                  <div class="activity-icon quiz-activity">
+                    ✓
+                  </div>
+
+                  <div>
+                    <strong>Physics Quiz completed</strong>
+                    <span>Score 18 / 20 • Today</span>
+                  </div>
+
+                  <b>+90 XP</b>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <div class="activity-icon book-activity">
+                    📖
+                  </div>
+
+                  <div>
+                    <strong>Biology NCERT studied</strong>
+                    <span>Cell: The Unit of Life</span>
+                  </div>
+
+                  <b>+40 XP</b>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <div class="activity-icon ai-activity">
+                    ✦
+                  </div>
+
+                  <div>
+                    <strong>Asked Aria AI</strong>
+                    <span>Physics numerical solution</span>
+                  </div>
+
+                  <b>+20 XP</b>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <div class="activity-icon dpp-activity">
+                    📝
+                  </div>
+
+                  <div>
+                    <strong>DPP completed</strong>
+                    <span>Today's practice set</span>
+                  </div>
+
+                  <b>+100 XP</b>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- SUBJECT PROGRESS -->
+          <section class="content-section">
+
+            <div class="section-header">
+
+              <div>
+                <p class="eyebrow">YOUR PREPARATION</p>
+                <h2>Subject Progress</h2>
+              </div>
+
+              <button class="text-button" data-page="analytics">
+                Analytics →
+              </button>
+
+            </div>
+
+
+            <div class="subject-progress-grid">
+
+              <div class="subject-progress-card">
+
+                <div class="subject-header">
+                  <div class="subject-symbol physics-bg">⚛</div>
+                  <div>
+                    <strong>Physics</strong>
+                    <span>NEET + JEE</span>
+                  </div>
+                  <b>52%</b>
+                </div>
+
+                <div class="progress-bar">
+                  <span style="width:52%"></span>
+                </div>
+
+                <small>8 of 15 chapters completed</small>
+
+              </div>
+
+
+              <div class="subject-progress-card">
+
+                <div class="subject-header">
+                  <div class="subject-symbol chemistry-bg">⚗</div>
+                  <div>
+                    <strong>Chemistry</strong>
+                    <span>NEET + JEE</span>
+                  </div>
+                  <b>45%</b>
+                </div>
+
+                <div class="progress-bar">
+                  <span style="width:45%"></span>
+                </div>
+
+                <small>7 of 16 chapters completed</small>
+
+              </div>
+
+
+              <div class="subject-progress-card">
+
+                <div class="subject-header">
+                  <div class="subject-symbol biology-bg">🧬</div>
+                  <div>
+                    <strong>Biology</strong>
+                    <span>NEET</span>
+                  </div>
+                  <b>58%</b>
+                </div>
+
+                <div class="progress-bar">
+                  <span style="width:58%"></span>
+                </div>
+
+                <small>14 of 24 chapters completed</small>
+
+              </div>
+
+
+              <div class="subject-progress-card">
+
+                <div class="subject-header">
+                  <div class="subject-symbol maths-bg">∑</div>
+                  <div>
+                    <strong>Mathematics</strong>
+                    <span>JEE</span>
+                  </div>
+                  <b>38%</b>
+                </div>
+
+                <div class="progress-bar">
+                  <span style="width:38%"></span>
+                </div>
+
+                <small>7 of 18 chapters completed</small>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- TODAY PLAN -->
+          <section class="content-section">
+
+            <div class="section-header">
+
+              <div>
+                <p class="eyebrow">TODAY'S PLAN</p>
+                <h2>Study schedule</h2>
+              </div>
+
+              <button class="text-button" data-page="planner">
+                Open Planner →
+              </button>
+
+            </div>
+
+
+            <div class="timeline">
+
+              <div class="timeline-item completed">
+
+                <div class="timeline-time">
+                  07:00
+                </div>
+
+                <div class="timeline-line">
+                  <span></span>
+                </div>
+
+                <div class="timeline-content">
+                  <strong>Biology NCERT</strong>
+                  <span>Human Physiology • 45 min</span>
+                </div>
+
+                <div class="timeline-status">✓</div>
+
+              </div>
+
+
+              <div class="timeline-item active">
+
+                <div class="timeline-time">
+                  10:00
+                </div>
+
+                <div class="timeline-line">
+                  <span></span>
+                </div>
+
+                <div class="timeline-content">
+                  <strong>Physics Lecture</strong>
+                  <span>Current Electricity • 60 min</span>
+                </div>
+
+                <div class="timeline-status">NOW</div>
+
+              </div>
+
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  14:00
+                </div>
+
+                <div class="timeline-line">
+                  <span></span>
+                </div>
+
+                <div class="timeline-content">
+                  <strong>Chemistry DPP</strong>
+                  <span>Mole Concept • 30 questions</span>
+                </div>
+
+                <div class="timeline-status">○</div>
+
+              </div>
+
+
+              <div class="timeline-item">
+
+                <div class="timeline-time">
+                  18:00
+                </div>
+
+                <div class="timeline-line">
+                  <span></span>
+                </div>
+
+                <div class="timeline-content">
+                  <strong>Daily Quiz</strong>
+                  <span>Mixed PCMB • 20 questions</span>
+                </div>
+
+                <div class="timeline-status">○</div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!-- ===================================================
+             LIBRARY
+        ==================================================== -->
+        <div class="page" id="page-library">
+
+          <div class="page-title">
+            <p class="eyebrow">STUDY LIBRARY</p>
+            <h1>Learning Library</h1>
+            <p>Everything you need for NEET & JEE preparation.</p>
+          </div>
+
+          <div class="feature-grid">
+
+            <button class="feature-card" data-page="books">
+              <span>📚</span>
+              <strong>Books & NCERT</strong>
+              <small>Digital study resources</small>
+            </button>
+
+            <button class="feature-card" data-page="videos">
+              <span>▶</span>
+              <strong>Video Lectures</strong>
+              <small>Learn from lectures</small>
+            </button>
+
+            <button class="feature-card" data-page="questions">
+              <span>❓</span>
+              <strong>Question Bank</strong>
+              <small>Practice questions</small>
+            </button>
+
+            <button class="feature-card" data-page="quiz">
+              <span>🧠</span>
+              <strong>Quiz</strong>
+              <small>Test your knowledge</small>
+            </button>
+
+            <button class="feature-card" data-page="dpp">
+              <span>📝</span>
+              <strong>DPP</strong>
+              <small>Daily practice</small>
+            </button>
+
+            <button class="feature-card" data-page="mock">
+              <span>🎯</span>
+              <strong>Mock Tests</strong>
+              <small>Full exam practice</small>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             BOOKS
+        ==================================================== -->
+        <div class="page" id="page-books">
+
+          <div class="page-title">
+            <p class="eyebrow">BOOKS</p>
+            <h1>Books & NCERT Library</h1>
+            <p>Organized resources for Physics, Chemistry, Biology and Mathematics.</p>
+          </div>
+
+          <div class="filter-row">
+
+            <button class="filter-button active">All</button>
+            <button class="filter-button">Physics</button>
+            <button class="filter-button">Chemistry</button>
+            <button class="filter-button">Biology</button>
+            <button class="filter-button">Mathematics</button>
+
+          </div>
+
+
+          <div class="book-grid">
+
+            <article class="book-card">
+              <div class="book-cover biology-cover">BIOLOGY</div>
+              <div class="book-info">
+                <span>NCERT • Class 11</span>
+                <h3>Biology NCERT</h3>
+                <button class="small-primary">Open Book</button>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div class="book-cover physics-cover">PHYSICS</div>
+              <div class="book-info">
+                <span>NCERT • Class 11–12</span>
+                <h3>Physics NCERT</h3>
+                <button class="small-primary">Open Book</button>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div class="book-cover chemistry-cover">CHEMISTRY</div>
+              <div class="book-info">
+                <span>NCERT • Class 11–12</span>
+                <h3>Chemistry NCERT</h3>
+                <button class="small-primary">Open Book</button>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div class="book-cover maths-cover">MATHS</div>
+              <div class="book-info">
+                <span>JEE • Class 11–12</span>
+                <h3>Mathematics Library</h3>
+                <button class="small-primary">Open Book</button>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             VIDEOS
+        ==================================================== -->
+        <div class="page" id="page-videos">
+
+          <div class="page-title">
+            <p class="eyebrow">VIDEO LECTURES</p>
+            <h1>Video Learning</h1>
+            <p>Continue your lectures and revise important concepts.</p>
+          </div>
+
+          <div class="video-layout">
+
+            <div class="video-player-placeholder">
+
+              <div class="play-large">▶</div>
+
+              <h3>Choose a lecture to start learning</h3>
+
+              <p>
+                Your selected lecture will appear here.
+              </p>
+
+            </div>
+
+            <div class="lecture-list">
+
+              <button class="lecture-item">
+                <span class="lecture-thumb">▶</span>
+                <div>
+                  <strong>Current Electricity</strong>
+                  <small>Physics • 60 min</small>
+                </div>
+                <b>60%</b>
+              </button>
+
+              <button class="lecture-item">
+                <span class="lecture-thumb">▶</span>
+                <div>
+                  <strong>Mole Concept</strong>
+                  <small>Chemistry • 48 min</small>
+                </div>
+                <b>35%</b>
+              </button>
+
+              <button class="lecture-item">
+                <span class="lecture-thumb">▶</span>
+                <div>
+                  <strong>Cell Structure</strong>
+                  <small>Biology • 52 min</small>
+                </div>
+                <b>75%</b>
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             QUESTION BANK
+        ==================================================== -->
+        <div class="page" id="page-questions">
+
+          <div class="page-title">
+            <p class="eyebrow">QUESTION BANK</p>
+            <h1>Practice Questions</h1>
+            <p>Practice chapter-wise NEET & JEE questions.</p>
+          </div>
+
+          <div class="question-controls">
+
+            <button class="subject-chip active">Physics</button>
+            <button class="subject-chip">Chemistry</button>
+            <button class="subject-chip">Biology</button>
+            <button class="subject-chip">Mathematics</button>
+
+          </div>
+
+          <div class="question-card">
+
+            <div class="question-top">
+              <span class="question-number">Question 1</span>
+              <span class="difficulty medium">Medium</span>
+            </div>
+
+            <h2>
+              A body is moving with uniform acceleration. Which quantity
+              changes uniformly with time?
+            </h2>
+
+            <div class="options">
+
+              <button>A. Distance</button>
+              <button>B. Velocity</button>
+              <button>C. Acceleration</button>
+              <button>D. Mass</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             DPP
+        ==================================================== -->
+        <div class="page" id="page-dpp">
+
+          <div class="page-title">
+            <p class="eyebrow">DAILY PRACTICE PROBLEM</p>
+            <h1>Today's DPP</h1>
+            <p>90 questions • Physics + Chemistry + Biology</p>
+          </div>
+
+          <div class="dpp-banner">
+
+            <div>
+              <span>DAILY CHALLENGE</span>
+              <h2>90 Questions</h2>
+              <p>30 Physics • 30 Chemistry • 30 Biology</p>
+            </div>
+
+            <button class="primary-button">
+              Start DPP →
+            </button>
+
+          </div>
+
+          <div class="dpp-grid">
+
+            <div class="dpp-subject physics-dpp">
+              <span>⚛</span>
+              <strong>Physics</strong>
+              <small>30 Questions</small>
+            </div>
+
+            <div class="dpp-subject chemistry-dpp">
+              <span>⚗</span>
+              <strong>Chemistry</strong>
+              <small>30 Questions</small>
+            </div>
+
+            <div class="dpp-subject biology-dpp">
+              <span>🧬</span>
+              <strong>Biology</strong>
+              <small>30 Questions</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             QUIZ
+        ==================================================== -->
+        <div class="page" id="page-quiz">
+
+          <div class="page-title">
+            <p class="eyebrow">DAILY QUIZ</p>
+            <h1>Test Your Knowledge</h1>
+            <p>Quick mixed-subject quizzes for daily revision.</p>
+          </div>
+
+          <div class="quiz-start-card">
+
+            <div class="quiz-symbol">🧠</div>
+
+            <h2>Daily Mixed Quiz</h2>
+
+            <p>
+              20 questions • 20 minutes
+            </p>
+
+            <div class="quiz-info">
+              <span>Physics</span>
+              <span>Chemistry</span>
+              <span>Biology</span>
+              <span>JEE Maths</span>
+            </div>
+
+            <button class="primary-button">
+              Start Quiz →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             MOCK TEST
+        ==================================================== -->
+        <div class="page" id="page-mock">
+
+          <div class="page-title">
+            <p class="eyebrow">FULL MOCK TEST</p>
+            <h1>NEET & JEE Mock Tests</h1>
+            <p>Simulate the real examination environment.</p>
+          </div>
+
+          <div class="mock-grid">
+
+            <div class="mock-card">
+
+              <div class="mock-icon">🎯</div>
+
+              <span>NEET UG</span>
+
+              <h2>Full NEET Mock Test</h2>
+
+              <p>
+                180 Questions • 720 Marks • 200 Minutes
+              </p>
+
+              <div class="mock-subjects">
+                <span>Physics 45</span>
+                <span>Chemistry 45</span>
+                <span>Biology 90</span>
+              </div>
+
+              <button class="primary-button">
+                Start NEET Test
+              </button>
+
+            </div>
+
+
+            <div class="mock-card">
+
+              <div class="mock-icon">∑</div>
+
+              <span>JEE</span>
+
+              <h2>JEE Practice Test</h2>
+
+              <p>
+                Physics • Chemistry • Mathematics
+              </p>
+
+              <div class="mock-subjects">
+                <span>Physics</span>
+                <span>Chemistry</span>
+                <span>Mathematics</span>
+              </div>
+
+              <button class="primary-button">
+                Start JEE Test
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             ARIA AI
+        ==================================================== -->
+        <div class="page" id="page-ai">
+
+          <div class="ai-page">
+
+            <div class="ai-header">
+
+              <div class="aria-avatar">
+                ✦
+              </div>
+
+              <div>
+                <p class="eyebrow">AI STUDY ASSISTANT</p>
+                <h1>Meet Aria AI</h1>
+                <p>
+                  Your personal NEET & JEE study companion.
+                </p>
+              </div>
+
+              <span class="ai-status">
+                <i></i> Online
+              </span>
+
+            </div>
+
+
+            <div class="ai-capabilities">
+
+              <button class="ai-capability">
+                📷
+                <strong>Photo Solution</strong>
+                <small>Upload a question</small>
+              </button>
+
+              <button class="ai-capability">
+                🧮
+                <strong>Step-by-Step</strong>
+                <small>Solve numericals</small>
+              </button>
+
+              <button class="ai-capability">
+                📝
+                <strong>Make Notes</strong>
+                <small>Smart revision notes</small>
+              </button>
+
+              <button class="ai-capability">
+                🧠
+                <strong>Generate Quiz</strong>
+                <small>Practice instantly</small>
+              </button>
+
+            </div>
+
+
+            <div class="ai-chat-card">
+
+              <div class="chat-messages" id="chatMessages">
+
+                <div class="chat-message aria-message">
+
+                  <div class="chat-avatar">✦</div>
+
+                  <div class="message-content">
+
+                    <strong>Aria AI</strong>
+
+                    <p>
+                      नमस्ते! 👋 मैं Aria हूँ।<br>
+                      NEET और JEE के Physics, Chemistry, Biology और
+                      Mathematics doubts में मैं तुम्हारी step-by-step मदद कर सकती हूँ।
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="chat-suggestions">
+
+                <button>
+                  Physics numerical solve करो
+                </button>
+
+                <button>
+                  Mole concept समझाओ
+                </button>
+
+                <button>
+                  Cell chapter के notes बनाओ
+                </button>
+
+                <button>
+                  JEE Maths का quiz बनाओ
+                </button>
+
+              </div>
+
+
+              <form class="chat-input-area" id="aiChatForm">
+
+                <label
+                  class="attach-button"
+                  title="Upload question photo"
+                >
+                  📷
+                  <input
+                    type="file"
+                    id="questionImage"
+                    accept="image/*"
+                    hidden
+                  >
+                </label>
+
+                <input
+                  type="text"
+                  id="aiInput"
+                  placeholder="Ask Aria anything..."
+                  autocomplete="off"
+                >
+
+                <button
+                  type="button"
+                  class="voice-button"
+                  id="voiceButton"
+                  title="Voice input"
+                >
+                  🎙
+                </button>
+
+                <button
+                  type="submit"
+                  class="send-button"
+                >
+                  →
+                </button>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             PLANNER
+        ==================================================== -->
+        <div class="page" id="page-planner">
+
+          <div class="page-title">
+            <p class="eyebrow">SMART PLANNER</p>
+            <h1>Study Planner</h1>
+            <p>Plan your daily preparation and stay consistent.</p>
+          </div>
+
+          <div class="planner-layout">
+
+            <div class="planner-calendar">
+
+              <div class="calendar-header">
+                <button>‹</button>
+                <strong id="calendarMonth">September 2026</strong>
+                <button>›</button>
+              </div>
+
+              <div class="calendar-grid">
+
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="today">7</button>
+
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+                <button>11</button>
+                <button>12</button>
+                <button>13</button>
+                <button>14</button>
+
+              </div>
+
+            </div>
+
+
+            <div class="planner-tasks">
+
+              <div class="task">
+                <span class="task-check">✓</span>
+                <div>
+                  <strong>Biology NCERT Revision</strong>
+                  <small>45 minutes</small>
+                </div>
+              </div>
+
+              <div class="task">
+                <span class="task-check active"></span>
+                <div>
+                  <strong>Physics Current Electricity</strong>
+                  <small>60 minutes</small>
+                </div>
+              </div>
+
+              <div class="task">
+                <span class="task-check"></span>
+                <div>
+                  <strong>Chemistry DPP</strong>
+                  <small>30 questions</small>
+                </div>
+              </div>
+
+              <button class="primary-button">
+                + Add Study Task
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             ANALYTICS
+        ==================================================== -->
+        <div class="page" id="page-analytics">
+
+          <div class="page-title">
+            <p class="eyebrow">PERFORMANCE</p>
+            <h1>Analytics</h1>
+            <p>Understand your preparation and improve every day.</p>
+          </div>
+
+          <div class="analytics-stats">
+
+            <div>
+              <span>Study Hours</span>
+              <strong>123h</strong>
+              <small>+18% this month</small>
+            </div>
+
+            <div>
+              <span>Questions Solved</span>
+              <strong>2,840</strong>
+              <small>+320 this week</small>
+            </div>
+
+            <div>
+              <span>Accuracy</span>
+              <strong>78%</strong>
+              <small>+5% improvement</small>
+            </div>
+
+            <div>
+              <span>Current Streak</span>
+              <strong>6</strong>
+              <small>days</small>
+            </div>
+
+          </div>
+
+
+          <div class="chart-card">
+
+            <div class="section-header compact">
+              <div>
+                <p class="eyebrow">WEEKLY ACTIVITY</p>
+                <h2>Study Hours</h2>
+              </div>
+            </div>
+
+            <div class="fake-chart">
+
+              <div class="chart-y">
+                <span>10h</span>
+                <span>8h</span>
+                <span>6h</span>
+                <span>4h</span>
+                <span>2h</span>
+                <span>0h</span>
+              </div>
+
+              <div class="bars">
+
+                <div style="height:45%">
+                  <span>Mon</span>
+                </div>
+
+                <div style="height:65%">
+                  <span>Tue</span>
+                </div>
+
+                <div style="height:50%">
+                  <span>Wed</span>
+                </div>
+
+                <div style="height:80%">
+                  <span>Thu</span>
+                </div>
+
+                <div style="height:60%">
+                  <span>Fri</span>
+                </div>
+
+                <div style="height:90%">
+                  <span>Sat</span>
+                </div>
+
+                <div style="height:42%">
+                  <span>Sun</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             BOOKMARKS
+        ==================================================== -->
+        <div class="page" id="page-bookmarks">
+
+          <div class="page-title">
+            <p class="eyebrow">SAVED</p>
+            <h1>Bookmarks</h1>
+            <p>Your saved questions, lectures and study resources.</p>
+          </div>
+
+          <div class="empty-state">
+
+            <div>🔖</div>
+
+            <h2>No new bookmarks</h2>
+
+            <p>
+              Save important questions and resources here for quick revision.
+            </p>
+
+            <button class="primary-button" data-page="library">
+              Explore Library →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             3D LEARNING LAB
+        ==================================================== -->
+        <div class="page" id="page-lab3d">
+
+          <div class="page-title">
+
+            <p class="eyebrow">INTERACTIVE SCIENCE</p>
+
+            <h1>🧊 3D Learning Lab</h1>
+
+            <p>
+              Explore Physics, Chemistry, Biology and Mathematics
+              concepts interactively.
+            </p>
+
+          </div>
+
+
+          <div class="lab-tabs">
+
+            <button class="lab-tab active">All</button>
+            <button class="lab-tab">Biology</button>
+            <button class="lab-tab">Chemistry</button>
+            <button class="lab-tab">Physics</button>
+            <button class="lab-tab">Mathematics</button>
+
+          </div>
+
+
+          <div class="model-grid">
+
+            <button class="model-card">
+
+              <div class="model-preview dna-model">
+                🧬
+              </div>
+
+              <div>
+                <span>Biology</span>
+                <strong>DNA Structure</strong>
+                <small>Explore DNA in 3D</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview cell-model">
+                🔬
+              </div>
+
+              <div>
+                <span>Biology</span>
+                <strong>Cell</strong>
+                <small>Cell organelles</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview atom-model">
+                ⚛
+              </div>
+
+              <div>
+                <span>Chemistry</span>
+                <strong>Atom</strong>
+                <small>Atomic structure</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview molecule-model">
+                ⚗
+              </div>
+
+              <div>
+                <span>Chemistry</span>
+                <strong>Molecular Geometry</strong>
+                <small>3D molecules</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview vector-model">
+                ↗
+              </div>
+
+              <div>
+                <span>Physics</span>
+                <strong>Vectors</strong>
+                <small>Vector visualization</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview circuit-model">
+                ⚡
+              </div>
+
+              <div>
+                <span>Physics</span>
+                <strong>Electric Circuit</strong>
+                <small>Interactive circuit</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview geometry-model">
+                ◇
+              </div>
+
+              <div>
+                <span>Mathematics</span>
+                <strong>3D Geometry</strong>
+                <small>Shapes and surfaces</small>
+              </div>
+
+            </button>
+
+
+            <button class="model-card">
+
+              <div class="model-preview graph-model">
+                ∿
+              </div>
+
+              <div>
+                <span>Mathematics</span>
+                <strong>Graphs</strong>
+                <small>Coordinate visualization</small>
+              </div>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             PCMB TOOLS
+        ==================================================== -->
+        <div class="page" id="page-tools">
+
+          <div class="page-title">
+
+            <p class="eyebrow">MATHEMATICAL & SCIENTIFIC TOOLS</p>
+
+            <h1>∑ PCMB Tools</h1>
+
+            <p>
+              Calculator and scientific tools for Physics,
+              Chemistry, Biology and Mathematics.
+            </p>
+
+          </div>
+
+
+          <div class="tools-grid">
+
+            <button class="tool-card">
+              <span>🧮</span>
+              <strong>Scientific Calculator</strong>
+              <small>sin • cos • tan • log • ln • √ • π</small>
+            </button>
+
+            <button class="tool-card">
+              <span>⚛</span>
+              <strong>Physics Calculator</strong>
+              <small>Speed • Force • Work • Energy • Electricity</small>
+            </button>
+
+            <button class="tool-card">
+              <span>⚗</span>
+              <strong>Chemistry Calculator</strong>
+              <small>Mole • Molarity • Molality • Concentration</small>
+            </button>
+
+            <button class="tool-card">
+              <span>🧬</span>
+              <strong>Biology Calculator</strong>
+              <small>Percentage • Ratio • Genetics probability</small>
+            </button>
+
+            <button class="tool-card">
+              <span>∑</span>
+              <strong>Mathematics Tools</strong>
+              <small>Algebra • Trigonometry • Calculus • Geometry</small>
+            </button>
+
+            <button class="tool-card">
+              <span>⇄</span>
+              <strong>Unit Converter</strong>
+              <small>Length • Mass • Time • Energy • Temperature</small>
+            </button>
+
+          </div>
+
+
+          <div class="calculator-preview">
+
+            <div class="calculator-screen">
+              <small>Scientific Calculator</small>
+              <strong id="calculatorDisplay">0</strong>
+            </div>
+
+            <div class="calculator-buttons">
+
+              <button>sin</button>
+              <button>cos</button>
+              <button>tan</button>
+              <button>log</button>
+              <button>ln</button>
+
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+              <button>÷</button>
+              <button>√</button>
+
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+              <button>×</button>
+              <button>π</button>
+
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>−</button>
+              <button>^</button>
+
+              <button>0</button>
+              <button>.</button>
+              <button>C</button>
+              <button>+</button>
+              <button class="equals">=</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             YOUTUBE
+        ==================================================== -->
+        <div class="page" id="page-youtube">
+
+          <div class="page-title">
+
+            <p class="eyebrow">LIVE LEARNING</p>
+
+            <h1>YouTube LIVE</h1>
+
+            <p>
+              NEET & JEE live classes, upcoming lectures and recent sessions.
+            </p>
+
+          </div>
+
+
+          <div class="youtube-controls">
+
+            <button class="youtube-filter active">
+              🔴 LIVE NOW
+            </button>
+
+            <button class="youtube-filter">
+              Upcoming
+            </button>
+
+            <button class="youtube-filter">
+              Recent
+            </button>
+
+            <button class="youtube-filter">
+              NEET
+            </button>
+
+            <button class="youtube-filter">
+              JEE
+            </button>
+
+            <button class="youtube-refresh" id="youtubeRefresh">
+              ↻ Refresh
+            </button>
+
+          </div>
+
+
+          <div id="youtubeLiveList" class="live-grid">
+
+            <div class="live-empty">
+
+              <div>▶</div>
+
+              <h2>Live classes will appear here</h2>
+
+              <p>
+                Connect your YouTube API through Vercel Environment Variables
+                to enable automatic live discovery.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             STUDY WEBSITES
+        ==================================================== -->
+        <div class="page" id="page-websites">
+
+          <div class="page-title">
+
+            <p class="eyebrow">STUDY RESOURCES</p>
+
+            <h1>Study Websites</h1>
+
+            <p>
+              Useful study resources collected inside Mission Lakshya.
+            </p>
+
+          </div>
+
+
+          <div class="website-grid">
+
+            <button
+              class="website-card"
+              data-url="https://studypanda.live/books"
+            >
+              <span>📚</span>
+              <strong>StudyPanda</strong>
+              <small>Books</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://learnify.deltaverse.site/"
+            >
+              <span>🎓</span>
+              <strong>Learnify</strong>
+              <small>Learning resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://pw.studyparcham.in/#home-view"
+            >
+              <span>📖</span>
+              <strong>PW StudyParcham</strong>
+              <small>Study resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://asmultiverse.com/?tab=home"
+            >
+              <span>🌐</span>
+              <strong>AS Multiverse</strong>
+              <small>Study platform</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://studyrays.cc"
+            >
+              <span>📚</span>
+              <strong>StudyRays</strong>
+              <small>Study resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://learntopper.in"
+            >
+              <span>🎯</span>
+              <strong>LearnTopper</strong>
+              <small>Learning</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://studyspark.pro"
+            >
+              <span>⚡</span>
+              <strong>StudySpark</strong>
+              <small>Study platform</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="http://eduzex-pw.pages.dev"
+            >
+              <span>📘</span>
+              <strong>Eduzex PW</strong>
+              <small>Study resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="http://deltastudy.site"
+            >
+              <span>🚀</span>
+              <strong>DeltaStudy</strong>
+              <small>Learning</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="http://studybeepro.site"
+            >
+              <span>🐝</span>
+              <strong>Studybeepro</strong>
+              <small>Study resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="http://rolexcoderz.in"
+            >
+              <span>💻</span>
+              <strong>RolexCoderZ</strong>
+              <small>Resources</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://vedstudy.com/"
+            >
+              <span>📕</span>
+              <strong>VedStudy</strong>
+              <small>Study platform</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://preppronetwork.vercel.app/"
+            >
+              <span>🎓</span>
+              <strong>PrepProNetwork</strong>
+              <small>Preparation</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="http://learnbyakp.site"
+            >
+              <span>🧑‍🏫</span>
+              <strong>learnbyakp</strong>
+              <small>Learning</small>
+            </button>
+
+            <button
+              class="website-card"
+              data-url="https://pwx.pages.dev"
+            >
+              <span>📱</span>
+              <strong>PWX</strong>
+              <small>Study resources</small>
+            </button>
+
+          </div>
+
+
+          <div class="website-viewer" id="websiteViewer">
+
+            <div class="viewer-placeholder">
+
+              <span>🌐</span>
+
+              <h2>In-site Resource Viewer</h2>
+
+              <p>
+                Select a study website above.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             THEMES
+        ==================================================== -->
+        <div class="page" id="page-themes">
+
+          <div class="page-title">
+
+            <p class="eyebrow">PERSONALIZATION</p>
+
+            <h1>Themes & Modes</h1>
+
+            <p>
+              Customize your Mission Lakshya study environment.
+            </p>
+
+          </div>
+
+
+          <div class="theme-grid">
+
+            <button class="theme-option active" data-theme="purple">
+              <span class="theme-preview purple-preview"></span>
+              <strong>Mission Purple</strong>
+            </button>
+
+            <button class="theme-option" data-theme="blue">
+              <span class="theme-preview blue-preview"></span>
+              <strong>Ocean Blue</strong>
+            </button>
+
+            <button class="theme-option" data-theme="green">
+              <span class="theme-preview green-preview"></span>
+              <strong>Emerald</strong>
+            </button>
+
+            <button class="theme-option" data-theme="orange">
+              <span class="theme-preview orange-preview"></span>
+              <strong>Sunset</strong>
+            </button>
+
+            <button class="theme-option" data-theme="red">
+              <span class="theme-preview red-preview"></span>
+              <strong>Crimson</strong>
+            </button>
+
+            <button class="theme-option" data-theme="dark">
+              <span class="theme-preview dark-preview"></span>
+              <strong>Midnight</strong>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             SETTINGS
+        ==================================================== -->
+        <div class="page" id="page-settings">
+
+          <div class="page-title">
+
+            <p class="eyebrow">ACCOUNT</p>
+
+            <h1>Settings</h1>
+
+            <p>
+              Manage your Mission Lakshya preferences.
+            </p>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Language</strong>
+                <small>Hindi / English</small>
+              </div>
+
+              <button class="setting-control">
+                HI / EN
+              </button>
+
+            </div>
+
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Notifications</strong>
+                <small>Study reminders and updates</small>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span></span>
+              </label>
+
+            </div>
+
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Study reminders</strong>
+                <small>Get reminders for your planner</small>
+              </div>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span></span>
+              </label>
+
+            </div>
+
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Profile</strong>
+                <small>Yashpal Aagri • Student</small>
+              </div>
+
+              <button class="setting-control">
+                Edit
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           FOOTER
+      ====================================================== -->
+      <footer class="site-footer">
+
+        <div>
+          <strong>MISSION LAKSHYA</strong>
+          <span>NEET & JEE 2027</span>
+        </div>
+
+        <p>
+          Your Success, Our Mission
+        </p>
+
+        <small>
+          Created by – Yashpal Aagri
+        </small>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================================================
+       NOTIFICATION PANEL
+  ========================================================== -->
+  <div class="notification-panel" id="notificationPanel">
+
+    <div class="notification-header">
+      <strong>Notifications</strong>
+      <button id="closeNotifications">×</button>
+    </div>
+
+    <div class="notification-item">
+      <span>🔥</span>
+      <div>
+        <strong>6 day streak!</strong>
+        <small>Keep your study streak alive.</small>
+      </div>
+    </div>
+
+    <div class="notification-item">
+      <span>📝</span>
+      <div>
+        <strong>Today's DPP is ready</strong>
+        <small>90 questions are waiting.</small>
+      </div>
+    </div>
+
+    <div class="notification-item">
+      <span>✦</span>
+      <div>
+        <strong>Aria AI is ready</strong>
+        <small>Ask your next doubt.</small>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       PROFILE MENU
+  ========================================================== -->
+  <div class="profile-menu" id="profileMenu">
+
+    <div class="profile-menu-user">
+
+      <div class="avatar">YA</div>
+
+      <div>
+        <strong>Yashpal Aagri</strong>
+        <span>Student</span>
+      </div>
+
+    </div>
+
+    <button data-page="settings">
+      ⚙ Settings
+    </button>
+
+    <button data-page="analytics">
+      📊 My Progress
+    </button>
+
+    <button data-page="bookmarks">
+      🔖 Bookmarks
+    </button>
+
+  </div>
+
+
+  <!-- =========================================================
+       GLOBAL SEARCH RESULTS
+  ========================================================== -->
+  <div class="search-results" id="searchResults">
+
+    <div class="search-result-title">
+      Search Results
+    </div>
+
+    <div id="searchResultList"></div>
+
+  </div>
+
+
+  <!-- =========================================================
+       WEBSITE MODAL
+  ========================================================== -->
+  <div class="modal" id="websiteModal">
+
+    <div class="modal-box large-modal">
+
+      <div class="modal-header">
+
+        <div>
+          <span class="eyebrow">RESOURCE VIEWER</span>
+          <h2 id="websiteModalTitle">Study Website</h2>
+        </div>
+
+        <button class="modal-close" id="closeWebsiteModal">
+          ×
+        </button>
+
+      </div>
+
+      <div class="external-warning" id="externalWarning">
+        If this website blocks in-site embedding, use the provided
+        fallback button.
+      </div>
+
+      <div class="embedded-site" id="embeddedSite"></div>
+
+      <button
+        class="secondary-button"
+        id="openExternalWebsite"
+      >
+        Open Resource →
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       MODEL MODAL
+  ========================================================== -->
+  <div class="modal" id="modelModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+
+        <div>
+          <span class="eyebrow">3D LEARNING LAB</span>
+          <h2 id="modelTitle">3D Model</h2>
+        </div>
+
+        <button class="modal-close" id="closeModelModal">
+          ×
+        </button>
+
+      </div>
+
+      <div class="model-stage">
+
+        <div class="model-object" id="modelObject">
+          ⚛
+        </div>
+
+      </div>
+
+      <div class="model-controls">
+
+        <button>↶ Rotate</button>
+        <button>↷ Rotate</button>
+        <button>＋ Zoom</button>
+        <button>− Zoom</button>
+        <button>⛶ Fullscreen</button>
+        <button>🏷 Labels</button>
+
+      </div>
+
+      <button class="primary-button" data-page="ai">
+        Ask Aria about this model ✦
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       STUDY TIMER
+  ========================================================== -->
+  <div class="study-timer" id="studyTimer">
+
+    <div class="timer-icon">◷</div>
+
+    <div>
+      <span>Study Timer</span>
+      <strong id="timerDisplay">25:00</strong>
+    </div>
+
+    <button id="timerStart">▶</button>
+    <button id="timerReset">↻</button>
+
+  </div>
+
+
+  <!-- =========================================================
+       TOAST
+  ========================================================== -->
+  <div class="toast" id="toast">
+
+    <span id="toastIcon">✓</span>
+
+    <div>
+      <strong id="toastTitle">Done</strong>
+      <small id="toastMessage">Action completed.</small>
+    </div>
+
+  </div>
+
+
+  <!-- MAIN JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+                  </html>
